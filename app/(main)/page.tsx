@@ -1,29 +1,19 @@
-import Hero from "@/app/components/sections/Hero";
-import About from "@/app/components/sections/About";
-import Education from "../components/sections/Education";
-import Legal from "../components/sections/Legal";
-import Sports from "../components/sections/Sports";
-import Initiatives from "../components/sections/Initiatives";
-import Contact from "../components/sections/Contact";
-import Media from "../components/sections/Media";
-import CredibilityStrip from "../components/sections/credibility";
-import PillarsPage from "../(pages)/pillars/page";
-import PublicImpactPage from "../(pages)/publicImpact/page";
+import Navbar from "../components/layout/navbar/Navbar";
+import HeroSection from "../components/sections/home/hero/HeroSection";
 
 export default function Home() {
   return (
-    <main className="bg-black text-white">
-      <Hero />
-      <CredibilityStrip/>
-      <About />
-      {/* <PillarsPage/> */}
-      <Education/>
-      <PublicImpactPage/>
-      <Sports/>
-      <Legal/>
-      <Initiatives/>
-      <Media/>
-    <Contact/>
+  <main
+      className="
+        bg-[var(--background)]
+        text-[var(--text)]
+        overflow-hidden
+        transition-colors
+        duration-500
+      "
+    >
+
+      <HeroSection />
     </main>
   );
 }
