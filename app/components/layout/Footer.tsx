@@ -119,7 +119,7 @@ export default function Footer() {
               className="
                 text-xs
                 uppercase
-                tracking-[0.25em]
+                  
                 text-[#fe0000]
                 mb-6
               "
@@ -133,8 +133,8 @@ export default function Footer() {
                 md:text-7xl
                 lg:text-8xl
                 leading-[0.9]
-                tracking-[-0.07em]
-                font-black
+           
+                font-display font-normal
                 uppercase
                 max-w-4xl
               "
@@ -177,7 +177,7 @@ export default function Footer() {
                 py-4
                 text-sm
                 uppercase
-                tracking-[0.18em]
+             
                 text-white
                 transition-all
                 duration-500
@@ -214,7 +214,7 @@ export default function Footer() {
                   className="
                     text-sm
                     uppercase
-                    tracking-[0.2em]
+                     
                     text-[var(--muted)]
                     mb-6
                   "
@@ -230,7 +230,7 @@ export default function Footer() {
                       className="
                         block
                         text-lg
-                        tracking-[-0.03em]
+                         
                         hover:text-[#fe0000]
                         transition-colors
                         duration-500
@@ -263,9 +263,9 @@ export default function Footer() {
             <h3
               className="
                 text-xl
-                font-black
+                font-display font-normal
                 uppercase
-                tracking-[-0.05em]
+                  
               "
             >
               SOCIYO
@@ -330,7 +330,7 @@ export default function Footer() {
             className="
               text-sm
               uppercase
-              tracking-[0.15em]
+                
               text-[var(--muted)]
             "
           >

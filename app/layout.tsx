@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 import SmoothScroll from "@/app/components/ui/SmoothScroll";
 import CustomCursor from "@/app/components/ui/CustomCursor";
-
+import { Bebas_Neue, Inter_Tight } from "next/font/google";
 import Navbar from "@/app/components/layout/navbar/Navbar";
 import Footer from "@/app/components/layout/Footer";
 
@@ -86,6 +86,18 @@ export const metadata: Metadata = {
   },
 };
 
+
+const bebas = Bebas_Neue({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-display",
+});
+
+const interTight = Inter_Tight({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -104,6 +116,8 @@ export default function RootLayout({
           overflow-x-hidden
           transition-colors
           duration-500
+          ${bebas.variable}
+          ${interTight.variable}
         "
       >
         {/* Custom Cursor */}

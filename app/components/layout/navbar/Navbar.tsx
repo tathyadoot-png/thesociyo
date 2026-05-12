@@ -24,7 +24,7 @@ export default function Navbar() {
           px-6
           md:px-10
           lg:px-16
-          py-8
+          py-4
           pointer-events-none
         "
       >

@@ -60,10 +60,10 @@ export default function MenuLinks() {
                 md:text-[10vw]
                 lg:text-[7vw]
                 xl:text-[6vw]
-                font-black
+                font-display font-normal
                 uppercase
                 leading-[0.9]
-                tracking-[-0.08em]
+     
                 text-white/20
                 transition-all
                 duration-700

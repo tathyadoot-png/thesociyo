@@ -1,13 +1,11 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import {
-  Environment,
-  Float,
-  PerspectiveCamera,
-} from "@react-three/drei";
+import { PerspectiveCamera } from "@react-three/drei";
 
 import SignalField from "./SignalField";
+import TransmissionLines from "./TransmissionLines";
+import ParticleField from "./ParticleField";
 
 export default function HeroScene() {
   return (
@@ -26,32 +24,28 @@ export default function HeroScene() {
           fov={45}
         />
 
-        {/* Lighting */}
-        <ambientLight intensity={0.4} />
+        {/* Atmospheric Fog */}
+        <fog attach="fog" args={["#000000", 6, 18]} />
 
-        <directionalLight
-          position={[3, 3, 3]}
-          intensity={2}
-          color="#ffffff"
-        />
-
+        {/* Cinematic Lighting */}
         <pointLight
-          position={[0, 0, 2]}
-          intensity={4}
+          position={[0, 0, 4]}
+          intensity={1.5}
           color="#fe0000"
         />
 
-        {/* Environment */}
-        <Environment preset="city" />
+        <pointLight
+          position={[-4, 2, -2]}
+          intensity={0.4}
+          color="#ffffff"
+        />
 
-        {/* Main Signal System */}
-        <Float
-          speed={1.2}
-          rotationIntensity={0.2}
-          floatIntensity={0.4}
-        >
-          <SignalField />
-        </Float>
+        {/* Systems */}
+        <TransmissionLines />
+
+        <ParticleField />
+
+        <SignalField />
       </Canvas>
     </div>
   );

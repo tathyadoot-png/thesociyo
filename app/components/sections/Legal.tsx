@@ -48,7 +48,7 @@ export default function Legal() {
     <section ref={containerRef} id="legal" className="py-24 bg-[#FDFCF0] relative overflow-hidden">
       {/* Decorative Background Text */}
       <div className="absolute right-[-2%] top-[15%] opacity-[0.03] select-none pointer-events-none hidden lg:block">
-        <h2 className="text-[18vw] font-black text-[#001F3F] leading-none uppercase">COUNSEL</h2>
+        <h2 className="text-[18vw] font-display font-normal text-[#001F3F] leading-none uppercase">COUNSEL</h2>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -64,14 +64,14 @@ export default function Legal() {
                 <div className="w-16 h-16 bg-[#001F3F] rounded-2xl flex items-center justify-center mb-10 shadow-lg group-hover:-rotate-3 transition-transform">
                   <Gavel className="text-white" size={28} />
                 </div>
-                <h3 className="text-5xl lg:text-7xl font-black text-[#001F3F] uppercase leading-[0.9] tracking-tighter italic mb-10">
+                <h3 className="text-5xl lg:text-7xl font-display font-normal text-[#001F3F] uppercase leading-[0.9] tracking-tighter italic mb-10">
                   {data.sections[0]?.title || "Litigation"}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-auto">
                   {data.sections[0]?.items.map((item, i) => (
                     <div key={i} className="flex items-center gap-3 p-4 rounded-xl bg-[#FDFCF0] border border-[#001F3F]/5">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#001F3F]" />
-                      <span className="text-[10px] font-black uppercase text-[#001F3F]/80">{item}</span>
+                      <span className="text-[10px] font-display font-normal uppercase text-[#001F3F]/80">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -81,7 +81,7 @@ export default function Legal() {
             {/* 02. ADVISORY SECTION */}
             <div className="reveal-up lg:col-span-5 bg-[#001F3F] text-[#FDFCF0] rounded-[3rem] p-10 lg:p-14 shadow-2xl relative overflow-hidden group">
               <Briefcase size={180} className="absolute -right-12 -bottom-12 opacity-5" />
-              <h3 className="text-3xl font-black uppercase italic mb-12 tracking-tight border-l-4 border-white/20 pl-6">
+              <h3 className="text-3xl font-display font-normal uppercase italic mb-12 tracking-tight border-l-4 border-white/20 pl-6">
                 {data.sections[1]?.title || "Advisory"}
               </h3>
               <div className="space-y-8 relative z-10">
@@ -92,7 +92,7 @@ export default function Legal() {
                 ))}
               </div>
               <div className="mt-12 pt-8 border-t border-white/10 flex items-center justify-between opacity-40">
-                <span className="text-[9px] font-black tracking-[0.4em] uppercase">Firm Partner Status</span>
+                <span className="text-[9px] font-display font-normal tracking-[0.4em] uppercase">Firm Partner Status</span>
                 <Landmark size={18} />
               </div>
             </div>
@@ -107,7 +107,7 @@ export default function Legal() {
                     </div>
                     <ArrowUpRight className="text-[#001F3F]/10 group-hover:text-white transition-all" size={22} />
                   </div>
-                  <h4 className="text-2xl font-black text-[#001F3F] group-hover:text-white uppercase tracking-tighter mb-4">{p.title}</h4>
+                  <h4 className="text-2xl font-display font-normal text-[#001F3F] group-hover:text-white uppercase tracking-tighter mb-4">{p.title}</h4>
                   <p className="text-xs text-[#001F3F]/50 group-hover:text-white/60 font-semibold leading-relaxed">{p.desc}</p>
                 </div>
               ))}

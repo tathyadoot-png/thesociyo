@@ -71,7 +71,7 @@ export default function Navbar() {
               <Link
                 key={item.id}
                 href={`#${item.id}`}
-                className={`relative px-4 py-2 text-[11px] font-black uppercase transition-all group ${
+                className={`relative px-4 py-2 text-[11px] font-display font-normal uppercase transition-all group ${
                   isScrolled ? "text-white/70 hover:text-white" : "text-[#001F3F]/70 hover:text-[#001F3F]"
                 }`}
               >
@@ -92,7 +92,7 @@ export default function Navbar() {
               }`}
             >
               <Globe className={`w-3 h-3 md:w-4 md:h-4 ${isScrolled || mobileMenuOpen ? "text-[#C5A059]" : "text-[#001F3F]"}`} />
-              <span className="text-[10px] md:text-[11px] font-black uppercase tracking-wider">
+              <span className="text-[10px] md:text-[11px] font-display font-normal uppercase tracking-wider">
                 {lang === "en" ? "हिन्दी" : "EN"}
               </span>
             </button>
@@ -118,7 +118,7 @@ export default function Navbar() {
       >
         {/* Background Watermark */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-[0.03] select-none w-full text-center">
-           <h2 className="text-[20vw] font-black text-white uppercase leading-none italic">VIKALP</h2>
+           <h2 className="text-[20vw] font-display font-normal text-white uppercase leading-none italic">VIKALP</h2>
         </div>
 
         <nav className="relative z-10 flex flex-col items-center space-y-4 md:space-y-6">
@@ -130,7 +130,7 @@ export default function Navbar() {
               className="group flex flex-col items-center"
             >
               <span className="text-[10px] font-bold text-[#C5A059] mb-1 tracking-[0.3em]">0{idx + 1}</span>
-              <span className="text-3xl md:text-5xl font-black uppercase text-white/40 group-hover:text-[#FDFCF0] group-hover:scale-110 transition-all duration-300">
+              <span className="text-3xl md:text-5xl font-display font-normal uppercase text-white/40 group-hover:text-[#FDFCF0] group-hover:scale-110 transition-all duration-300">
                 {item.label[lang as "en" | "hi"]}
               </span>
             </Link>

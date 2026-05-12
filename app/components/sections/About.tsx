@@ -54,7 +54,7 @@ export default function About() {
            style={{ backgroundImage: `url("https://www.transparenttextures.com/patterns/natural-paper.png")` }} />
       
       <div className="absolute -bottom-10 left-10 pointer-events-none opacity-[0.04] select-none">
-        <h2 className="text-[25vw] font-black text-[#001F3F] leading-none uppercase tracking-tighter">
+        <h2 className="text-[25vw] font-display font-normal text-[#001F3F] leading-none uppercase tracking-tighter">
           {lang === 'en' ? 'LEADER' : 'नेतृत्व'}
         </h2>
       </div>
@@ -90,13 +90,13 @@ export default function About() {
           <div className="about-reveal">
     <div className="flex items-center gap-4 mb-6">
       <span className="h-[2px] w-16 bg-[#001F3F]" />
-      <span className="text-[#001F3F] font-black text-xs uppercase tracking-[0.4em]">
+      <span className="text-[#001F3F] font-display font-normal text-xs uppercase tracking-[0.4em]">
         {data.title}
       </span>
     </div>
     
     {/* BILINGUAL HEADER FIXED HERE */}
-    <h2 className="text-6xl md:text-8xl lg:text-9xl font-black text-[#001F3F] uppercase leading-[0.8] tracking-tighter mb-8">
+    <h2 className="text-6xl md:text-8xl lg:text-9xl font-display font-normal text-[#001F3F] uppercase leading-[0.8] tracking-tighter mb-8">
       {lang === 'en' ? (
         <>
           Legacy <br /> 
@@ -118,7 +118,7 @@ export default function About() {
             <div className="about-reveal grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
               {data.highlights.map((item, idx) => (
                 <div key={idx} className="flex items-start gap-4 p-6 bg-white border border-[#001F3F]/5 rounded-2xl hover:border-[#001F3F]/20 transition-all shadow-sm group">
-                  <div className="text-[#001F3F]/20 font-black text-2xl group-hover:text-[#001F3F] transition-colors">0{idx + 1}</div>
+                  <div className="text-[#001F3F]/20 font-display font-normal text-2xl group-hover:text-[#001F3F] transition-colors">0{idx + 1}</div>
                   <p className="text-[#001F3F] font-bold text-sm uppercase tracking-wide pt-1">
                     {item}
                   </p>

@@ -55,7 +55,7 @@ export default function CredibilityStrip() {
             </div>
 
             {/* Bold Navy Text */}
-            <span className="text-[#001F3F] font-black text-xs md:text-sm uppercase tracking-[0.3em] whitespace-nowrap">
+            <span className="text-[#001F3F] font-display font-normal text-xs md:text-sm uppercase tracking-[0.3em] whitespace-nowrap">
               {text}
             </span>
 

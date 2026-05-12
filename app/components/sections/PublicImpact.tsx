@@ -58,7 +58,7 @@ export default function PublicImpact() {
               className="impact-card group relative bg-white border border-[#001F3F]/10 rounded-[2rem] p-8 lg:p-10 hover:bg-[#001F3F] transition-all duration-500 overflow-hidden shadow-sm hover:shadow-xl"
             >
               {/* Floating Background Number */}
-              <div className="absolute -right-2 -top-6 text-[10rem] font-black text-[#001F3F]/[0.03] group-hover:text-white/[0.05] transition-colors leading-none pointer-events-none select-none">
+              <div className="absolute -right-2 -top-6 text-[10rem] font-display font-normal text-[#001F3F]/[0.03] group-hover:text-white/[0.05] transition-colors leading-none pointer-events-none select-none">
                 0{i + 1}
               </div>
 
@@ -75,7 +75,7 @@ export default function PublicImpact() {
                 </div>
 
                 <div className="space-y-5">
-                  <h3 className="text-2xl lg:text-3xl font-black text-[#001F3F] group-hover:text-white uppercase italic leading-tight tracking-tight">
+                  <h3 className="text-2xl lg:text-3xl font-display font-normal text-[#001F3F] group-hover:text-white uppercase italic leading-tight tracking-tight">
                     {item.title}
                   </h3>
                   
@@ -97,7 +97,7 @@ export default function PublicImpact() {
 
                 <div className="mt-8 flex justify-end">
                    <div className="flex items-center gap-2 text-[#001F3F] group-hover:text-white transition-colors opacity-40 group-hover:opacity-100">
-                     <span className="text-[9px] font-black uppercase tracking-widest">Details</span>
+                     <span className="text-[9px] font-display font-normal uppercase tracking-widest">Details</span>
                      <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                    </div>
                 </div>
@@ -110,19 +110,19 @@ export default function PublicImpact() {
         {/* <div className="impact-card mt-12 bg-[#001F3F] rounded-[2.5rem] p-8 lg:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
           <div className="relative z-10">
-            <h4 className="text-[#FDFCF0] text-3xl lg:text-4xl font-black uppercase italic tracking-tighter mb-2">
+            <h4 className="text-[#FDFCF0] text-3xl lg:text-4xl font-display font-normal uppercase italic tracking-tighter mb-2">
               Transforming Lives
             </h4>
             <p className="text-[#FDFCF0]/50 font-bold uppercase tracking-widest text-[9px]">At the Intersection of Policy & People</p>
           </div>
           <div className="relative z-10 flex gap-4">
             <div className="px-6 py-4 bg-white rounded-xl text-center min-w-[120px]">
-              <div className="text-2xl font-black text-[#001F3F]">10K+</div>
-              <div className="text-[9px] font-black text-[#001F3F]/40 uppercase tracking-wider">Beneficiaries</div>
+              <div className="text-2xl font-display font-normal text-[#001F3F]">10K+</div>
+              <div className="text-[9px] font-display font-normal text-[#001F3F]/40 uppercase tracking-wider">Beneficiaries</div>
             </div>
             <div className="px-6 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl text-center min-w-[120px]">
-              <div className="text-2xl font-black text-white">5+</div>
-              <div className="text-[9px] font-black text-white/40 uppercase tracking-wider">Major Initiatives</div>
+              <div className="text-2xl font-display font-normal text-white">5+</div>
+              <div className="text-[9px] font-display font-normal text-white/40 uppercase tracking-wider">Major Initiatives</div>
             </div>
           </div>
         </div> */}

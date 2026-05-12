@@ -91,7 +91,7 @@ const Contact = () => {
                 <Send className="w-32 h-32 -rotate-12 text-[#001F3F]" />
             </div>
 
-            <h3 className="text-2xl md:text-3xl font-black text-[#001F3F] uppercase italic mb-8">
+            <h3 className="text-2xl md:text-3xl font-display font-normal text-[#001F3F] uppercase italic mb-8">
               {lang === 'hi' ? "संदेश भेजें" : "Send a Message"}
             </h3>
 
@@ -124,7 +124,7 @@ const Contact = () => {
                 ></textarea>
               </div>
 
-              <button className="w-full group relative overflow-hidden bg-[#001F3F] py-5 md:py-6 rounded-2xl font-black text-[#FDFCF0] uppercase italic transition-all active:scale-[0.98] shadow-xl hover:shadow-[#001F3F]/20">
+              <button className="w-full group relative overflow-hidden bg-[#001F3F] py-5 md:py-6 rounded-2xl font-display font-normal text-[#FDFCF0] uppercase italic transition-all active:scale-[0.98] shadow-xl hover:shadow-[#001F3F]/20">
                 <span className="relative z-10 flex items-center justify-center gap-3 tracking-widest text-sm md:text-base">
                   {lang === 'hi' ? "अभी भेजें" : "Transmit Now"}
                   <Send className="w-5 h-5 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform" />

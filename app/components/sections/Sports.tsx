@@ -111,7 +111,7 @@ export default function Sports() {
                 <div className="absolute inset-0 bg-white border-l-4 border-[#001F3F] p-8 md:p-12 flex flex-col justify-between group overflow-hidden shadow-2xl">
                   
                   {/* Number Overlay: Light Navy */}
-                  <span className="absolute -top-6 -right-6 text-[10rem] font-black text-[#001F3F]/[0.04] italic select-none">
+                  <span className="absolute -top-6 -right-6 text-[10rem] font-display font-normal text-[#001F3F]/[0.04] italic select-none">
                     0{index + 1}
                   </span>
 
@@ -122,7 +122,7 @@ export default function Sports() {
                     </div>
                     
                     {/* Text: Navy */}
-                    <h3 className="text-2xl md:text-4xl font-black text-[#001F3F] uppercase italic leading-tight">
+                    <h3 className="text-2xl md:text-4xl font-display font-normal text-[#001F3F] uppercase italic leading-tight">
                       {item}
                     </h3>
                   </div>
@@ -143,7 +143,7 @@ export default function Sports() {
 
       {/* Background Text: Light Navy */}
       <div className="absolute bottom-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none select-none z-0">
-        <span className="text-[25vw] font-black text-[#001F3F] uppercase italic">
+        <span className="text-[25vw] font-display font-normal text-[#001F3F] uppercase italic">
           SPEED
         </span>
       </div>

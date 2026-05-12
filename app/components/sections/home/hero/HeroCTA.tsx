@@ -33,7 +33,7 @@ export default function HeroCTA() {
         duration-500
       "
     >
-      <span className="text-sm uppercase tracking-[0.2em]">
+      <span className="text-sm uppercase  ">
         Start a Conversation
       </span>
 

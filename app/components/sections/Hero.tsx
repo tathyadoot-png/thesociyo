@@ -59,7 +59,7 @@ export default function Hero() {
       className="relative min-h-screen flex items-center bg-[#FDFCF0] pt-24 pb-12 overflow-hidden"
     >
       {/* Background Decorative Elements */}
-      <div className="absolute top-[-10%] right-[-5%] text-[25vw] font-black text-[#001F3F]/5 select-none leading-none z-0 uppercase">
+      <div className="absolute top-[-10%] right-[-5%] text-[25vw] font-display font-normal text-[#001F3F]/5 select-none leading-none z-0 uppercase">
         Vikalp
       </div>
 
@@ -70,16 +70,16 @@ export default function Hero() {
           <div className="lg:col-span-7 flex flex-col items-start text-left space-y-8">
             <div className="reveal-text inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#001F3F]/10 bg-white shadow-sm">
               <span className="w-2 h-2 rounded-full bg-[#001F3F] animate-pulse" />
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#001F3F]">
+              <p className="text-[10px] font-display font-normal uppercase   text-[#001F3F]">
                 {data.headline}
               </p>
             </div>
 
             <div className="space-y-0">
-              <h1 className="reveal-text text-6xl md:text-8xl pb-4 lg:text-[10rem] font-black text-[#001F3F] uppercase leading-[0.8] tracking-tighter">
+              <h1 className="reveal-text text-6xl md:text-8xl pb-4 lg:text-[10rem] font-display font-normal text-[#001F3F] uppercase leading-[0.8] tracking-tighter">
                 {data.name.split(' ')[0]}
               </h1>
-              <h1 className="reveal-text text-6xl md:text-8xl lg:text-[10rem] font-black text-[#001F3F] uppercase leading-[0.8] tracking-tighter outline-text italic">
+              <h1 className="reveal-text text-6xl md:text-8xl lg:text-[10rem] font-display font-normal text-[#001F3F] uppercase leading-[0.8] tracking-tighter outline-text italic">
                 {data.name.split(' ')[1]}
               </h1>
             </div>
@@ -89,10 +89,10 @@ export default function Hero() {
             </p>
 
             <div className="reveal-text flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-              <button className="group px-8 py-5 bg-[#001F3F] text-[#FDFCF0] rounded-2xl font-black uppercase text-sm tracking-widest flex items-center justify-center gap-3 hover:scale-[1.05] transition-transform shadow-xl">
+              <button className="group px-8 py-5 bg-[#001F3F] text-[#FDFCF0] rounded-2xl font-display font-normal uppercase text-sm tracking-widest flex items-center justify-center gap-3 hover:scale-[1.05] transition-transform shadow-xl">
                 {data.ctaPrimary} <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="px-8 py-5 bg-white border border-[#001F3F]/10 text-[#001F3F] rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-[#001F3F]/5 transition-colors shadow-sm">
+              <button className="px-8 py-5 bg-white border border-[#001F3F]/10 text-[#001F3F] rounded-2xl font-display font-normal uppercase text-sm tracking-widest hover:bg-[#001F3F]/5 transition-colors shadow-sm">
                 {data.ctaSecondary}
               </button>
             </div>
@@ -127,8 +127,8 @@ export default function Hero() {
                     <MousePointer2 size={20} />
                 </div>
                 <div>
-                    <p className="text-[10px] font-black text-[#001F3F]/40 uppercase tracking-tighter">Advocate</p>
-                    <p className="text-xs font-black text-[#001F3F] uppercase">High Court</p>
+                    <p className="text-[10px] font-display font-normal text-[#001F3F]/40 uppercase tracking-tighter">Advocate</p>
+                    <p className="text-xs font-display font-normal text-[#001F3F] uppercase">High Court</p>
                 </div>
             </div>
           </div>

@@ -18,7 +18,7 @@ export default function MenuFooter() {
           className="
             text-xs
             uppercase
-            tracking-[0.28em]
+             
             text-white/35
           "
         >
@@ -31,7 +31,7 @@ export default function MenuFooter() {
           className="
             text-xs
             uppercase
-            tracking-[0.28em]
+             
             text-[#fe0000]
           "
         >

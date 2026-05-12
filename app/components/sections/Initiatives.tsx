@@ -111,13 +111,13 @@ export default function Initiatives() {
                     <Icon className="w-6 h-6 md:w-10 md:h-10 text-[#001F3F]/40 group-hover:text-white transition-colors" />
                   </div>
                   {/* Watermark Index: Light Navy */}
-                  <span className="text-6xl md:text-8xl font-black text-[#001F3F]/[0.05] italic ">
+                  <span className="text-6xl md:text-8xl font-display font-normal text-[#001F3F]/[0.05] italic ">
                     0{index + 1}
                   </span>
                 </div>
 
                 {/* Title: Navy */}
-                <h3 className="text-4xl md:text-5xl lg:text-7xl font-black text-[#001F3F] uppercase italic leading-[0.8] group-hover:opacity-70 transition-all duration-500">
+                <h3 className="text-4xl md:text-5xl lg:text-7xl font-display font-normal text-[#001F3F] uppercase italic leading-[0.8] group-hover:opacity-70 transition-all duration-500">
                   {title}
                 </h3>
 

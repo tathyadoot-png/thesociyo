@@ -4,8 +4,8 @@ export const typography = {
     md:text-[9rem]
     lg:text-[12rem]
     leading-[0.9]
-    tracking-[-0.08em]
-    font-black
+      
+    font-display font-normal
     uppercase
   `,
 
@@ -15,7 +15,7 @@ export const typography = {
     lg:text-8xl
     leading-[0.9]
     tracking-[-0.07em]
-    font-black
+    font-display font-normal
     uppercase
   `,
 };

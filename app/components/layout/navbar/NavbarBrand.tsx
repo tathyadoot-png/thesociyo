@@ -5,9 +5,9 @@ export default function NavBrand() {
         className="
           text-2xl
           md:text-3xl
-          font-black
+          font-display font-normal
           uppercase
-          tracking-[-0.08em]
+            
           text-white
           leading-none
         "
@@ -24,7 +24,7 @@ export default function NavBrand() {
           text-white/40
         "
       >
-        Strategic Communication
+       Communication
       </p>
     </div>
   );

@@ -104,7 +104,7 @@ export default function Education() {
               Chronicle
             </span>
           </div>
-          <h2 className="text-5xl md:text-8xl font-black text-[#001F3F] leading-[0.8] uppercase tracking-tighter mb-10">
+          <h2 className="text-5xl md:text-8xl font-display font-normal text-[#001F3F] leading-[0.8] uppercase tracking-tighter mb-10">
             {data.title.split(' ')[0]} <br />
             <span className="text-transparent stroke-navy italic opacity-40">
               {data.title.split(' ').slice(1).join(' ')}
@@ -141,11 +141,11 @@ export default function Education() {
               {/* Content Box */}
               <div className="flex-1 pb-4">
                 <div className="flex flex-col md:flex-row md:items-end gap-2 md:gap-6 mb-6">
-                  <span className="text-4xl md:text-6xl font-black text-[#001F3F] leading-none tracking-tighter">
+                  <span className="text-4xl md:text-6xl font-display font-normal text-[#001F3F] leading-none tracking-tighter">
                     {item.year}
                   </span>
                   <div className="h-px flex-1 bg-[#001F3F]/10 hidden md:block mb-3" />
-                  <span className="text-[10px] font-black text-[#001F3F]/40 uppercase tracking-[0.2em] mb-2">
+                  <span className="text-[10px] font-display font-normal text-[#001F3F]/40 uppercase   mb-2">
                     Phase 0{index + 1}
                   </span>
                 </div>
@@ -161,7 +161,7 @@ export default function Education() {
                 {item.highlight && (
                   <div className="mt-8 inline-flex items-center gap-3 px-5 py-2 bg-[#001F3F] rounded-full shadow-lg shadow-[#001F3F]/20">
                     <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
-                    <span className="text-[#FDFCF0] text-[10px] font-black uppercase tracking-widest">
+                    <span className="text-[#FDFCF0] text-[10px] font-display font-normal uppercase tracking-widest">
                       Distinguished Alumnus
                     </span>
                   </div>

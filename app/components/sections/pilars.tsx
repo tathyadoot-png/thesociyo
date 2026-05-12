@@ -68,14 +68,14 @@ export default function Pillars() {
                 {icons[idx]}
               </div>
 
-              <h3 className="text-2xl md:text-3xl font-black text-[#001F3F] uppercase mb-5 leading-none">
+              <h3 className="text-2xl md:text-3xl font-display font-normal text-[#001F3F] uppercase mb-5 leading-none">
                 {item.title}
               </h3>
               <p className="text-[#001F3F]/70 text-base font-medium leading-relaxed max-w-sm">
                 {item.desc}
               </p>
 
-              <span className="absolute bottom-12 right-12 text-7xl font-black text-[#001F3F]/5 italic group-hover:text-[#001F3F]/10 transition-colors">
+              <span className="absolute bottom-12 right-12 text-7xl font-display font-normal text-[#001F3F]/5 italic group-hover:text-[#001F3F]/10 transition-colors">
                 0{idx + 1}
               </span>
               

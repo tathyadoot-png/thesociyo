@@ -27,7 +27,7 @@ export default function NavbarCTA() {
         text-sm
         font-medium
         uppercase
-        tracking-[0.18em]
+           
         text-white
         shadow-[0px_0px_40px_rgba(254,0,0,0.25)]
         transition-all

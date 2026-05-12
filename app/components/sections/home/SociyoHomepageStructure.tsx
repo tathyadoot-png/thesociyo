@@ -33,7 +33,7 @@ export default function SociyoHomepageStructure() {
 
         {/* Top Meta */}
         <div className="relative z-10 flex items-center justify-between">
-          <p className="uppercase tracking-[0.25em] text-xs text-black/50 dark:text-white/50">
+          <p className="uppercase    text-xs text-black/50 dark:text-white/50">
             Bhopal · Est. 2018 · Strategic Communication
           </p>
 
@@ -46,28 +46,28 @@ export default function SociyoHomepageStructure() {
         <div className="relative z-10 flex flex-col justify-center flex-1 py-16 md:py-24">
           <div className="space-y-8">
             <div>
-              <h1 className="text-[4rem] md:text-[9rem] lg:text-[12rem] leading-[0.9] tracking-[-0.08em] font-black uppercase">
+              <h1 className="text-[4rem] md:text-[9rem] lg:text-[12rem] leading-[0.9]    font-display font-normal uppercase">
                 Strategies
               </h1>
-              <p className="text-black/60 dark:text-white/60 uppercase tracking-[0.25em] text-sm md:text-base ml-2">
+              <p className="text-black/60 dark:text-white/60 uppercase    text-sm md:text-base ml-2">
                 shape perception
               </p>
             </div>
 
             <div className="pl-10 md:pl-24">
-              <h1 className="text-[4rem] md:text-[9rem] lg:text-[12rem] leading-[0.9] tracking-[-0.08em] font-black uppercase text-[#fe0000]">
+              <h1 className="text-[4rem] md:text-[9rem] lg:text-[12rem] leading-[0.9]    font-display font-normal uppercase text-[#fe0000]">
                 Stories
               </h1>
-              <p className="text-black/60 dark:text-white/60 uppercase tracking-[0.25em] text-sm md:text-base ml-2">
+              <p className="text-black/60 dark:text-white/60 uppercase    text-sm md:text-base ml-2">
                 build influence
               </p>
             </div>
 
             <div>
-              <h1 className="text-[4rem] md:text-[9rem] lg:text-[12rem] leading-[0.9] tracking-[-0.08em] font-black uppercase">
+              <h1 className="text-[4rem] md:text-[9rem] lg:text-[12rem] leading-[0.9]    font-display font-normal uppercase">
                 Success
               </h1>
-              <p className="text-black/60 dark:text-white/60 uppercase tracking-[0.25em] text-sm md:text-base ml-2">
+              <p className="text-black/60 dark:text-white/60 uppercase    text-sm md:text-base ml-2">
                 moves markets
               </p>
             </div>
@@ -80,7 +80,7 @@ export default function SociyoHomepageStructure() {
             <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.04em] uppercase">
               SOCIYO
             </h2>
-            <p className="text-black/50 dark:text-white/50 uppercase tracking-[0.2em] mt-2 text-xs md:text-sm">
+            <p className="text-black/50 dark:text-white/50 uppercase   mt-2 text-xs md:text-sm">
               Strategic Communication
             </p>
           </div>
@@ -99,7 +99,7 @@ export default function SociyoHomepageStructure() {
       <section className="relative px-6 md:px-12 lg:px-20 py-28 md:py-40 border-b border-black/10 dark:border-white/10 overflow-hidden">
         {/* Background Typography */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.04] dark:opacity-[0.03]">
-          <h2 className="text-[20vw] font-black uppercase tracking-[-0.08em]">
+          <h2 className="text-[20vw] font-display font-normal uppercase   ">
             PERCEPTION
           </h2>
         </div>
@@ -107,11 +107,11 @@ export default function SociyoHomepageStructure() {
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           {/* Left */}
           <div className="sticky top-20">
-            <p className="uppercase tracking-[0.25em] text-xs text-[#fe0000] mb-6">
+            <p className="uppercase    text-xs text-[#fe0000] mb-6">
               Philosophy
             </p>
 
-            <h2 className="text-5xl md:text-7xl lg:text-8xl leading-[0.9] tracking-[-0.07em] font-black uppercase text-[#111113] dark:text-white">
+            <h2 className="text-5xl md:text-7xl lg:text-8xl leading-[0.9] tracking-[-0.07em] font-display font-normal uppercase text-[#111113] dark:text-white">
               Perception
               <br />
               shapes
@@ -186,15 +186,15 @@ export default function SociyoHomepageStructure() {
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center w-full">
               <div>
-                <p className="uppercase tracking-[0.25em] text-xs text-[#fe0000] mb-8">
+                <p className="uppercase    text-xs text-[#fe0000] mb-8">
                   {item.label}
                 </p>
 
-                <h2 className="text-5xl md:text-7xl lg:text-8xl leading-[0.9] tracking-[-0.07em] font-black uppercase text-[#111113] dark:text-white">
+                <h2 className="text-5xl md:text-7xl lg:text-8xl leading-[0.9] tracking-[-0.07em] font-display font-normal uppercase text-[#111113] dark:text-white">
                   {item.title}
                 </h2>
 
-                <h3 className="text-3xl md:text-5xl text-black/60 dark:text-white/60 tracking-[-0.05em] mt-6 uppercase font-bold">
+                <h3 className="text-3xl md:text-5xl text-black/60 dark:text-white/60    mt-6 uppercase font-bold">
                   {item.subtitle}
                 </h3>
               </div>
@@ -214,11 +214,11 @@ export default function SociyoHomepageStructure() {
       ======================================== */}
       <section className="px-6 md:px-12 lg:px-20 py-28 md:py-40 border-b border-black/10 dark:border-white/10">
         <div className="mb-20">
-          <p className="uppercase tracking-[0.25em] text-xs text-[#fe0000] mb-6">
+          <p className="uppercase    text-xs text-[#fe0000] mb-6">
             Capabilities
           </p>
 
-          <h2 className="text-5xl md:text-7xl lg:text-8xl leading-[0.9] tracking-[-0.07em] font-black uppercase max-w-5xl">
+          <h2 className="text-5xl md:text-7xl lg:text-8xl leading-[0.9] tracking-[-0.07em] font-display font-normal uppercase max-w-5xl">
             One brief or a full transformation.
           </h2>
         </div>
@@ -236,13 +236,13 @@ export default function SociyoHomepageStructure() {
               className="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-10 border-t border-black/10 dark:border-white/10 pt-10"
             >
               <div>
-                <span className="text-[#fe0000] text-3xl md:text-5xl font-black tracking-[-0.05em]">
+                <span className="text-[#fe0000] text-3xl md:text-5xl font-display font-normal   ">
                   0{index + 1}
                 </span>
               </div>
 
               <div>
-                <h3 className="text-3xl md:text-5xl font-bold tracking-[-0.05em] uppercase mb-5">
+                <h3 className="text-3xl md:text-5xl font-bold    uppercase mb-5">
                   {item}
                 </h3>
 

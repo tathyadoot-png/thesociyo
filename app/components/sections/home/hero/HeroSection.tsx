@@ -4,16 +4,31 @@ import Atmosphere from "@/app/components/r3f/Atmosphere";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden border-b border-[color:var(--border)]">
-      
-      {/* R3F */}
-      <HeroScene />
+    <section
+      className="
+        relative
+        h-[100vh]
+      "
+    >
+      <div
+        className="
+          sticky
+          top-0
+          h-screen
+          overflow-hidden
+          border-b
+          border-[var(--border)]
+        "
+      >
+        {/* 3D Scene */}
+        <HeroScene />
 
-      {/* Atmosphere */}
-      <Atmosphere />
+        {/* Atmosphere */}
+        <Atmosphere />
 
-      {/* Content */}
-      <HeroContent />
+        {/* Content */}
+        <HeroContent />
+      </div>
     </section>
   );
 }

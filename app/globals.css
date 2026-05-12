@@ -44,6 +44,7 @@ body {
 
 /*Theme*/
 
+
 :root {
   --background: #ffffff;
   --surface: #f8f8f8;
@@ -51,6 +52,9 @@ body {
   --muted: rgba(17,17,19,0.6);
   --border: rgba(17,17,19,0.1);
   --accent: #fe0000;
+  --font-display: "Bebas Neue", sans-serif;
+  --font-body: "Inter Tight", sans-serif;
+
 }
 
 .dark {
@@ -59,4 +63,20 @@ body {
   --text: #ffffff;
   --muted: rgba(255,255,255,0.6);
   --border: rgba(255,255,255,0.1);
+}
+
+
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-kerning: none;
+  font-feature-settings: "kern" 0;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-body {
+  font-family: var(--font-body);
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
 }

@@ -46,14 +46,13 @@ export default function Scene() {
   return (
     <div className="w-full h-[60vh] lg:h-screen">
       <Canvas camera={{ position: [0, 0, 5], fov: 35 }}>
-        <Environment preset="city" />
         <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
         <pointLight position={[-10, -10, -10]} color="#001F3F" intensity={2} />
         
-        <Float speed={2} rotationIntensity={1} floatIntensity={1}>
+    
           <FountainPen />
-        </Float>
+    
 
         <ContactShadows 
           position={[0, -2.5, 0]} 

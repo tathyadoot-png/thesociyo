@@ -78,7 +78,7 @@ export default function ScrollToTop() {
             {/* 3. Central Icon & Text */}
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               {/* Progress Text - Hidden on mobile unless hovered, show small on desktop */}
-              <span className="hidden md:block text-[8px] font-black text-[#001F3F]/40 mb-[-2px] opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-tighter">
+              <span className="hidden md:block text-[8px] font-display font-normal text-[#001F3F]/40 mb-[-2px] opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-tighter">
                 {Math.round(progress)}%
               </span>
               

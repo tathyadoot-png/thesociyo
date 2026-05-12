@@ -59,7 +59,7 @@ export default function SectionHeader({ title, subtitle }: Props) {
       
       {/* Background Decorative Watermark (Ivory Family) */}
       <div className="absolute top-0 -left-6 opacity-[0.04] pointer-events-none select-none overflow-hidden">
-        <h2 className="text-[15vw] font-black uppercase text-[#001F3F] leading-none tracking-tighter">
+        <h2 className="text-[15vw] font-display font-normal uppercase text-[#001F3F] leading-none tracking-tighter">
           {title.split(' ')[0]}
         </h2>
       </div>
@@ -70,13 +70,13 @@ export default function SectionHeader({ title, subtitle }: Props) {
         <div className="header-icon-box mt-3 md:mt-0 w-16 h-16 md:w-20 md:h-20 relative flex items-center justify-center flex-shrink-0">
           <div className="absolute inset-0 bg-[#001F3F] rotate-45 rounded-lg shadow-lg" />
           <div className="absolute inset-2 border border-[#FDFCF0]/30 -rotate-12 rounded-lg" />
-          <span className="relative z-10 text-[#FDFCF0] font-black text-2xl md:text-3xl italic tracking-tighter">V</span>
+          <span className="relative z-10 text-[#FDFCF0] font-display font-normal text-2xl md:text-3xl italic tracking-tighter">V</span>
         </div>
 
         <div className="flex flex-col">
           <div className="overflow-hidden">
             {/* TEXT: Deep Navy Color */}
-            <h2 className="reveal-text text-3xl pr-6 md:text-7xl font-black text-[#001F3F] py-1 uppercase italic leading-[0.85] tracking-tighter">
+            <h2 className="reveal-text text-3xl pr-6 md:text-7xl font-display font-normal text-[#001F3F] py-1 uppercase italic leading-[0.85] tracking-tighter">
               {title}
             </h2>
           </div>
