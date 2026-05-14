@@ -1,5 +1,5 @@
 import HeroSection from "@/app/components/sections/home/hero/HeroSection";
-import PhilosophySection from "@/app/components/sections/home/philosophy/PhilosophySection";
+import PhilosophySection from "@/app/components/sections/home/ecosystem/EcosystemsSection";
 import CapabilitiesSection from "@/app/components/sections/home/capabilities/CapabilitiesSection";
 
 import ScrollScaleText from "@/app/components/cinematic/ScrollScaleText";
@@ -70,7 +70,7 @@ export default function Home() {
         <HeroSection />
       </section>
       <SignalTransition />
-      
+
       {/* INSIDE SOCIYO EXPERIENCE */}
       <InsideSociyo />
       {/* PHILOSOPHY */}

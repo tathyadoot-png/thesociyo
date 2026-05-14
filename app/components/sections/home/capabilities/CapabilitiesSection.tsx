@@ -3,8 +3,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { capabilitiesData } from "@/app/data/home/capabilities";
+import { capabilitiesData, capabilitiesHeading } from "@/app/data/home/capabilities";
 import CinematicLayer from "@/app/components/cinematic/CinematicLayer";
+import CinematicSectionHeading from "@/app/components/ui/CinematicSectionHeading";
 
 export default function CapabilitiesSection() {
   const [active, setActive] = useState(0);
@@ -52,116 +53,17 @@ export default function CapabilitiesSection() {
 
           px-6
           md:px-10
-          lg:px-16
+          lg:px-48
         "
       >
         {/* HEADER */}
-        <div
-          className="
-            flex
-            items-end
-            justify-between
-
-            border-b
-            border-white/10
-
-            pb-10
-          "
-        >
-          <div>
-            <div
-              className="
-                mb-5
-
-                flex
-                items-center
-                gap-4
-              "
-            >
-              <div
-                className="
-                  h-px
-                  w-14
-
-                  bg-[#fe0000]
-                "
-              />
-
-              <span
-                className="
-                  text-[10px]
-                  uppercase
-
-                  tracking-[0.45em]
-
-                  text-[#fe0000]
-                "
-              >
-                Capabilities
-              </span>
-            </div>
-
-            <motion.h2
-              initial={{
-                opacity: 0,
-                y: 80,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 1.2,
-              }}
-              className="
-                text-[3rem]
-                sm:text-[4rem]
-                md:text-[6rem]
-                xl:text-[7rem]
-
-                leading-[0.85]
-
-                tracking-[-0.08em]
-
-                font-display
-                uppercase
-
-                text-white
-              "
-            >
-              Strategic
-              <br />
-              Operating System
-            </motion.h2>
-          </div>
-
-          <div
-            className="
-              hidden
-              xl:block
-
-              text-right
-
-              text-[10px]
-              uppercase
-
-              leading-[2]
-
-              tracking-[0.45em]
-
-              text-white/20
-            "
-          >
-            Narrative
-            <br />
-            Communication
-            <br />
-            Infrastructure
-          </div>
-        </div>
+       <CinematicSectionHeading
+  {...capabilitiesHeading}
+  className="
+    relative
+    z-20
+  "
+/>
 {/* COMPACT CINEMATIC EDITORIAL LIST */}
 <div
   className="

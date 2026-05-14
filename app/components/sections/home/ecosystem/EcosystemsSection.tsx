@@ -8,14 +8,14 @@ import {
 } from "framer-motion";
 
 import { useRef } from "react";
-
-import { philosophyData, philosophyHeading } from "@/app/data/home/philosophy";
-
+import {
+  ecosystemsData,
+  ecosystemsHeading,
+} from "@/app/data/home/ecosystems";
 import CinematicLayer from "@/app/components/cinematic/CinematicLayer";
-import PinSection from "@/app/components/cinematic/PinSection";
 import CinematicSectionHeading from "@/app/components/ui/CinematicSectionHeading";
 
-export default function PhilosophySection() {
+export default function EcosystemsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -77,7 +77,7 @@ px-6 md:px-48
 
 
 <CinematicSectionHeading
-  {...philosophyHeading}
+  {...ecosystemsHeading}
   className="
     relative
     z-20
@@ -102,9 +102,9 @@ px-6 md:px-48
     md:pb-[10vh]
   "
 >
-  {philosophyData.map((item, index) => (
+  {ecosystemsData.map((item, index) => (
     <section
-      key={item.id}
+      key={item.number}
       className="
         relative
 
@@ -299,14 +299,7 @@ lg:-mt-[14rem]
               gap-3
             "
           >
-            <div
-              className="
-                h-px
-                w-12
-
-                bg-[#fe0000]
-              "
-            />
+          
 
             <span
               className="
@@ -318,7 +311,7 @@ lg:-mt-[14rem]
                 text-[#fe0000]
               "
             >
-              Philosophy 0{index + 1}
+             Ecosystem 0{index + 1}
             </span>
           </motion.div>
 
@@ -338,10 +331,10 @@ lg:-mt-[14rem]
                 ease: [0.22, 1, 0.36, 1],
               }}
               className="
-                text-[2.4rem]
-                sm:text-[3.2rem]
-                md:text-[4.8rem]
-                xl:text-[5.8rem]
+                text-[1.5rem]
+                sm:text-[2rem]
+                md:text-[3rem]
+                xl:text-[4rem]
 
                 leading-[0.84]
 
