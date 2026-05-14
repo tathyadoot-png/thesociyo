@@ -74,6 +74,84 @@ px-6 md:px-10 lg:px-16
       />
 
 
+{/* SECTION HEADING */}
+<div
+  className="
+    relative
+    z-20
+
+    mb-24
+
+    max-w-5xl
+  "
+>
+  <div
+    className="
+      mb-5
+
+      flex
+      items-center
+      gap-4
+    "
+  >
+    <div className="h-px w-16 bg-[#ff2d55]" />
+
+    <span
+      className="
+        text-[10px]
+        uppercase
+        tracking-[0.45em]
+
+        text-[#ff2d55]
+      "
+    >
+      Philosophy
+    </span>
+  </div>
+
+  <h2
+    className="
+      font-display
+      uppercase
+
+      leading-[0.85]
+      tracking-[-0.07em]
+
+      text-[14vw]
+      sm:text-[10vw]
+      md:text-[7vw]
+      lg:text-[5vw]
+
+      text-white
+    "
+  >
+    The System
+    <br />
+    Behind Influence
+  </h2>
+
+  {/* <p
+    className="
+      mt-8
+
+      max-w-2xl
+
+      text-sm
+      md:text-lg
+
+      leading-[2]
+
+      text-white/55
+    "
+  >
+    Influence is not created through noise.
+    It is engineered through perception,
+    narrative control, emotional timing,
+    and strategic cultural positioning.
+  </p> */}
+</div>
+
+
 {/* CINEMATIC PANELS */}
 <div
   className="

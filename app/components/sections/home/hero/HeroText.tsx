@@ -6,23 +6,13 @@ import {
   useTransform,
 } from "framer-motion";
 
-const lines = [
-  {
-    text: "Strategies",
-    subtitle: "Shape Perception",
-    accent: false,
-  },
-  {
-    text: "Story",
-    subtitle: "Build Influence",
-    accent: true,
-  },
-  {
-    text: "Success",
-    subtitle: "Move Culture",
-    accent: false,
-  },
-];
+
+import {
+  heroLines,
+  heroMeta,
+} from "@/app/data/home/heroTextData";
+
+
 
 export default function HeroText() {
   const { scrollYProgress } = useScroll();
@@ -73,7 +63,7 @@ export default function HeroText() {
   sm:px-6
 "
     >
-      
+
 
       {/* Cinematic Sweep */}
       <motion.div
@@ -96,11 +86,11 @@ export default function HeroText() {
         "
       />
 
-    
 
-   {/* Editorial Frame */}
-<div
-  className="
+
+      {/* Editorial Frame */}
+      <div
+        className="
     pointer-events-none
 
     absolute
@@ -117,11 +107,11 @@ md:m-5
 m-0
     opacity-40
   "
->
+      >
 
-  
 
-</div>
+
+      </div>
 
       {/* Side Label */}
       <div
@@ -143,10 +133,10 @@ m-0
             font-body
             text-[10px]
             uppercase
-            text-[var(--muted)]
+          text-white/80
           "
         >
-          Narrative Intelligence Framework
+          {heroMeta.sideLabel}
         </span>
       </div>
 
@@ -211,64 +201,64 @@ m-0
             md:gap-0
           "
         >
-          {lines.map((line, index) => {
-         const y = useTransform(
-  scrollYProgress,
-  [0, 1],
-  [
-    0,
-    index === 0
-      ? -220
-      : index === 1
-      ? -120
-      : -60,
-  ]
-);
+          {heroLines.map((line, index) => {
+            const y = useTransform(
+              scrollYProgress,
+              [0, 1],
+              [
+                0,
+                index === 0
+                  ? -220
+                  : index === 1
+                    ? -120
+                    : -60,
+              ]
+            );
 
-const x = useTransform(
-  scrollYProgress,
-  [0, 1],
-  [
-    0,
-    index === 0
-      ? -120
-      : index === 1
-      ? 0
-      : 80,
-  ]
-);
+            const x = useTransform(
+              scrollYProgress,
+              [0, 1],
+              [
+                0,
+                index === 0
+                  ? -120
+                  : index === 1
+                    ? 0
+                    : 80,
+              ]
+            );
 
-const scale = useTransform(
-  scrollYProgress,
-  [0, 1],
-  [
-    1,
-    index === 1 ? 1.15 : 0.9,
-  ]
-);
+            const scale = useTransform(
+              scrollYProgress,
+              [0, 1],
+              [
+                1,
+                index === 1 ? 1.15 : 0.9,
+              ]
+            );
 
-const rotate = useTransform(
-  scrollYProgress,
-  [0, 1],
-  [
-    0,
-    index === 0
-      ? -4
-      : index === 2
-      ? 4
-      : 0,
-  ]
-);
+            const rotate = useTransform(
+              scrollYProgress,
+              [0, 1],
+              [
+                0,
+                index === 0
+                  ? -4
+                  : index === 2
+                    ? 4
+                    : 0,
+              ]
+            );
 
             return (
               <motion.div
                 key={line.text}
-               style={{
-  y,
-  x,
-  scale,
-  rotate,
-}}
+                style={{
+                  y,
+                  x,
+                  scale,
+                  rotate,
+                }}
                 initial={{
                   opacity: 0,
                   y: 120,
@@ -397,9 +387,8 @@ const rotate = useTransform(
                       leading-[0.82]
                       select-none
                       will-change-transform
-                      ${
-                        line.accent
-                          ? `
+                      ${line.accent
+                        ? `
                             text-transparent
                             bg-clip-text
                             bg-gradient-to-b
@@ -408,8 +397,8 @@ const rotate = useTransform(
                             to-[#ffb3b3]
                             drop-shadow-[0_0_45px_rgba(254,0,0,0.28)]
                           `
-                          : `
-                            text-[var(--text)]
+                        : `
+                          text-white
                           `
                       }
                     `}
@@ -468,12 +457,13 @@ const rotate = useTransform(
                     delay: 1 + index * 0.15,
                   }}
                   className="
-                    mt-3
+                  my-1
+                    md:my-3
                     font-body
                     text-[10px]
                     md:text-xs
                     uppercase
-                    text-[var(--muted)]
+                    text-white/60
                   "
                 >
                   {line.subtitle}
@@ -536,7 +526,32 @@ const rotate = useTransform(
         </motion.div>
       </div>
 
-
+      {/* Side Label */}
+      <div
+        className="
+          absolute
+          right-5
+          top-1/2
+          hidden
+          xl:flex
+          -translate-y-1/2
+          rotate-180
+        "
+        style={{
+          writingMode: "vertical-rl",
+        }}
+      >
+        <span
+          className="
+            font-body
+            text-[10px]
+            uppercase
+          text-white/80
+          "
+        >
+          {heroMeta.sideLabel}
+        </span>
+      </div>
     </motion.section>
   );
 }
