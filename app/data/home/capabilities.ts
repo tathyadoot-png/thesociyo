@@ -1,40 +1,59 @@
-import { CapabilityData} from "../types/home";
+// capabilities.ts
+
+import { CapabilityData } from "../types/home";
 
 export const capabilitiesData: CapabilityData[] = [
   {
     number: "01",
     title: "Strategic Consultancy",
     description:
-      "Market positioning, PR planning, crisis communication, reputation health checks, and founder advisory.",
+      "Narrative positioning, perception engineering, crisis architecture, leadership communication, and reputation systems designed for long-term authority.",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
   },
+
   {
     number: "02",
-    title: "Branding & Identity",
+    title: "Brand Identity Systems",
     description:
-      "Logos, visual systems, messaging, packaging, and rebranding designed to build lasting recall.",
+      "Visual identities, brand language, packaging ecosystems, and symbolic storytelling crafted to create unforgettable recall.",
+    image:
+      "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1600&auto=format&fit=crop",
   },
+
   {
     number: "03",
-    title: "Print & Production",
+    title: "Print & Editorial Production",
     description:
-      "Brochures, catalogues, hoardings, packaging, and print collateral crafted with editorial precision.",
+      "Editorial-grade brochures, publications, campaign materials, outdoor systems, and tactile print experiences.",
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop",
   },
+
   {
     number: "04",
-    title: "Digital & Social Media",
+    title: "Digital Influence",
     description:
-      "Social strategy, paid media, SEO, ORM, influencer campaigns, and performance-driven digital presence.",
+      "Performance campaigns, social ecosystems, paid media strategy, creator collaborations, and attention architecture.",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
   },
+
   {
     number: "05",
-    title: "Event Management",
+    title: "Experiential Events",
     description:
-      "Conferences, launches, media meets, and activations designed to leave a lasting impression.",
+      "High-impact launches, conferences, political activations, and media experiences designed for emotional memory.",
+    image:
+      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop",
   },
+
   {
     number: "06",
-    title: "Advertising & Campaigns",
+    title: "Campaign Engineering",
     description:
-      "360° campaigns across print, outdoor, radio, and digital built around one powerful idea.",
+      "Integrated communication systems across digital, outdoor, print, and broadcast — unified by one powerful narrative.",
+    image:
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop",
   },
 ];

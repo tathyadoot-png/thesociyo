@@ -58,14 +58,20 @@ export default function HeroText() {
         filter: blurFilter,
       }}
       className="
-        relative
-        flex
-        min-h-screen
-        items-center
-        justify-center
-        overflow-hidden
-        px-6
-      "
+  relative
+  flex
+
+  min-h-[100svh]
+  md:min-h-screen
+
+  items-center
+  justify-center
+
+  overflow-hidden
+
+  px-4
+  sm:px-6
+"
     >
       
 
@@ -92,8 +98,29 @@ export default function HeroText() {
 
     
 
-      {/* Editorial Frame */}
-      <div className="absolute inset-6 md:inset-10 border border-[var(--border)] opacity-30 pointer-events-none" />
+   {/* Editorial Frame */}
+<div
+  className="
+    pointer-events-none
+
+    absolute
+
+    inset-3
+    sm:inset-4
+    md:inset-6
+    lg:inset-8
+    xl:inset-10
+
+    border
+    border-white/10
+
+    opacity-40
+  "
+>
+
+  
+
+</div>
 
       {/* Side Label */}
       <div
@@ -137,7 +164,7 @@ export default function HeroText() {
         "
       >
         {/* TOP METADATA */}
-        <motion.div
+        {/* <motion.div
           initial={{
             opacity: 0,
             y: 20,
@@ -168,7 +195,7 @@ export default function HeroText() {
           <span>Influence Systems</span>
           <span>Narrative Architecture</span>
           <span>Public Perception</span>
-        </motion.div>
+        </motion.div> */}
 
         {/* TYPOGRAPHY STACK */}
         <div
@@ -364,7 +391,7 @@ const rotate = useTransform(
                       font-display
                       uppercase
                       text-[clamp(5rem,14vw,14rem)]
-                      md:text-[clamp(7rem,15vw,18rem)]
+                      md:text-[clamp(6rem,15vw,18rem)]
                       leading-[0.82]
                       select-none
                       will-change-transform
@@ -475,7 +502,7 @@ const rotate = useTransform(
             gap-5
           "
         >
-          <motion.div
+          {/* <motion.div
             animate={{
               width: [60, 120, 60],
               opacity: [0.4, 1, 0.4],
@@ -491,9 +518,9 @@ const rotate = useTransform(
               from-[var(--accent)]
               to-transparent
             "
-          />
+          /> */}
 
-          <span
+          {/* <span
             className="
               font-body
               text-[10px]
@@ -503,7 +530,7 @@ const rotate = useTransform(
             "
           >
             Enter The System
-          </span>
+          </span> */}
         </motion.div>
       </div>
 

@@ -12,74 +12,95 @@ export default function PinSection({
   desc,
 }: Props) {
   return (
-    <section className="relative h-[200vh]">
+    <section
+      className="
+        relative
+        z-20
+
+        border-t
+        border-white/10
+
+        bg-black
+
+        px-6
+        md:px-10
+        lg:px-16
+
+        py-24
+        md:py-32
+      "
+    >
       <div
         className="
-          sticky
-          top-0
-          flex
-          h-screen
-          items-center
-          px-8
-          md:px-16
+          mx-auto
+          max-w-7xl
         "
       >
-        <div className="max-w-5xl">
-          <motion.h2
-            initial={{
-              opacity: 0,
-              y: 60,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 1,
-            }}
-            className="
-              text-[14vw]
-              leading-[0.9]
-              font-display font-normal
-              uppercase
-        -
+        {/* TITLE */}
+        <motion.h2
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            duration: 1,
+          }}
+          className="
+            text-5xl
+            md:text-7xl
+            xl:text-[7rem]
 
-              text-black
-              dark:text-white
-            "
-          >
-            {title}
-          </motion.h2>
+            leading-[0.9]
 
-          <motion.p
-            initial={{
-              opacity: 0,
-              y: 40,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 1,
-              delay: 0.2,
-            }}
-            className="
-              mt-10
-              max-w-2xl
+            font-display
+            uppercase
 
-              text-lg
-              md:text-2xl
+            text-white
+          "
+        >
+          {title}
+        </motion.h2>
 
-              leading-relaxed
+        {/* DESC */}
+        <motion.p
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            duration: 1,
+            delay: 0.2,
+          }}
+          className="
+            mt-10
+            max-w-3xl
 
-              text-black/60
-              dark:text-white/60
-            "
-          >
-            {desc}
-          </motion.p>
-        </div>
+            text-lg
+            md:text-2xl
+
+            leading-relaxed
+
+            text-white/70
+          "
+        >
+          {desc}
+        </motion.p>
       </div>
     </section>
   );

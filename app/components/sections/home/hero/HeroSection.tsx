@@ -16,8 +16,7 @@ export default function HeroSection() {
           top-0
           h-screen
           overflow-hidden
-          border-b
-          border-[var(--border)]
+        
         "
       >
         {/* 3D Scene */}

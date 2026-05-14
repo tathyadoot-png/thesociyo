@@ -13,6 +13,7 @@ export interface PhilosophyPoint {
   id: number;
   title: string;
   description: string;
+  image: string;
 }
 
 export interface SectorData {
@@ -29,6 +30,7 @@ export interface CapabilityData {
   number: string;
   title: string;
   description: string;
+  image: string;
 }
 
 export interface ProcessData {

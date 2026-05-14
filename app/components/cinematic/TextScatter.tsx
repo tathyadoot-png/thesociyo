@@ -36,8 +36,8 @@ export default function TextScatter({
           }}
           className="
             inline-block
-
-            text-[10vw]
+text-2xl
+md:text-4xl
             font-display font-normal
             uppercase
  

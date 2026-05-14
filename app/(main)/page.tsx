@@ -8,6 +8,7 @@ import MaskReveal from "@/app/components/cinematic/MaskReveal";
 import TextScatter from "@/app/components/cinematic/TextScatter";
 import PinSection from "@/app/components/cinematic/PinSection";
 import CinematicLayer from "@/app/components/cinematic/CinematicLayer";
+import SignalTransition from "../components/sections/home/transition/SignalTransition";
 
 export default function Home() {
   return (
@@ -70,6 +71,9 @@ export default function Home() {
 
 
 
+
+
+      <SignalTransition />
       {/* PHILOSOPHY */}
       <section className="relative z-10">
         <PhilosophySection />

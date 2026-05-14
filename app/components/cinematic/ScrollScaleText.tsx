@@ -2,14 +2,12 @@
 
 import {
   motion,
-  useMotionTemplate,
   useScroll,
   useTransform,
+  useMotionTemplate,
 } from "framer-motion";
 
 import { useRef } from "react";
-
-import { typography } from "@/app/styles/theme/typography";
 
 interface Props {
   text: string;
@@ -22,28 +20,25 @@ export default function ScrollScaleText({
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end start"],
+    offset: ["start center", "end start"],
   });
 
-  /* SCALE */
   const scale = useTransform(
     scrollYProgress,
     [0, 1],
-    [1, 4]
+    [1, 1.6]
   );
 
-  /* OPACITY */
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.7, 1],
+    [0, 0.8, 1],
     [1, 1, 0]
   );
 
-  /* BLUR */
   const blur = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, 30]
+    [0, 12]
   );
 
   const filter = useMotionTemplate`
@@ -55,10 +50,9 @@ export default function ScrollScaleText({
       ref={ref}
       className="
         relative
-        h-[300vh]
+        h-[120vh]
       "
     >
-      {/* STICKY CINEMA */}
       <div
         className="
           sticky
@@ -67,40 +61,32 @@ export default function ScrollScaleText({
           flex
           h-screen
           items-center
-          justify-center
 
           overflow-hidden
         "
       >
-        {/* ATMOSPHERE */}
-        <div
-          className="
-            absolute
-            inset-0
-
-            bg-[radial-gradient(circle_at_center,rgba(254,0,0,0.08),transparent_60%)]
-          "
-        />
-
-        {/* MASSIVE TEXT */}
         <motion.h2
           style={{
             scale,
             opacity,
             filter,
           }}
-          className={`
-            ${typography.hero}
+          className="
+            max-w-6xl
 
-            relative
-            z-10
+            text-5xl
+            md:text-7xl
+            xl:text-[8rem]
 
-            whitespace-nowrap
+            leading-[0.9]
+
+            font-display
+            uppercase
 
             text-[var(--text)]
 
             will-change-transform
-          `}
+          "
         >
           {text}
         </motion.h2>

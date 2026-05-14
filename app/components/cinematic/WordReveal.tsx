@@ -40,7 +40,10 @@ export default function WordReveal({
               ease: [0.22, 1, 0.36, 1],
             }}
             className={`
-              ${typography.sectionTitle}
+             text-lg
+md:text-2xl
+leading-relaxed
+font-light
 
               block
               text-[var(--text)]
