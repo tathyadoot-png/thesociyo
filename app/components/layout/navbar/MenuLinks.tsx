@@ -1,17 +1,40 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const links = [
-  "HOME",
-  "PHILOSOPHY",
-  "INFLUENCE",
-  "CAPABILITIES",
-  "INSIGHTS",
-  "CONTACT",
+  {
+    label: "HOME",
+    href: "/",
+  },
+  {
+    label: "PHILOSOPHY",
+    href: "/philosophy",
+  },
+  {
+    label: "INFLUENCE",
+    href: "/influence",
+  },
+  {
+    label: "CAPABILITIES",
+    href: "/capabilities",
+  },
+  {
+    label: "INSIGHTS",
+    href: "/insights",
+  },
+  {
+    label: "CONTACT",
+    href: "/contact",
+  },
 ];
 
-export default function MenuLinks() {
+export default function MenuLinks({
+  setOpen,
+}: {
+  setOpen: (value: boolean) => void;
+}) {
   return (
     <div
       className="
@@ -25,7 +48,7 @@ export default function MenuLinks() {
     >
       {links.map((item, index) => (
         <motion.div
-          key={item}
+          key={item.label}
           initial={{
             opacity: 0,
             y: 50,
@@ -41,7 +64,9 @@ export default function MenuLinks() {
           }}
           className="overflow-hidden"
         >
-          <button
+          <Link
+            href={item.href}
+            onClick={() => setOpen(false)}
             className="
               group
               relative
@@ -60,17 +85,19 @@ export default function MenuLinks() {
                 md:text-[10vw]
                 lg:text-[7vw]
                 xl:text-[6vw]
-                font-display font-normal
+                font-display
+                font-normal
                 uppercase
                 leading-[0.9]
-     
+
                 text-white/20
                 transition-all
                 duration-700
+
                 group-hover:text-white
               "
             >
-              {item}
+              {item.label}
             </span>
 
             {/* RED HOVER GLOW */}
@@ -89,7 +116,7 @@ export default function MenuLinks() {
                 group-hover:w-full
               "
             />
-          </button>
+          </Link>
         </motion.div>
       ))}
     </div>

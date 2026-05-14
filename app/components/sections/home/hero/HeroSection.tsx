@@ -16,14 +16,15 @@ export default function HeroSection() {
           top-0
           h-screen
           overflow-hidden
-        
+        md:p-5
+        p-0
         "
       >
         {/* 3D Scene */}
         <HeroScene />
 
         {/* Atmosphere */}
-        <Atmosphere />
+        {/* <Atmosphere /> */}
 
         {/* Content */}
         <HeroContent />

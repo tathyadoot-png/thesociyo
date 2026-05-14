@@ -1,11 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import {
-    ArrowUpRight,
- 
-} from "lucide-react";
+  FaInstagram,
+  FaLinkedinIn,
+  FaFacebookF,
+  FaArrowRight,
+  FaXTwitter,
+} from "react-icons/fa6";
 
 const footerLinks = [
   {
@@ -13,19 +17,19 @@ const footerLinks = [
     links: [
       {
         label: "Philosophy",
-        href: "#philosophy",
+        href: "/philosophy",
       },
       {
         label: "Influence",
-        href: "#influence",
+        href: "/influence",
       },
       {
         label: "Capabilities",
-        href: "#capabilities",
+        href: "/capabilities",
       },
       {
         label: "Insights",
-        href: "#insights",
+        href: "/insights",
       },
     ],
   },
@@ -55,18 +59,23 @@ const footerLinks = [
 
 const socials = [
   {
-    icon: ArrowUpRight,
-    href: "https://instagram.com",
+    icon: FaInstagram,
+    href: "https://instagram.com/thesociyo",
   },
 
   {
-    icon: ArrowUpRight,
-    href: "https://linkedin.com",
+    icon: FaLinkedinIn,
+    href: "https://linkedin.com/company/thesociyo",
   },
 
   {
-    icon: ArrowUpRight,
-    href: "https://facebook.com",
+    icon: FaFacebookF,
+    href: "https://facebook.com/thesociyo",
+  },
+
+  {
+    icon: FaXTwitter,
+    href: "https://x.com/thesociyo",
   },
 ];
 
@@ -77,17 +86,28 @@ export default function Footer() {
         relative
         overflow-hidden
         border-t
-        border-[color:var(--border)]
-        bg-[var(--background)]
+        border-white/10
+        bg-black
+        text-white
       "
     >
-      {/* Ambient Glow */}
+      {/* ATMOSPHERE */}
       <div
         className="
           absolute
           inset-0
           bg-[radial-gradient(circle_at_bottom,rgba(254,0,0,0.12),transparent_60%)]
-          pointer-events-none
+        "
+      />
+
+      {/* GRID */}
+      <div
+        className="
+          absolute
+          inset-0
+          opacity-[0.03]
+          bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)]
+          bg-[size:90px_90px]
         "
       />
 
@@ -95,247 +115,456 @@ export default function Footer() {
         className="
           relative
           z-10
+
           px-6
-          md:px-12
-          lg:px-20
           py-20
+
+          md:px-10
+          lg:px-16
         "
       >
-        {/* Top Area */}
+        {/* TOP STRIP */}
         <div
           className="
-            grid
-            grid-cols-1
-            lg:grid-cols-[1.5fr_1fr]
-            gap-20
-            pb-20
+            mb-16
+
+            flex
+            items-center
+            justify-between
+
             border-b
-            border-[color:var(--border)]
+            border-white/10
+
+            pb-6
           "
         >
-          {/* Left */}
-          <div>
-            <p
+          <div className="flex items-center gap-4">
+            <div className="h-px w-16 bg-[#fe0000]" />
+
+            <span
               className="
-                text-xs
+                text-[10px]
                 uppercase
-                  
+                tracking-[0.45em]
+
                 text-[#fe0000]
-                mb-6
               "
             >
-              Strategic Communication
-            </p>
-
-            <h2
-              className="
-                text-5xl
-                md:text-7xl
-                lg:text-8xl
-                leading-[0.9]
-           
-                font-display font-normal
-                uppercase
-                max-w-4xl
-              "
-            >
-              Influence
-              <br />
-              begins with
-              <br />
-              perception.
-            </h2>
-
-            <p
-              className="
-                mt-8
-                text-lg
-                md:text-xl
-                leading-relaxed
-                text-[var(--muted)]
-                max-w-2xl
-              "
-            >
-              Sociyo Communication is a strategic consultancy
-              helping brands, leaders, and institutions build
-              authority through communication, narrative, and
-              influence systems.
-            </p>
-
-            {/* CTA */}
-            <Link
-              href="/contact"
-              className="
-                group
-                mt-10
-                inline-flex
-                items-center
-                gap-3
-                rounded-full
-                bg-[#fe0000]
-                px-6
-                py-4
-                text-sm
-                uppercase
-             
-                text-white
-                transition-all
-                duration-500
-                hover:scale-[1.02]
-                shadow-[0px_0px_40px_rgba(254,0,0,0.2)]
-              "
-            >
-              Start a Conversation
-
-              <ArrowUpRight
-                size={18}
-                className="
-                  transition-transform
-                  duration-500
-                  group-hover:translate-x-1
-                  group-hover:-translate-y-1
-                "
-              />
-            </Link>
+              Socially Yours
+            </span>
           </div>
 
-          {/* Right */}
           <div
             className="
-              grid
-              grid-cols-1
-              sm:grid-cols-2
-              gap-12
+              hidden
+              lg:block
+
+              text-right
+
+              text-[10px]
+              uppercase
+              leading-[2]
+              tracking-[0.45em]
+
+              text-white/20
             "
           >
-            {footerLinks.map((group) => (
-              <div key={group.title}>
-                <h3
-                  className="
-                    text-sm
-                    uppercase
-                     
-                    text-[var(--muted)]
-                    mb-6
-                  "
-                >
-                  {group.title}
-                </h3>
-
-                <div className="space-y-4">
-                  {group.links.map((link) => (
-                    <Link
-                      key={link.label}
-                      href={link.href}
-                      className="
-                        block
-                        text-lg
-                         
-                        hover:text-[#fe0000]
-                        transition-colors
-                        duration-500
-                      "
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ))}
+            Influence
+            <br />
+            Narrative
+            <br />
+            Strategy
           </div>
         </div>
 
-        {/* Bottom Area */}
+        {/* MAIN */}
         <div
           className="
-            flex
-            flex-col
-            lg:flex-row
-            items-start
-            lg:items-center
-            justify-between
-            gap-10
-            pt-10
+            grid
+            gap-20
+
+            lg:grid-cols-[1.1fr_0.9fr]
+            lg:items-start
           "
         >
-          {/* Left */}
+          {/* LEFT SIDE */}
           <div>
-            <h3
-              className="
-                text-xl
-                font-display font-normal
-                uppercase
-                  
-              "
-            >
-              SOCIYO
-            </h3>
+            {/* BIG LOGO */}
+            <div className="overflow-hidden">
+              <Image
+                src="/SociyoLogo_Agency_WhiteRed.png"
+                alt="Sociyo"
 
+                width={700}
+                height={220}
+
+                priority
+
+                className="
+      h-auto
+      w-[240px]
+
+      sm:w-[120px]
+      md:w-[220px]
+      lg:w-[400px]
+
+      object-contain
+    "
+              />
+            </div>
+
+            {/* DESCRIPTION */}
             <p
               className="
-                mt-3
+                mt-8
+                max-w-xl
+
                 text-sm
-                leading-relaxed
-                text-[var(--muted)]
+                md:text-base
+
+                leading-[2]
+
+                text-white/50
               "
             >
-              FI-026, 5th Floor, Bansal One,
-              <br />
-              Bhopal, Madhya Pradesh — 462016
+              Strategic narratives, cinematic storytelling,
+              political communication, influence systems,
+              and positioning architectures crafted for
+              modern leadership and cultural impact.
             </p>
-          </div>
 
-          {/* Socials */}
-          <div className="flex items-center gap-4">
-            {socials.map((social, index) => {
-              const Icon = social.icon;
+            {/* SOCIALS */}
+            <div className="mt-10 flex items-center gap-4">
+              {socials.map((social, index) => {
+                const Icon = social.icon;
 
-              return (
-                <Link
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  className="
-                    group
-                    flex
-                    h-12
-                    w-12
-                    items-center
-                    justify-center
-                    rounded-full
-                    border
-                    border-[color:var(--border)]
-                    bg-white/5
-                    transition-all
-                    duration-500
-                    hover:border-[#fe0000]
-                    hover:bg-[#fe0000]
-                  "
-                >
-                  <Icon
-                    size={18}
+                return (
+                  <Link
+                    key={index}
+                    href={social.href}
+                    target="_blank"
                     className="
-                      transition-transform
+                      group
+
+                      relative
+
+                      flex
+                      h-12
+                      w-12
+                      items-center
+                      justify-center
+
+                      overflow-hidden
+                      rounded-full
+
+                      border
+                      border-white/10
+
+                      bg-white/[0.03]
+
+                      transition-all
                       duration-500
-                      group-hover:scale-110
+
+                      hover:border-[#fe0000]
                     "
-                  />
-                </Link>
-              );
-            })}
+                  >
+                    <span
+                      className="
+                        absolute
+                        inset-0
+
+                        translate-y-full
+
+                        bg-[#fe0000]
+
+                        transition-transform
+                        duration-500
+
+                        group-hover:translate-y-0
+                      "
+                    />
+
+                    <Icon
+                      size={16}
+                      className="
+                        relative
+                        z-10
+
+                        transition-transform
+                        duration-500
+
+                        group-hover:scale-110
+                      "
+                    />
+                  </Link>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Copyright */}
-          <p
+          {/* RIGHT SIDE */}
+          <div
             className="
-              text-sm
-              uppercase
-                
-              text-[var(--muted)]
+              grid
+              gap-14
+
+              sm:grid-cols-2
             "
           >
-            © 2026 SOCIYO Communications
-          </p>
+            {/* NAVIGATION */}
+            <div>
+              <h3
+                className="
+                  mb-6
+
+                  text-[10px]
+                  uppercase
+                  tracking-[0.45em]
+
+                  text-[#fe0000]
+                "
+              >
+                Navigation
+              </h3>
+
+              <div className="space-y-4">
+                {footerLinks[0].links.map((link) => (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    className="
+                      group
+
+                      flex
+                      items-center
+                      gap-2
+
+                      text-sm
+
+                      text-white/60
+
+                      transition-all
+                      duration-500
+
+                      hover:text-white
+                    "
+                  >
+                    <span>{link.label}</span>
+
+                    <FaArrowRight
+                      size={10}
+                      className="
+                        opacity-0
+
+                        transition-all
+                        duration-500
+
+                        group-hover:translate-x-1
+                        group-hover:-translate-y-[2px]
+                        group-hover:opacity-100
+                      "
+                    />
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* SERVICES */}
+            <div>
+              <h3
+                className="
+                  mb-6
+
+                  text-[10px]
+                  uppercase
+                  tracking-[0.45em]
+
+                  text-[#fe0000]
+                "
+              >
+                Services
+              </h3>
+
+              <div className="space-y-4">
+                {footerLinks[1].links.map((link) => (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    className="
+                      group
+
+                      flex
+                      items-center
+                      gap-2
+
+                      text-sm
+
+                      text-white/60
+
+                      transition-all
+                      duration-500
+
+                      hover:text-white
+                    "
+                  >
+                    <span>{link.label}</span>
+
+                    <FaArrowRight
+                      size={10}
+                      className="
+                        opacity-0
+
+                        transition-all
+                        duration-500
+
+                        group-hover:translate-x-1
+                        group-hover:-translate-y-[2px]
+                        group-hover:opacity-100
+                      "
+                    />
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* WORK */}
+            <div>
+              <h3
+                className="
+                  mb-6
+
+                  text-[10px]
+                  uppercase
+                  tracking-[0.45em]
+
+                  text-[#fe0000]
+                "
+              >
+                Work inquiries
+              </h3>
+
+              <p
+                className="
+                  mb-5
+
+                  text-sm
+                  leading-[1.8]
+
+                  text-white/50
+                "
+              >
+                Interested in working with us?
+              </p>
+
+              <div className="space-y-3">
+                <a
+                  href="mailto:thesociyo@gmail.com"
+                  className="
+                    block
+
+                    text-base
+
+                    text-white
+
+                    transition-all
+                    duration-500
+
+                    hover:text-[#fe0000]
+                  "
+                >
+                  thesociyo@gmail.com
+                </a>
+
+                <a
+                  href="tel:+919555106208"
+                  className="
+                    block
+
+                    text-sm
+
+                    text-white/60
+
+                    transition-all
+                    duration-500
+
+                    hover:text-white
+                  "
+                >
+                  Call: +91 95551 06208
+                </a>
+              </div>
+            </div>
+
+            {/* CAREER + ADDRESS */}
+            <div>
+
+              <h3
+                className="
+                  mb-6
+
+                  text-[10px]
+                  uppercase
+                  tracking-[0.45em]
+
+                  text-[#fe0000]
+                "
+              >
+                Address
+              </h3>
+              {/* ADDRESS */}
+              <div
+                className="
+                  mt-6
+
+                  text-sm
+                  leading-[1.9]
+
+                  text-white/40
+                "
+              >
+                SOCIYO Communications Pvt Ltd
+                <br />
+                FI-026, 5th Floor, Bansal One
+                <br />
+                Bhopal, Madhya Pradesh (INDIA)
+                <br />
+                462016
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* BOTTOM */}
+        <div
+          className="
+            mt-16
+            pt-6
+
+            border-t
+            border-white/10
+
+            flex
+            flex-col
+            gap-3
+
+            text-[10px]
+            uppercase
+            tracking-[0.35em]
+
+            text-white/25
+
+            sm:flex-row
+            sm:items-center
+            sm:justify-between
+          "
+        >
+          <div>
+            © {new Date().getFullYear()} Sociyo Communication
+          </div>
+
+          <div>
+            Socially Yours
+          </div>
         </div>
       </div>
     </footer>

@@ -1,143 +1,468 @@
 "use client";
-import React from 'react';
-import { contactData } from "@/app/data/contact";
-import { useLanguage } from "@/app/context/LanguageContext";
-import SectionHeader from '../ui/SectionHeader';
-import {
-  Phone,
-  Mail,
-  Globe,
-  Send,
-  X
-} from "lucide-react";
+import { useState } from "react";
 
-const Contact = () => {
-  const { lang } = useLanguage();
-  const data = contactData[lang as keyof typeof contactData];
 
-  const contactItems = [
-    { 
-      icon: Phone, 
-      label: lang === 'hi' ? "फ़ोन" : "Phone", 
-      value: data.phone, 
-      link: `tel:${data.phone}`,
-      color: "from-[#001F3F]/10 to-transparent"
-    },
-    { 
-      icon: Mail, 
-      label: lang === 'hi' ? "ईमेल" : "Email", 
-      value: data.email, 
-      link: `mailto:${data.email}`,
-      color: "from-[#001F3F]/10 to-transparent"
-    },
-    { 
-      icon: Globe, 
-      label: lang === 'hi' ? "वेबसाइट" : "Website", 
-      value: data.website, 
-      link: `https://${data.website}`,
-      color: "from-[#001F3F]/10 to-transparent"
-    },
-  ];
-
+export default function ContactPage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   return (
-    <section id='contact' className="relative bg-[#FDFCF0] py-16 md:py-24 overflow-hidden min-h-screen flex flex-col justify-center">
-      
-      {/* Background Decorative Elements - Subtle Navy Glows */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
-        <div className="absolute top-[10%] left-[-5%] w-72 h-72 md:w-96 md:h-96 bg-[#001F3F]/5 blur-[120px] rounded-full" />
-        <div className="absolute bottom-[10%] right-[-5%] w-72 h-72 md:w-96 md:h-96 bg-[#001F3F]/5 blur-[120px] rounded-full" />
-      </div>
+    <main
+      className="
+        relative
+        min-h-screen
+        overflow-hidden
+        bg-black
+        text-white
+      "
+    >
+      {/* ATMOSPHERE */}
+      <div
+        className="
+          absolute
+          inset-0
+          bg-[radial-gradient(circle_at_top_left,rgba(254,0,0,0.12),transparent_38%)]
+        "
+      />
 
-      <div className="relative z-10 mx-auto px-6 w-full">
-        <SectionHeader title={data.title} subtitle="Get In Touch" />
+      {/* GRID */}
+      <div
+        className="
+          absolute
+          inset-0
+          opacity-[0.035]
+          bg-[linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)]
+          bg-[size:90px_90px]
+        "
+      />
 
-        <div className="mt-12 md:mt-16 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12">
-          
-          {/* LEFT: Quick Contact Cards */}
-          <div className="lg:col-span-5 grid grid-cols-1 gap-6">
-            {contactItems.map((item, idx) => (
-              <a 
-                href={item.link} 
-                key={idx}
-                className="group relative overflow-hidden bg-white border border-[#001F3F]/10 p-6 md:p-8 rounded-[2rem] transition-all duration-500 hover:border-[#001F3F]/30 hover:shadow-xl hover:shadow-[#001F3F]/5"
-              >
-                <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                
-                <div className="relative z-10 flex items-center gap-5 md:gap-6">
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-[#FDFCF0] border border-[#001F3F]/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#001F3F] group-hover:border-[#001F3F] transition-all duration-500">
-                    <item.icon className="w-5 h-5 md:w-6 md:h-6 text-[#001F3F] group-hover:text-[#FDFCF0] transition-colors" />
-                  </div>
-                  <div className="overflow-hidden">
-                    <p className="text-[10px] font-mono uppercase text-[#001F3F]/50 mb-1">{item.label}</p>
-                    <h4 className="text-lg md:text-2xl font-bold text-[#001F3F] truncate">{item.value}</h4>
-                  </div>
-                </div>
-              </a>
-            ))}
 
-            {/* Social Connect Small Grid */}
-            <div className="grid grid-cols-3 gap-4">
-              {[X, Globe, Mail].map((Icon, i) => (
-                <div key={i} className="h-16 md:h-20 bg-white border border-[#001F3F]/10 rounded-[1.5rem] flex items-center justify-center hover:bg-[#001F3F] group transition-all duration-500 cursor-pointer shadow-sm hover:shadow-lg">
-                  <Icon className="w-5 h-5 md:w-6 md:h-6 text-[#001F3F] group-hover:text-[#FDFCF0] group-hover:scale-125 transition-all" />
-                </div>
-              ))}
-            </div>
+
+      <section
+        className="
+          relative
+          z-10
+
+          px-6
+          pt-28
+          pb-16
+
+          md:px-10
+          lg:px-16
+        "
+      >
+        {/* TOP BAR */}
+        <div
+          className="
+            mb-10
+
+            flex
+            items-center
+            justify-between
+
+            border-b
+            border-white/10
+
+            pb-6
+          "
+        >
+          <div className="flex items-center gap-4">
+            <div className="h-px w-16 bg-[#fe0000]" />
+
+            <span
+              className="
+                text-[10px]
+                uppercase
+                tracking-[0.45em]
+                text-[#fe0000]
+              "
+            >
+              Contact
+            </span>
           </div>
 
-          {/* RIGHT: Modern Contact Form */}
-          <div className="lg:col-span-7 bg-white border border-[#001F3F]/10 p-8 md:p-12 rounded-[2.5rem] md:rounded-[3rem] relative overflow-hidden shadow-sm">
-            <div className="absolute top-0 right-0 p-8 opacity-[0.03] pointer-events-none">
-                <Send className="w-32 h-32 -rotate-12 text-[#001F3F]" />
-            </div>
+          <div
+            className="
+              hidden
+              lg:block
 
-            <h3 className="text-2xl md:text-3xl font-display font-normal text-[#001F3F] uppercase italic mb-8">
-              {lang === 'hi' ? "संदेश भेजें" : "Send a Message"}
-            </h3>
+              text-right
 
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-[10px] font-mono uppercase text-[#001F3F]/40 ml-2">Name</label>
-                  <input 
-                    type="text" 
-                    className="w-full bg-[#FDFCF0]/50 border border-[#001F3F]/10 rounded-2xl px-6 py-4 text-[#001F3F] focus:outline-none focus:border-[#001F3F] focus:bg-white transition-all" 
-                    placeholder="John Doe" 
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[10px] font-mono uppercase text-[#001F3F]/40 ml-2">Email</label>
-                  <input 
-                    type="email" 
-                    className="w-full bg-[#FDFCF0]/50 border border-[#001F3F]/10 rounded-2xl px-6 py-4 text-[#001F3F] focus:outline-none focus:border-[#001F3F] focus:bg-white transition-all" 
-                    placeholder="john@example.com" 
-                  />
-                </div>
-              </div>
+              text-[10px]
+              uppercase
+              leading-[2]
+              tracking-[0.45em]
 
-              <div className="space-y-2">
-                <label className="text-[10px] font-mono uppercase text-[#001F3F]/40 ml-2">Message</label>
-                <textarea 
-                  rows={4} 
-                  className="w-full bg-[#FDFCF0]/50 border border-[#001F3F]/10 rounded-3xl px-6 py-4 text-[#001F3F] focus:outline-none focus:border-[#001F3F] focus:bg-white transition-all resize-none" 
-                  placeholder="Your message here..."
-                ></textarea>
-              </div>
-
-              <button className="w-full group relative overflow-hidden bg-[#001F3F] py-5 md:py-6 rounded-2xl font-display font-normal text-[#FDFCF0] uppercase italic transition-all active:scale-[0.98] shadow-xl hover:shadow-[#001F3F]/20">
-                <span className="relative z-10 flex items-center justify-center gap-3 tracking-widest text-sm md:text-base">
-                  {lang === 'hi' ? "अभी भेजें" : "Transmit Now"}
-                  <Send className="w-5 h-5 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform" />
-                </span>
-                <div className="absolute inset-0 bg-[#002d5c] translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-              </button>
-            </form>
+              text-white/20
+            "
+          >
+            Narrative
+            <br />
+            Strategy
+            <br />
+            Systems
           </div>
-
         </div>
-      </div>
-    </section>
-  );
-};
 
-export default Contact;
+        {/* HERO */}
+        <div
+          className="
+            flex
+            flex-col
+            gap-14
+
+            lg:flex-row
+            lg:items-end
+            lg:justify-between
+          "
+        >
+          {/* TITLE */}
+          <div className="max-w-5xl">
+            <h1
+              className="
+                font-display
+                uppercase
+
+                leading-[0.82]
+                tracking-[-0.07em]
+
+                text-[18vw]
+                sm:text-[14vw]
+                md:text-[10vw]
+                lg:text-[7vw]
+
+                text-white
+              "
+            >
+              Start
+              <br />
+              The
+              <br />
+              Conversation
+            </h1>
+          </div>
+
+          {/* INFO */}
+          <div
+            className="
+              w-full
+              max-w-md
+
+              space-y-10
+            "
+          >
+            <p
+              className="
+                text-sm
+                md:text-base
+
+                leading-[2]
+
+                text-white/60
+              "
+            >
+              Strategic communication, cinematic branding,
+              influence architecture, political positioning,
+              and narrative systems.
+            </p>
+
+            <div className="space-y-8">
+              <div>
+                <div
+                  className="
+                    mb-2
+                    text-[10px]
+                    uppercase
+                    tracking-[0.4em]
+                    text-white/30
+                  "
+                >
+                  Email
+                </div>
+
+                <a
+                  href="mailto:letstalk@sociyo.com"
+                  className="
+                    text-xl
+                    text-white
+                    transition-opacity
+                    duration-500
+                    hover:opacity-60
+                  "
+                >
+                  letstalk@sociyo.com
+                </a>
+
+
+              </div>
+
+              <div>
+                <div
+                  className="
+                    mb-2
+                    text-[10px]
+                    uppercase
+                    tracking-[0.4em]
+                    text-white/30
+                  "
+                >
+                  Location
+                </div>
+
+                <p className="text-xl text-white">
+                  SOCIYO Communications Pvt Ltd
+                  FI-026, 5th Floor, Bansal One
+                  Bhopal, Madhya Pradesh (INDIA)
+                  462016
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* MAIN */}
+        <div
+          className="
+            mt-20
+
+            grid
+            gap-8
+
+            lg:grid-cols-[1.1fr_0.9fr]
+          "
+        >
+          {/* MAP */}
+          <div
+            className="
+              relative
+              overflow-hidden
+
+              rounded-[2rem]
+
+              border
+              border-white/10
+
+              min-h-[420px]
+              lg:min-h-[680px]
+            "
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4349.259941416157!2d77.43814669999999!3d23.222881400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c43b2a961c525%3A0x31120be3bbc5cf27!2sSOCIYO%20Communications!5e1!3m2!1sen!2sin!4v1778746488788!5m2!1sen!2sin"
+              loading="lazy"
+              className="
+                absolute
+                inset-0
+                h-full
+                w-full
+
+           
+                contrast-125
+              "
+            />
+
+
+
+            <div
+              className="
+                absolute
+                inset-0
+
+                bg-gradient-to-t
+                from-black
+                via-black/20
+                to-black/10
+              "
+            />
+          </div>
+
+          {/* FORM */}
+          <div
+            className="
+              relative
+              overflow-hidden
+
+              rounded-[2rem]
+
+              border
+              border-white/10
+
+              bg-white/[0.02]
+
+              p-8
+              md:p-10
+            "
+          >
+            {/* GLOW */}
+            <div
+              className="
+                absolute
+                right-0
+                top-0
+
+                h-40
+                w-40
+
+                bg-[#fe0000]/10
+
+                blur-[100px]
+              "
+            />
+
+            <div className="relative z-10">
+              <div
+                className="
+                  mb-10
+
+                  text-[10px]
+                  uppercase
+                  tracking-[0.45em]
+
+                  text-[#fe0000]
+                "
+              >
+                Send Inquiry
+              </div>
+
+              <form className="space-y-8">
+                <div>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Your Name"
+                    className="
+                      w-full
+
+                      border-b
+                      border-white/10
+
+                      bg-transparent
+
+                      pb-5
+
+                      text-lg
+                      text-white
+
+                      outline-none
+
+
+                      placeholder:text-white/25
+                      focus:border-[#fe0000]
+                    "
+                  />
+                </div>
+
+                <div>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Email Address"
+                    className="
+                      w-full
+
+                      border-b
+                      border-white/10
+
+                      bg-transparent
+
+                      pb-5
+
+                      text-lg
+                      text-white
+
+                      outline-none
+
+                      placeholder:text-white/25
+                      focus:border-[#fe0000]
+                    "
+                  />
+                </div>
+
+                <div>
+                  <textarea
+                    rows={6}
+                    placeholder="Tell us about your project or vision"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className="
+                      w-full
+
+                      resize-none
+
+                      border-b
+                      border-white/10
+
+                      bg-transparent
+
+                      pb-5
+
+                      text-lg
+                      text-white
+
+                      outline-none
+
+                      placeholder:text-white/25
+                      focus:border-[#fe0000]
+                    "
+                  />
+                </div>
+
+                <a
+                  href={`mailto:letstalk@sociyo.com?subject=${encodeURIComponent(
+                    `New Inquiry from ${name}`
+                  )}&body=${encodeURIComponent(
+                    `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+                  )}`}
+                  className="
+    group
+    relative
+    inline-flex
+    items-center
+    justify-center
+    overflow-hidden
+
+    border
+    border-white/10
+
+    px-8
+    py-5
+
+    text-xs
+    uppercase
+    tracking-[0.4em]
+
+    text-white
+
+    transition-all
+    duration-500
+
+    hover:border-[#fe0000]
+  "
+                >
+                  <span className="relative z-10">
+                    Send Message
+                  </span>
+
+                  <span
+                    className="
+      absolute
+      inset-0
+      w-0
+      bg-[#fe0000]
+      transition-all
+      duration-500
+      group-hover:w-full
+    "
+                  />
+                </a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+

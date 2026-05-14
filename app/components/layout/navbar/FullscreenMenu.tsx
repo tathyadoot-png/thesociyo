@@ -11,8 +11,12 @@ interface Props {
 }
 
 export default function FullscreenMenu({
-    open,
-}: Props) {
+  open,
+  setOpen,
+}: {
+  open: boolean;
+  setOpen: (value: boolean) => void;
+}) {
     return (
         <AnimatePresence>
             {open && (
@@ -68,7 +72,7 @@ export default function FullscreenMenu({
     py-20
   "
                     >
-                        <MenuLinks />
+                        <MenuLinks setOpen={setOpen} />
 
                         <MenuFooter />
                     </div>

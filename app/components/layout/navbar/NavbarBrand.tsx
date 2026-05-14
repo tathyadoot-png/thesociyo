@@ -1,31 +1,42 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+
 export default function NavBrand() {
   return (
-    <div className="flex flex-col">
-      <h2
-        className="
-          text-2xl
-          md:text-3xl
-          font-display font-normal
-          uppercase
-            
-          text-white
-          leading-none
-        "
-      >
-        SOCIYO
-      </h2>
+    <Link
+      href="/"
+      className="
+        group
+        relative
+        inline-flex
+        items-center
+      "
+    >
+      <Image
+        src="/SociyoLogo_Agency_WhiteRed.png"
+        alt="SOCIYO Communication"
 
-      <p
+        width={200}
+        height={60}
+
+        priority
+
         className="
-          mt-2
-          text-[10px]
-          uppercase
-          tracking-[0.3em]
-          text-white/40
+          h-auto
+          w-[100px]
+
+          md:w-[160px]
+
+          object-contain
+
+          transition-all
+          duration-500
+
+          group-hover:opacity-80
         "
-      >
-       Communication
-      </p>
-    </div>
+      />
+    </Link>
   );
 }

@@ -98,7 +98,7 @@ py-8 md:py-10
             </motion.div>
 
             {/* CENTER TEXT */}
-            <div
+            {/* <div
                 className="
           pointer-events-none
 
@@ -141,7 +141,7 @@ py-8 md:py-10
                 >
                     Strategic Narrative Systems
                 </motion.div>
-            </div>
+            </div> */}
 
             {/* NOISE */}
             <div

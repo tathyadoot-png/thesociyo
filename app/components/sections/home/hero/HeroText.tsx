@@ -69,7 +69,7 @@ export default function HeroText() {
 
   overflow-hidden
 
-  px-4
+  
   sm:px-6
 "
     >
@@ -105,7 +105,7 @@ export default function HeroText() {
 
     absolute
 
-    inset-3
+    inset-1
     sm:inset-4
     md:inset-6
     lg:inset-8
@@ -113,7 +113,8 @@ export default function HeroText() {
 
     border
     border-white/10
-
+md:m-5
+m-0
     opacity-40
   "
 >
@@ -161,6 +162,7 @@ export default function HeroText() {
           items-center
           justify-center
           text-center
+          pt-20
         "
       >
         {/* TOP METADATA */}
@@ -347,7 +349,7 @@ const rotate = useTransform(
                   </motion.h1>
 
                   {/* SCANLINE */}
-                  <motion.div
+                  {/* <motion.div
                     animate={{
                       x: ["-120%", "120%"],
                     }}
@@ -365,7 +367,7 @@ const rotate = useTransform(
                       blur-xl
                       pointer-events-none
                     "
-                  />
+                  /> */}
 
                   {/* MAIN WORD */}
                   <motion.h1
