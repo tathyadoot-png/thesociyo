@@ -2,6 +2,20 @@
 
 import { PhilosophyPoint } from "../types/home";
 
+
+export const philosophyHeading = {
+  sectionLabel: "Philosophy",
+
+  heading: {
+    first: "The",
+    highlight: "System",
+    last: "Behind Influence",
+  },
+
+  shortText:
+    "Influence is not created through noise. It is engineered through perception, narrative control, emotional timing, and strategic cultural positioning.",
+};
+
 export const philosophyData: PhilosophyPoint[] = [
   {
     id: 1,

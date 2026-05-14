@@ -1,22 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { signalTransitionData } from "@/app/data/home/signalTransitionData";
 
-const words = [
-    "Influence",
-    "Perception",
-    "Narrative",
-    "Psychology",
-    "Systems",
-    "Authority",
-    "Culture",
-];
+const { words } = signalTransitionData;
 
 export default function SignalTransition() {
-    return (
-        <section
-            className="
+  return (
+    <section
+      className="
         relative
+
+        h-14
+        md:h-16
 
         overflow-hidden
 
@@ -24,140 +20,169 @@ export default function SignalTransition() {
         border-white/10
 
         bg-black
-
-py-8 md:py-10
       "
-        >
-            {/* ATMOSPHERE */}
-            <div
-                className="
+    >
+      {/* SUBTLE RED ATMOSPHERE */}
+      <div
+        className="
           absolute
           inset-0
 
-          bg-[radial-gradient(circle_at_center,rgba(254,0,0,0.08),transparent_70%)]
-        "
-            />
+          bg-[radial-gradient(circle_at_center,rgba(254,0,0,0.08),transparent_60%)]
 
-            {/* MOVING TRACK */}
-            <motion.div
-                animate={{
-                    x: ["0%", "-50%"],
-                }}
-                transition={{
-                    duration: 24,
-                    repeat: Infinity,
-                    ease: "linear",
-                }}
-                className="
-          flex
-          whitespace-nowrap
+          opacity-70
         "
-            >
-                {[...words, ...words, ...words].map(
-                    (word, index) => (
-                        <div
-                            key={index}
-                            className="
-               mx-6
+      />
+
+      {/* TOP LIGHT */}
+      <div
+        className="
+          absolute
+          top-0
+          left-0
+
+          h-px
+          w-full
+
+          bg-gradient-to-r
+          from-transparent
+          via-[#fe0000]/40
+          to-transparent
+        "
+      />
+
+      {/* MOVING TRACK */}
+      <motion.div
+        animate={{
+          x: ["0%", "-50%"],
+        }}
+        transition={{
+          duration: 38,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="
+          flex
+          h-full
+
+          items-center
+
+          whitespace-nowrap
+
+          will-change-transform
+        "
+      >
+        {[...words, ...words, ...words].map(
+          (word, index) => (
+            <div
+              key={index}
+              className="
+                mx-6
+                md:mx-8
 
                 flex
                 items-center
-                gap-10
+                gap-6
+                md:gap-8
               "
-                        >
-                            {/* WORD */}
-                            <span
-                                className="
-                 text-xl md:text-3xl
-
-                  font-display
-                  uppercase
-
-                  tracking-[-0.06em]
-
-                  text-white/10
-                "
-                            >
-                                {word}
-                            </span>
-
-                            {/* DOT */}
-                            <div
-                                className="
-                  h-2
-                  w-2
+            >
+              {/* DOT */}
+              <motion.div
+                animate={{
+                  opacity: [0.4, 1, 0.4],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: index * 0.08,
+                }}
+                className="
+                  h-1.5
+                  w-1.5
 
                   rounded-full
 
                   bg-[#fe0000]
+
+                  shadow-[0_0_10px_rgba(254,0,0,0.8)]
                 "
-                            />
-                        </div>
-                    )
-                )}
-            </motion.div>
+              />
 
-            {/* CENTER TEXT */}
-            {/* <div
+              {/* WORD */}
+              <span
                 className="
+                  font-body
+                  uppercase
+
+                  text-[10px]
+                  md:text-xs
+
+                  tracking-[0.35em]
+
+                  text-white/35
+
+                  transition-colors
+                  duration-500
+
+                  hover:text-white/70
+                "
+              >
+                {word}
+              </span>
+            </div>
+          )
+        )}
+      </motion.div>
+
+      {/* CENTER FADE */}
+      <div
+        className="
           pointer-events-none
 
           absolute
-          inset-0
+          inset-y-0
+          left-0
 
-          flex
-          items-center
-          justify-center
+          w-24
+
+          bg-gradient-to-r
+          from-black
+          to-transparent
         "
-            >
-                <motion.div
-                    initial={{
-                        opacity: 0,
-                        scale: 0.8,
-                    }}
-                    whileInView={{
-                        opacity: 1,
-                        scale: 1,
-                    }}
-                    transition={{
-                        duration: 1.2,
-                    }}
-                    className="
-            border
-            border-white/10
+      />
 
-            bg-black/60
-            backdrop-blur-xl
+      <div
+        className="
+          pointer-events-none
 
-           px-4 py-2
+          absolute
+          inset-y-0
+          right-0
 
-            text-[10px]
-            uppercase
+          w-24
 
-            tracking-[0.45em]
+          bg-gradient-to-l
+          from-black
+          to-transparent
+        "
+      />
 
-            text-white/60
-          "
-                >
-                    Strategic Narrative Systems
-                </motion.div>
-            </div> */}
-
-            {/* NOISE */}
-            <div
-                className="
+      {/* NOISE */}
+      <div
+        className="
           pointer-events-none
 
           absolute
           inset-0
 
-          opacity-[0.04]
+          opacity-[0.03]
 
           mix-blend-soft-light
 
           bg-[url('/noise.png')]
         "
-            />
-        </section>
-    );
+      />
+    </section>
+  );
 }

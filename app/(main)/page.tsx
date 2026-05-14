@@ -9,6 +9,7 @@ import TextScatter from "@/app/components/cinematic/TextScatter";
 import PinSection from "@/app/components/cinematic/PinSection";
 import CinematicLayer from "@/app/components/cinematic/CinematicLayer";
 import SignalTransition from "../components/sections/home/transition/SignalTransition";
+import InsideSociyo from "../components/sections/home/insideSociyo/InsideSociyo";
 
 export default function Home() {
   return (
@@ -69,6 +70,9 @@ export default function Home() {
         <HeroSection />
       </section>
       <SignalTransition />
+      
+      {/* INSIDE SOCIYO EXPERIENCE */}
+      <InsideSociyo />
       {/* PHILOSOPHY */}
       <section className="relative z-10">
         <PhilosophySection />
@@ -80,7 +84,7 @@ export default function Home() {
         <CapabilitiesSection />
       </section>
 
-  
+
 
 
       {/* FINAL ATMOSPHERIC SPACE */}

@@ -324,7 +324,7 @@ m-0
                       font-display
                       uppercase
                       text-[clamp(5rem,14vw,14rem)]
-                      md:text-[clamp(7rem,15vw,18rem)]
+                 md:text-[clamp(5rem,11vw,12rem)]
                       leading-[0.82]
                       text-transparent
                       blur-[2px]
@@ -383,7 +383,7 @@ m-0
                       font-display
                       uppercase
                       text-[clamp(5rem,14vw,14rem)]
-                      md:text-[clamp(6rem,15vw,18rem)]
+                     md:text-[clamp(5rem,11vw,12rem)]
                       leading-[0.82]
                       select-none
                       will-change-transform

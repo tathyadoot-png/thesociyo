@@ -9,10 +9,11 @@ import {
 
 import { useRef } from "react";
 
-import { philosophyData } from "@/app/data/home/philosophy";
+import { philosophyData, philosophyHeading } from "@/app/data/home/philosophy";
 
 import CinematicLayer from "@/app/components/cinematic/CinematicLayer";
 import PinSection from "@/app/components/cinematic/PinSection";
+import CinematicSectionHeading from "@/app/components/ui/CinematicSectionHeading";
 
 export default function PhilosophySection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -43,7 +44,8 @@ export default function PhilosophySection() {
         border-b
         border-white/10
 py-20 md:py-40
-px-6 md:px-10 lg:px-16
+px-6 md:px-48
+
         bg-black
       "
     >
@@ -74,82 +76,13 @@ px-6 md:px-10 lg:px-16
       />
 
 
-{/* SECTION HEADING */}
-<div
+<CinematicSectionHeading
+  {...philosophyHeading}
   className="
     relative
     z-20
-
-    mb-24
-
-    max-w-5xl
   "
->
-  <div
-    className="
-      mb-5
-
-      flex
-      items-center
-      gap-4
-    "
-  >
-    <div className="h-px w-16 bg-[#ff2d55]" />
-
-    <span
-      className="
-        text-[10px]
-        uppercase
-        tracking-[0.45em]
-
-        text-[#ff2d55]
-      "
-    >
-      Philosophy
-    </span>
-  </div>
-
-  <h2
-    className="
-      font-display
-      uppercase
-
-      leading-[0.85]
-      tracking-[-0.07em]
-
-      text-[14vw]
-      sm:text-[10vw]
-      md:text-[7vw]
-      lg:text-[5vw]
-
-      text-white
-    "
-  >
-    The System
-    <br />
-    Behind Influence
-  </h2>
-
-  {/* <p
-    className="
-      mt-8
-
-      max-w-2xl
-
-      text-sm
-      md:text-lg
-
-      leading-[2]
-
-      text-white/55
-    "
-  >
-    Influence is not created through noise.
-    It is engineered through perception,
-    narrative control, emotional timing,
-    and strategic cultural positioning.
-  </p> */}
-</div>
+/>
 
 
 {/* CINEMATIC PANELS */}
@@ -175,8 +108,7 @@ px-6 md:px-10 lg:px-16
       className="
         relative
 
-        min-h-[62vh]
-        md:min-h-[68vh]
+       min-h-[auto]
 
         overflow-hidden
       "
@@ -241,7 +173,7 @@ px-6 md:px-10 lg:px-16
         }}
         className={`
           relative
-          z-10
+         lg:z-20
 
           overflow-hidden
 
@@ -253,18 +185,18 @@ px-6 md:px-10 lg:px-16
           w-[82%]
           sm:w-[68%]
           md:w-[42vw]
-          lg:w-[22vw]
-          xl:w-[20vw]
+         lg:w-[26vw]
+xl:w-[22vw]
 
-          mx-auto
+         ml-0
 
           ${
             index % 2 === 0
               ? `
-                lg:ml-[10%]
+                lg:ml-0
               `
               : `
-                lg:mr-[10%]
+                lg:mr-0
                 lg:ml-auto
               `
           }
@@ -333,12 +265,10 @@ px-6 md:px-10 lg:px-16
           flex
           items-center
 
-          mt-8
-          lg:-mt-[5vh]
+         mt-4
+lg:-mt-[14rem]
 
-          px-4
-          md:px-8
-          lg:px-12
+         px-0 md:px-2 lg:px-4
 
           ${
             index % 2 === 0
@@ -347,7 +277,7 @@ px-6 md:px-10 lg:px-16
           }
         `}
       >
-        <div className="max-w-2xl">
+        <div className="max-w-[90%] xl:max-w-2xl">
           {/* LABEL */}
           <motion.div
             initial={{
@@ -465,7 +395,7 @@ px-6 md:px-10 lg:px-16
             </p>
 
             {/* FLOATING META */}
-            <motion.div
+            {/* <motion.div
               animate={{
                 y: [0, -10, 0],
               }}
@@ -499,7 +429,7 @@ px-6 md:px-10 lg:px-16
                 <br />
                 Systems
               </div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </div>
