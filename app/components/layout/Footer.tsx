@@ -85,8 +85,7 @@ export default function Footer() {
       className="
         relative
         overflow-hidden
-        border-t
-        border-white/10
+   
         bg-black
         text-white
       "

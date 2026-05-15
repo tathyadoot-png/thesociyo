@@ -10,6 +10,8 @@ import PinSection from "@/app/components/cinematic/PinSection";
 import CinematicLayer from "@/app/components/cinematic/CinematicLayer";
 import SignalTransition from "../components/sections/home/transition/SignalTransition";
 import InsideSociyo from "../components/sections/home/insideSociyo/InsideSociyo";
+import ManifestoSection from "../components/sections/home/manifesto/ManifestoSection";
+import SelectedAssociationsSection from "../components/sections/home/associations/SelectedAssociationsSection";
 
 export default function Home() {
   return (
@@ -84,11 +86,12 @@ export default function Home() {
         <CapabilitiesSection />
       </section>
 
+      <ManifestoSection />
+
+      <SelectedAssociationsSection />
 
 
 
-      {/* FINAL ATMOSPHERIC SPACE */}
-      <div className="h-[25vh]" />
     </main>
   );
 }
