@@ -45,7 +45,7 @@ export default function ManifestoSection() {
         bg-[#050505]
 
     px-10
-        md:px-40
+        md:px-48
  
 
         py-24
