@@ -104,121 +104,445 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* HERO */}
+{/* HERO */}
+<div
+  className="
+    relative
+
+    grid
+    gap-16
+
+    xl:grid-cols-[0.85fr_1fr]
+    xl:gap-24
+    xl:items-center
+  "
+>
+  {/* LEFT SIDE */}
+  <div
+    className="
+      relative
+
+      flex
+      flex-col
+      justify-center
+    "
+  >
+    {/* SMALL LABEL */}
+    <div
+      className="
+        mb-8
+
+        flex
+        items-center
+        gap-4
+      "
+    >
+      <div
+        className="
+          h-px
+          w-14
+
+          bg-[#ff2d2d]
+        "
+      />
+
+      <span
+        className="
+          text-[10px]
+          uppercase
+
+          tracking-[0.55em]
+
+          text-white/35
+        "
+      >
+        Sociyo Communications
+      </span>
+    </div>
+
+    {/* HUGE TYPO */}
+    <h1
+      className="
+        relative
+
+        font-display
+        uppercase
+
+        leading-[0.82]
+        tracking-[-0.11em]
+
+        text-[18vw]
+        sm:text-[14vw]
+        md:text-[10vw]
+        xl:text-[7vw]
+
+        text-white
+      "
+    >
+      Start
+      <br />
+
+      <span
+        className="
+          text-transparent
+
+          bg-gradient-to-r
+          from-white
+          via-[#ff9d9d]
+          to-[#ff2d2d]
+
+          bg-clip-text
+        "
+      >
+        The
+      </span>
+
+      <br />
+
+      Conversation
+    </h1>
+
+    {/* FADED WORD */}
+    <div
+      className="
+        pointer-events-none
+
+        absolute
+        -left-10
+        bottom-0
+
+        font-display
+        uppercase
+
+        text-[24vw]
+
+        leading-none
+        tracking-[-0.14em]
+
+        text-white/[0.02]
+      "
+    >
+      TALK
+    </div>
+  </div>
+
+  {/* RIGHT SIDE */}
+  <div
+    className="
+      relative
+
+      w-full
+      max-w-2xl
+
+      xl:ml-auto
+    "
+  >
+    {/* PANEL */}
+    <div
+      className="
+        relative
+        overflow-hidden
+
+        rounded-[2.5rem]
+
+        border
+        border-white/10
+
+        bg-white/[0.03]
+
+        p-7
+        sm:p-10
+        md:p-12
+
+        backdrop-blur-xl
+      "
+    >
+      {/* GLOW */}
+      <div
+        className="
+          absolute
+          right-0
+          top-0
+
+          h-52
+          w-52
+
+          bg-[#ff2d2d]/10
+
+          blur-[120px]
+        "
+      />
+
+      {/* TOP */}
+      <div className="relative z-10">
         <div
           className="
-            flex
-            flex-col
-            gap-14
+            mb-8
 
-            lg:flex-row
-            lg:items-end
-            lg:justify-between
+            flex
+            items-center
+            gap-4
           "
         >
-          {/* TITLE */}
-          <div className="max-w-5xl">
-            <h1
-              className="
-                font-display
-                uppercase
-
-                leading-[0.82]
-                tracking-[-0.07em]
-
-                text-[18vw]
-                sm:text-[14vw]
-                md:text-[10vw]
-                lg:text-[7vw]
-
-                text-white
-              "
-            >
-              Start
-              <br />
-              The
-              <br />
-              Conversation
-            </h1>
-          </div>
-
-          {/* INFO */}
           <div
             className="
-              w-full
-              max-w-md
+              h-px
+              w-10
 
-              space-y-10
+              bg-[#ff2d2d]
+            "
+          />
+
+          <span
+            className="
+              text-[10px]
+              uppercase
+
+              tracking-[0.55em]
+
+              text-white/35
             "
           >
-            <p
+            Let’s Begin
+          </span>
+        </div>
+
+        {/* TITLE */}
+        <h2
+          className="
+            mb-8
+
+            font-display
+            uppercase
+
+            text-[2.6rem]
+            sm:text-[3rem]
+            md:text-[4rem]
+
+            leading-[0.84]
+            tracking-[-0.1em]
+
+            text-white
+          "
+        >
+          Discover.
+          <br />
+
+          <span
+            className="
+              text-transparent
+
+              bg-gradient-to-b
+              from-[#ff2d2d]
+              via-[#ff8a8a]
+              to-[#ffffff]
+
+              bg-clip-text
+            "
+          >
+            Decode.
+          </span>
+
+          <br />
+
+          Deliver.
+        </h2>
+
+        {/* DESC */}
+        <p
+          className="
+            max-w-lg
+
+            text-sm
+            sm:text-base
+            md:text-lg
+
+            leading-[2]
+
+            text-white/60
+          "
+        >
+          Let’s build systems, experiences and
+          communication that people don’t just notice —
+          but remember.
+        </p>
+
+        {/* CONTACT GRID */}
+        <div
+          className="
+            mt-12
+
+            grid
+            gap-5
+
+            sm:grid-cols-2
+          "
+        >
+          {/* EMAIL */}
+          <div
+            className="
+              rounded-[1.8rem]
+
+              border
+              border-white/10
+
+              bg-black/30
+
+              p-6
+            "
+          >
+            <div
+              className="
+                mb-5
+
+                text-[10px]
+                uppercase
+
+                tracking-[0.45em]
+
+                text-white/30
+              "
+            >
+              Email
+            </div>
+
+            <div className="space-y-3">
+              <a
+                href="mailto:letstalk@thesociyo.com"
+                className="
+                  block
+
+                  text-sm
+                  md:text-base
+
+                  text-white
+
+                  transition-all
+                  duration-500
+
+                  hover:text-[#ff8a8a]
+                "
+              >
+                letstalk@thesociyo.com
+              </a>
+
+              <a
+                href="mailto:thesociyo@gmail.com"
+                className="
+                  block
+
+                  text-sm
+                  md:text-base
+
+                  text-white/65
+
+                  transition-all
+                  duration-500
+
+                  hover:text-[#ff8a8a]
+                "
+              >
+                thesociyo@gmail.com
+              </a>
+            </div>
+          </div>
+
+          {/* PHONE */}
+          <div
+            className="
+              rounded-[1.8rem]
+
+              border
+              border-white/10
+
+              bg-black/30
+
+              p-6
+            "
+          >
+            <div
+              className="
+                mb-5
+
+                text-[10px]
+                uppercase
+
+                tracking-[0.45em]
+
+                text-white/30
+              "
+            >
+              Phone
+            </div>
+
+            <a
+              href="tel:+919555106208"
               className="
                 text-sm
                 md:text-base
 
-                leading-[2]
+                text-white
 
-                text-white/60
+                transition-all
+                duration-500
+
+                hover:text-[#ff8a8a]
               "
             >
-              Strategic communication, cinematic branding,
-              influence architecture, political positioning,
-              and narrative systems.
-            </p>
-
-            <div className="space-y-8">
-              <div>
-                <div
-                  className="
-                    mb-2
-                    text-[10px]
-                    uppercase
-                    tracking-[0.4em]
-                    text-white/30
-                  "
-                >
-                  Email
-                </div>
-
-                <a
-                  href="mailto:letstalk@sociyo.com"
-                  className="
-                    text-xl
-                    text-white
-                    transition-opacity
-                    duration-500
-                    hover:opacity-60
-                  "
-                >
-                  letstalk@sociyo.com
-                </a>
-
-
-              </div>
-
-              <div>
-                <div
-                  className="
-                    mb-2
-                    text-[10px]
-                    uppercase
-                    tracking-[0.4em]
-                    text-white/30
-                  "
-                >
-                  Location
-                </div>
-
-                <p className="text-xl text-white">
-                  SOCIYO Communications Pvt Ltd
-                  FI-026, 5th Floor, Bansal One
-                  Bhopal, Madhya Pradesh (INDIA)
-                  462016
-                </p>
-              </div>
-            </div>
+              +91 9555-106208
+            </a>
           </div>
         </div>
+
+        {/* LOCATION */}
+        <div
+          className="
+            mt-5
+
+            rounded-[1.8rem]
+
+            border
+            border-white/10
+
+            bg-black/30
+
+            p-6
+          "
+        >
+          <div
+            className="
+              mb-5
+
+              text-[10px]
+              uppercase
+
+              tracking-[0.45em]
+
+              text-white/30
+            "
+          >
+            Location
+          </div>
+
+          <p
+            className="
+              text-sm
+              md:text-base
+
+              leading-[1.9]
+
+              text-white/70
+            "
+          >
+            FI-026, 5th Floor, Bansal One
+            <br />
+            Bhopal, Madhya Pradesh – 462016
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
         {/* MAIN */}
         <div

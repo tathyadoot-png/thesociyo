@@ -226,10 +226,8 @@ export default function Footer() {
                 text-white/50
               "
             >
-              Strategic narratives, cinematic storytelling,
-              political communication, influence systems,
-              and positioning architectures crafted for
-              modern leadership and cultural impact.
+              The future belongs to organizations that communicate with clarity, evolve with direction and build meaningful audience connection. 
+
             </p>
 
             {/* SOCIALS */}
