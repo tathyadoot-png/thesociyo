@@ -5,28 +5,29 @@ import Link from "next/link";
 
 const links = [
   {
-    label: "HOME",
+    label: "ARRIVAL",
     href: "/",
+    number: "01",
   },
   {
-    label: "PHILOSOPHY",
-    href: "/philosophy",
+    label: "IDENTITY",
+    href: "/about",
+    number: "02",
   },
   {
-    label: "INFLUENCE",
-    href: "/influence",
+    label: "EXECUTIONS",
+    href: "/work",
+    number: "03",
   },
   {
-    label: "CAPABILITIES",
-    href: "/capabilities",
+    label: "NOTES",
+    href: "/blogs",
+    number: "04",
   },
   {
-    label: "INSIGHTS",
-    href: "/insights",
-  },
-  {
-    label: "CONTACT",
+    label: "INITIATE",
     href: "/contact",
+    number: "05",
   },
 ];
 
@@ -38,87 +39,256 @@ export default function MenuLinks({
   return (
     <div
       className="
+        relative
+
         flex
         flex-1
         flex-col
-        justify-center
-        overflow-y-auto
-        py-10
+        justify-between
+
+        overflow-hidden
+
+        py-6
       "
     >
-      {links.map((item, index) => (
-        <motion.div
-          key={item.label}
-          initial={{
-            opacity: 0,
-            y: 50,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            delay: index * 0.08,
-            duration: 0.9,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="overflow-hidden"
-        >
-          <Link
-            href={item.href}
-            onClick={() => setOpen(false)}
+      {/* BG GLOW */}
+      <div
+        className="
+          pointer-events-none
+
+          absolute
+          left-1/2
+          top-1/2
+
+          h-[28rem]
+          w-[28rem]
+
+          -translate-x-1/2
+          -translate-y-1/2
+
+          rounded-full
+
+          bg-[#ff2d2d]/10
+
+          blur-[120px]
+        "
+      />
+
+      {/* BG WORD */}
+      <div
+        className="
+          pointer-events-none
+
+          absolute
+          left-1/2
+          top-1/2
+
+          -translate-x-1/2
+          -translate-y-1/2
+
+          whitespace-nowrap
+
+          font-display
+          uppercase
+
+          text-[22vw]
+
+          leading-none
+          tracking-[-0.14em]
+
+          text-white/[0.02]
+        "
+      >
+        SOCIYO
+      </div>
+
+      {/* LINKS */}
+      <div
+        className="
+          relative
+          z-10
+
+          flex
+          flex-col
+        "
+      >
+        {links.map((item, index) => (
+          <motion.div
+            key={item.label}
+            initial={{
+              opacity: 0,
+              y: 30,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: index * 0.06,
+              duration: 0.8,
+            }}
             className="
-              group
-              relative
-              block
-              w-full
-              text-left
+              border-b
+              border-white/10
             "
           >
-            {/* MAIN TEXT */}
-            <span
+            <Link
+              href={item.href}
+              onClick={() => setOpen(false)}
               className="
+                group
                 relative
-                block
-                text-[18vw]
-                sm:text-[14vw]
-                md:text-[10vw]
-                lg:text-[7vw]
-                xl:text-[6vw]
-                font-display
-                font-normal
-                uppercase
-                leading-[0.9]
 
-                text-white/20
-                transition-all
-                duration-700
+                flex
+                items-center
+                justify-between
 
-                group-hover:text-white
+                py-4
+                md:py-5
               "
             >
-              {item.label}
-            </span>
+              {/* LEFT */}
+              <div
+                className="
+                  flex
+                  items-center
+                  gap-4
+                "
+              >
+                {/* NUMBER */}
+                <span
+                  className="
+                    text-[10px]
 
-            {/* RED HOVER GLOW */}
-            <span
-              className="
-                absolute
-                left-0
-                top-1/2
-                h-[40%]
-                w-0
-                -translate-y-1/2
-                bg-[#fe0000]/10
-                blur-3xl
-                transition-all
-                duration-700
-                group-hover:w-full
-              "
-            />
-          </Link>
-        </motion.div>
-      ))}
+                    uppercase
+
+                    tracking-[0.4em]
+
+                    text-white/20
+                  "
+                >
+                  {item.number}
+                </span>
+
+                {/* TITLE */}
+                <div className="relative overflow-hidden">
+                  {/* HOVER GLOW */}
+                  <div
+                    className="
+                      absolute
+                      inset-0
+
+                      opacity-0
+
+                      transition-opacity
+                      duration-500
+
+                      group-hover:opacity-100
+
+                      bg-[radial-gradient(circle_at_left,rgba(255,45,45,0.18),transparent_60%)]
+                    "
+                  />
+
+                  <motion.span
+                    whileHover={{
+                      x: 8,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                    }}
+                    className="
+                      relative
+                      z-10
+
+                      block
+
+                      font-display
+                      uppercase
+
+                      text-[13vw]
+                      sm:text-[10vw]
+                      md:text-[6vw]
+                      lg:text-[4.5vw]
+
+                      leading-[0.85]
+                      tracking-[-0.1em]
+
+                      text-white/20
+
+                      transition-all
+                      duration-500
+
+                      group-hover:text-white
+                    "
+                  >
+                    {item.label}
+                  </motion.span>
+                </div>
+              </div>
+
+              {/* RIGHT */}
+              <div
+                className="
+                  hidden
+                  md:flex
+
+                  items-center
+                  gap-3
+                "
+              >
+                <div
+                  className="
+                    h-px
+                    w-8
+
+                    bg-[#ff2d2d]
+
+                    transition-all
+                    duration-500
+
+                    group-hover:w-14
+                  "
+                />
+
+                <span
+                  className="
+                    text-[10px]
+                    uppercase
+
+                    tracking-[0.45em]
+
+                    text-white/30
+                  "
+                >
+                  Open
+                </span>
+              </div>
+
+              {/* HOVER LINE */}
+              <div
+                className="
+                  absolute
+                  bottom-0
+                  left-0
+
+                  h-px
+                  w-0
+
+                  bg-gradient-to-r
+                  from-[#ff2d2d]
+                  to-transparent
+
+                  transition-all
+                  duration-700
+
+                  group-hover:w-full
+                "
+              />
+            </Link>
+          </motion.div>
+        ))}
+      </div>
+
     </div>
   );
 }

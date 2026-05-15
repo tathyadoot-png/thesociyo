@@ -1,162 +1,1194 @@
 "use client";
-import { useRef, useEffect } from "react";
-import Image from "next/image";
-import { aboutData } from "@/app/data/about";
-import { useLanguage } from "@/app/context/LanguageContext";
-import gsap from "@/app/lib/gsap";
-import vs from "@/public/vs.png";
 
-export default function About() {
-  const { lang } = useLanguage();
-  const data = aboutData[lang as keyof typeof aboutData];
-  const containerRef = useRef(null);
-  const imageRef = useRef(null);
+import { motion } from "framer-motion";
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Content Entrance
-      gsap.from(".about-reveal", {
-        y: 60,
-        opacity: 0,
-        stagger: 0.2,
-        duration: 1.2,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 70%",
-        }
-      });
-
-      // Subtle Parallax for Image
-      gsap.to(imageRef.current, {
-        y: -50,
-        ease: "none",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        }
-      });
-    }, containerRef);
-    return () => ctx.revert();
-  }, [lang]);
-
-  if (!data) return null;
-
+export default function AboutPage() {
   return (
-    <section 
-      ref={containerRef} 
-      id="about" 
-      className="relative bg-[#FDFCF0] py-24 lg:py-40 overflow-hidden"
+    <main
+      className="
+        relative
+        overflow-hidden
+        bg-black
+        text-white
+      "
     >
-      <div className="absolute inset-0 opacity-[0.4] pointer-events-none mix-blend-multiply" 
-           style={{ backgroundImage: `url("https://www.transparenttextures.com/patterns/natural-paper.png")` }} />
-      
-      <div className="absolute -bottom-10 left-10 pointer-events-none opacity-[0.04] select-none">
-        <h2 className="text-[25vw] font-display font-normal text-[#001F3F] leading-none uppercase tracking-tighter">
-          {lang === 'en' ? 'LEADER' : 'नेतृत्व'}
-        </h2>
-      </div>
+      {/* ATMOSPHERE */}
+      <div
+        className="
+          absolute
+          inset-0
 
-      <div className="container mx-auto px-6 lg:px-20 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
-          
-          {/* LEFT: Portrait - order-1 mobile par top pe dikhayega */}
-          <div className="lg:col-span-5 order-1 lg:order-1">
-            <div className="relative group">
-              <div ref={imageRef} className="about-reveal relative aspect-[3/4] w-full rounded-[2.5rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,31,63,0.3)] border-[12px] border-white z-10">
-                <Image 
-                  src={vs} 
-                  alt={data.name} 
-                  fill 
-                  className="object-cover transition-transform duration-1000 group-hover:scale-110" 
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  priority 
-                />
-                <div className="absolute inset-0 bg-[#001F3F]/10 group-hover:bg-transparent transition-colors duration-500" />
-              </div>
-              
-              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#001F3F] rounded-full hidden lg:flex items-center justify-center p-8 z-20 animate-spin-slow">
-                 <p className="text-[#FDFCF0] text-[10px] font-bold text-center uppercase tracking-widest leading-tight">
-                   Advocate • Thinker • Leader
-                 </p>
-              </div>
-            </div>
+          bg-[radial-gradient(circle_at_top_left,rgba(255,45,45,0.16),transparent_30%)]
+        "
+      />
+
+      {/* GRID */}
+      <div
+        className="
+          absolute
+          inset-0
+
+          opacity-[0.03]
+
+          bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)]
+
+          bg-[size:80px_80px]
+        "
+      />
+
+      {/* HERO */}
+      <section
+        className="
+          relative
+          z-10
+
+          min-h-screen
+
+          px-3
+          py-28
+
+          md:px-40
+     
+        "
+      >
+        {/* TOP */}
+        <div
+          className="
+            mb-20
+
+            flex
+            items-center
+            justify-between
+          "
+        >
+          <div
+            className="
+              flex
+              items-center
+              gap-4
+            "
+          >
+            <div
+              className="
+                h-px
+                w-14
+
+                bg-[#ff2d2d]
+              "
+            />
+
+            <span
+              className="
+                text-[10px]
+                uppercase
+
+                tracking-[0.6em]
+
+                text-white/40
+              "
+            >
+              About Sociyo
+            </span>
           </div>
 
-          {/* RIGHT: Text Content - order-2 mobile par niche dikhayega */}
-          <div className="lg:col-span-7 order-2 lg:order-2 space-y-10">
-          <div className="about-reveal">
-    <div className="flex items-center gap-4 mb-6">
-      <span className="h-[2px] w-16 bg-[#001F3F]" />
-      <span className="text-[#001F3F] font-display font-normal text-xs uppercase tracking-[0.4em]">
-        {data.title}
-      </span>
-    </div>
-    
-    {/* BILINGUAL HEADER FIXED HERE */}
-    <h2 className="text-6xl md:text-8xl lg:text-9xl font-display font-normal text-[#001F3F] uppercase leading-[0.8] tracking-tighter mb-8">
-      {lang === 'en' ? (
-        <>
-          Legacy <br /> 
-          <span className="text-transparent stroke-navy italic">In Motion.</span>
-        </>
-      ) : (
-        <>
-          विरासत <br /> 
-          <span className="text-transparent stroke-navy italic py-7">गतिमान।</span>
-        </>
-      )}
-    </h2>
-    
-    <p className="text-[#001F3F]/80 text-xl md:text-3xl font-light leading-relaxed text-justify max-w-3xl">
-      {data.intro}
-    </p>
+          <div
+            className="
+              hidden
+              md:block
+
+              text-[10px]
+              uppercase
+
+              tracking-[0.45em]
+
+              text-white/20
+            "
+          >
+            Narrative • Systems • Influence
+          </div>
+        </div>
+
+        {/* MAIN LAYOUT */}
+        <div
+          className="
+            grid
+            gap-20
+
+            xl:grid-cols-[1fr_420px]
+          "
+        >
+          {/* LEFT SIDE */}
+          <div>
+            {/* MASSIVE WORD */}
+            <motion.h1
+              initial={{
+                opacity: 0,
+                y: 80,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 1,
+              }}
+              className="
+                font-display
+                uppercase
+
+                text-[20vw]
+                sm:text-[16vw]
+                md:text-[11vw]
+                xl:text-[8vw]
+
+                leading-[0.72]
+                tracking-[-0.16em]
+              "
+            >
+              Beyond
+              <br />
+
+              <span
+                className="
+                  text-transparent
+
+                  bg-gradient-to-b
+                  from-[#ff2d2d]
+                  via-[#ff9d9d]
+                  to-[#ffffff]
+
+                  bg-clip-text
+                "
+              >
+                Visibility
+              </span>
+            </motion.h1>
+
+            {/* SUBTEXT */}
+            <motion.p
+              initial={{
+                opacity: 0,
+                y: 50,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 1,
+                delay: 0.2,
+              }}
+              className="
+                mt-14
+
+                max-w-2xl
+
+                text-lg
+                md:text-xl
+
+                leading-[2]
+
+                text-white/60
+              "
+            >
+              Sociyo builds cinematic communication
+              systems where narrative, design, technology
+              and influence operate together to create
+              long-term public memory.
+            </motion.p>
+          </div>
+
+          {/* RIGHT SIDE */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: 40,
+            }}
+            animate={{
+              opacity: 1,
+              x: 0,
+            }}
+            transition={{
+              duration: 1,
+              delay: 0.3,
+            }}
+            className="
+              relative
+
+              flex
+              flex-col
+              gap-6
+            "
+          >
+            {/* CARD 1 */}
+            <div
+              className="
+                relative
+
+                overflow-hidden
+
+                border
+                border-white/10
+
+                bg-white/[0.03]
+
+                p-8
+              "
+            >
+              {/* GLOW */}
+              <div
+                className="
+                  absolute
+                  right-0
+                  top-0
+
+                  h-32
+                  w-32
+
+                  rounded-full
+
+                  bg-[#ff2d2d]/10
+
+                  blur-[80px]
+                "
+              />
+
+              <div className="relative z-10">
+                <div
+                  className="
+                    mb-8
+
+                    flex
+                    items-center
+                    justify-between
+                  "
+                >
+                  <span
+                    className="
+                      text-[10px]
+                      uppercase
+
+                      tracking-[0.5em]
+
+                      text-white/35
+                    "
+                  >
+                    Philosophy
+                  </span>
+
+                  <span
+                    className="
+                      font-display
+
+                      text-[2rem]
+
+                      tracking-[-0.1em]
+
+                      text-white/10
+                    "
+                  >
+                    01
+                  </span>
+                </div>
+
+                <h2
+                  className="
+                    font-display
+                    uppercase
+
+                    text-[2rem]
+                    md:text-[3rem]
+
+                    leading-[0.9]
+                    tracking-[-0.1em]
+
+                    text-white
+                  "
+                >
+                  Communication
+                  <br />
+                  Is Strategy.
+                </h2>
+              </div>
+            </div>
+
+            {/* CARD 2 */}
+            <div
+              className="
+                relative
+
+                overflow-hidden
+
+                border
+                border-white/10
+
+                bg-white/[0.03]
+
+                p-8
+              "
+            >
+              {/* GLOW */}
+              <div
+                className="
+                  absolute
+                  left-0
+                  bottom-0
+
+                  h-32
+                  w-32
+
+                  rounded-full
+
+                  bg-[#ff2d2d]/10
+
+                  blur-[80px]
+                "
+              />
+
+              <div className="relative z-10">
+                <div
+                  className="
+                    mb-8
+
+                    flex
+                    items-center
+                    justify-between
+                  "
+                >
+                  <span
+                    className="
+                      text-[10px]
+                      uppercase
+
+                      tracking-[0.5em]
+
+                      text-white/35
+                    "
+                  >
+                    Systems
+                  </span>
+
+                  <span
+                    className="
+                      font-display
+
+                      text-[2rem]
+
+                      tracking-[-0.1em]
+
+                      text-white/10
+                    "
+                  >
+                    02
+                  </span>
+                </div>
+
+                <h2
+                  className="
+                    font-display
+                    uppercase
+
+                    text-[2rem]
+                    md:text-[3rem]
+
+                    leading-[0.9]
+                    tracking-[-0.1em]
+
+                    text-white
+                  "
+                >
+                  Designed
+                  <br />
+                  For Recall.
+                </h2>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* HUGE CENTER BLOCK */}
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 1,
+          }}
+          className="
+            relative
+
+            mt-40
+
+            border-y
+            border-white/10
+
+            py-24
+          "
+        >
+          {/* BG WORD */}
+          <div
+            className="
+              pointer-events-none
+
+              absolute
+              left-1/2
+              top-1/2
+
+              -translate-x-1/2
+              -translate-y-1/2
+
+              font-display
+              uppercase
+
+              text-[30vw]
+
+              leading-none
+              tracking-[-0.18em]
+
+              text-white/[0.02]
+            "
+          >
+            IMPACT
+          </div>
+
+          <div
+            className="
+              relative
+              z-10
+
+              mx-auto
+
+              max-w-5xl
+
+              text-center
+            "
+          >
+            <div
+              className="
+                mb-6
+
+                text-[10px]
+                uppercase
+
+                tracking-[0.8em]
+
+                text-white/35
+              "
+            >
+              Sociyo Communications
+            </div>
+
+            <h2
+              className="
+                font-display
+                uppercase
+
+                text-[10vw]
+                md:text-[7vw]
+
+                leading-[0.82]
+                tracking-[-0.14em]
+
+                text-white
+              "
+            >
+              Not Just
+              <br />
+
+              Seen.
+              <br />
+
+              <span
+                className="
+                  text-transparent
+
+                  bg-gradient-to-b
+                  from-[#ff2d2d]
+                  via-[#ff8a8a]
+                  to-[#ffffff]
+
+                  bg-clip-text
+                "
+              >
+                Remembered.
+              </span>
+            </h2>
+          </div>
+        </motion.div>
+
+
+{/* CINEMATIC FILMS */}
+<section
+  className="
+    relative
+    z-10
+
+    overflow-hidden
+  "
+>
+  {/* BG WORD */}
+  <div
+    className="
+      pointer-events-none
+
+      absolute
+      left-1/2
+      top-1/2
+
+      -translate-x-1/2
+      -translate-y-1/2
+
+      whitespace-nowrap
+
+      font-display
+      uppercase
+
+      text-[26vw]
+      md:text-[18vw]
+
+      leading-none
+      tracking-[-0.14em]
+
+      text-white/[0.02]
+    "
+  >
+    FILMS
   </div>
 
-            <div className="about-reveal grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-              {data.highlights.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-4 p-6 bg-white border border-[#001F3F]/5 rounded-2xl hover:border-[#001F3F]/20 transition-all shadow-sm group">
-                  <div className="text-[#001F3F]/20 font-display font-normal text-2xl group-hover:text-[#001F3F] transition-colors">0{idx + 1}</div>
-                  <p className="text-[#001F3F] font-bold text-sm uppercase tracking-wide pt-1">
-                    {item}
-                  </p>
-                </div>
-              ))}
+
+
+  {/* FILMS */}
+  <div
+    className="
+      relative
+      z-10
+
+      space-y-10
+      md:space-y-40
+    "
+  >
+    {/* FILM 01 */}
+    <motion.a
+      href="https://youtu.be/6dz3DEe2KRc"
+      target="_blank"
+      initial={{
+        opacity: 0,
+        y: 80,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+      }}
+      transition={{
+        duration: 1,
+      }}
+      className="
+        group
+        relative
+
+        block
+
+        overflow-hidden
+
+        border
+        border-white/10
+
+        bg-black
+      "
+    >
+      <div
+        className="
+          grid
+
+          lg:grid-cols-[1.1fr_0.9fr]
+        "
+      >
+        {/* THUMB */}
+        <div
+          className="
+            relative
+
+            aspect-video
+
+            overflow-hidden
+          "
+        >
+          <img
+            src="https://img.youtube.com/vi/6dz3DEe2KRc/maxresdefault.jpg"
+            alt="Film 01"
+            className="
+              h-full
+              w-full
+
+              object-cover
+
+              transition-all
+              duration-700
+
+              group-hover:scale-105
+            "
+          />
+
+          {/* OVERLAY */}
+          <div
+            className="
+              absolute
+              inset-0
+
+              bg-gradient-to-r
+              from-black/60
+              via-black/10
+              to-transparent
+            "
+          />
+
+          {/* PLAY */}
+          <div
+            className="
+              absolute
+              left-8
+              top-8
+
+              flex
+              items-center
+              gap-4
+            "
+          >
+            <div
+              className="
+                flex
+                h-16
+                w-16
+
+                items-center
+                justify-center
+
+                rounded-full
+
+                border
+                border-white/20
+
+                bg-white/10
+
+                backdrop-blur-xl
+              "
+            >
+              <div
+                className="
+                  ml-1
+
+                  h-0
+                  w-0
+
+                  border-y-[10px]
+                  border-y-transparent
+
+                  border-l-[16px]
+                  border-l-white
+                "
+              />
             </div>
 
-            <div className="about-reveal mt-12 pl-8 border-l-4 border-[#001F3F]/10">
-               <p className="text-[#001F3F] text-2xl md:text-3xl font-serif italic max-w-2xl text-justify">
-                 "{data.vision}"
-               </p>
-               <div className="mt-4 flex items-center gap-2">
-                 <div className="w-4 h-4 bg-[#001F3F] rounded-full" />
-                 <span className="text-[#001F3F] font-bold uppercase text-xs tracking-widest">Our Vision</span>
-               </div>
+            <div>
+              <div
+                className="
+                  text-[10px]
+                  uppercase
+
+                  tracking-[0.45em]
+
+                  text-white/40
+                "
+              >
+                Watch Film
+              </div>
+
+              <div
+                className="
+                  mt-1
+
+                  text-sm
+
+                  text-white/70
+                "
+              >
+                Sociyo Narrative
+              </div>
             </div>
           </div>
+        </div>
 
+        {/* CONTENT */}
+        <div
+          className="
+            relative
+
+            flex
+            flex-col
+            justify-between
+
+            p-8
+            md:p-10
+          "
+        >
+          {/* BIG NUMBER */}
+          <div
+            className="
+              absolute
+              right-6
+              top-4
+
+              font-display
+
+              text-[5rem]
+
+              leading-none
+              tracking-[-0.12em]
+
+              text-white/[0.04]
+            "
+          >
+            01
+          </div>
+
+          <div>
+            <div
+              className="
+                mb-6
+
+                flex
+                items-center
+                gap-3
+              "
+            >
+              <div
+                className="
+                  h-px
+                  w-10
+
+                  bg-[#ff2d2d]
+                "
+              />
+
+              <span
+                className="
+                  text-[10px]
+                  uppercase
+
+                  tracking-[0.45em]
+
+                  text-white/35
+                "
+              >
+                Influence Film
+              </span>
+            </div>
+
+            <h3
+              className="
+                max-w-[10ch]
+
+                font-display
+                uppercase
+
+                text-[3rem]
+                md:text-[4rem]
+
+                leading-[0.85]
+                tracking-[-0.09em]
+
+                text-white
+              "
+            >
+              Influence
+            </h3>
+          </div>
+
+          <div
+            className="
+              mt-10
+
+              flex
+              items-center
+              justify-between
+            "
+          >
+            <p
+              className="
+                max-w-md
+
+                text-sm
+                md:text-base
+
+                leading-relaxed
+
+                text-white/50
+              "
+            >
+              Visual storytelling built around emotion,
+              narrative and strategic communication.
+            </p>
+
+            <div
+              className="
+                hidden
+                md:flex
+
+                items-center
+                gap-3
+              "
+            >
+              <div
+                className="
+                  h-px
+                  w-10
+
+                  bg-white/20
+                "
+              />
+
+              <span
+                className="
+                  text-[10px]
+                  uppercase
+
+                  tracking-[0.45em]
+
+                  text-white/30
+                "
+              >
+                Open
+              </span>
+            </div>
+          </div>
         </div>
       </div>
+    </motion.a>
 
-      <style jsx global>{`
-        .stroke-navy {
-          -webkit-text-stroke: 1.5px #001F3F;
-        }
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        .animate-spin-slow {
-          animation: spin-slow 15s linear infinite;
-        }
-        @media (min-width: 1024px) {
-          .stroke-navy {
-            -webkit-text-stroke: 3px #001F3F;
-          }
-        }
-      `}</style>
-    </section>
+    {/* FILM 02 */}
+    <motion.a
+      href="https://youtu.be/O8E-ZydMAw0"
+      target="_blank"
+      initial={{
+        opacity: 0,
+        y: 80,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+      }}
+      transition={{
+        duration: 1,
+        delay: 0.1,
+      }}
+      className="
+        group
+        relative
+
+        block
+
+        overflow-hidden
+
+        border
+        border-white/10
+
+        bg-black
+      "
+    >
+      <div
+        className="
+          grid
+
+          lg:grid-cols-[0.9fr_1.1fr]
+        "
+      >
+        {/* CONTENT */}
+        <div
+          className="
+            relative
+
+            order-2
+            lg:order-1
+
+            flex
+            flex-col
+            justify-between
+
+            p-8
+            md:p-10
+          "
+        >
+          {/* BIG NUMBER */}
+          <div
+            className="
+              absolute
+              left-6
+              top-4
+
+              font-display
+
+              text-[5rem]
+
+              leading-none
+              tracking-[-0.12em]
+
+              text-white/[0.04]
+            "
+          >
+            02
+          </div>
+
+          <div>
+            <div
+              className="
+                mb-6
+
+                flex
+                items-center
+                gap-3
+              "
+            >
+              <div
+                className="
+                  h-px
+                  w-10
+
+                  bg-[#ff2d2d]
+                "
+              />
+
+              <span
+                className="
+                  text-[10px]
+                  uppercase
+
+                  tracking-[0.45em]
+
+                  text-white/35
+                "
+              >
+                Narrative Film
+              </span>
+            </div>
+
+            <h3
+              className="
+                max-w-[10ch]
+
+                font-display
+                uppercase
+
+                text-[3rem]
+                md:text-[4rem]
+
+                leading-[0.85]
+                tracking-[-0.09em]
+
+                text-white
+              "
+            >
+              Narrative
+            </h3>
+          </div>
+
+          <div
+            className="
+              mt-10
+
+              flex
+              items-center
+              justify-between
+            "
+          >
+            <p
+              className="
+                max-w-md
+
+                text-sm
+                md:text-base
+
+                leading-relaxed
+
+                text-white/50
+              "
+            >
+              Cinematic communication crafted to create
+              emotional memory and attention.
+            </p>
+
+            <div
+              className="
+                hidden
+                md:flex
+
+                items-center
+                gap-3
+              "
+            >
+              <div
+                className="
+                  h-px
+                  w-10
+
+                  bg-white/20
+                "
+              />
+
+              <span
+                className="
+                  text-[10px]
+                  uppercase
+
+                  tracking-[0.45em]
+
+                  text-white/30
+                "
+              >
+                Open
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* THUMB */}
+        <div
+          className="
+            relative
+
+            order-1
+            lg:order-2
+
+            aspect-video
+
+            overflow-hidden
+          "
+        >
+          <img
+            src="https://img.youtube.com/vi/O8E-ZydMAw0/maxresdefault.jpg"
+            alt="Film 02"
+            className="
+              h-full
+              w-full
+
+              object-cover
+
+              transition-all
+              duration-700
+
+              group-hover:scale-105
+            "
+          />
+
+          {/* OVERLAY */}
+          <div
+            className="
+              absolute
+              inset-0
+
+              bg-gradient-to-l
+              from-black/60
+              via-black/10
+              to-transparent
+            "
+          />
+
+          {/* PLAY */}
+          <div
+            className="
+              absolute
+              right-8
+              top-8
+
+              flex
+              items-center
+              gap-4
+            "
+          >
+            <div>
+              <div
+                className="
+                  text-right
+
+                  text-[10px]
+                  uppercase
+
+                  tracking-[0.45em]
+
+                  text-white/40
+                "
+              >
+                Watch Film
+              </div>
+
+              <div
+                className="
+                  mt-1
+
+                  text-right
+                  text-sm
+
+                  text-white/70
+                "
+              >
+                Strategic Storytelling
+              </div>
+            </div>
+
+            <div
+              className="
+                flex
+                h-16
+                w-16
+
+                items-center
+                justify-center
+
+                rounded-full
+
+                border
+                border-white/20
+
+                bg-white/10
+
+                backdrop-blur-xl
+              "
+            >
+              <div
+                className="
+                  ml-1
+
+                  h-0
+                  w-0
+
+                  border-y-[10px]
+                  border-y-transparent
+
+                  border-l-[16px]
+                  border-l-white
+                "
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.a>
+  </div>
+</section>
+      </section>
+    </main>
   );
 }
