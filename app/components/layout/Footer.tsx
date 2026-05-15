@@ -181,7 +181,7 @@ export default function Footer() {
           className="
             grid
             gap-20
-px-5 md:px-36
+px-0 md:px-36
             lg:grid-cols-[1.1fr_0.9fr]
             lg:items-start
           "
