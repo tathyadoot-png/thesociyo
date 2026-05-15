@@ -43,66 +43,15 @@ export default function ContactPage() {
           relative
           z-10
 
-          px-6
+          px-5
           pt-28
           pb-16
 
-          md:px-10
-          lg:px-16
+          md:px-40
+    
         "
       >
-        {/* TOP BAR */}
-        <div
-          className="
-            mb-10
-
-            flex
-            items-center
-            justify-between
-
-            border-b
-            border-white/10
-
-            pb-6
-          "
-        >
-          <div className="flex items-center gap-4">
-            <div className="h-px w-16 bg-[#fe0000]" />
-
-            <span
-              className="
-                text-[10px]
-                uppercase
-                tracking-[0.45em]
-                text-[#fe0000]
-              "
-            >
-              Contact
-            </span>
-          </div>
-
-          <div
-            className="
-              hidden
-              lg:block
-
-              text-right
-
-              text-[10px]
-              uppercase
-              leading-[2]
-              tracking-[0.45em]
-
-              text-white/20
-            "
-          >
-            Narrative
-            <br />
-            Strategy
-            <br />
-            Systems
-          </div>
-        </div>
+      
 
 {/* HERO */}
 <div

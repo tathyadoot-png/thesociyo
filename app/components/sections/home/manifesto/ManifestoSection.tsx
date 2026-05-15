@@ -246,149 +246,201 @@ export default function ManifestoSection() {
         </div>
 
         {/* CONTENT */}
+<div
+  className="
+    relative
+
+    mt-24
+    md:mt-32
+  "
+>
+  {/* CENTER LINE */}
+  <div
+    className="
+      absolute
+      left-1/2
+      top-0
+
+      hidden
+      md:block
+
+      h-full
+      w-px
+
+      -translate-x-1/2
+
+      bg-gradient-to-b
+      from-transparent
+      via-white/10
+      to-transparent
+    "
+  />
+
+  <div className="space-y-28 md:space-y-36">
+    {manifestoContent.map((item, index) => (
+      <motion.div
+        key={item.id}
+        initial={{
+          opacity: 0,
+          y: 80,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{
+          once: true,
+          amount: 0.2,
+        }}
+        transition={{
+          duration: 1,
+          delay: index * 0.15,
+        }}
+        className={`
+          relative
+
+          flex
+
+          ${
+            index % 2 === 0
+              ? "justify-start"
+              : "justify-end"
+          }
+        `}
+      >
+        {/* ORB */}
         <div
           className="
-            mt-20
-            md:mt-24
+            absolute
+            left-1/2
+            top-10
 
-            grid
-            gap-6
+            hidden
+            md:block
 
-            lg:grid-cols-2
+            h-5
+            w-5
+
+            -translate-x-1/2
+
+            rounded-full
+
+            border
+            border-[#ff2d2d]/40
+
+            bg-black
           "
         >
-          {manifestoContent.map((item, index) => (
-            <motion.div
-              key={item.id}
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.2,
-              }}
-              transition={{
-                duration: 0.9,
-                delay: index * 0.1,
-              }}
+          <div
+            className="
+              absolute
+              inset-0
+
+              rounded-full
+
+              bg-[#ff2d2d]/30
+
+              blur-md
+            "
+          />
+        </div>
+
+        {/* CONTENT */}
+        <div
+          className={`
+            relative
+
+            w-full
+            md:w-[46%]
+
+            ${
+              index % 2 === 0
+                ? "md:pr-16"
+                : "md:pl-16"
+            }
+          `}
+        >
+          {/* HUGE NUMBER */}
+          <div
+            className="
+              pointer-events-none
+              absolute
+              -top-8
+              font-display
+              uppercase
+              text-[6rem]
+              md:text-[8rem]
+              leading-none
+              tracking-[-0.12em]
+              text-white/[0.03]
+            "
+          >
+            {item.id}
+          </div>
+
+          {/* SMALL LABEL */}
+          <div
+            className="
+              mb-6
+              flex
+              items-center
+              gap-4
+            "
+          >
+            <div
               className="
-                group
-                relative
+                h-px
+                w-10
+                bg-[#ff2d2d]
+              "
+            />
 
-                overflow-hidden
-
-                border
-                border-white/10
-
-                bg-white/[0.03]
-
-                p-6
-                md:p-8
-
-                backdrop-blur-xl
+            <span
+              className="
+                text-[10px]
+                uppercase
+                tracking-[0.45em]
+                text-white/35
               "
             >
-              {/* TOP */}
-              <div
-                className="
-                  mb-8
+              Manifesto
+            </span>
+          </div>
 
-                  flex
-                  items-center
-                  justify-between
-                "
-              >
-                <div
-                  className="
-                    flex
-                    items-center
-                    gap-3
-                  "
-                >
-                  <div
-                    className="
-                      h-px
-                      w-10
+          {/* TEXT */}
+          <p
+            className="
+              relative
+              z-10
+              text-[1.7rem]
+              md:text-[2.2rem]
+              font-light
+              leading-[1.02]
+              tracking-[-0.07em]
+              text-white/92
+            "
+          >
+            {item.text}
+          </p>
 
-                      bg-[#ff2d2d]
-                    "
-                  />
+          {/* BOTTOM FADE */}
+          <div
+            className="
+              mt-8
 
-                  <span
-                    className="
-                      text-[10px]
-                      uppercase
+              h-px
+              w-32
 
-                      tracking-[0.4em]
-
-                      text-white/35
-                    "
-                  >
-                    Manifesto
-                  </span>
-                </div>
-
-                <div
-                  className="
-                    font-display
-
-                    text-[1.6rem]
-
-                    leading-none
-                    tracking-[-0.08em]
-
-                    text-white/15
-                  "
-                >
-                  {item.id}
-                </div>
-              </div>
-
-              {/* TEXT */}
-              <p
-                className="
-                  relative
-                  z-10
-
-                  text-[1.3rem]
-                  sm:text-[1.6rem]
-                  md:text-[2rem]
-
-                  font-light
-
-                  leading-[1.15]
-                  tracking-[-0.04em]
-
-                  text-white/90
-                "
-              >
-                {item.text}
-              </p>
-
-              {/* HOVER LIGHT */}
-              <div
-                className="
-                  absolute
-                  inset-0
-
-                  opacity-0
-
-                  transition-opacity
-                  duration-500
-
-                  group-hover:opacity-100
-
-                  bg-[radial-gradient(circle_at_top_right,rgba(255,45,45,0.14),transparent_45%)]
-                "
-              />
-            </motion.div>
-          ))}
+              bg-gradient-to-r
+              from-[#ff2d2d]
+              to-transparent
+            "
+          />
         </div>
+      </motion.div>
+    ))}
+  </div>
+</div>
 
         {/* BOTTOM STATEMENT */}
         <motion.div

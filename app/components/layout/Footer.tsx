@@ -115,11 +115,11 @@ export default function Footer() {
           relative
           z-10
 
-          px-6
+     px-3
           py-20
 
-          md:px-10
-          lg:px-16
+    
+         
         "
       >
         {/* TOP STRIP */}
@@ -181,7 +181,7 @@ export default function Footer() {
           className="
             grid
             gap-20
-
+px-5 md:px-36
             lg:grid-cols-[1.1fr_0.9fr]
             lg:items-start
           "
@@ -226,7 +226,7 @@ export default function Footer() {
                 text-white/50
               "
             >
-              The future belongs to organizations that communicate with clarity, evolve with direction and build meaningful audience connection. 
+              The future belongs to organizations that communicate with clarity, evolve with direction and build meaningful audience connection.
 
             </p>
 
@@ -453,7 +453,26 @@ export default function Footer() {
                 Interested in working with us?
               </p>
 
-              <div className="space-y-3">
+              <div className="space-y-2">
+                <a
+                  href="mailto:letstalk@thesociyo.com"
+                  className="
+                    block
+
+                    text-base
+
+                    text-white
+
+                    transition-all
+                    duration-500
+
+                    hover:text-[#fe0000]
+                  "
+                >
+                  letstalk@thesociyo.com
+
+                </a>
+
                 <a
                   href="mailto:thesociyo@gmail.com"
                   className="
@@ -469,6 +488,7 @@ export default function Footer() {
                     hover:text-[#fe0000]
                   "
                 >
+
                   thesociyo@gmail.com
                 </a>
 
