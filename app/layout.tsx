@@ -7,6 +7,7 @@ import CustomCursor from "@/app/components/ui/CustomCursor";
 import { Bebas_Neue, Inter_Tight } from "next/font/google";
 import Navbar from "@/app/components/layout/navbar/Navbar";
 import Footer from "@/app/components/layout/Footer";
+import ScrollToTop from "@/app/components/ui/ScrollToTop";
 
 export const metadata: Metadata = {
   title:
@@ -109,23 +110,24 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className="
+        className={`
+          ${bebas.variable}
+          ${interTight.variable}
+
           bg-[var(--background)]
           text-[var(--text)]
           antialiased
           overflow-x-hidden
           transition-colors
           duration-500
-          ${bebas.variable}
-          ${interTight.variable}
-        "
+        `}
       >
         {/* Custom Cursor */}
         <CustomCursor />
 
         {/* Smooth Scroll */}
         <SmoothScroll>
-          {/* Global Navbar */}
+          {/* Navbar */}
           <Navbar />
 
           {/* Main Content */}
@@ -133,7 +135,10 @@ export default function RootLayout({
             {children}
           </main>
 
-          {/* Global Footer */}
+          {/* Scroll To Top */}
+          <ScrollToTop />
+
+          {/* Footer */}
           <Footer />
         </SmoothScroll>
       </body>

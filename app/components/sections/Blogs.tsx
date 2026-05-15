@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import {
   motion,
@@ -11,43 +12,7 @@ import {
 
 import { useRef } from "react";
 
-const blogs = [
-  {
-    id: "01",
-    category: "Strategy",
-    title: "Attention Is No Longer Communication.",
-    description:
-      "Visibility without emotional connection disappears instantly. Modern communication requires memory, clarity and narrative consistency.",
-    href: "/blogs/attention-is-no-longer-communication",
-  },
-
-  {
-    id: "02",
-    category: "Narrative",
-    title: "Influence Begins Before Campaigns Start.",
-    description:
-      "Public perception is shaped long before advertising begins. Systems, behavior and storytelling create credibility first.",
-    href: "/blogs/influence-begins-before-campaigns-start",
-  },
-
-  {
-    id: "03",
-    category: "Digital",
-    title: "Brands Are Becoming Living Ecosystems.",
-    description:
-      "Web, media, identity, motion and interaction now function together as one continuous communication layer.",
-    href: "/blogs/brands-are-becoming-living-ecosystems",
-  },
-
-  {
-    id: "04",
-    category: "Philosophy",
-    title: "People Remember Emotional Precision.",
-    description:
-      "The strongest communication is not louder. It is sharper, emotionally aligned and strategically intentional.",
-    href: "/blogs/people-remember-emotional-precision",
-  },
-];
+import { blogs } from "@/app/data/blogs/blogs";
 
 export default function BlogsPage() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -74,7 +39,8 @@ export default function BlogsPage() {
       className="
         relative
         overflow-hidden
-
+ px-0
+          md:px-40
         bg-black
         text-white
       "
@@ -107,7 +73,7 @@ export default function BlogsPage() {
         className="
           absolute
           inset-0
-
+         
           opacity-[0.04]
 
           bg-[linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)]
@@ -123,7 +89,7 @@ export default function BlogsPage() {
 
           absolute
           left-1/2
-          top-[10%]
+          top-[8%]
 
           -translate-x-1/2
 
@@ -271,283 +237,271 @@ export default function BlogsPage() {
           </div>
         </div>
 
-        {/* BLOG FLOW */}
-        <div className="space-y-6">
-          {blogs.map((item, index) => (
-            <motion.div
-              key={item.id}
-              initial={{
-                opacity: 0,
-                y: 60,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.2,
-              }}
-              transition={{
-                duration: 1,
-                delay: index * 0.08,
-              }}
-            >
-              <Link
-                href={item.href}
-                className="
-                  group
-                  relative
+{/* BLOG FLOW */}
+<div className="space-y-4 md:space-y-5">
+  {blogs.map((item, index) => (
+    <motion.div
+      key={item.id}
+      initial={{
+        opacity: 0,
+        y: 40,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.2,
+      }}
+      transition={{
+        duration: 0.8,
+        delay: index * 0.05,
+      }}
+    >
+      <Link
+        href={item.link}
+        target="_blank"
+        className="
+          group
+          relative
 
-                  block
+          block
 
-                  overflow-hidden
+          overflow-hidden
 
-                  border
-                  border-white/10
+          border
+          border-white/10
 
-                  bg-white/[0.02]
+          bg-white/[0.02]
 
-                  p-6
-                  md:p-10
-                "
-              >
-                {/* HOVER LIGHT */}
-                <div
-                  className="
-                    absolute
-                    inset-0
+          transition-all
+          duration-500
 
-                    opacity-0
+          hover:border-[#ff2d2d]/30
+        "
+      >
+        {/* HOVER GLOW */}
+        <div
+          className="
+            absolute
+            inset-0
 
-                    transition-opacity
-                    duration-700
+            opacity-0
 
-                    group-hover:opacity-100
+            transition-opacity
+            duration-700
 
-                    bg-[radial-gradient(circle_at_top_right,rgba(255,45,45,0.14),transparent_45%)]
-                  "
-                />
+            group-hover:opacity-100
 
-                {/* TOP */}
-                <div
-                  className="
-                    relative
-                    z-10
+            bg-[radial-gradient(circle_at_right,rgba(255,45,45,0.10),transparent_45%)]
+          "
+        />
 
-                    mb-10
-
-                    flex
-                    items-center
-                    justify-between
-                  "
-                >
-                  <div
-                    className="
-                      flex
-                      items-center
-                      gap-4
-                    "
-                  >
-                    <span
-                      className="
-                        text-[10px]
-                        uppercase
-
-                        tracking-[0.45em]
-
-                        text-white/30
-                      "
-                    >
-                      {item.category}
-                    </span>
-
-                    <div
-                      className="
-                        h-px
-                        w-10
-
-                        bg-[#ff2d2d]
-                      "
-                    />
-                  </div>
-
-                  <div
-                    className="
-                      font-display
-
-                      text-[1.6rem]
-
-                      leading-none
-                      tracking-[-0.08em]
-
-                      text-white/15
-                    "
-                  >
-                    {item.id}
-                  </div>
-                </div>
-
-                {/* CONTENT */}
-                <div
-                  className="
-                    grid
-                    gap-10
-
-                    xl:grid-cols-[1fr_320px]
-                    xl:items-end
-                  "
-                >
-                  <h2
-                    className="
-                      max-w-5xl
-
-                      font-display
-                      uppercase
-
-                      text-[2.4rem]
-                      sm:text-[3rem]
-                      md:text-[4rem]
-                      xl:text-[5rem]
-
-                      leading-[0.88]
-                      tracking-[-0.09em]
-
-                      text-white
-
-                      transition-all
-                      duration-700
-
-                      group-hover:translate-x-3
-                    "
-                  >
-                    {item.title}
-                  </h2>
-
-                  <div>
-                    <p
-                      className="
-                        text-sm
-                        md:text-base
-
-                        leading-[1.9]
-
-                        text-white/55
-                      "
-                    >
-                      {item.description}
-                    </p>
-
-                    <div
-                      className="
-                        mt-8
-
-                        flex
-                        items-center
-                        gap-4
-                      "
-                    >
-                      <div
-                        className="
-                          h-px
-                          w-12
-
-                          bg-white/20
-
-                          transition-all
-                          duration-700
-
-                          group-hover:w-20
-                          group-hover:bg-[#ff2d2d]
-                        "
-                      />
-
-                      <span
-                        className="
-                          text-[10px]
-                          uppercase
-
-                          tracking-[0.45em]
-
-                          text-white/30
-                        "
-                      >
-                        Read Note
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* BOTTOM */}
         <div
           className="
             relative
+            z-10
 
-            mt-28
+            grid
+            gap-0
 
-            border-t
-            border-white/10
-
-            pt-14
+            md:grid-cols-[260px_1fr]
           "
         >
+          {/* IMAGE */}
+          <div
+            className="
+              relative
+
+              h-[240px]
+              md:h-full
+
+              overflow-hidden
+            "
+          >
+            <Image
+              src={item.image}
+              alt={item.title}
+              fill
+              className="
+                object-cover
+
+                transition-transform
+                duration-700
+
+                group-hover:scale-105
+              "
+            />
+
+            {/* OVERLAY */}
+            <div
+              className="
+                absolute
+                inset-0
+
+                bg-gradient-to-t
+                from-black/60
+                via-black/10
+                to-transparent
+              "
+            />
+          </div>
+
+          {/* CONTENT */}
           <div
             className="
               flex
               flex-col
-              gap-8
+              justify-between
 
-              md:flex-row
-              md:items-end
-              md:justify-between
+              p-6
+              md:p-8
             "
           >
-            <p
+            {/* TOP */}
+            <div
               className="
-                max-w-2xl
+                mb-10
 
-                text-lg
-                md:text-2xl
-
-                leading-[1.7]
-
-                text-white/55
+                flex
+                items-center
+                justify-between
               "
             >
-              Communication evolves constantly.
-              Attention disappears quickly.
-              Meaningful systems survive longer.
-            </p>
+              <div
+                className="
+                  flex
+                  items-center
+                  gap-4
+                "
+              >
+                <span
+                  className="
+                    text-[10px]
+                    uppercase
 
-            <h2
+                    tracking-[0.45em]
+
+                    text-[#ff2d2d]
+                  "
+                >
+                  {item.date}
+                </span>
+
+                <div
+                  className="
+                    h-px
+                    w-8
+
+                    bg-white/20
+                  "
+                />
+              </div>
+
+              <span
+                className="
+                  font-display
+
+                  text-[1.2rem]
+
+                  tracking-[-0.08em]
+
+                  text-white/15
+                "
+              >
+                {item.id}
+              </span>
+            </div>
+
+            {/* MAIN */}
+            <div>
+              <h2
+                className="
+                  max-w-4xl
+
+                  font-display
+                  uppercase
+
+                  text-[1.8rem]
+                  sm:text-[2.2rem]
+                  md:text-[2.7rem]
+
+                  leading-[0.9]
+                  tracking-[-0.08em]
+
+                  text-white
+
+                  transition-all
+                  duration-500
+
+                  group-hover:translate-x-2
+                "
+              >
+                {item.title}
+              </h2>
+
+              <p
+                className="
+                  mt-5
+
+                  max-w-3xl
+
+                  text-sm
+                  md:text-[15px]
+
+                  leading-[1.9]
+
+                  text-white/50
+                "
+              >
+                {item.shortDescription}
+              </p>
+            </div>
+
+            {/* BOTTOM */}
+            <div
               className="
-                font-display
-                uppercase
+                mt-10
 
-                text-[4rem]
-                md:text-[6rem]
-
-                leading-[0.85]
-                tracking-[-0.12em]
-
-                text-transparent
-
-                bg-gradient-to-b
-                from-[#ff2d2d]
-                via-[#ff8a8a]
-                to-white
-
-                bg-clip-text
+                flex
+                items-center
+                gap-4
               "
             >
-              NOTES
-            </h2>
+              <div
+                className="
+                  h-px
+                  w-10
+
+                  bg-[#ff2d2d]
+
+                  transition-all
+                  duration-500
+
+                  group-hover:w-20
+                "
+              />
+
+              <span
+                className="
+                  text-[10px]
+                  uppercase
+
+                  tracking-[0.45em]
+
+                  text-white/35
+                "
+              >
+                Open Article
+              </span>
+            </div>
           </div>
         </div>
+      </Link>
+    </motion.div>
+  ))}
+</div>
       </section>
     </main>
   );
