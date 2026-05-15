@@ -20,7 +20,7 @@ export default function InsideSociyo() {
         overflow-hidden
 
         bg-black
-
+px-1md:px-24
         py-28
         md:py-40
       "
