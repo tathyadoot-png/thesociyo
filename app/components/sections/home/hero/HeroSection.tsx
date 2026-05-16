@@ -1,6 +1,5 @@
 import HeroScene from "@/app/components/r3f/HeroScene";
 import HeroContent from "./HeroContent";
-import Atmosphere from "@/app/components/r3f/Atmosphere";
 
 export default function HeroSection() {
   return (
@@ -22,9 +21,6 @@ export default function HeroSection() {
       >
         {/* 3D Scene */}
         <HeroScene />
-
-        {/* Atmosphere */}
-        {/* <Atmosphere /> */}
 
         {/* Content */}
         <HeroContent />

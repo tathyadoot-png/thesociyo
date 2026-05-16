@@ -18,6 +18,8 @@ export default function ManifestoSection() {
         bg-[#05080F]
         py-24 md:py-32
         border-t border-white/20
+        px-5
+        
       "
     >
       {/* BACKGROUND */}

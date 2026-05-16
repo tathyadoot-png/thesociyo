@@ -14,8 +14,9 @@ export default function SignalField() {
     groupRef.current.rotation.z =
       Math.sin(state.clock.elapsedTime * 0.05) * 0.03;
 
+    // ↓ thoda neeche shift
     groupRef.current.position.y =
-      Math.sin(state.clock.elapsedTime * 0.08) * 0.1;
+      -0.5 + Math.sin(state.clock.elapsedTime * 0.08) * 0.1;
   });
 
   return (
