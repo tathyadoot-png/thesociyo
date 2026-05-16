@@ -80,3 +80,14 @@ body {
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
 }
+
+
+@keyframes drift {
+  0% { transform: translateX(-20%); }
+  100% { transform: translateX(20%); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
+}

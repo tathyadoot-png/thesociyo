@@ -41,13 +41,9 @@ export default function ManifestoSection() {
       className="
         relative
         overflow-hidden
-
         bg-[#050505]
-
-    px-10
+        px-10
         md:px-48
- 
-
         py-24
         md:py-32
       "

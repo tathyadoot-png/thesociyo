@@ -5,48 +5,30 @@ import { PerspectiveCamera } from "@react-three/drei";
 
 import SignalField from "./SignalField";
 import TransmissionLines from "./TransmissionLines";
-import ParticleField from "./ParticleField";
+import CinematicNexus from "./CinematicNexus";
 
 export default function HeroScene() {
   return (
     <div className="absolute inset-0 z-0">
-      <Canvas
-        dpr={[1, 2]}
-        gl={{
-          antialias: true,
-          alpha: true,
-        }}
-      >
-        {/* Camera */}
-        <PerspectiveCamera
-          makeDefault
-          position={[0, 0, 8]}
-          fov={45}
-        />
+ <Canvas
+  dpr={[1, 1.5]}           // ← Reduced from [1,2]
+  gl={{
+    antialias: true,
+    alpha: true,
+    powerPreference: "high-performance",
+    preserveDrawingBuffer: false,
+  }}
+  style={{ background: 'transparent' }}
+>
+  <fog attach="fog" args={["#0A0B1A", 8, 20]} />   // ← Match background
 
-        {/* Atmospheric Fog */}
-        <fog attach="fog" args={["#000000", 6, 18]} />
+  <pointLight position={[0, 0, 4]} intensity={1.2} color="#fe0000" />
+  <pointLight position={[-4, 2, -2]} intensity={0.3} color="#ffffff" />
 
-        {/* Cinematic Lighting */}
-        <pointLight
-          position={[0, 0, 4]}
-          intensity={1.5}
-          color="#fe0000"
-        />
-
-        <pointLight
-          position={[-4, 2, -2]}
-          intensity={0.4}
-          color="#ffffff"
-        />
-
-        {/* Systems */}
-        <TransmissionLines />
-
-        <ParticleField />
-
-        <SignalField />
-      </Canvas>
+  <TransmissionLines />
+  <CinematicNexus />
+  <SignalField />
+</Canvas>
     </div>
   );
 }
