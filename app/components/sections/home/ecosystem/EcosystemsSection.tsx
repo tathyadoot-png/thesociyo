@@ -110,7 +110,7 @@ export default function EcosystemsSection() {
                 transition={{ duration: 1 }}
                 src={item.image}
                 alt={item.title}
-                className="aspect-[4/5] w-full object-cover grayscale brightness-[0.72] contrast-[1.05]"
+                className="aspect-[4/5] w-full object-cover  brightness-[0.72] contrast-[1.05]"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />

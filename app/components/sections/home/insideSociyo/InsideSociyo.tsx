@@ -38,7 +38,7 @@ export default function InsideSociyo() {
               src="/About-Us.jpg"
               alt="Inside Sociyo"
               fill
-              className="object-cover grayscale transition-all duration-[2500ms] hover:scale-105 hover:grayscale-0"
+              className="object-cover  transition-all duration-[2500ms] hover:scale-105 hover:grayscale-0"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
           </motion.div>

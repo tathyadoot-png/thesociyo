@@ -24,47 +24,7 @@ export default function HeroText() {
       style={{ opacity: heroOpacity, scale: heroScale, filter: blurFilter }}
       className="relative flex min-h-[100svh] md:min-h-screen items-center justify-center overflow-hidden sm:px-6"
     >
-      {/* SOFT CINEMATIC SWEEP - Left side ka heavy red kam kiya */}
-      {/* <motion.div
-        animate={{ x: ["-100%", "120%"] }}
-        transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
-        className="
-          absolute top-0 left-0 h-full w-[25vw]
-          bg-[linear-gradient(to_right,transparent,rgba(254,0,0,0.06),transparent)]
-          blur-3xl
-          pointer-events-none
-        "
-      /> */}
 
-      <motion.div
-  animate={{
-    x: [0, 40, 0],
-    y: [0, -30, 0],
-    opacity: [0.18, 0.28, 0.18],
-  }}
-  transition={{
-    duration: 12,
-    repeat: Infinity,
-    ease: "easeInOut",
-  }}
-  className="
-    absolute
-
-    left-[-10%]
-    top-[10%]
-
-    h-[32rem]
-    w-[32rem]
-
-    rounded-full
-
-    bg-[radial-gradient(circle,rgba(0,140,255,0.18),transparent_70%)]
-
-    blur-[140px]
-
-    pointer-events-none
-  "
-/>
 
       {/* Editorial Frame */}
       <div className="pointer-events-none absolute inset-1 sm:inset-4 md:inset-6 lg:inset-8 xl:inset-10 border border-white/10 opacity-40" />
@@ -125,13 +85,7 @@ export default function HeroText() {
                   </motion.h1>
                 </div>
 
-                {/* SIGNAL LINE */}
-                {/* <motion.div
-                  initial={{ scaleX: 0, opacity: 0 }}
-                  animate={{ scaleX: 1, opacity: 1 }}
-                  transition={{ duration: 1.5, delay: 0.8 + index * 0.15 }}
-                  className="mt-2 h-px w-[140px] md:w-[240px] origin-center bg-gradient-to-r from-transparent via-red-500 to-transparent"
-                /> */}
+            
 
                 {/* SUBTITLE */}
                 <motion.p

@@ -93,7 +93,7 @@ export default function CapabilitiesSection() {
         w-full
         object-cover
 
-        grayscale
+       
 
         transition-all
         duration-[2000ms]
