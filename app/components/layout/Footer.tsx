@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import CinematicBackground from "@/app/components/cinematic/CinematicBackground";
 
 import {
   FaInstagram,
@@ -86,30 +87,25 @@ export default function Footer() {
         relative
         overflow-hidden
    
-        bg-black
+       bg-[#05080F]
         text-white
       "
     >
-      {/* ATMOSPHERE */}
-      <div
-        className="
-          absolute
-          inset-0
-          bg-[radial-gradient(circle_at_bottom,rgba(254,0,0,0.12),transparent_60%)]
-        "
-      />
+      {/* CINEMATIC BG */}
+<CinematicBackground />
 
-      {/* GRID */}
-      <div
-        className="
-          absolute
-          inset-0
-          opacity-[0.03]
-          bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)]
-          bg-[size:90px_90px]
-        "
-      />
+{/* DARK OVERLAY */}
+<div
+  className="
+    absolute
+    inset-0
 
+    bg-black/25
+  "
+/>
+
+  
+      
       <div
         className="
           relative

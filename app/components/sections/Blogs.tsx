@@ -14,6 +14,9 @@ import { useRef } from "react";
 
 import { blogs } from "@/app/data/blogs/blogs";
 
+import CinematicBackground from "@/app/components/cinematic/CinematicBackground";
+import CinematicSectionHeading from "../ui/CinematicSectionHeading";
+
 export default function BlogsPage() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
@@ -39,13 +42,28 @@ export default function BlogsPage() {
       className="
         relative
         overflow-hidden
- px-0
-          md:px-40
-        bg-black
+
+        px-0
+        md:px-40
+
+        bg-[#05080F]
         text-white
       "
     >
-      {/* ATMOSPHERE */}
+      {/* CINEMATIC BG */}
+      <CinematicBackground />
+
+      {/* DARK OVERLAY */}
+      <div
+        className="
+          absolute
+          inset-0
+
+          bg-[#05080F]/50
+        "
+      />
+
+      {/* RED GLOW */}
       <motion.div
         style={{
           y: glowY,
@@ -62,7 +80,7 @@ export default function BlogsPage() {
 
           rounded-full
 
-          bg-[#ff2d2d]/10
+          bg-[#fe0000]/8
 
           blur-[160px]
         "
@@ -73,10 +91,10 @@ export default function BlogsPage() {
         className="
           absolute
           inset-0
-         
-          opacity-[0.04]
 
-          bg-[linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)]
+          opacity-[0.03]
+
+          bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]
 
           bg-[size:90px_90px]
         "
@@ -122,386 +140,309 @@ export default function BlogsPage() {
           xl:px-16
         "
       >
-        {/* TOP */}
-        <div
-          className="
-            mb-20
+   
+      {/* TOP */}
+<div
+  className="
+    mb-20
 
-            border-b
-            border-white/10
+    border-b
+    border-white/10
 
-            pb-14
-          "
-        >
-          {/* LABEL */}
-          <div
-            className="
-              mb-8
+    pb-14
+  "
+>
+  <CinematicSectionHeading
+    sectionLabel="Thoughts & Perspectives"
+    heading={{
+      first: "Ideas",
+      highlight: "Influence",
+      last: "Become",
+    }}
+    shortText="
+      Thoughts around communication, systems,
+      digital behavior, public perception and
+      cinematic storytelling.
+    "
+    className="
+      !mb-0
+      !pb-0
+    "
+  />
+</div>
 
-              flex
-              items-center
-              gap-4
-            "
-          >
-            <div
-              className="
-                h-px
-                w-14
-
-                bg-[#ff2d2d]
-              "
-            />
-
-            <span
-              className="
-                text-[10px]
-                uppercase
-
-                tracking-[0.6em]
-
-                text-white/40
-              "
+        {/* BLOG FLOW */}
+        <div className="space-y-8
+    md:space-y-10
+    xl:space-y-14">
+          {blogs.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{
+                opacity: 0,
+                y: 40,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.2,
+              }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.05,
+              }}
             >
-              Thoughts & Perspectives
-            </span>
-          </div>
-
-          {/* HERO */}
-          <div
-            className="
-              grid
-              gap-10
-
-              xl:grid-cols-[1fr_380px]
-              xl:items-end
-            "
-          >
-            <div>
-              <h1
+              <Link
+                href={item.link}
+                target="_blank"
                 className="
-                  max-w-6xl
+                  group
+                  relative
 
-                  font-display
-                  uppercase
+                  block
 
-                  text-[4rem]
-                  sm:text-[6rem]
-                  md:text-[8rem]
-                  xl:text-[10rem]
+                  overflow-hidden
 
-                  leading-[0.8]
-                  tracking-[-0.13em]
+                  rounded-[2rem]
 
-                  text-white
+                  border
+                  border-white/10
+
+                  bg-[#07111F]/60
+
+                  backdrop-blur-xl
+
+                  transition-all
+                  duration-500
+
+                  hover:border-[#fe0000]/30
                 "
               >
-                Ideas
-                <br />
-
-                Become
-                <br />
-
-                <span
+                {/* HOVER GLOW */}
+                <div
                   className="
-                    text-transparent
+                    absolute
+                    inset-0
 
-                    bg-gradient-to-b
-                    from-[#ff2d2d]
-                    via-[#ff8a8a]
-                    to-white
+                    opacity-0
 
-                    bg-clip-text
+                    transition-opacity
+                    duration-700
+
+                    group-hover:opacity-100
+
+                    bg-[radial-gradient(circle_at_right,rgba(0,140,255,0.10),transparent_45%)]
                   "
-                >
-                  Influence
-                </span>
-              </h1>
-            </div>
-
-            <p
-              className="
-                max-w-md
-
-                text-base
-                md:text-lg
-
-                leading-[1.9]
-
-                text-white/55
-              "
-            >
-              Thoughts around communication, systems,
-              digital behavior, public perception and
-              cinematic storytelling.
-            </p>
-          </div>
-        </div>
-
-{/* BLOG FLOW */}
-<div className="space-y-4 md:space-y-5">
-  {blogs.map((item, index) => (
-    <motion.div
-      key={item.id}
-      initial={{
-        opacity: 0,
-        y: 40,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: true,
-        amount: 0.2,
-      }}
-      transition={{
-        duration: 0.8,
-        delay: index * 0.05,
-      }}
-    >
-      <Link
-        href={item.link}
-        target="_blank"
-        className="
-          group
-          relative
-
-          block
-
-          overflow-hidden
-
-          border
-          border-white/10
-
-          bg-white/[0.02]
-
-          transition-all
-          duration-500
-
-          hover:border-[#ff2d2d]/30
-        "
-      >
-        {/* HOVER GLOW */}
-        <div
-          className="
-            absolute
-            inset-0
-
-            opacity-0
-
-            transition-opacity
-            duration-700
-
-            group-hover:opacity-100
-
-            bg-[radial-gradient(circle_at_right,rgba(255,45,45,0.10),transparent_45%)]
-          "
-        />
-
-        <div
-          className="
-            relative
-            z-10
-
-            grid
-            gap-0
-
-            md:grid-cols-[260px_1fr]
-          "
-        >
-          {/* IMAGE */}
-          <div
-            className="
-              relative
-
-              h-[240px]
-              md:h-full
-
-              overflow-hidden
-            "
-          >
-            <Image
-              src={item.image}
-              alt={item.title}
-              fill
-              className="
-                object-cover
-
-                transition-transform
-                duration-700
-
-                group-hover:scale-105
-              "
-            />
-
-            {/* OVERLAY */}
-            <div
-              className="
-                absolute
-                inset-0
-
-                bg-gradient-to-t
-                from-black/60
-                via-black/10
-                to-transparent
-              "
-            />
-          </div>
-
-          {/* CONTENT */}
-          <div
-            className="
-              flex
-              flex-col
-              justify-between
-
-              p-6
-              md:p-8
-            "
-          >
-            {/* TOP */}
-            <div
-              className="
-                mb-10
-
-                flex
-                items-center
-                justify-between
-              "
-            >
-              <div
-                className="
-                  flex
-                  items-center
-                  gap-4
-                "
-              >
-                <span
-                  className="
-                    text-[10px]
-                    uppercase
-
-                    tracking-[0.45em]
-
-                    text-[#ff2d2d]
-                  "
-                >
-                  {item.date}
-                </span>
+                />
 
                 <div
                   className="
-                    h-px
-                    w-8
+                    relative
+                    z-10
 
-                    bg-white/20
+                    grid
+                    gap-0
+
+                    md:grid-cols-[260px_1fr]
                   "
-                />
-              </div>
+                >
+                  {/* IMAGE */}
+                  <div
+                    className="
+                      relative
 
-              <span
-                className="
-                  font-display
+                      h-[240px]
+                      md:h-full
 
-                  text-[1.2rem]
+                      overflow-hidden
+                    "
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="
+                        object-cover
 
-                  tracking-[-0.08em]
+                        transition-transform
+                        duration-700
 
-                  text-white/15
-                "
-              >
-                {item.id}
-              </span>
-            </div>
+                        group-hover:scale-105
+                      "
+                    />
 
-            {/* MAIN */}
-            <div>
-              <h2
-                className="
-                  max-w-4xl
+                    {/* OVERLAY */}
+                    <div
+                      className="
+                        absolute
+                        inset-0
 
-                  font-display
-                  uppercase
+                        bg-gradient-to-r
+                        from-[#05080F]
+                        via-[#07111F]/70
+                        to-transparent
+                      "
+                    />
+                  </div>
 
-                  text-[1.8rem]
-                  sm:text-[2.2rem]
-                  md:text-[2.7rem]
+                  {/* CONTENT */}
+                  <div
+                    className="
+                      flex
+                      flex-col
+                      justify-between
 
-                  leading-[0.9]
-                  tracking-[-0.08em]
+                      p-6
+                      md:p-8
+                    "
+                  >
+                    {/* TOP */}
+                    <div
+                      className="
+                        mb-10
 
-                  text-white
+                        flex
+                        items-center
+                        justify-between
+                      "
+                    >
+                      <div
+                        className="
+                          flex
+                          items-center
+                          gap-4
+                          
+                        "
+                      >
+                        <span
+                          className="
+                            text-[10px]
+                            uppercase
 
-                  transition-all
-                  duration-500
+                            tracking-[0.45em]
 
-                  group-hover:translate-x-2
-                "
-              >
-                {item.title}
-              </h2>
+                            text-[#fe0000]
+                          "
+                        >
+                          {item.date}
+                        </span>
 
-              <p
-                className="
-                  mt-5
+                        <div
+                          className="
+                            h-px
+                            w-8
 
-                  max-w-3xl
+                            bg-white/20
+                          "
+                        />
+                      </div>
 
-                  text-sm
-                  md:text-[15px]
+                      <span
+                        className="
+                          font-display
 
-                  leading-[1.9]
+                          text-[1.2rem]
 
-                  text-white/50
-                "
-              >
-                {item.shortDescription}
-              </p>
-            </div>
+                          tracking-[-0.08em]
 
-            {/* BOTTOM */}
-            <div
-              className="
-                mt-10
+                          text-white/15
+                        "
+                      >
+                        {item.id}
+                      </span>
+                    </div>
 
-                flex
-                items-center
-                gap-4
-              "
-            >
-              <div
-                className="
-                  h-px
-                  w-10
+                    {/* MAIN */}
+                    <div>
+                      <h2
+                        className="
+                          max-w-4xl
 
-                  bg-[#ff2d2d]
+                          font-display
+                          uppercase
 
-                  transition-all
-                  duration-500
+                          text-[1.8rem]
+                          sm:text-[2.2rem]
+                          md:text-[2.7rem]
 
-                  group-hover:w-20
-                "
-              />
+                          leading-[0.9]
+                          tracking-[-0.08em]
 
-              <span
-                className="
-                  text-[10px]
-                  uppercase
+                          text-white
 
-                  tracking-[0.45em]
+                          transition-all
+                          duration-500
 
-                  text-white/35
-                "
-              >
-                Open Article
-              </span>
-            </div>
-          </div>
+                          group-hover:translate-x-2
+                        "
+                      >
+                        {item.title}
+                      </h2>
+
+                      <p
+                        className="
+                          mt-5
+
+                          max-w-3xl
+
+                          text-sm
+                          md:text-[15px]
+
+                          leading-[1.9]
+
+                          text-white/50
+                        "
+                      >
+                        {item.shortDescription}
+                      </p>
+                    </div>
+
+                    {/* BOTTOM */}
+                    <div
+                      className="
+                        mt-10
+
+                        flex
+                        items-center
+                        gap-4
+                      "
+                    >
+                      <div
+                        className="
+                          h-px
+                          w-10
+
+                          bg-[#fe0000]
+
+                          transition-all
+                          duration-500
+
+                          group-hover:w-20
+                        "
+                      />
+
+                      <span
+                        className="
+                          text-[10px]
+                          uppercase
+
+                          tracking-[0.45em]
+
+                          text-white/35
+                        "
+                      >
+                        Open Article
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
         </div>
-      </Link>
-    </motion.div>
-  ))}
-</div>
       </section>
     </main>
   );

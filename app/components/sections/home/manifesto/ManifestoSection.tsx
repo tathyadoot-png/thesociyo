@@ -1,74 +1,45 @@
 "use client";
 
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
-
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 import {
   manifestoContent,
   manifestoHeading,
 } from "@/app/data/home/manifesto";
 
-import CinematicLayer from "@/app/components/cinematic/CinematicLayer";
+import CinematicBackground from "@/app/components/cinematic/CinematicBackground";
 
 export default function ManifestoSection() {
-  const sectionRef = useRef<HTMLDivElement | null>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"],
-  });
-
-  const smooth = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-  });
-
-  const glowY = useTransform(
-    smooth,
-    [0, 1],
-    [0, -120]
-  );
-
   return (
     <section
-      ref={sectionRef}
       className="
         relative
         overflow-hidden
-        bg-[#050505]
-        px-10
-        md:px-48
-        py-24
-        md:py-32
+        bg-[#05080F]
+        py-24 md:py-32
+        border-t border-white/20
       "
     >
       {/* BACKGROUND */}
-      <CinematicLayer />
+      <CinematicBackground />
 
-      {/* GLOW */}
-      <motion.div
-        style={{
-          y: glowY,
-        }}
+      {/* SOFT RED GLOW */}
+      <div
         className="
           absolute
-          right-0
+          left-1/2
           top-0
 
-          h-[28rem]
-          w-[28rem]
+          h-[26rem]
+          w-[26rem]
+
+          -translate-x-1/2
 
           rounded-full
 
-          bg-[#ff2d2d]/10
+          bg-[#fe0000]/10
 
-          blur-[140px]
+          blur-[130px]
         "
       />
 
@@ -78,9 +49,10 @@ export default function ManifestoSection() {
           absolute
           inset-0
 
-          bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)]
+          bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),
+                       linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)]
 
-          bg-[size:80px_80px]
+          bg-[size:70px_70px]
 
           opacity-20
         "
@@ -89,26 +61,26 @@ export default function ManifestoSection() {
       <div
         className="
           relative
-          z-20
+          z-10
 
-    
-        
-        
+          w-[92%]
+          xl:w-[82%]
+
+          mx-auto
         "
       >
         {/* TOP */}
         <div
           className="
             grid
-            gap-14
+            gap-16
 
-            xl:grid-cols-[1fr_420px]
-            xl:items-end
+            lg:grid-cols-[1fr_380px]
+            lg:items-end
           "
         >
           {/* LEFT */}
           <div>
-            {/* LABEL */}
             <motion.div
               initial={{
                 opacity: 0,
@@ -122,31 +94,24 @@ export default function ManifestoSection() {
                 once: true,
               }}
               transition={{
-                duration: 0.8,
+                duration: 0.7,
               }}
               className="
-                mb-8
+                mb-6
 
                 flex
                 items-center
                 gap-4
               "
             >
-              <div
-                className="
-                  h-px
-                  w-12
-
-                  bg-[#ff2d2d]
-                "
-              />
+              <div className="h-px w-10 bg-[#fe0000]" />
 
               <span
                 className="
                   text-[10px]
                   uppercase
 
-                  tracking-[0.5em]
+                  tracking-[0.45em]
 
                   text-white/40
                 "
@@ -155,11 +120,10 @@ export default function ManifestoSection() {
               </span>
             </motion.div>
 
-            {/* HEADING */}
             <motion.h2
               initial={{
                 opacity: 0,
-                y: 40,
+                y: 30,
               }}
               whileInView={{
                 opacity: 1,
@@ -169,32 +133,27 @@ export default function ManifestoSection() {
                 once: true,
               }}
               transition={{
-                duration: 1,
+                duration: 0.9,
               }}
               className="
-           
+                max-w-4xl
 
                 font-display
                 uppercase
 
-                text-[3rem]
-                sm:text-[4rem]
-                md:text-[5rem]
-                xl:text-[6rem]
+                text-[2.7rem]
+                sm:text-[3.5rem]
+                md:text-[4.5rem]
 
-                leading-[0.86]
-                tracking-[-0.08em]
+                leading-[0.92]
+                tracking-[-0.06em]
 
                 text-white
               "
             >
               {manifestoHeading.heading.first}
 
-              <span
-                className="
-                  text-[#ff2d2d]
-                "
-              >
+              <span className="text-[#fe0000]">
                 {" "}
                 {manifestoHeading.heading.highlight}
               </span>
@@ -205,8 +164,8 @@ export default function ManifestoSection() {
             </motion.h2>
           </div>
 
-          {/* RIGHT TEXT */}
-          <motion.div
+          {/* RIGHT */}
+          <motion.p
             initial={{
               opacity: 0,
               y: 20,
@@ -219,230 +178,163 @@ export default function ManifestoSection() {
               once: true,
             }}
             transition={{
-              duration: 1,
+              duration: 0.7,
               delay: 0.15,
             }}
             className="
-              xl:pb-2
+              text-base
+              md:text-lg
+
+              leading-relaxed
+
+              text-white/55
             "
           >
-            <p
-              className="
-                text-base
-                md:text-lg
-
-                leading-relaxed
-
-                text-white/60
-              "
-            >
-              {manifestoHeading.shortText}
-            </p>
-          </motion.div>
+            {manifestoHeading.shortText}
+          </motion.p>
         </div>
 
-        {/* CONTENT */}
-<div
-  className="
-    relative
-
-    mt-24
-    md:mt-32
-  "
->
-  {/* CENTER LINE */}
-  <div
-    className="
-      absolute
-      left-1/2
-      top-0
-
-      hidden
-      md:block
-
-      h-full
-      w-px
-
-      -translate-x-1/2
-
-      bg-gradient-to-b
-      from-transparent
-      via-white/10
-      to-transparent
-    "
-  />
-
-  <div className="space-y-28 md:space-y-36">
-    {manifestoContent.map((item, index) => (
-      <motion.div
-        key={item.id}
-        initial={{
-          opacity: 0,
-          y: 80,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        viewport={{
-          once: true,
-          amount: 0.2,
-        }}
-        transition={{
-          duration: 1,
-          delay: index * 0.15,
-        }}
-        className={`
-          relative
-
-          flex
-
-          ${
-            index % 2 === 0
-              ? "justify-start"
-              : "justify-end"
-          }
-        `}
-      >
-        {/* ORB */}
+        {/* MANIFESTO ROWS */}
         <div
           className="
-            absolute
-            left-1/2
-            top-10
+            mt-20
+            md:mt-24
 
-            hidden
-            md:block
-
-            h-5
-            w-5
-
-            -translate-x-1/2
-
-            rounded-full
-
-            border
-            border-[#ff2d2d]/40
-
-            bg-black
+            divide-y
+            divide-white/6
           "
         >
-          <div
-            className="
-              absolute
-              inset-0
-
-              rounded-full
-
-              bg-[#ff2d2d]/30
-
-              blur-md
-            "
-          />
-        </div>
-
-        {/* CONTENT */}
-        <div
-          className={`
-            relative
-
-            w-full
-            md:w-[46%]
-
-            ${
-              index % 2 === 0
-                ? "md:pr-16"
-                : "md:pl-16"
-            }
-          `}
-        >
-          {/* HUGE NUMBER */}
-          <div
-            className="
-              pointer-events-none
-              absolute
-              -top-8
-              font-display
-              uppercase
-              text-[6rem]
-              md:text-[8rem]
-              leading-none
-              tracking-[-0.12em]
-              text-white/[0.03]
-            "
-          >
-            {item.id}
-          </div>
-
-          {/* SMALL LABEL */}
-          <div
-            className="
-              mb-6
-              flex
-              items-center
-              gap-4
-            "
-          >
-            <div
+          {manifestoContent.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{
+                opacity: 0,
+                y: 30,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.15,
+              }}
+              transition={{
+                duration: 0.7,
+                delay: index * 0.06,
+              }}
               className="
-                h-px
-                w-10
-                bg-[#ff2d2d]
-              "
-            />
+                group
 
-            <span
-              className="
-                text-[10px]
-                uppercase
-                tracking-[0.45em]
-                text-white/35
+                grid
+                gap-8
+
+                py-10
+                md:py-12
+
+                md:grid-cols-[80px_1fr_120px]
+                md:items-center
               "
             >
-              Manifesto
-            </span>
-          </div>
+              {/* LEFT NUMBER */}
+              <div
+                className="
+                  flex
+                  items-center
+                  gap-4
+                "
+              >
+                <div
+                  className="
+                    h-px
+                    w-8
 
-          {/* TEXT */}
-          <p
-            className="
-              relative
-              z-10
-              text-[1.7rem]
-              md:text-[2.2rem]
-              font-light
-              leading-[1.02]
-              tracking-[-0.07em]
-              text-white/92
-            "
-          >
-            {item.text}
-          </p>
+                    bg-[#fe0000]
 
-          {/* BOTTOM FADE */}
-          <div
-            className="
-              mt-8
+                    transition-all
+                    duration-300
 
-              h-px
-              w-32
+                    group-hover:w-14
+                  "
+                />
 
-              bg-gradient-to-r
-              from-[#ff2d2d]
-              to-transparent
-            "
-          />
+                <span
+                  className="
+                    font-display
+
+                    text-2xl
+
+                    tracking-[-0.08em]
+
+                    text-[#fe0000]
+                  "
+                >
+                  {item.id}
+                </span>
+              </div>
+
+              {/* TEXT */}
+              <h3
+                className="
+                  max-w-4xl
+
+                  text-[1.35rem]
+                  md:text-[1.8rem]
+
+                  font-light
+
+                  leading-[1.15]
+                  tracking-[-0.03em]
+
+                  text-white/90
+
+                  transition-all
+                  duration-300
+
+                  group-hover:text-white
+                "
+              >
+                {item.text}
+              </h3>
+
+              {/* RIGHT */}
+              <div
+                className="
+                  hidden
+                  md:flex
+
+                  justify-end
+                "
+              >
+                <div
+                  className="
+                    h-10
+                    w-10
+
+                    rounded-full
+
+                    border
+                    border-white/10
+
+                    bg-white/[0.03]
+
+                    transition-all
+                    duration-300
+
+                    group-hover:border-[#fe0000]/40
+                    group-hover:bg-[#fe0000]/10
+                  "
+                />
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </motion.div>
-    ))}
-  </div>
-</div>
 
-        {/* BOTTOM STATEMENT */}
+        {/* FINAL */}
         <motion.div
           initial={{
             opacity: 0,
-            y: 40,
+            y: 30,
           }}
           whileInView={{
             opacity: 1,
@@ -452,12 +344,10 @@ export default function ManifestoSection() {
             once: true,
           }}
           transition={{
-            duration: 1,
+            duration: 0.8,
           }}
           className="
-            relative
-
-            mt-20
+            mt-24
             md:mt-28
 
             border-t
@@ -467,37 +357,8 @@ export default function ManifestoSection() {
             md:pt-16
           "
         >
-          {/* BG WORD */}
           <div
             className="
-              pointer-events-none
-
-              absolute
-              right-0
-              top-1/2
-
-              -translate-y-1/2
-
-              font-display
-              uppercase
-
-              text-[12vw]
-
-              leading-none
-              tracking-[-0.14em]
-
-              text-white/[0.03]
-            "
-          >
-            MEMORY
-          </div>
-
-          {/* CONTENT */}
-          <div
-            className="
-              relative
-              z-10
-
               flex
               flex-col
               gap-5
@@ -515,7 +376,7 @@ export default function ManifestoSection() {
                   text-[10px]
                   uppercase
 
-                  tracking-[0.7em]
+                  tracking-[0.6em]
 
                   text-white/35
                 "
@@ -528,12 +389,12 @@ export default function ManifestoSection() {
                   font-display
                   uppercase
 
-                  text-[2.5rem]
-                  sm:text-[3rem]
-                  md:text-[4rem]
+                  text-[2rem]
+                  sm:text-[2.5rem]
+                  md:text-[3rem]
 
-                  leading-[0.9]
-                  tracking-[-0.08em]
+                  leading-[0.95]
+                  tracking-[-0.06em]
 
                   text-white
                 "
@@ -547,19 +408,19 @@ export default function ManifestoSection() {
                 font-display
                 uppercase
 
-                text-[3rem]
-                sm:text-[4rem]
-                md:text-[6rem]
+                text-[2.8rem]
+                sm:text-[3.5rem]
+                md:text-[4.5rem]
 
                 leading-none
-                tracking-[-0.1em]
+                tracking-[-0.08em]
 
                 text-transparent
 
                 bg-gradient-to-b
-                from-[#ff2d2d]
-                via-[#ff8c8c]
-                to-[#ffffff]
+                from-[#fe0000]
+                via-[#ff7a7a]
+                to-white
 
                 bg-clip-text
               "

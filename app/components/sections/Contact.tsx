@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import CinematicBackground from "@/app/components/cinematic/CinematicBackground";
+import CinematicSectionHeading from "@/app/components/ui/CinematicSectionHeading";
 
 
 export default function ContactPage() {
@@ -7,36 +9,64 @@ export default function ContactPage() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   return (
-    <main
-      className="
-        relative
-        min-h-screen
-        overflow-hidden
-        bg-black
-        text-white
-      "
-    >
+  <main
+  className="
+    relative
+    min-h-screen
+    overflow-hidden
+
+    bg-[#05080F]
+
+    text-white
+  "
+>
       {/* ATMOSPHERE */}
-      <div
-        className="
-          absolute
-          inset-0
-          bg-[radial-gradient(circle_at_top_left,rgba(254,0,0,0.12),transparent_38%)]
-        "
-      />
+      {/* CINEMATIC BG */}
+<CinematicBackground />
 
-      {/* GRID */}
-      <div
-        className="
-          absolute
-          inset-0
-          opacity-[0.035]
-          bg-[linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)]
-          bg-[size:90px_90px]
-        "
-      />
+{/* DARK OVERLAY */}
+<div
+  className="
+    absolute
+    inset-0
 
+    bg-[#05080F]/45
+  "
+/>
 
+{/* RED GLOW */}
+<div
+  className="
+    absolute
+    left-1/2
+    top-0
+
+    h-[38rem]
+    w-[38rem]
+
+    -translate-x-1/2
+
+    rounded-full
+
+    bg-[#fe0000]/8
+
+    blur-[160px]
+  "
+/>
+
+{/* GRID */}
+<div
+  className="
+    absolute
+    inset-0
+
+    opacity-[0.03]
+
+    bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]
+
+    bg-[size:90px_90px]
+  "
+/>
 
       <section
         className="
@@ -66,114 +96,58 @@ export default function ContactPage() {
     xl:items-center
   "
 >
-  {/* LEFT SIDE */}
+
+{/* LEFT SIDE */}
+<div
+  className="
+    relative
+
+    flex
+    flex-col
+    justify-center
+  "
+>
+  <CinematicSectionHeading
+    sectionLabel="Sociyo Communications"
+    heading={{
+      first: "Start",
+      highlight: "The",
+      last: "Conversation",
+    }}
+    shortText="
+      Let’s build systems, experiences and
+      communication that people don’t just notice —
+      but remember.
+    "
+    className="
+      !mb-0
+      !pb-0
+    "
+  />
+
+  {/* FADED WORD */}
   <div
     className="
-      relative
+      pointer-events-none
 
-      flex
-      flex-col
-      justify-center
+      absolute
+      -left-10
+      bottom-0
+
+      font-display
+      uppercase
+
+      text-[24vw]
+
+      leading-none
+      tracking-[-0.14em]
+
+      text-white/[0.02]
     "
   >
-    {/* SMALL LABEL */}
-    <div
-      className="
-        mb-8
-
-        flex
-        items-center
-        gap-4
-      "
-    >
-      <div
-        className="
-          h-px
-          w-14
-
-          bg-[#ff2d2d]
-        "
-      />
-
-      <span
-        className="
-          text-[10px]
-          uppercase
-
-          tracking-[0.55em]
-
-          text-white/35
-        "
-      >
-        Sociyo Communications
-      </span>
-    </div>
-
-    {/* HUGE TYPO */}
-    <h1
-      className="
-        relative
-
-        font-display
-        uppercase
-
-        leading-[0.82]
-        tracking-[-0.11em]
-
-        text-[18vw]
-        sm:text-[14vw]
-        md:text-[10vw]
-        xl:text-[7vw]
-
-        text-white
-      "
-    >
-      Start
-      <br />
-
-      <span
-        className="
-          text-transparent
-
-          bg-gradient-to-r
-          from-white
-          via-[#ff9d9d]
-          to-[#ff2d2d]
-
-          bg-clip-text
-        "
-      >
-        The
-      </span>
-
-      <br />
-
-      Conversation
-    </h1>
-
-    {/* FADED WORD */}
-    <div
-      className="
-        pointer-events-none
-
-        absolute
-        -left-10
-        bottom-0
-
-        font-display
-        uppercase
-
-        text-[24vw]
-
-        leading-none
-        tracking-[-0.14em]
-
-        text-white/[0.02]
-      "
-    >
-      TALK
-    </div>
+    TALK
   </div>
+</div>
 
   {/* RIGHT SIDE */}
   <div
@@ -192,12 +166,12 @@ export default function ContactPage() {
         relative
         overflow-hidden
 
-        rounded-[2.5rem]
+       rounded-[2.8rem]
 
         border
         border-white/10
 
-        bg-white/[0.03]
+       bg-[#07111F]/60
 
         p-7
         sm:p-10
@@ -335,7 +309,7 @@ export default function ContactPage() {
               border
               border-white/10
 
-              bg-black/30
+              bg-[#0B1628]/60
 
               p-6
             "
@@ -404,7 +378,7 @@ export default function ContactPage() {
               border
               border-white/10
 
-              bg-black/30
+              bg-[#0B1628]/60
 
               p-6
             "
@@ -453,7 +427,7 @@ export default function ContactPage() {
             border
             border-white/10
 
-            bg-black/30
+            bg-[#0B1628]/60
 
             p-6
           "
@@ -559,8 +533,8 @@ export default function ContactPage() {
               border
               border-white/10
 
-              bg-white/[0.02]
-
+              bg-[#07111F]/60
+backdrop-blur-xl
               p-8
               md:p-10
             "
@@ -633,7 +607,8 @@ export default function ContactPage() {
                     placeholder="Email Address"
                     className="
                       w-full
-
+transition-all
+duration-500
                       border-b
                       border-white/10
 
@@ -660,7 +635,8 @@ export default function ContactPage() {
                     onChange={(e) => setMessage(e.target.value)}
                     className="
                       w-full
-
+transition-all
+duration-500
                       resize-none
 
                       border-b

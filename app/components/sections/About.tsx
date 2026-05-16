@@ -1,40 +1,31 @@
 "use client";
 
 import { motion } from "framer-motion";
-
+import CinematicBackground from "@/app/components/cinematic/CinematicBackground";
 export default function AboutPage() {
   return (
-    <main
-      className="
-        relative
-        overflow-hidden
-        bg-black
-        text-white
-      "
-    >
-      {/* ATMOSPHERE */}
-      <div
-        className="
-          absolute
-          inset-0
+  <main
+  className="
+    relative
+    overflow-hidden
 
-          bg-[radial-gradient(circle_at_top_left,rgba(255,45,45,0.16),transparent_30%)]
-        "
-      />
+    bg-[#05080F]
 
-      {/* GRID */}
-      <div
-        className="
-          absolute
-          inset-0
+    text-white
+  "
+>
+   {/* CINEMATIC BG */}
+<CinematicBackground />
 
-          opacity-[0.03]
+{/* DARK BLEND */}
+<div
+  className="
+    absolute
+    inset-0
 
-          bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)]
-
-          bg-[size:80px_80px]
-        "
-      />
+    bg-black/20
+  "
+/>
 
       {/* HERO */}
       <section
@@ -52,7 +43,7 @@ export default function AboutPage() {
         "
       >
         {/* TOP */}
-        <div
+        {/* <div
           className="
             mb-20
 
@@ -106,305 +97,406 @@ export default function AboutPage() {
           >
             Narrative • Systems • Influence
           </div>
-        </div>
+        </div> */}
 
-        {/* MAIN LAYOUT */}
+      {/* MAIN LAYOUT */}
+<div
+  className="
+    relative
+
+    grid
+    gap-16
+
+    xl:grid-cols-[1fr_420px]
+    xl:items-start
+  "
+>
+  {/* LEFT SIDE */}
+  <div className="relative">
+    {/* SMALL LABEL */}
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 20,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        duration: 0.8,
+      }}
+      className="
+        mb-8
+
+        flex
+        items-center
+        gap-4
+      "
+    >
+      <div
+        className="
+          h-px
+          w-12
+
+          bg-[#fe0000]
+        "
+      />
+
+      <span
+        className="
+          text-[10px]
+          uppercase
+
+          tracking-[0.55em]
+
+          text-white/40
+        "
+      >
+        Beyond Visibility
+      </span>
+    </motion.div>
+
+    {/* HEADING */}
+    <motion.h1
+      initial={{
+        opacity: 0,
+        y: 60,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        duration: 1,
+      }}
+      className="
+        max-w-5xl
+
+        font-display
+        uppercase
+
+        text-[3.8rem]
+        sm:text-[5rem]
+        md:text-[7rem]
+        xl:text-[8rem]
+
+        leading-[0.82]
+        tracking-[-0.1em]
+
+        text-white
+      "
+    >
+      Beyond
+
+      <br />
+
+      <span
+        className="
+          text-transparent
+
+          bg-gradient-to-b
+          from-[#fe0000]
+          via-[#ff8c8c]
+          to-white
+
+          bg-clip-text
+        "
+      >
+        Visibility
+      </span>
+    </motion.h1>
+
+    {/* SUBTEXT */}
+    <motion.p
+      initial={{
+        opacity: 0,
+        y: 40,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        duration: 1,
+        delay: 0.2,
+      }}
+      className="
+        mt-10
+
+        max-w-2xl
+
+        text-base
+        md:text-xl
+
+        leading-[2]
+
+        text-white/55
+      "
+    >
+      Sociyo builds cinematic communication systems
+      where narrative, design, technology and influence
+      operate together to create long-term public memory.
+    </motion.p>
+  </div>
+
+  {/* RIGHT SIDE */}
+  <motion.div
+    initial={{
+      opacity: 0,
+      x: 40,
+    }}
+    animate={{
+      opacity: 1,
+      x: 0,
+    }}
+    transition={{
+      duration: 1,
+      delay: 0.3,
+    }}
+    className="
+      relative
+
+      flex
+      flex-col
+      gap-5
+    "
+  >
+    {/* CARD 1 */}
+    <div
+      className="
+        group
+        relative
+
+        overflow-hidden
+
+        rounded-[2rem]
+
+        border
+        border-white/10
+
+        bg-white/[0.03]
+
+        p-8
+
+        backdrop-blur-xl
+
+        transition-all
+        duration-500
+
+        hover:border-[#fe0000]/30
+      "
+    >
+      {/* GLOW */}
+      <div
+        className="
+          absolute
+          right-0
+          top-0
+
+          h-40
+          w-40
+
+          rounded-full
+
+          bg-[#fe0000]/10
+
+          blur-[100px]
+        "
+      />
+
+      {/* GRID */}
+      <div
+        className="
+          absolute
+          inset-0
+
+          opacity-[0.03]
+
+          bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)]
+
+          bg-[size:40px_40px]
+        "
+      />
+
+      <div className="relative z-10">
         <div
           className="
-            grid
-            gap-20
+            mb-8
 
-            xl:grid-cols-[1fr_420px]
+            flex
+            items-center
+            justify-between
           "
         >
-          {/* LEFT SIDE */}
-          <div>
-            {/* MASSIVE WORD */}
-            <motion.h1
-              initial={{
-                opacity: 0,
-                y: 80,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 1,
-              }}
-              className="
-                font-display
-                uppercase
-
-                text-[20vw]
-                sm:text-[16vw]
-                md:text-[11vw]
-                xl:text-[8vw]
-
-                leading-[0.72]
-                tracking-[-0.16em]
-              "
-            >
-              Beyond
-              <br />
-
-              <span
-                className="
-                  text-transparent
-
-                  bg-gradient-to-b
-                  from-[#ff2d2d]
-                  via-[#ff9d9d]
-                  to-[#ffffff]
-
-                  bg-clip-text
-                "
-              >
-                Visibility
-              </span>
-            </motion.h1>
-
-            {/* SUBTEXT */}
-            <motion.p
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 1,
-                delay: 0.2,
-              }}
-              className="
-                mt-14
-
-                max-w-2xl
-
-                text-lg
-                md:text-xl
-
-                leading-[2]
-
-                text-white/60
-              "
-            >
-              Sociyo builds cinematic communication
-              systems where narrative, design, technology
-              and influence operate together to create
-              long-term public memory.
-            </motion.p>
-          </div>
-
-          {/* RIGHT SIDE */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              x: 40,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
-            transition={{
-              duration: 1,
-              delay: 0.3,
-            }}
+          <span
             className="
-              relative
+              text-[10px]
+              uppercase
 
-              flex
-              flex-col
-              gap-6
+              tracking-[0.5em]
+
+              text-white/35
             "
           >
-            {/* CARD 1 */}
-            <div
-              className="
-                relative
+            Philosophy
+          </span>
 
-                overflow-hidden
+          <span
+            className="
+              font-display
 
-                border
-                border-white/10
+              text-[2.5rem]
 
-                bg-white/[0.03]
+              leading-none
+              tracking-[-0.1em]
 
-                p-8
-              "
-            >
-              {/* GLOW */}
-              <div
-                className="
-                  absolute
-                  right-0
-                  top-0
-
-                  h-32
-                  w-32
-
-                  rounded-full
-
-                  bg-[#ff2d2d]/10
-
-                  blur-[80px]
-                "
-              />
-
-              <div className="relative z-10">
-                <div
-                  className="
-                    mb-8
-
-                    flex
-                    items-center
-                    justify-between
-                  "
-                >
-                  <span
-                    className="
-                      text-[10px]
-                      uppercase
-
-                      tracking-[0.5em]
-
-                      text-white/35
-                    "
-                  >
-                    Philosophy
-                  </span>
-
-                  <span
-                    className="
-                      font-display
-
-                      text-[2rem]
-
-                      tracking-[-0.1em]
-
-                      text-white/10
-                    "
-                  >
-                    01
-                  </span>
-                </div>
-
-                <h2
-                  className="
-                    font-display
-                    uppercase
-
-                    text-[2rem]
-                    md:text-[3rem]
-
-                    leading-[0.9]
-                    tracking-[-0.1em]
-
-                    text-white
-                  "
-                >
-                  Communication
-                  <br />
-                  Is Strategy.
-                </h2>
-              </div>
-            </div>
-
-            {/* CARD 2 */}
-            <div
-              className="
-                relative
-
-                overflow-hidden
-
-                border
-                border-white/10
-
-                bg-white/[0.03]
-
-                p-8
-              "
-            >
-              {/* GLOW */}
-              <div
-                className="
-                  absolute
-                  left-0
-                  bottom-0
-
-                  h-32
-                  w-32
-
-                  rounded-full
-
-                  bg-[#ff2d2d]/10
-
-                  blur-[80px]
-                "
-              />
-
-              <div className="relative z-10">
-                <div
-                  className="
-                    mb-8
-
-                    flex
-                    items-center
-                    justify-between
-                  "
-                >
-                  <span
-                    className="
-                      text-[10px]
-                      uppercase
-
-                      tracking-[0.5em]
-
-                      text-white/35
-                    "
-                  >
-                    Systems
-                  </span>
-
-                  <span
-                    className="
-                      font-display
-
-                      text-[2rem]
-
-                      tracking-[-0.1em]
-
-                      text-white/10
-                    "
-                  >
-                    02
-                  </span>
-                </div>
-
-                <h2
-                  className="
-                    font-display
-                    uppercase
-
-                    text-[2rem]
-                    md:text-[3rem]
-
-                    leading-[0.9]
-                    tracking-[-0.1em]
-
-                    text-white
-                  "
-                >
-                  Designed
-                  <br />
-                  For Recall.
-                </h2>
-              </div>
-            </div>
-          </motion.div>
+              text-white/[0.08]
+            "
+          >
+            01
+          </span>
         </div>
+
+        <h2
+          className="
+            font-display
+            uppercase
+
+            text-[2rem]
+            md:text-[2.7rem]
+
+            leading-[0.9]
+            tracking-[-0.08em]
+
+            text-white
+          "
+        >
+          Communication
+          <br />
+          Is Strategy.
+        </h2>
+      </div>
+    </div>
+
+    {/* CARD 2 */}
+    <div
+      className="
+        group
+        relative
+
+        overflow-hidden
+
+        rounded-[2rem]
+
+        border
+        border-white/10
+
+        bg-white/[0.03]
+
+        p-8
+
+        backdrop-blur-xl
+
+        transition-all
+        duration-500
+
+        hover:border-[#fe0000]/30
+      "
+    >
+      {/* GLOW */}
+      <div
+        className="
+          absolute
+          left-0
+          bottom-0
+
+          h-40
+          w-40
+
+          rounded-full
+
+          bg-[#fe0000]/10
+
+          blur-[100px]
+        "
+      />
+
+      {/* GRID */}
+      <div
+        className="
+          absolute
+          inset-0
+
+          opacity-[0.03]
+
+          bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)]
+
+          bg-[size:40px_40px]
+        "
+      />
+
+      <div className="relative z-10">
+        <div
+          className="
+            mb-8
+
+            flex
+            items-center
+            justify-between
+          "
+        >
+          <span
+            className="
+              text-[10px]
+              uppercase
+
+              tracking-[0.5em]
+
+              text-white/35
+            "
+          >
+            Systems
+          </span>
+
+          <span
+            className="
+              font-display
+
+              text-[2.5rem]
+
+              leading-none
+              tracking-[-0.1em]
+
+              text-white/[0.08]
+            "
+          >
+            02
+          </span>
+        </div>
+
+        <h2
+          className="
+            font-display
+            uppercase
+
+            text-[2rem]
+            md:text-[2.7rem]
+
+            leading-[0.9]
+            tracking-[-0.08em]
+
+            text-white
+          "
+        >
+          Designed
+          <br />
+          For Recall.
+        </h2>
+      </div>
+    </div>
+  </motion.div>
+</div>
 
         {/* HUGE CENTER BLOCK */}
         <motion.div
@@ -594,18 +686,27 @@ export default function AboutPage() {
         duration: 1,
       }}
       className="
-        group
-        relative
+  group
+  relative
 
-        block
+  block
 
-        overflow-hidden
+  overflow-hidden
 
-        border
-        border-white/10
+  rounded-[2rem]
 
-        bg-black
-      "
+  border
+  border-white/10
+
+  bg-[#07111F]/70
+
+  backdrop-blur-xl
+
+  transition-all
+  duration-500
+
+  hover:border-[#fe0000]/30
+"
     >
       <div
         className="
@@ -895,19 +996,28 @@ export default function AboutPage() {
         duration: 1,
         delay: 0.1,
       }}
-      className="
-        group
-        relative
+     className="
+  group
+  relative
 
-        block
+  block
 
-        overflow-hidden
+  overflow-hidden
 
-        border
-        border-white/10
+  rounded-[2rem]
 
-        bg-black
-      "
+  border
+  border-white/10
+
+  bg-[#07111F]/70
+
+  backdrop-blur-xl
+
+  transition-all
+  duration-500
+
+  hover:border-[#fe0000]/30
+"
     >
       <div
         className="

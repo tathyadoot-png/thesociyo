@@ -12,7 +12,7 @@ import {
 import { useRef } from "react";
 
 import CinematicLayer from "@/app/components/cinematic/CinematicLayer";
-
+import CinematicBackground from "@/app/components/cinematic/CinematicBackground";
 import {
   associations,
   associationsHeading,
@@ -44,37 +44,17 @@ export default function SelectedAssociationsSection() {
         relative
         overflow-hidden
 
-        bg-black
-
+      bg-[#05080F]
+border-t border-white/20
         py-24
         md:py-32
       "
     >
       {/* BACKGROUND */}
-      <CinematicLayer />
+      <CinematicBackground />
+ 
 
-      {/* GLOW */}
-      <motion.div
-        style={{
-          y: glowY,
-        }}
-        className="
-          absolute
-          left-1/2
-          top-[10%]
-
-          h-[34rem]
-          w-[34rem]
-
-          -translate-x-1/2
-
-          rounded-full
-
-          bg-[#ff2d2d]/10
-
-          blur-[140px]
-        "
-      />
+     
 
 
 
