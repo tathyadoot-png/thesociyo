@@ -9,6 +9,7 @@ import { corporateCommunicationData } from "@/app/data/work/corporateCommunicati
 
 const data = corporateCommunicationData;
 
+
 const fadeUp: Variants = {
   initial: {
     opacity: 0,
@@ -19,11 +20,10 @@ const fadeUp: Variants = {
     y: 0,
     transition: {
       duration: 1.1,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
-
 export default function CorporateCommunication() {
   return (
     <main className="relative overflow-hidden bg-[#05080F] md:px-32 pt-32 md:pt-40 text-white">
@@ -158,7 +158,10 @@ export default function CorporateCommunication() {
 
             {/* TITLE */}
             <motion.h1
-              {...fadeUp}
+              variants={fadeUp}
+              initial="initial"
+              whileInView="whileInView"
+              viewport={{ once: true, amount: 0.2 }}
               className="
                 relative
                 z-10
@@ -182,7 +185,10 @@ export default function CorporateCommunication() {
 
             {/* INFO */}
             <motion.div
-              {...fadeUp}
+              variants={fadeUp}
+initial="initial"
+whileInView="whileInView"
+viewport={{ once: true, amount: 0.2 }}
               transition={{
                 delay: 0.2,
                 duration: 1,
@@ -314,7 +320,10 @@ export default function CorporateCommunication() {
         <div className="grid gap-20 xl:grid-cols-[0.6fr_1fr]">
           {/* LEFT VISUAL */}
           <motion.div
-            {...fadeUp}
+            variants={fadeUp}
+initial="initial"
+whileInView="whileInView"
+viewport={{ once: true, amount: 0.2 }}
             className="sticky top-24 h-fit"
           >
             <div
@@ -358,7 +367,10 @@ export default function CorporateCommunication() {
           {/* RIGHT */}
           <div>
             <motion.span
-              {...fadeUp}
+              variants={fadeUp}
+initial="initial"
+whileInView="whileInView"
+viewport={{ once: true, amount: 0.2 }}
               className="
                 text-[10px]
                 uppercase
@@ -372,7 +384,10 @@ export default function CorporateCommunication() {
             </motion.span>
 
             <motion.h2
-              {...fadeUp}
+              variants={fadeUp}
+initial="initial"
+whileInView="whileInView"
+viewport={{ once: true, amount: 0.2 }}
               className="
                 mt-8
 
