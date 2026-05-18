@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 import CinematicBackground from "@/app/components/cinematic/CinematicBackground";
 
@@ -10,25 +10,18 @@ import { politicalCommunicationData } from "@/app/data/work/politicalCommunicati
 
 const data = politicalCommunicationData;
 
-const fadeUp = {
+const fadeUp: Variants = {
   initial: {
     opacity: 0,
-    y: 80,
+    y: 100,
   },
-
-  whileInView: {
+  visible: {
     opacity: 1,
     y: 0,
-  },
-
-  viewport: {
-    once: true,
-    amount: 0.2,
-  },
-
-  transition: {
-    duration: 1,
-    ease: [0.22, 1, 0.36, 1],
+    transition: {
+      duration: 1.1,
+      ease: [0.22, 1, 0.36, 1] as const,
+    },
   },
 };
 
@@ -96,7 +89,10 @@ export default function PoliticalCommunication() {
           {/* CENTER */}
           <div className="relative py-20">
             <motion.div
-              {...fadeUp}
+              variants={fadeUp}
+initial="initial"
+whileInView="whileInView"
+viewport={{ once: true, amount: 0.2 }}
               className="
                 absolute
                 -top-10
@@ -117,7 +113,10 @@ export default function PoliticalCommunication() {
             </motion.div>
 
             <motion.h1
-              {...fadeUp}
+              variants={fadeUp}
+initial="initial"
+whileInView="whileInView"
+viewport={{ once: true, amount: 0.2 }}
               className="
                 relative
                 z-10
