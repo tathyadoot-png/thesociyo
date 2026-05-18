@@ -48,7 +48,7 @@ export default function MenuLinks({
 
         overflow-hidden
 
-        py-6
+   py-2 md:py-6
       "
     >
       {/* BG GLOW */}
@@ -68,14 +68,14 @@ export default function MenuLinks({
 
           rounded-full
 
-          bg-[#ff2d2d]/10
+          bg-[#05080F] 
 
           blur-[120px]
         "
       />
 
       {/* BG WORD */}
-      <div
+      {/* <div
         className="
           pointer-events-none
 
@@ -100,7 +100,7 @@ export default function MenuLinks({
         "
       >
         SOCIYO
-      </div>
+      </div> */}
 
       {/* LINKS */}
       <div
@@ -143,7 +143,7 @@ export default function MenuLinks({
                 items-center
                 justify-between
 
-                py-4
+                py-3
                 md:py-5
               "
             >
@@ -153,6 +153,8 @@ export default function MenuLinks({
                   flex
                   items-center
                   gap-4
+
+                  px-5
                 "
               >
                 {/* NUMBER */}
@@ -204,11 +206,10 @@ export default function MenuLinks({
 
                       font-display
                       uppercase
-
-                      text-[13vw]
-                      sm:text-[10vw]
-                      md:text-[6vw]
-                      lg:text-[4.5vw]
+text-[11vw]
+sm:text-[11vw]
+md:text-[6vw]
+lg:text-[4.5vw]
 
                       leading-[0.85]
                       tracking-[-0.1em]

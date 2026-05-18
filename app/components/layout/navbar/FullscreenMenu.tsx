@@ -71,7 +71,7 @@ export default function FullscreenMenu({
 
               rounded-full
 
-              bg-[#fe0000]/15
+              bg-[#05080F] 
 
               blur-[140px]
             "
@@ -89,7 +89,7 @@ export default function FullscreenMenu({
 
               rounded-full
 
-              bg-[#fe0000]/10
+              bg-[#05080F] 
 
               blur-[120px]
             "
@@ -110,26 +110,28 @@ export default function FullscreenMenu({
           />
 
           {/* CONTENT */}
-          <div
-            className="
-              relative
-              z-20
+      <div
+  className="
+    relative
+    z-20
 
-              flex
-              min-h-screen
-              flex-col
-              justify-between
+    flex
+    min-h-screen
+    flex-col
+    justify-between
 
-              px-8
-              py-20
+    px-5
+    pb-8
+    pt-24
 
-              md:px-14
-            "
-          >
-            <MenuLinks setOpen={setOpen} />
+    sm:px-8
+    md:px-14
+  "
+>
+  <MenuLinks setOpen={setOpen} />
 
-            <MenuFooter />
-          </div>
+  <MenuFooter />
+</div>
         </motion.div>
       )}
     </AnimatePresence>
