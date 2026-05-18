@@ -8,6 +8,7 @@ import {
 } from "@/app/data/home/manifesto";
 
 import CinematicBackground from "@/app/components/cinematic/CinematicBackground";
+import CinematicSectionHeading from "@/app/components/ui/CinematicSectionHeading";
 
 export default function ManifestoSection() {
   return (
@@ -72,129 +73,9 @@ export default function ManifestoSection() {
         "
       >
         {/* TOP */}
-        <div
-          className="
-            grid
-            gap-16
-
-            lg:grid-cols-[1fr_380px]
-            lg:items-end
-          "
-        >
-          {/* LEFT */}
-          <div>
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.7,
-              }}
-              className="
-                mb-6
-
-                flex
-                items-center
-                gap-4
-              "
-            >
-              <div className="h-px w-10 bg-[#fe0000]" />
-
-              <span
-                className="
-                  text-[10px]
-                  uppercase
-
-                  tracking-[0.45em]
-
-                  text-white/40
-                "
-              >
-                {manifestoHeading.sectionLabel}
-              </span>
-            </motion.div>
-
-            <motion.h2
-              initial={{
-                opacity: 0,
-                y: 30,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.9,
-              }}
-              className="
-                max-w-4xl
-
-                font-display
-                uppercase
-
-                text-[2.7rem]
-                sm:text-[3.5rem]
-                md:text-[4.5rem]
-
-                leading-[0.92]
-                tracking-[-0.06em]
-
-                text-white
-              "
-            >
-              {manifestoHeading.heading.first}
-
-              <span className="text-[#fe0000]">
-                {" "}
-                {manifestoHeading.heading.highlight}
-              </span>
-
-              <br />
-
-              {manifestoHeading.heading.last}
-            </motion.h2>
-          </div>
-
-          {/* RIGHT */}
-          <motion.p
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 0.7,
-              delay: 0.15,
-            }}
-            className="
-              text-base
-              md:text-lg
-
-              leading-relaxed
-
-              text-white/55
-            "
-          >
-            {manifestoHeading.shortText}
-          </motion.p>
-        </div>
+        <CinematicSectionHeading
+  {...manifestoHeading}
+/>
 
         {/* MANIFESTO ROWS */}
         <div

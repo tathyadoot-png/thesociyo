@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const links = [
+export const links = [
   {
     label: "ARRIVAL",
     href: "/",

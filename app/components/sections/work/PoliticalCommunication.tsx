@@ -62,7 +62,7 @@ export default function PoliticalCommunication() {
           <div className="absolute inset-0 z-10 bg-gradient-to-l from-transparent via-[#05080F]/40 to-[#05080F]" />
 
           <Image
-            src="/images/work/political/hero.jpg"
+            src="/About-Us.jpg"
             alt="Political Communication"
             fill
             priority
@@ -170,7 +170,120 @@ viewport={{ once: true, amount: 0.2 }}
                 >
                   {data.cover.tagline}
                 </p>
+
+                <div className="mt-12 flex flex-wrap gap-4">
+  {/* ENGLISH PDF */}
+  <a
+    href="/pdfs/corporate-en.pdf"
+    download
+    className="
+      group
+      relative
+
+      overflow-hidden
+
+      rounded-full
+
+      border
+      border-[#7DB8FF]/30
+
+      bg-[#7DB8FF]/10
+
+      px-7
+      py-4
+
+      text-[10px]
+      uppercase
+
+      tracking-[0.3em]
+
+      text-white
+
+      transition-all
+      duration-500
+
+      hover:border-[#7DB8FF]
+      hover:bg-[#7DB8FF]/20
+    "
+  >
+    <span className="relative z-10">
+      Download English PDF
+    </span>
+
+    <div
+      className="
+        absolute
+        inset-0
+
+        translate-y-full
+
+        bg-[#7DB8FF]/10
+
+        transition-transform
+        duration-500
+
+        group-hover:translate-y-0
+      "
+    />
+  </a>
+
+  {/* HINDI PDF */}
+  <a
+    href="/pdfs/corporate-hi.pdf"
+    download
+    className="
+      group
+      relative
+
+      overflow-hidden
+
+      rounded-full
+
+      border
+      border-white/10
+
+      bg-white/[0.05]
+
+      px-7
+      py-4
+
+      text-[10px]
+      uppercase
+
+      tracking-[0.3em]
+
+      text-white/80
+
+      transition-all
+      duration-500
+
+      hover:border-white/20
+      hover:bg-white/[0.08]
+    "
+  >
+    <span className="relative z-10">
+      हिंदी PDF डाउनलोड
+    </span>
+
+    <div
+      className="
+        absolute
+        inset-0
+
+        translate-y-full
+
+        bg-white/[0.06]
+
+        transition-transform
+        duration-500
+
+        group-hover:translate-y-0
+      "
+    />
+  </a>
+</div>
               </div>
+              
             </div>
           </div>
 

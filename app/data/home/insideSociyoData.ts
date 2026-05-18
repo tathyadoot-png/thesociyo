@@ -28,14 +28,14 @@ export const insideSociyoData: InsideSociyoData = {
   },
 
   shortText:
-    "Built around the belief that communication should move people — not just reach them.",
+    "Built around the belief that communication should move people - not just reach them.",
 
   cards: [
     {
       title: "Founded In 2018",
 
       description:
-        "Built around the belief that communication should move people — not just reach them, Sociyo Communications works across corporate communication, political outreach, development initiatives and digital transformation.",
+        "Sociyo Communications works across corporate communication, political outreach, development initiatives and digital transformation.",
     },
 
     {

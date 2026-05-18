@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 import CinematicBackground from "@/app/components/cinematic/CinematicBackground";
@@ -10,466 +11,685 @@ const data = technologyDigitalData;
 
 export default function TechnologyDigital() {
   return (
-    <main className="relative overflow-hidden md:px-32 pt-32 md:pt-40 bg-[#05080F] text-white">
+    <main className="relative overflow-hidden bg-[#05080F] text-white md:px-32 pt-32 md:pt-40">
       <CinematicBackground />
 
-      {/* HERO */}
-      <section className="relative min-h-screen border-b border-white/10">
-        <div className="relative z-10 px-6 py-32 md:px-10 lg:px-20">
-          <div className="max-w-7xl">
-            {/* LABEL */}
-            <div className="flex items-center gap-4">
-              <div className="h-px w-16 bg-[#7DB8FF]" />
+  <section className="relative overflow-hidden border-b border-white/10">
+  {/* BACKGROUND GLOW */}
+  <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute left-0 top-0 h-[40rem] w-[40rem] rounded-full bg-[#7DB8FF]/10 blur-[140px]" />
 
-              <span className="text-[10px] uppercase tracking-[0.45em] text-white/40">
-                Information & Technology
-              </span>
-            </div>
+    <div className="absolute bottom-0 right-0 h-[35rem] w-[35rem] rounded-full bg-white/[0.03] blur-[120px]" />
 
-            {/* HUGE GRID HERO */}
-            <div className="mt-20 grid gap-10 xl:grid-cols-[1.2fr_0.8fr]">
-              {/* LEFT */}
+    <div
+      className="
+        absolute
+        inset-0
+
+        bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)]
+
+        bg-[size:120px_120px]
+
+        opacity-30
+      "
+    />
+  </div>
+
+  <div className="relative z-10 px-6 py-24 md:px-10 lg:px-20">
+    {/* TOP STRIP */}
+    <div className="flex flex-wrap items-center justify-between gap-6">
+      <div className="flex items-center gap-4">
+        <div className="h-px w-20 bg-[#7DB8FF]" />
+
+        <span className="text-[10px] uppercase tracking-[0.45em] text-white/40">
+          Information & Technology
+        </span>
+      </div>
+
+      <div className="hidden items-center gap-3 md:flex">
+        <span className="h-2 w-2 rounded-full bg-[#7DB8FF]" />
+
+        <span className="text-[10px] uppercase tracking-[0.35em] text-white/30">
+          Digital Ecosystem Division
+        </span>
+      </div>
+    </div>
+
+    {/* MAIN HERO */}
+    <div className="mt-20 grid gap-16 xl:grid-cols-[1.15fr_0.85fr]">
+      {/* LEFT */}
+      <div>
+        {/* BIG TITLE */}
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 60,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 1,
+          }}
+        >
+          <div className="mb-8 flex items-center gap-5">
+            <span className="font-display text-7xl tracking-[-0.12em] text-white/[0.06]">
+              04
+            </span>
+
+            <div className="h-px flex-1 bg-white/10" />
+          </div>
+
+          <h1
+            className="
+              max-w-6xl
+
+              font-display
+              uppercase
+
+              text-[4rem]
+              sm:text-[6rem]
+              lg:text-[8rem]
+
+              leading-[0.78]
+              tracking-[-0.12em]
+            "
+          >
+            Technology
+            <br />
+            Built Around
+            <br />
+            Human
+            <br />
+            Experience.
+          </h1>
+        </motion.div>
+
+        {/* DESCRIPTION */}
+        <motion.p
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            delay: 0.2,
+            duration: 1,
+          }}
+          className="
+            mt-12
+
+            max-w-2xl
+
+            text-lg
+            leading-[2]
+
+            text-white/55
+          "
+        >
+          {data.cover.description}
+        </motion.p>
+
+        {/* PDF ACTIONS */}
+        <div className="mt-16 flex flex-wrap gap-6">
+          <a
+            href={data.pdfs.english}
+            download
+            className="
+              group
+              relative
+
+              overflow-hidden
+
+              rounded-full
+
+              border
+              border-[#7DB8FF]/20
+
+              bg-[#7DB8FF]/10
+
+              px-8
+              py-5
+
+              transition-all
+              duration-500
+
+              hover:border-[#7DB8FF]/50
+              hover:bg-[#7DB8FF]/15
+            "
+          >
+            <div className="flex items-center gap-5">
+              <div
+                className="
+                  flex
+                  h-12
+                  w-12
+
+                  items-center
+                  justify-center
+
+                  rounded-full
+
+                  bg-[#7DB8FF]/20
+
+                  text-lg
+                "
+              >
+                ↓
+              </div>
+
               <div>
-                <motion.h1
-                  initial={{
-                    opacity: 0,
-                    y: 60,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  viewport={{
-                    once: true,
-                  }}
-                  transition={{
-                    duration: 1,
-                  }}
-                  className="
-                    max-w-5xl
-
-                    font-display
-                    uppercase
-
-                    text-[4rem]
-                    sm:text-[6rem]
-                    lg:text-[8rem]
-
-                    leading-[0.82]
-                    tracking-[-0.12em]
-                  "
-                >
-                  Build
-                  <br />
-                  Digital
-                  <br />
-                  Systems
-                  <br />
-                  That Scale.
-                </motion.h1>
-
-                <p
-                  className="
-                    mt-10
-
-                    max-w-2xl
-
-                    text-lg
-
-                    leading-[2]
-
-                    text-white/60
-                  "
-                >
-                  {data.cover.description}
+                <p className="text-[10px] uppercase tracking-[0.35em] text-white/30">
+                  English PDF
                 </p>
 
-                {/* STACK */}
-                <div className="mt-14 flex flex-wrap gap-3">
-                  {[
-                    "Web",
-                    "UI/UX",
-                    "Cloud",
-                    "DevOps",
-                    "Platforms",
-                    "Infrastructure",
-                  ].map((item) => (
-                    <div
-                      key={item}
-                      className="
-                        rounded-full
-
-                        border
-                        border-[#7DB8FF]/20
-
-                        bg-[#7DB8FF]/10
-
-                        px-5
-                        py-3
-
-                        text-sm
-
-                        text-[#C7DFFF]
-                      "
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* RIGHT */}
-              <div className="grid gap-4 sm:grid-cols-2">
-                {data.environment.points.map((item, index) => (
-                  <motion.div
-                    key={item}
-                    initial={{
-                      opacity: 0,
-                      scale: 0.9,
-                    }}
-                    whileInView={{
-                      opacity: 1,
-                      scale: 1,
-                    }}
-                    viewport={{
-                      once: true,
-                    }}
-                    transition={{
-                      delay: index * 0.08,
-                    }}
-                    className="
-                      group
-                      relative
-
-                      overflow-hidden
-
-                      rounded-[2rem]
-
-                      border
-                      border-white/10
-
-                      bg-white/[0.03]
-
-                      p-8
-                    "
-                  >
-                    <div
-                      className="
-                        absolute
-                        inset-0
-
-                        opacity-0
-
-                        transition-opacity
-                        duration-500
-
-                        group-hover:opacity-100
-
-                        bg-[radial-gradient(circle_at_top,rgba(125,184,255,0.15),transparent_65%)]
-                      "
-                    />
-
-                    <div className="relative z-10">
-                      <span className="font-display text-5xl tracking-[-0.08em] text-white/[0.06]">
-                        0{index + 1}
-                      </span>
-
-                      <h3 className="mt-10 text-2xl leading-[1.2] text-white/80">
-                        {item}
-                      </h3>
-                    </div>
-                  </motion.div>
-                ))}
+                <p className="mt-1 text-sm text-white/80">
+                  Download Portfolio
+                </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </a>
 
-      {/* FRAMEWORK */}
-      <section className="relative border-b border-white/10 px-6 py-32 md:px-10 lg:px-20">
-        <div className="mb-20 flex flex-col gap-10 xl:flex-row xl:items-end xl:justify-between">
-          <div>
-            <span className="text-[10px] uppercase tracking-[0.45em] text-white/30">
-              The Digital Framework
+          <a
+            href={data.pdfs.hindi}
+            download
+            className="
+              group
+              relative
+
+              overflow-hidden
+
+              rounded-full
+
+              border
+              border-white/10
+
+              bg-white/[0.04]
+
+              px-8
+              py-5
+
+              transition-all
+              duration-500
+
+              hover:border-white/20
+              hover:bg-white/[0.07]
+            "
+          >
+            <div className="flex items-center gap-5">
+              <div
+                className="
+                  flex
+                  h-12
+                  w-12
+
+                  items-center
+                  justify-center
+
+                  rounded-full
+
+                  bg-white/[0.08]
+
+                  text-lg
+                "
+              >
+                ↓
+              </div>
+
+              <div>
+                <p className="text-[10px] uppercase tracking-[0.35em] text-white/30">
+                  हिंदी PDF
+                </p>
+
+                <p className="mt-1 text-sm text-white/80">
+                  डाउनलोड पोर्टफोलियो
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      {/* RIGHT SIDE */}
+      <motion.div
+        initial={{
+          opacity: 0,
+          x: 40,
+        }}
+        whileInView={{
+          opacity: 1,
+          x: 0,
+        }}
+        viewport={{
+          once: true,
+        }}
+        transition={{
+          delay: 0.2,
+          duration: 1,
+        }}
+        className="relative"
+      >
+        <div
+          className="
+            relative
+
+            overflow-hidden
+
+            rounded-[2.5rem]
+
+            border
+            border-white/10
+
+            bg-white/[0.03]
+
+            p-10
+          "
+        >
+          {/* TYPO */}
+          <div
+            className="
+              absolute
+              right-0
+              top-0
+
+              font-display
+
+              text-[10rem]
+
+              leading-none
+              tracking-[-0.14em]
+
+              text-white/[0.03]
+            "
+          >
+            UX
+          </div>
+
+          {/* CONTENT */}
+          <div className="relative z-10">
+            <span className="text-[10px] uppercase tracking-[0.4em] text-[#7DB8FF]">
+              Digital-First Environment
             </span>
 
             <h2
               className="
                 mt-8
 
-                max-w-5xl
+                font-display
+                uppercase
+
+                text-[2.5rem]
+                md:text-[4rem]
+
+                leading-[0.88]
+                tracking-[-0.08em]
+              "
+            >
+              Perception
+              <br />
+              Starts With
+              <br />
+              Experience.
+            </h2>
+
+            <p
+              className="
+                mt-8
+
+                text-base
+                leading-[2]
+
+                text-white/50
+              "
+            >
+              {data.environment.outro}
+            </p>
+
+            {/* POINTS */}
+            <div className="mt-14 space-y-6">
+              {data.environment.points.map((item, index) => (
+                <div
+                  key={item}
+                  className="
+                    flex
+                    items-center
+                    justify-between
+
+                    border-b
+                    border-white/10
+
+                    pb-5
+                  "
+                >
+                  <div className="flex items-center gap-5">
+                    <span
+                      className="
+                        font-display
+
+                        text-3xl
+
+                        tracking-[-0.08em]
+
+                        text-white/[0.12]
+                      "
+                    >
+                      0{index + 1}
+                    </span>
+
+                    <span
+                      className="
+                        text-sm
+                        uppercase
+
+                        tracking-[0.3em]
+
+                        text-white/70
+                      "
+                    >
+                      {item}
+                    </span>
+                  </div>
+
+                  <div className="h-2 w-2 rounded-full bg-[#7DB8FF]" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</section>
+
+  
+    <div className="space-y-56">
+  {data.ecosystems.categories.map((category, categoryIndex) => {
+  const projects = data.snapshots.filter(
+  (snapshot) => snapshot.ecosystem === category.title
+);
+
+    return (
+      <section
+        key={category.title}
+        className="relative"
+      >
+        {/* SECTION TOP */}
+        <div
+          className="
+            mb-24
+
+            flex
+            flex-col
+            gap-10
+
+            lg:flex-row
+            lg:items-end
+            lg:justify-between
+          "
+        >
+          {/* LEFT */}
+          <div>
+            <div className="flex items-center gap-5">
+              <span
+                className="
+                  font-display
+
+                  text-6xl
+
+                  tracking-[-0.12em]
+
+                  text-white/[0.06]
+                "
+              >
+                {(categoryIndex + 1)
+                  .toString()
+                  .padStart(2, "0")}
+              </span>
+
+              <div className="h-px w-20 bg-[#7DB8FF]" />
+            </div>
+
+            <h3
+              className="
+                mt-8
+
+                max-w-4xl
 
                 font-display
                 uppercase
 
                 text-[3rem]
-                md:text-[6rem]
+                md:text-[5rem]
 
-                leading-[0.84]
+                leading-[0.82]
                 tracking-[-0.1em]
               "
             >
-              Experience.
-              <br />
-              Performance.
-              <br />
-              Systems.
-            </h2>
+              {category.title}
+            </h3>
           </div>
 
-          <p className="max-w-md text-base leading-[2] text-white/45">
-            Technology works best when design, infrastructure and functionality
-            operate together.
-          </p>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-3">
-          {data.framework.map((item, index) => (
-            <motion.div
-              key={item.title}
-              initial={{
-                opacity: 0,
-                y: 60,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                delay: index * 0.08,
-              }}
+          {/* RIGHT */}
+          <div className="max-w-md">
+            <p
               className="
-                relative
+                text-base
+                leading-[2]
 
-                min-h-[24rem]
-
-                overflow-hidden
-
-                rounded-[2rem]
-
-                border
-                border-white/10
-
-                bg-white/[0.03]
-
-                p-10
+                text-white/45
               "
             >
-              <div className="font-display text-[7rem] tracking-[-0.12em] text-white/[0.04]">
-                0{index + 1}
-              </div>
-
-              <h3
-                className="
-                  mt-12
-
-                  font-display
-                  uppercase
-
-                  text-4xl
-
-                  tracking-[-0.08em]
-                "
-              >
-                {item.title}
-              </h3>
-
-              <p className="mt-6 text-base leading-[2] text-white/55">
-                {item.description}
-              </p>
-            </motion.div>
-          ))}
+              {projects.length} platforms developed across this digital
+              ecosystem with scalable infrastructure and editorial-first user
+              experience.
+            </p>
+          </div>
         </div>
-      </section>
 
-      {/* SERVICES */}
-      <section className="relative px-6 py-32 md:px-10 lg:px-20">
-        <div className="mb-24">
-          <span className="text-[10px] uppercase tracking-[0.45em] text-white/30">
-            What We Build
-          </span>
+        {/* EDITORIAL PROJECT WALL */}
+     <div className="space-y-0">
+  {projects.map((project, index) => (
+    <motion.a
+      href={project.liveLink}
+      target="_blank"
+      key={project.title}
+      initial={{
+        opacity: 0,
+        y: 80,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+      }}
+      transition={{
+        duration: 1,
+        delay: index * 0.06,
+      }}
+      className="
+        group
+        relative
+        block
 
-          <h2
+        border-t
+        border-white/10
+
+        py-14
+      "
+    >
+      <div
+        className="
+          grid
+          gap-10
+
+          lg:grid-cols-[0.9fr_1.1fr]
+          lg:items-center
+        "
+      >
+        {/* IMAGE */}
+        <div className="relative overflow-hidden rounded-[2rem]">
+          <div className="relative h-[22rem] overflow-hidden">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="
+                object-cover
+
+                transition-all
+                duration-700
+
+                group-hover:scale-105
+              "
+            />
+
+            {/* OVERLAY */}
+            <div
+              className="
+                absolute
+                inset-0
+
+                bg-gradient-to-t
+                from-[#05080F]
+                via-[#05080F]/10
+                to-transparent
+              "
+            />
+          </div>
+        </div>
+
+        {/* CONTENT */}
+        <div className="relative">
+          {/* BIG INDEX */}
+          <div
             className="
-              mt-8
-
-              max-w-6xl
+              absolute
+              -top-10
+              left-0
 
               font-display
-              uppercase
 
-              text-[3rem]
-              md:text-[6rem]
+              text-[7rem]
 
-              leading-[0.84]
-              tracking-[-0.1em]
+              leading-none
+              tracking-[-0.12em]
+
+              text-white/[0.03]
             "
           >
-            Technology
-            <br />
-            Solutions
-            <br />
-            Designed
-            <br />
-            For Scale.
-          </h2>
-        </div>
+            {(index + 1)
+              .toString()
+              .padStart(2, "0")}
+          </div>
 
-        <div className="grid gap-[1px] overflow-hidden rounded-[2rem] bg-white/10 lg:grid-cols-2">
-          {data.services.map((item, index) => (
-            <motion.div
-              key={item.title}
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                delay: index * 0.05,
-              }}
+          <div className="relative z-10">
+            <span
               className="
-                relative
+                text-[10px]
+                uppercase
 
-                bg-[#070B13]
+                tracking-[0.45em]
 
-                p-10
+                text-[#7DB8FF]
               "
             >
-              <div className="absolute right-8 top-6 font-display text-6xl tracking-[-0.1em] text-white/[0.04]">
-                {(index + 1).toString().padStart(2, "0")}
-              </div>
+              {project.category}
+            </span>
 
-              <h3
-                className="
-                  max-w-[12ch]
-
-                  font-display
-                  uppercase
-
-                  text-3xl
-
-                  leading-[0.9]
-                  tracking-[-0.08em]
-                "
-              >
-                {item.title}
-              </h3>
-
-              <p className="mt-8 max-w-xl text-base leading-[2] text-white/55">
-                {item.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* ECOSYSTEMS */}
-      <section className="relative border-t border-white/10 px-6 py-32 md:px-10 lg:px-20">
-        <div className="mb-20">
-          <span className="text-[10px] uppercase tracking-[0.45em] text-white/30">
-            Digital Ecosystems We've Built
-          </span>
-
-          <h2
-            className="
-              mt-8
-
-              max-w-5xl
-
-              font-display
-              uppercase
-
-              text-[3rem]
-              md:text-[5rem]
-
-              leading-[0.84]
-              tracking-[-0.1em]
-            "
-          >
-            Platforms
-            <br />
-            Across
-            <br />
-            Diverse Sectors.
-          </h2>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-2">
-          {data.ecosystems.categories.map((category) => (
-            <motion.div
-              key={category.title}
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
+            <h4
               className="
-                rounded-[2rem]
+                mt-6
 
-                border
-                border-white/10
+                max-w-3xl
 
-                bg-white/[0.03]
+                font-display
+                uppercase
 
-                p-8
+                text-[3rem]
+                md:text-[5rem]
+
+                leading-[0.86]
+                tracking-[-0.08em]
+
+                transition-all
+                duration-500
+
+                group-hover:translate-x-4
               "
             >
-              <h3
+              {project.title}
+            </h4>
+
+            <div className="mt-10 flex items-center gap-6">
+              <div
                 className="
-                  font-display
+                  h-px
+                  w-20
+
+                  bg-white/20
+
+                  transition-all
+                  duration-500
+
+                  group-hover:w-32
+                  group-hover:bg-[#7DB8FF]
+                "
+              />
+
+              <span
+                className="
+                  text-xs
                   uppercase
 
-                  text-3xl
+                  tracking-[0.35em]
 
-                  tracking-[-0.08em]
+                  text-white/45
                 "
               >
-                {category.title}
-              </h3>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                {category.items.map((item) => (
-                  <div
-                    key={item}
-                    className="
-                      rounded-full
-
-                      border
-                      border-white/10
-
-                      bg-white/[0.04]
-
-                      px-4
-                      py-2
-
-                      text-sm
-                      text-white/60
-                    "
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+                Open Live Platform
+              </span>
+            </div>
+          </div>
         </div>
+      </div>
+
+      {/* HOVER GLOW */}
+      <div
+        className="
+          pointer-events-none
+
+          absolute
+          inset-0
+
+          opacity-0
+
+          transition-opacity
+          duration-700
+
+          group-hover:opacity-100
+
+          bg-[radial-gradient(circle_at_center,rgba(125,184,255,0.08),transparent_60%)]
+        "
+      />
+    </motion.a>
+  ))}
+</div>
       </section>
+    );
+  })}
+</div>
     </main>
   );
 }

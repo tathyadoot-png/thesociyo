@@ -156,8 +156,8 @@ export default function BlogsPage() {
     sectionLabel="Thoughts & Perspectives"
     heading={{
       first: "Ideas",
-      highlight: "Influence",
-      last: "Become",
+      highlight: "Become",
+      last: "Influence",
     }}
     shortText="
       Thoughts around communication, systems,

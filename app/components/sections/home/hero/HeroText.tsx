@@ -27,10 +27,10 @@ export default function HeroText() {
 
 
       {/* Editorial Frame */}
-      <div className="pointer-events-none absolute inset-1 sm:inset-4 md:inset-6 lg:inset-8 xl:inset-10 border border-white/10 opacity-40" />
+      {/* <div className="pointer-events-none absolute inset-1 sm:inset-4 md:inset-6 lg:inset-8 xl:inset-10 border border-white/10 opacity-40" /> */}
 
       {/* MAIN CONTENT */}
-      <div className="relative z-20 flex w-full max-w-[1700px] flex-col items-center justify-center text-center pt-20">
+      <div className="relative z-20 flex w-full max-w-[1700px] flex-col items-center justify-center text-center pt-10">
         <div className="relative flex flex-col items-center justify-center gap-2 md:gap-0">
           {heroLines.map((line, index) => {
             const y = useTransform(scrollYProgress, [0, 1], [0, index === 0 ? -220 : index === 1 ? -120 : -60]);
@@ -103,12 +103,12 @@ export default function HeroText() {
       </div>
 
       {/* Side Labels */}
-      <div className="absolute left-5 top-1/2 hidden xl:flex -translate-y-1/2 rotate-180" style={{ writingMode: "vertical-rl" }}>
+      {/* <div className="absolute left-5 top-1/2 hidden xl:flex -translate-y-1/2 rotate-180" style={{ writingMode: "vertical-rl" }}>
         <span className="font-body text-[10px] uppercase text-white/80">{heroMeta.sideLabel}</span>
       </div>
       <div className="absolute right-5 top-1/2 hidden xl:flex -translate-y-1/2 rotate-180" style={{ writingMode: "vertical-rl" }}>
         <span className="font-body text-[10px] uppercase text-white/80">{heroMeta.sideLabel}</span>
-      </div>
+      </div> */}
     </motion.section>
   );
 }

@@ -13,6 +13,182 @@ export const technologyDigitalData = {
       "Sociyo Digital builds scalable digital ecosystems focused on usability, performance, infrastructure and long-term adaptability for modern organizations.",
   },
 
+  pdfs: {
+    english: "/pdfs/technology-en.pdf",
+
+    hindi: "/pdfs/technology-hi.pdf",
+  },
+
+  featuredProject: {
+    title: "Sociyo Communications",
+
+    description:
+      "A modern communication ecosystem designed for branding, digital storytelling, media operations and organizational presence.",
+
+    image: "/images/work/technology/featured.jpg",
+
+    liveLink: "https://sociyocommunications.com",
+  },
+
+snapshots: [
+  {
+    title: "The Drishtikon",
+    ecosystem: "News & Media",
+    category: "News & Media",
+    image: "/About-Us.jpg",
+    liveLink: "https://www.thedrishtikon.com",
+  },
+
+  {
+    title: "Indian Says",
+    ecosystem: "News & Media",
+    category: "Media Platform",
+    image: "/About-Us.jpg",
+    liveLink: "https://www.indiansays.com",
+  },
+
+  {
+    title: "TathyaDoot",
+    ecosystem: "News & Media",
+    category: "News Platform",
+    image: "/About-Us.jpg",
+    liveLink: "https://www.indiansays.com",
+  },
+
+  {
+    title: "News World Web",
+    ecosystem: "News & Media",
+    category: "Digital Media",
+    image: "/About-Us.jpg",
+    liveLink: "https://www.newsworldweb.in",
+  },
+
+  {
+    title: "H2O Connects",
+    ecosystem: "Social Impact",
+    category: "Social Impact",
+    image: "/About-Us.jpg",
+    liveLink: "https://h2oconnects.org",
+  },
+
+  {
+    title: "Sarthak Sanstha",
+    ecosystem: "Social Impact",
+    category: "NGO Platform",
+    image: "/About-Us.jpg",
+    liveLink: "https://www.sarthaksanstha.org",
+  },
+
+  {
+    title: "Nirbhaya Foundation",
+    ecosystem: "Foundations",
+    category: "Foundation",
+    image: "/About-Us.jpg",
+    liveLink: "https://nirbhayafoundation.org",
+  },
+
+  {
+    title: "Sky Social",
+    ecosystem: "Foundations",
+    category: "Organization",
+    image: "/About-Us.jpg",
+    liveLink: "https://skysocial.org",
+  },
+
+  {
+    title: "Sacchi Saheli",
+    ecosystem: "Foundations",
+    category: "Women Empowerment",
+    image: "/About-Us.jpg",
+    liveLink: "https://sachhisaheli.org",
+  },
+
+  {
+    title: "Sociyo Communications",
+    ecosystem: "Corporate Platforms",
+    category: "Corporate Platform",
+    image: "/About-Us.jpg",
+    liveLink: "https://thesociyo.com",
+  },
+
+  {
+    title: "Inedco Networks",
+    ecosystem: "Corporate Platforms",
+    category: "Corporate",
+    image: "/About-Us.jpg",
+    liveLink: "https://www.inedconetworks.com",
+  },
+
+  {
+    title: "Sampatiya Uikey",
+    ecosystem: "Political & Public Profiles",
+    category: "Political Profile",
+    image: "/About-Us.jpg",
+    liveLink: "https://www.sampatiyauikey.com",
+  },
+
+  {
+    title: "Ganesh Singh",
+    ecosystem: "Political & Public Profiles",
+    category: "Public Leadership",
+    image: "/About-Us.jpg",
+    liveLink: "https://ganeshsingh.com",
+  },
+
+  {
+    title: "Rajendra Shukla",
+    ecosystem: "Political & Public Profiles",
+    category: "Governance",
+    image: "/About-Us.jpg",
+    liveLink: "http://rajendrashukla.co.in",
+  },
+
+  {
+    title: "Bhupendra Singh",
+    ecosystem: "Political & Public Profiles",
+    category: "Political Communication",
+    image: "/About-Us.jpg",
+    liveLink: "http://bhuppendrasiingh.com",
+  },
+
+  {
+    title: "Content Mohalla",
+    ecosystem: "Creative & Personal Platforms",
+    category: "Creative Ecosystem",
+    image: "/About-Us.jpg",
+    liveLink: "https://www.contentmohalla.com",
+  },
+
+  {
+    title: "Sociyo CMS",
+    ecosystem: "Corporate",
+    category: "Internal Platform",
+    image: "/About-Us.jpg",
+    liveLink: "https://thesociyo.in",
+  },
+  {
+  title: "Ssksatna",
+  ecosystem: "Governance",
+  category: "Governance Platform",
+  image: "/About-Us.jpg",
+  liveLink: "https://www.ssksatna.com",
+},
+
+{
+  title: "JSK",
+  ecosystem: "Governance",
+  category: "Citizen Service Platform",
+  image: "/About-Us.jpg",
+  liveLink: "https://jskindia.in",
+},
+{
+  title: "Vikalp Singh",
+  ecosystem: "Creative & Personal Platforms",
+  category: "Personal Portfolio",
+  image: "/About-Us.jpg",
+  liveLink: "https://vikalpsingh.com",
+},
+],
   environment: {
     title: "Digital-First Business Environment",
 
