@@ -11,7 +11,7 @@ const data = socialDevelopmentData;
 
 export default function SocialDevelopment() {
   return (
-    <main className="relative overflow-hidden bg-[#05080F] pt-32 text-white md:px-32 md:pt-40">
+    <main className="relative overflow-hidden bg-[#18090B] pt-32 text-white md:px-32 md:pt-40">
       <CinematicBackground />
 
       {/* HERO */}
@@ -26,7 +26,7 @@ export default function SocialDevelopment() {
             className="object-cover opacity-30"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-[#05080F]/70 to-[#05080F]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-[#18090B]/70 to-[#18090B]" />
         </div>
 
         <div className="relative z-10 px-6 py-24 md:px-10 lg:px-20">
@@ -290,7 +290,7 @@ export default function SocialDevelopment() {
                   className="object-cover opacity-70"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#05080F] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#18090B] via-transparent to-transparent" />
               </div>
             </div>
           </div>
@@ -432,7 +432,7 @@ export default function SocialDevelopment() {
                   "
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#05080F] to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#18090B] to-transparent" />
               </div>
 
               <div className="font-display text-[5rem] tracking-[-0.1em] text-white/[0.04]">

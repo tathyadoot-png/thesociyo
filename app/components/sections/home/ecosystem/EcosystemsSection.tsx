@@ -40,7 +40,7 @@ export default function EcosystemsSection() {
         border-b border-white/10
         py-20 md:py-40
         px-6 md:px-48
-        bg-[#05080F]
+        bg-[#18090B]
         border-t border-white/20
       "
     >

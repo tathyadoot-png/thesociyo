@@ -18,7 +18,7 @@ export default function SignalTransition() {
         border-y
         border-white/5
 
-        bg-[#05080F]
+        bg-[#18090B]
       "
     >
       {/* BASE GLOW */}

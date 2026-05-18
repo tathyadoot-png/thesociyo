@@ -46,7 +46,7 @@ export default function BlogsPage() {
         px-0
         md:px-40
 
-        bg-[#05080F]
+        bg-[#18090B]
         text-white
       "
     >
@@ -59,7 +59,7 @@ export default function BlogsPage() {
           absolute
           inset-0
 
-          bg-[#05080F]/50
+          bg-[#18090B]/50
         "
       />
 
@@ -281,7 +281,7 @@ export default function BlogsPage() {
                         inset-0
 
                         bg-gradient-to-r
-                        from-[#05080F]
+                        from-[#18090B]
                         via-[#07111F]/70
                         to-transparent
                       "

@@ -10,7 +10,7 @@ const { cards } = insideSociyoData;
 
 export default function InsideSociyo() {
   return (
-    <section className="relative overflow-hidden bg-[#05080F] px-4 md:px-24 py-28 md:py-40">
+    <section className="relative overflow-hidden bg-[#18090B] px-4 md:px-24 py-28 md:py-40">
       
       <CinematicBackground />   
       <div

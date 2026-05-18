@@ -27,7 +27,7 @@ const fadeUp: Variants = {
 
 export default function PoliticalCommunication() {
   return (
-    <main className="relative overflow-hidden bg-[#05080F] md:px-32 pt-32 md:pt-40 text-white">
+    <main className="relative overflow-hidden bg-[#18090B] md:px-32 pt-32 md:pt-40 text-white">
       <CinematicBackground />
 
       {/* HERO */}
@@ -59,7 +59,7 @@ export default function PoliticalCommunication() {
             xl:block
           "
         >
-          <div className="absolute inset-0 z-10 bg-gradient-to-l from-transparent via-[#05080F]/40 to-[#05080F]" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-l from-transparent via-[#18090B]/40 to-[#18090B]" />
 
           <Image
             src="/About-Us.jpg"

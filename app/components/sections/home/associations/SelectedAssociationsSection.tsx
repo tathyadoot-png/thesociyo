@@ -44,7 +44,7 @@ export default function SelectedAssociationsSection() {
         relative
         overflow-hidden
 
-      bg-[#05080F]
+      bg-[#18090B]
 border-t border-white/20
         py-24
         md:py-32

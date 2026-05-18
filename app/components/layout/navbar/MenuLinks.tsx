@@ -68,7 +68,7 @@ export default function MenuLinks({
 
           rounded-full
 
-          bg-[#05080F] 
+          bg-[#18090B] 
 
           blur-[120px]
         "

@@ -16,7 +16,7 @@ export default function CapabilitiesSection() {
       className="
         relative
         overflow-x-hidden
-        bg-[#05080F]        // Consistent dark background
+        bg-[#18090B]        // Consistent dark background
         py-24 md:py-36
       "
     >
@@ -109,9 +109,9 @@ export default function CapabilitiesSection() {
         inset-0
 
         bg-gradient-to-r
-        from-[#05080F]
-        via-[#05080F]/85
-        to-[#05080F]/65
+        from-[#18090B]
+        via-[#18090B]/85
+        to-[#18090B]/65
       "
                   />
 

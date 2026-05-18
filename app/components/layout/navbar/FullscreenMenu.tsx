@@ -40,7 +40,7 @@ export default function FullscreenMenu({
 
             overflow-y-auto
 
-            bg-[#05080F]
+            bg-[#18090B]
           "
         >
           {/* CINEMATIC BG */}
@@ -52,7 +52,7 @@ export default function FullscreenMenu({
               absolute
               inset-0
 
-              bg-[#05080F]
+              bg-[#18090B]
             "
           />
 
@@ -71,7 +71,7 @@ export default function FullscreenMenu({
 
               rounded-full
 
-              bg-[#05080F] 
+              bg-[#18090B] 
 
               blur-[140px]
             "
@@ -89,7 +89,7 @@ export default function FullscreenMenu({
 
               rounded-full
 
-              bg-[#05080F] 
+              bg-[#18090B] 
 
               blur-[120px]
             "

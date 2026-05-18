@@ -15,7 +15,7 @@ export default function ContactPage() {
     min-h-screen
     overflow-hidden
 
-    bg-[#05080F]
+    bg-[#18090B]
 
     text-white
   "
@@ -30,7 +30,7 @@ export default function ContactPage() {
     absolute
     inset-0
 
-    bg-[#05080F]/45
+    bg-[#18090B]/45
   "
 />
 

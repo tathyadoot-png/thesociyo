@@ -87,7 +87,7 @@ export default function Footer() {
         relative
         overflow-hidden
    
-       bg-[#05080F]
+       bg-[#18090B]
         text-white
       "
     >

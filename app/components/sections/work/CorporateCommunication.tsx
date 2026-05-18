@@ -26,7 +26,7 @@ const fadeUp: Variants = {
 };
 export default function CorporateCommunication() {
   return (
-    <main className="relative overflow-hidden bg-[#05080F] md:px-32 pt-32 md:pt-40 text-white">
+    <main className="relative overflow-hidden bg-[#18090B] md:px-32 pt-32 md:pt-40 text-white">
       {/* CINEMATIC BG */}
       <CinematicBackground />
 
@@ -60,7 +60,7 @@ export default function CorporateCommunication() {
             xl:block
           "
         >
-          <div className="absolute inset-0 z-10 bg-gradient-to-l from-transparent via-[#05080F]/40 to-[#05080F]" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-l from-transparent via-[#18090B]/40 to-[#18090B]" />
 
           <Image
             src="/About-Us.jpg"
@@ -465,7 +465,7 @@ viewport={{ once: true, amount: 0.2 }}
                   className="object-cover opacity-60"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#05080F] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#18090B] via-transparent to-transparent" />
               </div>
 
               <div className="p-8">
@@ -678,7 +678,7 @@ viewport={{ once: true, amount: 0.2 }}
                   "
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#05080F] to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#18090B] to-transparent" />
               </div>
 
               <div className="relative p-8">
