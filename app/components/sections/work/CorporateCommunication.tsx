@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 import CinematicBackground from "@/app/components/cinematic/CinematicBackground";
 
@@ -9,7 +9,7 @@ import { corporateCommunicationData } from "@/app/data/work/corporateCommunicati
 
 const data = corporateCommunicationData;
 
-const fadeUp = {
+const fadeUp: Variants = {
   initial: {
     opacity: 0,
     y: 100,
@@ -17,14 +17,10 @@ const fadeUp = {
   whileInView: {
     opacity: 1,
     y: 0,
-  },
-  viewport: {
-    once: true,
-    amount: 0.2,
-  },
-  transition: {
-    duration: 1.1,
-    ease: [0.22, 1, 0.36, 1],
+    transition: {
+      duration: 1.1,
+      ease: [0.22, 1, 0.36, 1],
+    },
   },
 };
 
