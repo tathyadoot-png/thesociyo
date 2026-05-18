@@ -5,7 +5,7 @@
 import { useState } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
-
+import { lenisRef } from "@/app/components/ui/SmoothScroll";
 import CorporateCommunication from "@/app/components/sections/work/CorporateCommunication";
 import PoliticalCommunication from "@/app/components/sections/work/PoliticalCommunication";
 import SocialDevelopment from "@/app/components/sections/work/SocialDevelopment";
@@ -37,6 +37,9 @@ const tabs = [
     component: <TechnologyDigital />,
   },
 ];
+
+
+
 
 export default function WorkPage() {
   const [activeTab, setActiveTab] = useState("corporate");
@@ -109,7 +112,13 @@ export default function WorkPage() {
               return (
                 <button
                   key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
+                  onClick={() => {
+                    lenisRef?.scrollTo(0, {
+                      immediate: true,
+                    });
+
+                    setActiveTab(tab.id);
+                  }}
                   className="
                     relative
 
@@ -188,10 +197,9 @@ export default function WorkPage() {
                       transition-all
                       duration-300
 
-                      ${
-                        isActive
-                          ? "text-white"
-                          : "text-white/40 hover:text-white/75"
+                      ${isActive
+                        ? "text-white"
+                        : "text-white/40 hover:text-white/75"
                       }
                     `}
                   >
