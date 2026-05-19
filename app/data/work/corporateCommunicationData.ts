@@ -9,6 +9,7 @@ export const corporateCommunicationData = {
 
   theme: "blue",
 
+  // HERO
   cover: {
     title: "SOCIYO COMMUNICATIONS",
 
@@ -21,6 +22,7 @@ export const corporateCommunicationData = {
       "Building perception. Strengthening trust. Creating brands that lead conversations.",
   },
 
+  // PERSPECTIVE
   perspective: {
     title:
       "Communication is no longer a support function. It is a business advantage.",
@@ -34,300 +36,394 @@ export const corporateCommunicationData = {
 
       "Every inconsistency weakens trust.",
 
-      "At Sociyo Communications, we help businesses create communication systems that do more than generate visibility - We help them create trust & authority.",
+      "At Sociyo Communications, we help businesses create communication systems that do more than generate visibility — We help them create trust & authority.",
     ],
   },
 
+  // MARKET REALITY
   marketReality: {
     title:
       "Businesses today are not competing only on products. They are competing on perception.",
 
-    description: [
+    intro:
       "A company may have a strong product, a capable team and ambitious goals and yet still struggle because its communication lacks clarity, consistency or strategic direction.",
 
-      "The result:",
-
-      "reduced trust",
-
-      "diluted positioning",
-
-      "unclear messaging",
-
-      "and lost opportunities",
-
-      "This is where strategic communication becomes essential.",
+    problems: [
+      "Reduced Trust",
+      "Diluted Positioning",
+      "Unclear Messaging",
+      "Lost Opportunities",
     ],
+
+    conclusion:
+      "This is where strategic communication becomes essential.",
   },
 
+  // WHO WE ARE
   whoWeAre: {
     title:
       "A communication consultancy shaping brands that grow into legacies.",
 
-    description: [
+    founded:
       "Founded in 2018, Sociyo Communications was created with one clear belief:",
 
+    belief:
       "Businesses deserve communication partners who think beyond execution.",
 
-      "We operate, Combining conventional agency with an integrated communication consultancy that blends:",
+    ecosystem: [
+      "Strategy",
+      "Creativity",
+      "Branding",
+      "Media",
+      "Digital",
+      "Campaigns",
+      "Execution",
+    ],
 
-      "strategy",
-
-      "creativity",
-
-      "branding",
-
-      "media",
-
-      "digital",
-
-      "campaigns",
-
-      "execution",
-
-      "under one ecosystem.",
-
+    description:
       "From emerging businesses building their identity to established organizations redefining market perception, we help brands communicate with one clear and unified voice.",
 
-      "Our role extends beyond visibility. We help businesses define:",
-
-      "how they are perceived",
-
-      "what they stand for",
-
-      "and why audiences should trust them",
+    focus: [
+      "How they are perceived",
+      "What they stand for",
+      "Why audiences should trust them",
     ],
   },
 
+  // DIFFERENTIATOR
   differentiator: {
     title:
       "We don’t approach communication as isolated services. We approach it as business architecture.",
 
-    description: [
-      "Most agencies focus on execution while We focus on alignment. Every campaign, design, message, advertisement, media placement and digital interaction should move in the same strategic direction.",
+    description:
+      "Most agencies focus on execution while we focus on alignment. Every campaign, design, message, advertisement, media placement and digital interaction should move in the same strategic direction.",
 
-      "What makes us different is our ability to connect:",
+    connects: [
+      "Communication with business goals",
+      "Creativity with strategy",
+      "Visibility with trust",
+      "Storytelling with measurable impact",
+    ],
 
-      "communication with business goals",
+    conclusion:
+      "At Sociyo, communication is not divided into silos. Our teams work together to create unified brand experiences across every interface.",
 
-      "creativity with strategy",
-
-      "visibility with trust",
-
-      "and storytelling with measurable impact",
-
-      "At Sociyo, communication is not divided into silos.",
-
-      "Our teams work together to create unified brand experiences across every interface.",
-
+    philosophy:
       "Because audiences do not experience brands department-wise. They experience them as one complete identity.",
+  },
+
+  // FRAMEWORK
+  framework: {
+    heading:
+      "Visibility creates sales. Consistency creates trust. Trust creates brands.",
+
+    intro:
+      "Most businesses focus only on being seen. But long-term market authority is built through a deeper communication journey.",
+
+    stages: [
+      {
+        step: "01",
+
+        title: "Visibility",
+
+        subtitle: "The first interaction creates attention.",
+
+        description:
+          "People discover the business through campaigns, media presence, digital visibility, advertising or communication itself.",
+
+        note: "But attention alone is temporary.",
+      },
+
+      {
+        step: "02",
+
+        title: "Trust",
+
+        subtitle:
+          "Trust begins when communication remains consistent.",
+
+        description:
+          "When messaging, experience, reputation and delivery align over time, audiences begin to rely on the brand.",
+
+        note:
+          "Audiences return because the experience remains reliable.",
+      },
+
+      {
+        step: "03",
+
+        title: "Brand Authority",
+
+        subtitle:
+          "Over time, trust transforms into reputation.",
+
+        description:
+          "People begin remembering the business, recommending it to others and associating it with reliability, quality and value.",
+
+        note:
+          "This is where communication moves beyond marketing and starts creating long-term brand authority.",
+      },
+    ],
+
+    conclusion:
+      "At Sociyo, every strategy is designed to strengthen this entire cycle.",
+  },
+
+  // CAPABILITIES
+  capabilities: {
+    heading:
+      "Integrated communication solutions under one roof.",
+
+    intro:
+      "Tackling unclear brand positioning, inconsistent communication, weak market recall, low audience trust, fragmented brand presence, reputation vulnerability and limited communication strategy.",
+
+    services: [
+      {
+        title: "Strategic Consultancy",
+
+        description:
+          "Market positioning, communication planning, reputation management, founder positioning, crisis communication and long-term brand strategy.",
+      },
+
+      {
+        title: "Branding & Identity",
+
+        description:
+          "Brand naming, visual identity systems, messaging architecture, rebranding, packaging and brand guidelines.",
+      },
+
+      {
+        title: "Digital & Social Media",
+
+        description:
+          "Digital campaigns, social media strategy, content systems, paid media, SEO, SMO, ORM, websites and performance communication.",
+      },
+
+      {
+        title: "Advertising & Campaigns",
+
+        description:
+          "Integrated campaigns across digital, print, outdoor and media platforms built around one strong communication idea.",
+      },
+
+      {
+        title: "Public Relations",
+
+        description:
+          "Strategic reputation-building through media narratives, public communication and relationship management.",
+      },
+
+      {
+        title: "Media Management",
+
+        description:
+          "Planning, coordination and execution across print, digital, broadcast and media-facing platforms.",
+      },
+
+      {
+        title: "Design & Production",
+
+        description:
+          "Brochures, reports, catalogues, presentations, hoardings, brand collaterals and production support.",
+      },
+
+      {
+        title: "Events & Activations",
+
+        description:
+          "Corporate events, launches, conferences, public activations, media events and experiential communication.",
+      },
     ],
   },
 
-  framework: [
-    {
-      title: "Visibility creates sales.",
+  // WORKFLOW
+  workflow: {
+    title:
+      "A process designed for clarity, collaboration and outcomes.",
 
-      description:
-        "The first interaction creates attention. People discover the business through campaigns, media presence, digital visibility, advertising or communication itself.",
-    },
+    steps: [
+      {
+        step: "01",
 
-    {
-      title: "Consistency creates trust.",
+        title: "We Listen",
 
-      description:
-        "Trust begins when communication remains consistent. When messaging, experience, reputation and delivery align over time, audiences begin to rely on the brand.",
-    },
+        points: [
+          "Business goals",
+          "Audience behaviour",
+          "Market position",
+          "Communication challenges",
+        ],
+      },
 
-    {
-      title: "Trust creates brands.",
+      {
+        step: "02",
 
-      description:
-        "Over time, trust transforms into reputation. People begin remembering the business, recommending it to others and associating it with reliability, quality and value.",
-    },
-  ],
+        title: "We Research",
 
-  capabilities: [
-    {
-      title: "Strategic Consultancy",
+        points: [
+          "Competitors",
+          "Audience perception",
+          "Communication gaps",
+          "Market opportunities",
+        ],
+      },
 
-      description:
-        "Market positioning, communication planning, reputation management, founder positioning, crisis communication and long-term brand strategy.",
-    },
+      {
+        step: "03",
 
-    {
-      title: "Branding & Identity",
+        title: "We Strategize",
 
-      description:
-        "Brand naming, visual identity systems, messaging architecture, rebranding, packaging and brand guidelines.",
-    },
+        description:
+          "We build communication systems aligned with business objectives — not isolated deliverables.",
+      },
 
-    {
-      title: "Digital & Social Media",
+      {
+        step: "04",
 
-      description:
-        "Digital campaigns, social media strategy, content systems, paid media, SEO, SMO, ORM, websites and performance communication.",
-    },
+        title: "We Execute",
 
-    {
-      title: "Advertising & Campaigns",
+        description:
+          "From campaigns and design to media and digital implementation, every detail is handled with consistency and precision.",
+      },
 
-      description:
-        "Integrated campaigns across digital, print, outdoor, and media platforms - built around one strong communication idea.",
-    },
+      {
+        step: "05",
 
-    {
-      title: "Public Relations",
+        title: "We Measure",
 
-      description:
-        "Strategic reputation-building through media narratives, public communication and relationship management.",
-    },
+        points: [
+          "Stronger recall",
+          "Audience engagement",
+          "Improved trust",
+          "Business visibility",
+        ],
+      },
+    ],
+  },
 
-    {
-      title: "Media Makeup",
-
-      description:
-        "Planning, coordination and execution across print, digital, broadcast and media-facing platforms.",
-    },
-
-    {
-      title: "Design & Production",
-
-      description:
-        "Brochures, reports, catalogues, presentations, hoardings, brand collaterals and production support.",
-    },
-
-    {
-      title: "Events & Activations",
-
-      description:
-        "Corporate events, launches, conferences, public activations, media events and experiential communication.",
-    },
-  ],
-
-  workflow: [
-    {
-      step: "01",
-
-      title: "We Listen",
-
-      description:
-        "Every engagement begins with understanding business goals, audience behaviour, market position and communication challenges.",
-    },
-
-    {
-      step: "02",
-
-      title: "We Research",
-
-      description:
-        "We study competitors, audience perception, communication gaps and market opportunities before making recommendations.",
-    },
-
-    {
-      step: "03",
-
-      title: "We Strategize",
-
-      description:
-        "We build communication systems aligned with business objectives - not isolated deliverables.",
-    },
-
-    {
-      step: "04",
-
-      title: "We Execute",
-
-      description:
-        "From campaigns and design to media and digital implementation, every detail is handled with consistency and precision.",
-    },
-
-    {
-      step: "05",
-
-      title: "We Measure",
-
-      description:
-        "We believe communication should create measurable outcomes including stronger recall, audience engagement, improved trust and business visibility.",
-    },
-  ],
-
+  // TOUCHPOINTS
   touchpoints: {
     title:
+      "Communication across every point of contact.",
+
+    intro:
       "Brands are built through accumulated experiences.",
 
-    description: [
+    description:
       "A customer forms opinions long before making a purchase.",
 
-      "Sometimes through:",
+    interactions: [
+      "A line they read",
+      "A visual they remember",
+      "A message they connect with",
+      "A story they relate to",
+      "An experience they associate with the brand",
+    ],
 
-      "a line they read",
+    touchpoints: [
+      "Social Media Post",
+      "Presentation",
+      "Campaign",
+      "Advertisement",
+      "News Feature",
+      "Website",
+      "Brand Response",
+    ],
 
-      "a visual they remember",
+    conclusion:
+      "Every touchpoint contributes to perception. That is why we build communication ecosystems — not disconnected campaigns.",
+  },
 
-      "a message they connect with",
+  // INDUSTRIES
+  industries: {
+    title:
+      "Communication strategies adapted to diverse sectors.",
 
-      "a story they relate to",
+    description:
+      "Every industry communicates differently. Our role is to understand the language, audience and perception dynamics unique to each one.",
 
-      "an experience they associate with the brand",
-
-      "It could be",
-
-      "a social media post",
-
-      "a presentation",
-
-      "a campaign",
-
-      "an advertisement",
-
-      "a news feature",
-
-      "A website",
-
-      "even a brand response",
-
-      "Every touchpoint contributes to perception.",
-
-      "That is why we build communication ecosystems - not disconnected campaigns.",
-
-      "At Sociyo, strategy, design, digital, media, advertising and brand storytelling work together to create one unified experience. Because consistency builds credibility.",
+    items: [
+      "Fintech",
+      "Engineering",
+      "Technology",
+      "Startups",
+      "Manufacturing",
+      "Lifestyle",
+      "Public Sector",
+      "Social Impact",
+      "Infrastructure",
+      "Professional Services",
     ],
   },
 
-  industries: [
-    "Fintech",
-    "Engineering",
-    "Technology",
-    "Startups",
-    "Manufacturing",
-    "Lifestyle",
-    "Public Sector",
-    "Social Impact",
-    "Infrastructure",
-    "Professional Services",
-  ],
+  // ASSOCIATIONS
+  associations: {
+    title:
+      "Built through trust, strengthened through results.",
 
-  associations: [
-    "Equations Money",
-    "DSS Group",
-    "Genefire",
-    "Moseta Renewable Luxury",
-    "Ansoz Creations",
-    "A globally recognized MasterChef celebrity collaboration",
-  ],
+    description:
+      "Each engagement is approached differently — because no two brands require the same communication strategy.",
 
-  whyClientsWorkWithUs: [
-    "Integrated Thinking",
+    brands: [
+      "Equations Money",
+      "DSS Group",
+      "Genefire",
+      "Moseta Renewable Luxury",
+      "Ansoz Creations",
+      "A globally recognized MasterChef celebrity collaboration",
+    ],
+  },
 
-    "Strategic Involvement",
+  // WHY CLIENTS
+  whyClientsWorkWithUs: {
+    title:
+      "Because communication requires partnership, not outsourcing.",
 
-    "Flexible Collaboration",
+    intro:
+      "Clients choose Sociyo because we combine strategic thinking, creative capability, operational execution and long-term involvement.",
 
-    "Accountability",
+    description:
+      "We function as an extension of the brands we work with.",
 
-    "Long-Term Perspective",
-  ],
+    points: [
+      {
+        title: "Integrated Thinking",
 
+        description:
+          "No fragmented coordination between multiple vendors.",
+      },
+
+      {
+        title: "Strategic Involvement",
+
+        description:
+          "Every execution is backed by communication logic.",
+      },
+
+      {
+        title: "Flexible Collaboration",
+
+        description:
+          "Built to scale with startups, growing businesses and established organizations alike.",
+      },
+
+      {
+        title: "Accountability",
+
+        description:
+          "We focus on outcomes that influence business perception — not vanity metrics.",
+      },
+
+      {
+        title: "Long-Term Perspective",
+
+        description:
+          "We help brands grow sustainably instead of chasing short-term visibility alone.",
+      },
+    ],
+  },
+
+  // LOOKING AHEAD
   lookingAhead: {
     title:
       "The future belongs to brands that communicate with clarity.",
@@ -337,24 +433,15 @@ export const corporateCommunicationData = {
 
       "Audiences are no longer influenced only by advertising.",
 
-      "They evaluate:",
-
-      "consistency",
-
-      "transparency",
-
-      "positioning",
-
-      "credibility",
-
-      "brand behaviour",
+      "They evaluate consistency, transparency, positioning, credibility and brand behaviour.",
 
       "The businesses that succeed tomorrow will not simply market better. They will communicate better.",
 
-      "At Sociyo, we continue building systems, strategies, and experiences designed for that future.",
+      "At Sociyo, we continue building systems, strategies and experiences designed for that future.",
     ],
   },
 
+  // CLOSING
   closingStatement: {
     title: "DISCOVER. DECODE. DELIVER",
 
@@ -371,7 +458,11 @@ export const corporateCommunicationData = {
     ],
   },
 
+  // CONTACT
   contact: {
+    title:
+      "Let’s build communication that creates impact.",
+
     website: "www.thesociyo.com",
 
     email: [

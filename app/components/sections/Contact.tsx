@@ -1,471 +1,467 @@
 "use client";
+
 import { useState } from "react";
+
 import CinematicBackground from "@/app/components/cinematic/CinematicBackground";
 import CinematicSectionHeading from "@/app/components/ui/CinematicSectionHeading";
-
 
 export default function ContactPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
   return (
-  <main
-  className="
-    relative
-    min-h-screen
-    overflow-hidden
+    <main
+      className="
+        relative
+        min-h-screen
+        overflow-hidden
 
-    bg-[#18090B]
+        bg-[var(--bg)]
+        text-[var(--text)]
+      "
+    >
+      {/* BG */}
+      <CinematicBackground />
 
-    text-white
-  "
->
-      {/* ATMOSPHERE */}
-      {/* CINEMATIC BG */}
-<CinematicBackground />
+      {/* SOFT OVERLAY */}
+      <div
+        className="
+          absolute
+          inset-0
 
-{/* DARK OVERLAY */}
-<div
-  className="
-    absolute
-    inset-0
+          bg-[linear-gradient(to_bottom,rgba(246,241,238,0.82),rgba(246,241,238,0.96))]
+        "
+      />
 
-    bg-[#18090B]/45
-  "
-/>
+      {/* AMBIENT */}
+      <div
+        className="
+          absolute
+          inset-0
 
-{/* RED GLOW */}
-<div
-  className="
-    absolute
-    left-1/2
-    top-0
+          bg-[radial-gradient(circle_at_top,var(--ambient-1)_0%,transparent_65%)]
 
-    h-[38rem]
-    w-[38rem]
+          opacity-60
+        "
+      />
 
-    -translate-x-1/2
+      {/* GRID */}
+      <div
+        className="
+          absolute
+          inset-0
 
-    rounded-full
+          opacity-[0.022]
 
-    bg-[#fe0000]/8
+          bg-[linear-gradient(rgba(17,17,19,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(17,17,19,0.04)_1px,transparent_1px)]
 
-    blur-[160px]
-  "
-/>
+          bg-[size:90px_90px]
+        "
+      />
 
-{/* GRID */}
-<div
-  className="
-    absolute
-    inset-0
-
-    opacity-[0.03]
-
-    bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]
-
-    bg-[size:90px_90px]
-  "
-/>
-
+      {/* CONTENT */}
       <section
         className="
           relative
           z-10
 
-          px-5
+          mx-auto
+          w-[94%]
+          max-w-[1600px]
+
           pt-28
           pb-16
-
-          md:px-40
-    
         "
       >
-      
-
-{/* HERO */}
-<div
-  className="
-    relative
-
-    grid
-    gap-16
-
-    xl:grid-cols-[0.85fr_1fr]
-    xl:gap-24
-    xl:items-center
-  "
->
-
-{/* LEFT SIDE */}
-<div
-  className="
-    relative
-
-    flex
-    flex-col
-    justify-center
-  "
->
-  <CinematicSectionHeading
-    sectionLabel="Sociyo Communications"
-    heading={{
-      first: "Start",
-      highlight: "The",
-      last: "Conversation",
-    }}
-    shortText="
-      Let’s build systems, experiences and
-      communication that people don’t just notice —
-      but remember.
-    "
-    className="
-      !mb-0
-      !pb-0
-    "
-  />
-
-  {/* FADED WORD */}
-  <div
-    className="
-      pointer-events-none
-
-      absolute
-      -left-10
-      bottom-0
-
-      font-display
-      uppercase
-
-      text-[24vw]
-
-      leading-none
-      tracking-[-0.14em]
-
-      text-white/[0.02]
-    "
-  >
-    TALK
-  </div>
-</div>
-
-  {/* RIGHT SIDE */}
-  <div
-    className="
-      relative
-
-      w-full
-      max-w-2xl
-
-      xl:ml-auto
-    "
-  >
-    {/* PANEL */}
-    <div
-      className="
-        relative
-        overflow-hidden
-
-       rounded-[2.8rem]
-
-        border
-        border-white/10
-
-       bg-[#07111F]/60
-
-        p-7
-        sm:p-10
-        md:p-12
-
-        backdrop-blur-xl
-      "
-    >
-      {/* GLOW */}
-      <div
-        className="
-          absolute
-          right-0
-          top-0
-
-          h-52
-          w-52
-
-          bg-[#ff2d2d]/10
-
-          blur-[120px]
-        "
-      />
-
-      {/* TOP */}
-      <div className="relative z-10">
+        {/* HERO */}
         <div
           className="
-            mb-8
-
-            flex
-            items-center
-            gap-4
-          "
-        >
-          <div
-            className="
-              h-px
-              w-10
-
-              bg-[#ff2d2d]
-            "
-          />
-
-          <span
-            className="
-              text-[10px]
-              uppercase
-
-              tracking-[0.55em]
-
-              text-white/35
-            "
-          >
-            Let’s Begin
-          </span>
-        </div>
-
-        {/* TITLE */}
-        <h2
-          className="
-            mb-8
-
-            font-display
-            uppercase
-
-            text-[2.6rem]
-            sm:text-[3rem]
-            md:text-[4rem]
-
-            leading-[0.84]
-            tracking-[-0.1em]
-
-            text-white
-          "
-        >
-          Discover.
-          <br />
-
-          <span
-            className="
-              text-transparent
-
-              bg-gradient-to-b
-              from-[#ff2d2d]
-              via-[#ff8a8a]
-              to-[#ffffff]
-
-              bg-clip-text
-            "
-          >
-            Decode.
-          </span>
-
-          <br />
-
-          Deliver.
-        </h2>
-
-        {/* DESC */}
-        <p
-          className="
-            max-w-lg
-
-            text-sm
-            sm:text-base
-            md:text-lg
-
-            leading-[2]
-
-            text-white/60
-          "
-        >
-          Let’s build systems, experiences and
-          communication that people don’t just notice —
-          but remember.
-        </p>
-
-        {/* CONTACT GRID */}
-        <div
-          className="
-            mt-12
+            relative
 
             grid
-            gap-5
+            gap-16
 
-            sm:grid-cols-2
+            xl:grid-cols-[0.85fr_1fr]
+            xl:gap-24
+            xl:items-center
           "
         >
-          {/* EMAIL */}
+          {/* LEFT */}
           <div
             className="
-              rounded-[1.8rem]
+              relative
 
-              border
-              border-white/10
+              flex
+              flex-col
+              justify-center
+            "
+          >
+            <CinematicSectionHeading
+              sectionLabel="Sociyo Communications"
+              heading={{
+                first: "Start",
+                highlight: "The",
+                last: "Conversation",
+              }}
+              shortText="
+                Let’s build systems, experiences and
+                communication that people don’t just notice —
+                but remember.
+              "
+              className="
+                !mb-0
+                !pb-0
+              "
+            />
 
-              bg-[#0B1628]/60
+            {/* BG WORD */}
+            <div
+              className="
+                pointer-events-none
 
-              p-6
+                absolute
+                -left-10
+                bottom-0
+
+                font-display
+                uppercase
+
+                text-[24vw]
+
+                leading-none
+                tracking-[-0.14em]
+
+                text-[var(--text)]/[0.02]
+              "
+            >
+              TALK
+            </div>
+          </div>
+
+          {/* RIGHT PANEL */}
+          <div
+            className="
+              relative
+
+              w-full
+              max-w-2xl
+
+              xl:ml-auto
             "
           >
             <div
               className="
-                mb-5
+                relative
+                overflow-hidden
 
-                text-[10px]
-                uppercase
+                rounded-[2.5rem]
 
-                tracking-[0.45em]
+                border
+                border-[var(--border)]
 
-                text-white/30
+                bg-[var(--glass)]
+
+                p-7
+                sm:p-10
+                md:p-12
+
+                backdrop-blur-2xl
+
+                shadow-[0_10px_40px_rgba(0,0,0,0.04)]
               "
             >
-              Email
-            </div>
-
-            <div className="space-y-3">
-              <a
-                href="mailto:letstalk@thesociyo.com"
+              {/* GLOW */}
+              <div
                 className="
-                  block
+                  absolute
+                  right-0
+                  top-0
 
-                  text-sm
-                  md:text-base
+                  h-52
+                  w-52
 
-                  text-white
+                  bg-[var(--ambient-1)]
 
-                  transition-all
-                  duration-500
+                  blur-[100px]
 
-                  hover:text-[#ff8a8a]
+                  opacity-70
                 "
-              >
-                letstalk@thesociyo.com
-              </a>
+              />
 
-              <a
-                href="mailto:thesociyo@gmail.com"
-                className="
-                  block
+              <div className="relative z-10">
+                {/* TOP */}
+                <div
+                  className="
+                    mb-8
 
-                  text-sm
-                  md:text-base
+                    flex
+                    items-center
+                    gap-4
+                  "
+                >
+                  <div
+                    className="
+                      h-px
+                      w-10
 
-                  text-white/65
+                      bg-[var(--accent)]
+                    "
+                  />
 
-                  transition-all
-                  duration-500
+                  <span
+                    className="
+                      text-[10px]
+                      uppercase
 
-                  hover:text-[#ff8a8a]
-                "
-              >
-                thesociyo@gmail.com
-              </a>
+                      tracking-[0.55em]
+
+                      text-[var(--muted)]
+                    "
+                  >
+                    Let’s Begin
+                  </span>
+                </div>
+
+                {/* TITLE */}
+                <h2
+                  className="
+                    mb-8
+
+                    font-display
+
+                    text-[2.6rem]
+                    sm:text-[3rem]
+                    md:text-[4rem]
+
+                    leading-[0.84]
+                    tracking-[-0.08em]
+
+                    text-[var(--text)]
+                  "
+                >
+                  Discover.
+                  <br />
+
+                  <span
+                    className="
+                      text-transparent
+
+                      bg-gradient-to-b
+                      from-[var(--accent-light)]
+                      to-[var(--accent)]
+
+                      bg-clip-text
+                    "
+                  >
+                    Decode.
+                  </span>
+
+                  <br />
+
+                  Deliver.
+                </h2>
+
+                {/* DESC */}
+                <p
+                  className="
+                    max-w-lg
+
+                    text-sm
+                    sm:text-base
+                    md:text-lg
+
+                    leading-[2]
+
+                    text-[var(--muted)]
+                  "
+                >
+                  Let’s build systems, experiences and communication
+                  that people don’t just notice — but remember.
+                </p>
+
+                {/* CONTACT GRID */}
+                <div
+                  className="
+                    mt-12
+
+                    grid
+                    gap-5
+
+                    sm:grid-cols-2
+                  "
+                >
+                  {/* EMAIL */}
+                  <div
+                    className="
+                      rounded-[1.8rem]
+
+                      border
+                      border-[var(--border)]
+
+                      bg-[rgba(255,255,255,0.42)]
+
+                      p-6
+
+                      backdrop-blur-xl
+                    "
+                  >
+                    <div
+                      className="
+                        mb-5
+
+                        text-[10px]
+                        uppercase
+
+                        tracking-[0.45em]
+
+                        text-[var(--muted)]
+                      "
+                    >
+                      Email
+                    </div>
+
+                    <div className="space-y-3">
+                      <a
+                        href="mailto:letstalk@thesociyo.com"
+                        className="
+                          block
+
+                          text-sm
+                          md:text-base
+
+                          text-[var(--text)]
+
+                          transition-all
+                          duration-500
+
+                          hover:text-[var(--accent)]
+                        "
+                      >
+                        letstalk@thesociyo.com
+                      </a>
+
+                      <a
+                        href="mailto:thesociyo@gmail.com"
+                        className="
+                          block
+
+                          text-sm
+                          md:text-base
+
+                          text-[var(--text)]/65
+
+                          transition-all
+                          duration-500
+
+                          hover:text-[var(--accent)]
+                        "
+                      >
+                        thesociyo@gmail.com
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* PHONE */}
+                  <div
+                    className="
+                      rounded-[1.8rem]
+
+                      border
+                      border-[var(--border)]
+
+                      bg-[rgba(255,255,255,0.42)]
+
+                      p-6
+
+                      backdrop-blur-xl
+                    "
+                  >
+                    <div
+                      className="
+                        mb-5
+
+                        text-[10px]
+                        uppercase
+
+                        tracking-[0.45em]
+
+                        text-[var(--muted)]
+                      "
+                    >
+                      Phone
+                    </div>
+
+                    <a
+                      href="tel:+919555106208"
+                      className="
+                        text-sm
+                        md:text-base
+
+                        text-[var(--text)]
+
+                        transition-all
+                        duration-500
+
+                        hover:text-[var(--accent)]
+                      "
+                    >
+                      +91 9555-106208
+                    </a>
+                  </div>
+                </div>
+
+                {/* LOCATION */}
+                <div
+                  className="
+                    mt-5
+
+                    rounded-[1.8rem]
+
+                    border
+                    border-[var(--border)]
+
+                    bg-[rgba(255,255,255,0.42)]
+
+                    p-6
+
+                    backdrop-blur-xl
+                  "
+                >
+                  <div
+                    className="
+                      mb-5
+
+                      text-[10px]
+                      uppercase
+
+                      tracking-[0.45em]
+
+                      text-[var(--muted)]
+                    "
+                  >
+                    Location
+                  </div>
+
+                  <p
+                    className="
+                      text-sm
+                      md:text-base
+
+                      leading-[1.9]
+
+                      text-[var(--text)]/70
+                    "
+                  >
+                    FI-026, 5th Floor, Bansal One
+                    <br />
+                    Bhopal, Madhya Pradesh – 462016
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-
-          {/* PHONE */}
-          <div
-            className="
-              rounded-[1.8rem]
-
-              border
-              border-white/10
-
-              bg-[#0B1628]/60
-
-              p-6
-            "
-          >
-            <div
-              className="
-                mb-5
-
-                text-[10px]
-                uppercase
-
-                tracking-[0.45em]
-
-                text-white/30
-              "
-            >
-              Phone
-            </div>
-
-            <a
-              href="tel:+919555106208"
-              className="
-                text-sm
-                md:text-base
-
-                text-white
-
-                transition-all
-                duration-500
-
-                hover:text-[#ff8a8a]
-              "
-            >
-              +91 9555-106208
-            </a>
           </div>
         </div>
-
-        {/* LOCATION */}
-        <div
-          className="
-            mt-5
-
-            rounded-[1.8rem]
-
-            border
-            border-white/10
-
-            bg-[#0B1628]/60
-
-            p-6
-          "
-        >
-          <div
-            className="
-              mb-5
-
-              text-[10px]
-              uppercase
-
-              tracking-[0.45em]
-
-              text-white/30
-            "
-          >
-            Location
-          </div>
-
-          <p
-            className="
-              text-sm
-              md:text-base
-
-              leading-[1.9]
-
-              text-white/70
-            "
-          >
-            FI-026, 5th Floor, Bansal One
-            <br />
-            Bhopal, Madhya Pradesh – 462016
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
         {/* MAIN */}
         <div
@@ -475,7 +471,7 @@ export default function ContactPage() {
             grid
             gap-8
 
-            lg:grid-cols-[1.1fr_0.9fr]
+            lg:grid-cols-[1.2fr_0.8fr]
           "
         >
           {/* MAP */}
@@ -484,10 +480,10 @@ export default function ContactPage() {
               relative
               overflow-hidden
 
-              rounded-[2rem]
+              rounded-[2.5rem]
 
               border
-              border-white/10
+              border-[var(--border)]
 
               min-h-[420px]
               lg:min-h-[680px]
@@ -502,22 +498,16 @@ export default function ContactPage() {
                 h-full
                 w-full
 
-           
-                contrast-125
+                contrast-110
               "
             />
-
-
 
             <div
               className="
                 absolute
                 inset-0
 
-                bg-gradient-to-t
-                from-black
-                via-black/20
-                to-black/10
+                bg-[linear-gradient(to_top,rgba(246,241,238,0.24),rgba(246,241,238,0.04),transparent)]
               "
             />
           </div>
@@ -528,15 +518,19 @@ export default function ContactPage() {
               relative
               overflow-hidden
 
-              rounded-[2rem]
+              rounded-[2.5rem]
 
               border
-              border-white/10
+              border-[var(--border)]
 
-              bg-[#07111F]/60
-backdrop-blur-xl
+              bg-[var(--glass)]
+
+              backdrop-blur-2xl
+
               p-8
               md:p-10
+
+              shadow-[0_10px_40px_rgba(0,0,0,0.04)]
             "
           >
             {/* GLOW */}
@@ -549,9 +543,11 @@ backdrop-blur-xl
                 h-40
                 w-40
 
-                bg-[#fe0000]/10
+                bg-[var(--ambient-1)]
 
-                blur-[100px]
+                blur-[90px]
+
+                opacity-70
               "
             />
 
@@ -564,7 +560,7 @@ backdrop-blur-xl
                   uppercase
                   tracking-[0.45em]
 
-                  text-[#fe0000]
+                  text-[var(--accent)]
                 "
               >
                 Send Inquiry
@@ -581,20 +577,23 @@ backdrop-blur-xl
                       w-full
 
                       border-b
-                      border-white/10
+                      border-[rgba(17,17,19,0.12)]
 
                       bg-transparent
 
                       pb-5
 
                       text-lg
-                      text-white
+                      text-[var(--text)]
 
                       outline-none
 
+                      transition-all
+                      duration-500
 
-                      placeholder:text-white/25
-                      focus:border-[#fe0000]
+                      placeholder:text-[var(--muted)]
+
+                      focus:border-[var(--accent)]
                     "
                   />
                 </div>
@@ -607,22 +606,25 @@ backdrop-blur-xl
                     placeholder="Email Address"
                     className="
                       w-full
-transition-all
-duration-500
+
                       border-b
-                      border-white/10
+                      border-[rgba(17,17,19,0.12)]
 
                       bg-transparent
 
                       pb-5
 
                       text-lg
-                      text-white
+                      text-[var(--text)]
 
                       outline-none
 
-                      placeholder:text-white/25
-                      focus:border-[#fe0000]
+                      transition-all
+                      duration-500
+
+                      placeholder:text-[var(--muted)]
+
+                      focus:border-[var(--accent)]
                     "
                   />
                 </div>
@@ -635,24 +637,27 @@ duration-500
                     onChange={(e) => setMessage(e.target.value)}
                     className="
                       w-full
-transition-all
-duration-500
+
                       resize-none
 
                       border-b
-                      border-white/10
+                      border-[rgba(17,17,19,0.12)]
 
                       bg-transparent
 
                       pb-5
 
                       text-lg
-                      text-white
+                      text-[var(--text)]
 
                       outline-none
 
-                      placeholder:text-white/25
-                      focus:border-[#fe0000]
+                      transition-all
+                      duration-500
+
+                      placeholder:text-[var(--muted)]
+
+                      focus:border-[var(--accent)]
                     "
                   />
                 </div>
@@ -664,45 +669,66 @@ duration-500
                     `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
                   )}`}
                   className="
-    group
-    relative
-    inline-flex
-    items-center
-    justify-center
-    overflow-hidden
+                    group
+                    relative
+                    inline-flex
+                    items-center
+                    justify-center
+                    overflow-hidden
 
-    border
-    border-white/10
+                    rounded-full
 
-    px-8
-    py-5
+                    border
+                    border-[var(--border)]
 
-    text-xs
-    uppercase
-    tracking-[0.4em]
+                    bg-[rgba(255,255,255,0.45)]
 
-    text-white
+                    px-8
+                    py-5
 
-    transition-all
-    duration-500
+                    text-xs
+                    uppercase
+                    tracking-[0.35em]
 
-    hover:border-[#fe0000]
-  "
+                    text-[var(--text)]
+
+                    backdrop-blur-xl
+
+                    transition-all
+                    duration-500
+
+                    hover:border-[var(--accent)]/20
+                    hover:bg-[var(--soft-accent)]
+                  "
                 >
-                  <span className="relative z-10">
+                  <span
+                    className="
+                      relative
+                      z-10
+
+                      transition-colors
+                      duration-500
+
+                      group-hover:text-[var(--accent)]
+                    "
+                  >
                     Send Message
                   </span>
 
                   <span
                     className="
-      absolute
-      inset-0
-      w-0
-      bg-[#fe0000]
-      transition-all
-      duration-500
-      group-hover:w-full
-    "
+                      absolute
+                      inset-0
+
+                      bg-[var(--soft-accent)]
+
+                      opacity-0
+
+                      transition-opacity
+                      duration-500
+
+                      group-hover:opacity-100
+                    "
                   />
                 </a>
               </form>
@@ -713,5 +739,3 @@ duration-500
     </main>
   );
 }
-
-

@@ -10,24 +10,25 @@ export default function SignalTransition() {
     <section
       className="
         relative
-
         h-[72px]
-
         overflow-hidden
 
         border-y
-        border-white/5
+        border-[var(--border)]
 
-        bg-[#18090B]
+        bg-[var(--bg)]
       "
     >
-      {/* BASE GLOW */}
+      {/* BASE CINEMATIC GLOW */}
       <div
         className="
           absolute
           inset-0
 
-          bg-[linear-gradient(to_right,#07111F,rgba(0,140,255,0.08),#07111F)]
+          bg-[linear-gradient(to_right,
+          transparent,
+          var(--ambient-1),
+          transparent)]
         "
       />
 
@@ -49,7 +50,10 @@ export default function SignalTransition() {
           h-full
           w-[20%]
 
-          bg-[linear-gradient(to_right,transparent,rgba(125,184,255,0.10),transparent)]
+          bg-[linear-gradient(to_right,
+          transparent,
+          rgba(255,70,95,0.10),
+          transparent)]
 
           blur-2xl
         "
@@ -69,7 +73,7 @@ export default function SignalTransition() {
 
           bg-gradient-to-r
           from-transparent
-          via-[#7DB8FF]/20
+          via-[var(--accent)]/15
           to-transparent
         "
       />
@@ -100,7 +104,6 @@ export default function SignalTransition() {
             key={index}
             className="
               relative
-
               flex
               items-center
 
@@ -108,7 +111,7 @@ export default function SignalTransition() {
               md:px-12
             "
           >
-            {/* CONNECTOR LINE */}
+            {/* CONNECTOR */}
             <div
               className="
                 absolute
@@ -122,7 +125,7 @@ export default function SignalTransition() {
 
                 bg-gradient-to-r
                 from-transparent
-                via-white/[0.03]
+                via-[var(--border)]
                 to-transparent
               "
             />
@@ -130,7 +133,7 @@ export default function SignalTransition() {
             {/* DOT */}
             <motion.div
               animate={{
-                opacity: [0.5, 1, 0.5],
+                opacity: [0.45, 1, 0.45],
                 scale: [1, 1.4, 1],
               }}
               transition={{
@@ -149,9 +152,9 @@ export default function SignalTransition() {
 
                 rounded-full
 
-                bg-[#7DB8FF]
+                bg-[var(--accent)]
 
-                shadow-[0_0_14px_rgba(125,184,255,0.9)]
+                shadow-[0_0_14px_rgba(255,46,87,0.75)]
               "
             />
 
@@ -169,7 +172,7 @@ export default function SignalTransition() {
 
                 tracking-[0.35em]
 
-                text-white/45
+                text-[var(--muted)]
               "
             >
               {word}
@@ -190,7 +193,7 @@ export default function SignalTransition() {
 
           bg-gradient-to-r
           from-transparent
-          via-white/[0.08]
+          via-[var(--border)]
           to-transparent
         "
       />
@@ -207,7 +210,7 @@ export default function SignalTransition() {
 
           bg-gradient-to-r
           from-transparent
-          via-[#7DB8FF]/15
+          via-[var(--accent)]/20
           to-transparent
         "
       />
@@ -218,11 +221,7 @@ export default function SignalTransition() {
           absolute
           inset-0
 
-          opacity-[0.02]
-
-          mix-blend-soft-light
-
-          bg-[url('/noise.png')]
+          cinematic-noise
         "
       />
     </section>

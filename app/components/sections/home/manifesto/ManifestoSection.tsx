@@ -16,17 +16,37 @@ export default function ManifestoSection() {
       className="
         relative
         overflow-hidden
-        bg-[#18090B]
-        py-24 md:py-32
-        border-t border-white/20
+
+        bg-[var(--bg)]
+
+        py-24
+        md:py-32
+
+        border-t
+        border-[var(--border)]
+
         px-5
-        
       "
     >
       {/* BACKGROUND */}
       <CinematicBackground />
 
-      {/* SOFT RED GLOW */}
+      {/* DEPTH OVERLAY */}
+      <div
+        className="
+          absolute
+          inset-0
+
+          bg-gradient-to-b
+          from-transparent
+          via-[var(--ambient-1)]/5
+          to-black/[0.05]
+
+          dark:to-black/30
+        "
+      />
+
+      {/* CHERRY GLOW */}
       <div
         className="
           absolute
@@ -40,7 +60,7 @@ export default function ManifestoSection() {
 
           rounded-full
 
-          bg-[#fe0000]/10
+          bg-[var(--accent)]/10
 
           blur-[130px]
         "
@@ -52,8 +72,16 @@ export default function ManifestoSection() {
           absolute
           inset-0
 
-          bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),
-                       linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)]
+          bg-[linear-gradient(
+            to_right,
+            rgba(255,255,255,0.025)_1px,
+            transparent_1px
+          ),
+          linear-gradient(
+            to_bottom,
+            rgba(255,255,255,0.025)_1px,
+            transparent_1px
+          )]
 
           bg-[size:70px_70px]
 
@@ -61,30 +89,31 @@ export default function ManifestoSection() {
         "
       />
 
+      {/* CONTENT */}
       <div
         className="
           relative
           z-10
 
+          mx-auto
+
           w-[92%]
           xl:w-[82%]
-
-          mx-auto
         "
       >
-        {/* TOP */}
+        {/* HEADING */}
         <CinematicSectionHeading
-  {...manifestoHeading}
-/>
+          {...manifestoHeading}
+        />
 
-        {/* MANIFESTO ROWS */}
+        {/* MANIFESTO LIST */}
         <div
           className="
             mt-20
             md:mt-24
 
             divide-y
-            divide-white/6
+            divide-[var(--border)]
           "
         >
           {manifestoContent.map((item, index) => (
@@ -108,9 +137,12 @@ export default function ManifestoSection() {
               }}
               className="
                 group
+                relative
 
                 grid
                 gap-8
+
+                overflow-hidden
 
                 py-10
                 md:py-12
@@ -119,20 +151,43 @@ export default function ManifestoSection() {
                 md:items-center
               "
             >
-              {/* LEFT NUMBER */}
+              {/* HOVER AMBIENT */}
               <div
                 className="
+                  pointer-events-none
+
+                  absolute
+                  inset-0
+
+                  opacity-0
+
+                  transition-opacity
+                  duration-500
+
+                  group-hover:opacity-100
+
+                  bg-[radial-gradient(circle_at_left,var(--ambient-1),transparent_60%)]
+                "
+              />
+
+              {/* LEFT */}
+              <div
+                className="
+                  relative
+                  z-10
+
                   flex
                   items-center
                   gap-4
                 "
               >
+                {/* LINE */}
                 <div
                   className="
                     h-px
                     w-8
 
-                    bg-[#fe0000]
+                    bg-[var(--accent)]
 
                     transition-all
                     duration-300
@@ -141,6 +196,7 @@ export default function ManifestoSection() {
                   "
                 />
 
+                {/* NUMBER */}
                 <span
                   className="
                     font-display
@@ -149,7 +205,7 @@ export default function ManifestoSection() {
 
                     tracking-[-0.08em]
 
-                    text-[#fe0000]
+                    text-[var(--accent)]
                   "
                 >
                   {item.id}
@@ -159,6 +215,9 @@ export default function ManifestoSection() {
               {/* TEXT */}
               <h3
                 className="
+                  relative
+                  z-10
+
                   max-w-4xl
 
                   text-[1.35rem]
@@ -169,12 +228,12 @@ export default function ManifestoSection() {
                   leading-[1.15]
                   tracking-[-0.03em]
 
-                  text-white/90
+                  text-[var(--text)]/88
 
                   transition-all
                   duration-300
 
-                  group-hover:text-white
+                  group-hover:text-[var(--accent)]
                 "
               >
                 {item.text}
@@ -183,6 +242,9 @@ export default function ManifestoSection() {
               {/* RIGHT */}
               <div
                 className="
+                  relative
+                  z-10
+
                   hidden
                   md:flex
 
@@ -197,15 +259,15 @@ export default function ManifestoSection() {
                     rounded-full
 
                     border
-                    border-white/10
+                    border-[var(--border)]
 
-                    bg-white/[0.03]
+                    glass-card
 
                     transition-all
                     duration-300
 
-                    group-hover:border-[#fe0000]/40
-                    group-hover:bg-[#fe0000]/10
+                    group-hover:border-[var(--accent)]
+                    group-hover:bg-[var(--accent)]/10
                   "
                 />
               </div>
@@ -213,7 +275,7 @@ export default function ManifestoSection() {
           ))}
         </div>
 
-        {/* FINAL */}
+        {/* FINAL STATEMENT */}
         <motion.div
           initial={{
             opacity: 0,
@@ -234,7 +296,7 @@ export default function ManifestoSection() {
             md:mt-28
 
             border-t
-            border-white/10
+            border-[var(--border)]
 
             pt-12
             md:pt-16
@@ -251,17 +313,18 @@ export default function ManifestoSection() {
               md:justify-between
             "
           >
+            {/* LEFT */}
             <div>
               <div
                 className="
                   mb-4
 
                   text-[10px]
-                  uppercase
 
+                  uppercase
                   tracking-[0.6em]
 
-                  text-white/35
+                  text-[var(--muted)]
                 "
               >
                 Communication Philosophy
@@ -279,13 +342,14 @@ export default function ManifestoSection() {
                   leading-[0.95]
                   tracking-[-0.06em]
 
-                  text-white
+                  text-[var(--text)]
                 "
               >
                 Not Just Seen.
               </h3>
             </div>
 
+            {/* RIGHT */}
             <h2
               className="
                 font-display
@@ -299,13 +363,14 @@ export default function ManifestoSection() {
                 tracking-[-0.08em]
 
                 text-transparent
+                bg-clip-text
 
                 bg-gradient-to-b
-                from-[#fe0000]
-                via-[#ff7a7a]
-                to-white
+                from-[var(--accent-light)]
+                via-[var(--accent)]
+                to-[#ffd5dc]
 
-                bg-clip-text
+                drop-shadow-[0_0_40px_rgba(255,46,87,0.18)]
               "
             >
               Remembered

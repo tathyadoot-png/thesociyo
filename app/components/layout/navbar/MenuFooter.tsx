@@ -45,8 +45,8 @@ export default function MenuFooter() {
           origin-left
 
           bg-gradient-to-r
-          from-[#ff2d2d]
-          via-[#ff8a8a]
+          from-[var(--accent-light)]
+          via-[var(--accent)]
           to-transparent
         "
       />
@@ -73,7 +73,7 @@ export default function MenuFooter() {
 
               tracking-[0.5em]
 
-              text-white/25
+              text-[var(--muted)]
             "
           >
             Sociyo Communications
@@ -88,7 +88,7 @@ export default function MenuFooter() {
 
               leading-[1.8]
 
-              text-white/40
+              text-[var(--muted)]
             "
           >
             Systems, narratives and experiences
@@ -109,16 +109,16 @@ export default function MenuFooter() {
 
             tracking-[0.45em]
 
-            text-white/20
+            text-[var(--muted)]
           "
         >
           <span>DISCOVER</span>
 
-          <div className="h-px w-6 bg-white/10" />
+          <div className="h-px w-6 glass-card" />
 
           <span>DECODE</span>
 
-          <div className="h-px w-6 bg-white/10" />
+          <div className="h-px w-6 glass-card" />
 
           <span>DELIVER</span>
         </div>

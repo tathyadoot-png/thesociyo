@@ -30,14 +30,14 @@ export default function CustomCursor() {
       gsap.to(cursorRef.current, {
         x: e.clientX,
         y: e.clientY,
-        duration: 0.25,
+        duration: 0.22,
         ease: "power3.out",
       });
     };
 
     const handleMouseDown = () => {
       gsap.to(cursorRef.current, {
-        scale: 0.85,
+        scale: 0.82,
         duration: 0.15,
       });
     };
@@ -45,7 +45,7 @@ export default function CustomCursor() {
     const handleMouseUp = () => {
       gsap.to(cursorRef.current, {
         scale: 1,
-        duration: 0.2,
+        duration: 0.25,
       });
     };
 
@@ -65,36 +65,107 @@ export default function CustomCursor() {
   return (
     <div
       ref={cursorRef}
-      className="fixed top-0 left-0 z-[9999] pointer-events-none"
+      className="
+        fixed
+        top-0
+        left-0
+        z-[9999]
+
+        pointer-events-none
+      "
       style={{
         transform: "translate(-50%, -50%)",
       }}
     >
-      {/* Glow Layer */}
-      <div className="absolute inset-0 rounded-full bg-white/20 blur-xl scale-150" />
+      {/* OUTER GLOW */}
+      <div
+        className="
+          absolute
+          inset-0
 
-      {/* Cursor Body */}
+          scale-[2.2]
+
+          rounded-full
+
+          glow-cherry
+
+          opacity-70
+
+          blur-2xl
+        "
+      />
+
+      {/* OUTER RING */}
+      <div
+        className="
+          absolute
+          inset-0
+
+          scale-[1.35]
+
+          rounded-full
+
+          border
+          border-[var(--accent)]/20
+        "
+      />
+
+      {/* MAIN CURSOR */}
       <div
         className="
           relative
-          flex items-center justify-center
-          w-12 h-12
+
+          flex
+          items-center
+          justify-center
+
+          h-14
+          w-14
+
           rounded-full
-          border border-white/10
-          bg-white/5
-          backdrop-blur-md
-          shadow-[0_0_25px_rgba(255,255,255,0.15)]
+
+          glass-card
+
+          border-[var(--accent)]/20
+
+          bg-[rgba(17,17,19,0.72)]
+
+          shadow-[0_0_40px_rgba(254,0,0,0.16)]
+
+          transition-all
+          duration-300
         "
       >
+        {/* INNER RED LIGHT */}
+        <div
+          className="
+            absolute
+
+            h-8
+            w-8
+
+            rounded-full
+
+            bg-[var(--accent)]/12
+
+            blur-xl
+          "
+        />
+
+        {/* LOGO */}
         <Image
-          src="/Sociyo_WFavicon.png"
+          src="/Sociyo_Favicon.png"
           alt="cursor"
-          width={26}
-          height={26}
+          width={24}
+          height={24}
           priority
           className="
+            relative
+            z-10
+
             object-contain
-            drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]
+
+            drop-shadow-[0_0_12px_rgba(254,0,0,0.55)]
           "
         />
       </div>

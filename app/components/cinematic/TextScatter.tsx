@@ -42,7 +42,7 @@ md:text-4xl
             uppercase
  
 
-            text-[#fe0000]
+            text-[var(--accent)]
           "
         >
           {letter === " " ? "\u00A0" : letter}

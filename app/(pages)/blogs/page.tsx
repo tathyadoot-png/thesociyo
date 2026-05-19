@@ -2,7 +2,7 @@ import BlogsPage from "@/app/components/sections/Blogs";
 
 export default function BlogsPageComponent() {
   return (
-    <main className="bg-black text-white">
+    <main className="bg-[var(--bg)] text-[var(--text)]">
       <BlogsPage />
     </main>
   );

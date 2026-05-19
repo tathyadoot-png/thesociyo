@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import CinematicBackground from "@/app/components/cinematic/CinematicBackground";
 
 import {
   FaInstagram,
@@ -86,55 +85,78 @@ export default function Footer() {
       className="
         relative
         overflow-hidden
-   
-       bg-[#18090B]
-        text-white
+
+        bg-[#151210]
+
+        text-[#F5EEE8]
       "
     >
-      {/* CINEMATIC BG */}
-<CinematicBackground />
+      {/* NOISE */}
+      <div
+        className="
+          pointer-events-none
 
-{/* DARK OVERLAY */}
-<div
-  className="
-    absolute
-    inset-0
+          absolute
+          inset-0
 
-    bg-black/25
-  "
-/>
+          opacity-[0.015]
 
-  
-      
+          mix-blend-overlay
+
+          bg-[url('/noise.png')]
+        "
+      />
+
+      {/* SUBTLE RED AMBIENT */}
+      <div
+        className="
+          pointer-events-none
+
+          absolute
+          inset-0
+
+          bg-[radial-gradient(circle_at_top,rgba(254,0,0,0.035),transparent_60%)]
+        "
+      />
+
       <div
         className="
           relative
           z-10
 
-     px-3
-          py-20
+          px-3
+          md:px-8
+          lg:px-12
 
-    
-         
+          py-20
+          md:py-28
         "
       >
         {/* TOP STRIP */}
         <div
           className="
-            mb-16
+            mb-20
+            md:mb-28
 
             flex
             items-center
             justify-between
 
             border-b
-            border-white/10
+            border-white/[0.08]
 
             pb-6
           "
         >
           <div className="flex items-center gap-4">
-            <div className="h-px w-16 bg-[#fe0000]" />
+            <div
+              className="
+                h-px
+                w-16
+
+                bg-[linear-gradient(to_right,var(--accent),transparent)]
+              "
+            />
 
             <span
               className="
@@ -142,7 +164,7 @@ export default function Footer() {
                 uppercase
                 tracking-[0.45em]
 
-                text-[#fe0000]
+                text-[var(--accent)]
               "
             >
               Socially Yours
@@ -161,7 +183,7 @@ export default function Footer() {
               leading-[2]
               tracking-[0.45em]
 
-              text-white/20
+              text-[#B8AEA8]
             "
           >
             Influence
@@ -172,43 +194,74 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* BG WORD */}
+        <div
+          className="
+            pointer-events-none
+
+            absolute
+            left-1/2
+            top-1/2
+
+            -translate-x-1/2
+            -translate-y-1/2
+
+            whitespace-nowrap
+
+            font-display
+            uppercase
+
+            text-[26vw]
+            md:text-[18vw]
+
+            leading-none
+            tracking-[-0.14em]
+
+            text-white/[0.015]
+          "
+        >
+          SOCIYO
+        </div>
+
         {/* MAIN */}
         <div
           className="
             grid
-            gap-20
-px-5 md:px-36
-            lg:grid-cols-[1.1fr_0.9fr]
+            gap-24
+            lg:gap-32
+
+            px-2
+            md:px-10
+            lg:px-20
+
+            lg:grid-cols-[1.2fr_0.8fr]
             lg:items-start
           "
         >
-          {/* LEFT SIDE */}
+          {/* LEFT */}
           <div>
-            {/* BIG LOGO */}
+            {/* LOGO */}
             <div className="overflow-hidden">
               <Image
                 src="/SociyoLogo_Agency_WhiteRed.png"
                 alt="Sociyo"
-
                 width={700}
                 height={220}
-
                 priority
-
                 className="
-      h-auto
-      w-[240px]
+                  h-auto
 
-      sm:w-[120px]
-      md:w-[220px]
-      lg:w-[400px]
+                  w-[160px]
+                  sm:w-[220px]
+                  md:w-[320px]
+                  lg:w-[420px]
 
-      object-contain
-    "
+                  object-contain
+                "
               />
             </div>
 
-            {/* DESCRIPTION */}
+            {/* DESC */}
             <p
               className="
                 mt-8
@@ -219,11 +272,13 @@ px-5 md:px-36
 
                 leading-[2]
 
-                text-white/50
+                text-[#B8AEA8]
               "
             >
-              The future belongs to organizations that communicate with clarity, evolve with direction and build meaningful audience connection.
-
+              The future belongs to organizations
+              that communicate with clarity, evolve
+              with direction and build meaningful
+              audience connection.
             </p>
 
             {/* SOCIALS */}
@@ -251,14 +306,17 @@ px-5 md:px-36
                       rounded-full
 
                       border
-                      border-white/10
+                      border-white/[0.08]
 
-                      bg-white/[0.03]
+                      bg-white/[0.02]
+
+                      backdrop-blur-xl
 
                       transition-all
                       duration-500
 
-                      hover:border-[#fe0000]
+                      hover:border-[var(--accent)]
+                      hover:bg-[var(--accent)]/[0.06]
                     "
                   >
                     <span
@@ -268,7 +326,7 @@ px-5 md:px-36
 
                         translate-y-full
 
-                        bg-[#fe0000]
+                        bg-[var(--accent)]/90
 
                         transition-transform
                         duration-500
@@ -283,10 +341,13 @@ px-5 md:px-36
                         relative
                         z-10
 
-                        transition-transform
+                        text-[#EDE4DD]
+
+                        transition-all
                         duration-500
 
                         group-hover:scale-110
+                        group-hover:text-white
                       "
                     />
                   </Link>
@@ -295,7 +356,7 @@ px-5 md:px-36
             </div>
           </div>
 
-          {/* RIGHT SIDE */}
+          {/* RIGHT */}
           <div
             className="
               grid
@@ -314,7 +375,7 @@ px-5 md:px-36
                   uppercase
                   tracking-[0.45em]
 
-                  text-[#fe0000]
+                  text-[var(--accent)]
                 "
               >
                 Navigation
@@ -334,12 +395,12 @@ px-5 md:px-36
 
                       text-sm
 
-                      text-white/60
+                      text-[#B8AEA8]
 
                       transition-all
                       duration-500
 
-                      hover:text-white
+                      hover:text-[var(--accent)]
                     "
                   >
                     <span>{link.label}</span>
@@ -372,7 +433,7 @@ px-5 md:px-36
                   uppercase
                   tracking-[0.45em]
 
-                  text-[#fe0000]
+                  text-[var(--accent)]
                 "
               >
                 Services
@@ -392,12 +453,12 @@ px-5 md:px-36
 
                       text-sm
 
-                      text-white/60
+                      text-[#B8AEA8]
 
                       transition-all
                       duration-500
 
-                      hover:text-white
+                      hover:text-[var(--accent)]
                     "
                   >
                     <span>{link.label}</span>
@@ -430,7 +491,7 @@ px-5 md:px-36
                   uppercase
                   tracking-[0.45em]
 
-                  text-[#fe0000]
+                  text-[var(--accent)]
                 "
               >
                 Work inquiries
@@ -443,7 +504,7 @@ px-5 md:px-36
                   text-sm
                   leading-[1.8]
 
-                  text-white/50
+                  text-[#B8AEA8]
                 "
               >
                 Interested in working with us?
@@ -457,16 +518,15 @@ px-5 md:px-36
 
                     text-base
 
-                    text-white
+                    text-[#EDE4DD]
 
                     transition-all
                     duration-500
 
-                    hover:text-[#fe0000]
+                    hover:text-[var(--accent)]
                   "
                 >
                   letstalk@thesociyo.com
-
                 </a>
 
                 <a
@@ -476,15 +536,14 @@ px-5 md:px-36
 
                     text-base
 
-                    text-white
+                    text-[#EDE4DD]
 
                     transition-all
                     duration-500
 
-                    hover:text-[#fe0000]
+                    hover:text-[var(--accent)]
                   "
                 >
-
                   thesociyo@gmail.com
                 </a>
 
@@ -495,12 +554,12 @@ px-5 md:px-36
 
                     text-sm
 
-                    text-white/60
+                    text-[#B8AEA8]
 
                     transition-all
                     duration-500
 
-                    hover:text-white
+                    hover:text-[var(--accent)]
                   "
                 >
                   Call: +91 95551 06208
@@ -508,9 +567,8 @@ px-5 md:px-36
               </div>
             </div>
 
-            {/* CAREER + ADDRESS */}
+            {/* ADDRESS */}
             <div>
-
               <h3
                 className="
                   mb-6
@@ -519,12 +577,12 @@ px-5 md:px-36
                   uppercase
                   tracking-[0.45em]
 
-                  text-[#fe0000]
+                  text-[var(--accent)]
                 "
               >
                 Address
               </h3>
-              {/* ADDRESS */}
+
               <div
                 className="
                   mt-6
@@ -532,7 +590,7 @@ px-5 md:px-36
                   text-sm
                   leading-[1.9]
 
-                  text-white/40
+                  text-[#B8AEA8]
                 "
               >
                 SOCIYO Communications Pvt Ltd
@@ -554,7 +612,7 @@ px-5 md:px-36
             pt-6
 
             border-t
-            border-white/10
+            border-white/[0.08]
 
             flex
             flex-col
@@ -564,7 +622,7 @@ px-5 md:px-36
             uppercase
             tracking-[0.35em]
 
-            text-white/25
+            text-white/40
 
             sm:flex-row
             sm:items-center
@@ -575,9 +633,7 @@ px-5 md:px-36
             © {new Date().getFullYear()} Sociyo Communication
           </div>
 
-          <div>
-            Socially Yours
-          </div>
+          <div>Socially Yours</div>
         </div>
       </div>
     </footer>

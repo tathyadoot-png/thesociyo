@@ -4,220 +4,369 @@
 
 import { useState } from "react";
 
-import { AnimatePresence, motion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+} from "framer-motion";
+
 import { lenisRef } from "@/app/components/ui/SmoothScroll";
+
 import CorporateCommunication from "@/app/components/sections/work/CorporateCommunication";
 import PoliticalCommunication from "@/app/components/sections/work/PoliticalCommunication";
 import SocialDevelopment from "@/app/components/sections/work/SocialDevelopment";
 import TechnologyDigital from "@/app/components/sections/work/TechnologyDigital";
 
 const tabs = [
-  {
-    id: "corporate",
-    label: "Corporate",
-    short: "Corp",
-    component: <CorporateCommunication />,
-  },
-  {
+    {
     id: "political",
     label: "Political",
-    short: "Pol",
+    desc: "Narrative & influence",
     component: <PoliticalCommunication />,
   },
   {
+    id: "corporate",
+    label: "Corporate",
+    desc: "Strategic brand systems",
+    component: <CorporateCommunication />,
+  },
+ {
     id: "social",
-    label: "Social Development",
-    short: "Social",
+    label: "Social",
+    desc: "Impact development",
     component: <SocialDevelopment />,
   },
   {
     id: "technology",
-    label: "Technology & Digital",
-    short: "Tech",
+    label: "Technology",
+    desc: "Digital ecosystems",
     component: <TechnologyDigital />,
   },
+ 
 ];
 
-
-
-
 export default function WorkPage() {
-  const [activeTab, setActiveTab] = useState("corporate");
+  const [activeTab, setActiveTab] =
+    useState("political");
 
-  const activeContent = tabs.find((tab) => tab.id === activeTab);
+  const activeContent = tabs.find(
+    (tab) => tab.id === activeTab
+  );
 
   return (
-    <main className="relative overflow-hidden  bg-black text-white">
-      {/* FLOATING NAV */}
+    <main
+      className="
+        relative
+        overflow-hidden
+
+        bg-[var(--bg)]
+        text-[var(--text)]
+      "
+    >
+      {/* DESKTOP CINEMATIC SWITCHER */}
       <div
         className="
           fixed
-          left-1/2
-          top-20
+          right-10
+          top-1/2
           z-[120]
 
-          w-full
-          -translate-x-1/2
+          hidden
+          xl:flex
 
-          px-3
-          sm:px-4
+          -translate-y-1/2
+
+          flex-col
+          gap-4
         "
       >
-        <div className="mx-auto flex w-full justify-center">
-          <div
-            className="
-              relative
+        {tabs.map((tab, index) => {
+          const isActive =
+            activeTab === tab.id;
 
-              flex
-              w-full
-              max-w-fit
+          return (
+            <button
+              key={tab.id}
+              onClick={() => {
+                lenisRef?.scrollTo(0, {
+                  immediate: true,
+                });
 
-              items-center
+                setActiveTab(tab.id);
+              }}
+              className={`
+                group
+                relative
 
-              overflow-x-auto
+                overflow-hidden
 
-              rounded-full
+                rounded-[2rem]
 
-              border
-              border-white/10
+                border
 
-              bg-black/40
+                text-left
 
-              p-1
+                transition-all
+                duration-500
 
-              backdrop-blur-2xl
+                ${
+                  isActive
+                    ? `
+                      w-[320px]
 
-              shadow-[0_10px_60px_rgba(0,0,0,0.45)]
+                      border-[var(--accent)]/15
 
-              scrollbar-none
-            "
-          >
-            {/* ambient glow */}
-            <div
-              className="
-                absolute
-                inset-0
+                      bg-white
 
-                rounded-full
+                      shadow-[0_25px_60px_rgba(254,0,0,0.10)]
+                    `
+                    : `
+                      w-[220px]
 
-                bg-[radial-gradient(circle_at_center,rgba(125,184,255,0.12),transparent_70%)]
+                      border-black/[0.06]
 
-                opacity-70
-              "
-            />
+                      bg-white/55
 
-            {tabs.map((tab) => {
-              const isActive = activeTab === tab.id;
+                      backdrop-blur-xl
 
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => {
-                    lenisRef?.scrollTo(0, {
-                      immediate: true,
-                    });
-
-                    setActiveTab(tab.id);
-                  }}
+                      hover:w-[260px]
+                      hover:bg-white/75
+                    `
+                }
+              `}
+            >
+              {/* ACTIVE GLOW */}
+              {isActive && (
+                <motion.div
+                  layoutId="work-switcher"
                   className="
-                    relative
+                    absolute
+                    inset-0
 
-                    flex
-                    flex-shrink-0
-                    items-center
-                    justify-center
-
-                    overflow-hidden
-
-                    rounded-full
-
-                    px-3
-                    py-2.5
-
-                    sm:px-5
-                    sm:py-3
-
-                    text-[9px]
-                    sm:text-[10px]
-                    md:text-xs
-
-                    uppercase
-
-                    tracking-[0.18em]
-                    sm:tracking-[0.28em]
-
-                    transition-all
-                    duration-300
+                    bg-[radial-gradient(circle_at_right,rgba(254,0,0,0.08),transparent_72%)]
                   "
-                >
-                  {/* ACTIVE BG */}
-                  {isActive && (
-                    <motion.div
-                      layoutId="active-pill"
-                      transition={{
-                        type: "spring",
-                        stiffness: 260,
-                        damping: 24,
-                      }}
-                      className="
-                        absolute
-                        inset-0
+                />
+              )}
 
-                        rounded-full
+              {/* TOP LIGHT */}
+              <div
+                className="
+                  pointer-events-none
 
-                        border
-                        border-[#7DB8FF]/30
+                  absolute
+                  inset-0
 
-                        bg-[#7DB8FF]/15
+                  bg-[linear-gradient(180deg,rgba(255,255,255,0.7),transparent_40%)]
 
-                        shadow-[0_0_25px_rgba(125,184,255,0.22)]
-                      "
-                    >
-                      {/* shine */}
-                      <div
-                        className="
-                          absolute
-                          inset-0
+                  opacity-70
+                "
+              />
 
-                          bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.16),transparent)]
+              <div
+                className="
+                  relative
+                  z-10
 
-                          animate-[shine_4s_linear_infinite]
-                        "
-                      />
-                    </motion.div>
-                  )}
+                  flex
+                  items-center
+                  justify-between
 
+                  px-6
+                  py-5
+                "
+              >
+                {/* LEFT */}
+                <div className="flex flex-col">
+                  {/* NUMBER */}
                   <span
                     className={`
-                      relative
-                      z-10
+                      text-[9px]
 
-                      whitespace-nowrap
+                      tracking-[0.35em]
 
                       transition-all
                       duration-300
 
-                      ${isActive
-                        ? "text-white"
-                        : "text-white/40 hover:text-white/75"
+                      ${
+                        isActive
+                          ? "text-[var(--accent)]"
+                          : "text-[var(--muted)]"
                       }
                     `}
                   >
-                    {/* MOBILE */}
-                    <span className="sm:hidden">
-                      {tab.short}
-                    </span>
-
-                    {/* DESKTOP */}
-                    <span className="hidden sm:block">
-                      {tab.label}
-                    </span>
+                    0{index + 1}
                   </span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
+
+                  {/* LABEL */}
+                  <span
+                    className={`
+                      mt-2
+
+                      text-[13px]
+                      uppercase
+
+                      tracking-[0.24em]
+
+                      transition-all
+                      duration-300
+
+                      ${
+                        isActive
+                          ? "text-[var(--text)]"
+                          : "text-[var(--muted)]"
+                      }
+                    `}
+                  >
+                    {tab.label}
+                  </span>
+
+                  {/* DESC */}
+                  <span
+                    className="
+                      mt-2
+
+                      text-[11px]
+
+                      text-[var(--muted)]
+                    "
+                  >
+                    {tab.desc}
+                  </span>
+                </div>
+
+                {/* RIGHT INDICATOR */}
+                <div
+                  className={`
+                    flex
+                    h-12
+                    w-12
+
+                    items-center
+                    justify-center
+
+                    rounded-full
+
+                    text-sm
+
+                    transition-all
+                    duration-300
+
+                    ${
+                      isActive
+                        ? `
+                          bg-[var(--accent)]
+
+                          text-white
+
+                          shadow-[0_0_30px_rgba(254,0,0,0.35)]
+                        `
+                        : `
+                          border
+                          border-black/10
+
+                          text-[var(--muted)]
+                        `
+                    }
+                  `}
+                >
+                  ↗
+                </div>
+              </div>
+
+              {/* ACTIVE EDGE */}
+              {isActive && (
+                <div
+                  className="
+                    absolute
+                    left-0
+                    top-0
+
+                    h-full
+                    w-[4px]
+
+                    bg-[var(--accent)]
+                  "
+                />
+              )}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* MOBILE SWITCHER */}
+      <div
+        className="
+          fixed
+          bottom-5
+          left-1/2
+          z-[120]
+
+          flex
+          xl:hidden
+
+          -translate-x-1/2
+
+          items-center
+          gap-2
+
+          rounded-full
+
+          border
+          border-white/10
+
+          bg-white/75
+
+          p-2
+
+          backdrop-blur-xl
+
+          shadow-[0_10px_40px_rgba(0,0,0,0.08)]
+        "
+      >
+        {tabs.map((tab, index) => {
+          const isActive =
+            activeTab === tab.id;
+
+          return (
+            <button
+              key={tab.id}
+              onClick={() => {
+                lenisRef?.scrollTo(0, {
+                  immediate: true,
+                });
+
+                setActiveTab(tab.id);
+              }}
+              className={`
+                rounded-full
+
+                px-4
+                py-3
+
+                text-[10px]
+                uppercase
+
+                tracking-[0.25em]
+
+                transition-all
+                duration-300
+
+                ${
+                  isActive
+                    ? `
+                      bg-[var(--accent)]
+
+                      text-white
+                    `
+                    : `
+                      text-[var(--muted)]
+                    `
+                }
+              `}
+            >
+              0{index + 1}
+            </button>
+          );
+        })}
       </div>
 
       {/* CONTENT */}
@@ -226,7 +375,7 @@ export default function WorkPage() {
           key={activeTab}
           initial={{
             opacity: 0,
-            y: 30,
+            y: 40,
           }}
           animate={{
             opacity: 1,
@@ -234,10 +383,10 @@ export default function WorkPage() {
           }}
           exit={{
             opacity: 0,
-            y: -30,
+            y: -40,
           }}
           transition={{
-            duration: 0.55,
+            duration: 0.7,
             ease: [0.22, 1, 0.36, 1],
           }}
         >

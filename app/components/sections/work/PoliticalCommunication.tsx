@@ -27,283 +27,458 @@ const fadeUp: Variants = {
 
 export default function PoliticalCommunication() {
   return (
-    <main className="relative overflow-hidden bg-[#18090B] md:px-32 pt-32 md:pt-40 text-white">
+    <main className="relative overflow-hidden bg-[var(--bg)] md:px-32 pt-32 md:pt-40 text-[var(--text)]">
       <CinematicBackground />
 
-      {/* HERO */}
-      <section className="relative min-h-screen border-b border-white/10">
-        {/* IMAGE */}
-        <motion.div
-          initial={{
-            opacity: 0,
-            scale: 1.1,
-          }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-          }}
-          transition={{
-            duration: 1.5,
-          }}
+{/* HERO */}
+<section
+  className="
+    relative
+
+    overflow-hidden
+
+    border-b
+    border-[var(--border)]
+
+    bg-[var(--bg)]
+  "
+>
+  {/* SOFT BACKLIGHT */}
+  <div
+    className="
+      absolute
+      inset-0
+
+      bg-[radial-gradient(circle_at_top_left,rgba(254,0,0,0.04),transparent_35%)]
+
+      pointer-events-none
+    "
+  />
+
+  <div
+    className="
+      relative
+      z-10
+
+      grid
+      min-h-screen
+
+      xl:grid-cols-[1.05fr_0.95fr]
+    "
+  >
+    {/* LEFT CONTENT */}
+    <div
+      className="
+        relative
+
+        flex
+        flex-col
+        justify-between
+
+        px-6
+        py-10
+
+        md:px-10
+        lg:px-20
+      "
+    >
+      {/* TOP */}
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <div className="h-px w-16 bg-[var(--accent)]" />
+
+          <span
+            className="
+              text-[10px]
+              uppercase
+
+              tracking-[0.45em]
+
+              text-[var(--muted)]
+            "
+          >
+            Ecosystem {data.id}
+          </span>
+        </div>
+
+        <span
           className="
-            absolute
-            right-0
-            top-0
-
             hidden
-            h-full
-            w-[42%]
+            md:block
 
-            overflow-hidden
+            text-[10px]
+            uppercase
 
-            xl:block
+            tracking-[0.45em]
+
+            text-[var(--muted)]
           "
         >
-          <div className="absolute inset-0 z-10 bg-gradient-to-l from-transparent via-[#18090B]/40 to-[#18090B]" />
+          Political Strategy Division
+        </span>
+      </div>
 
-          <Image
-            src="/About-Us.jpg"
-            alt="Political Communication"
-            fill
-            priority
-            className="object-cover opacity-60"
-          />
+      {/* CENTER */}
+      <div className="relative py-16">
+        {/* BIG NUMBER */}
+        <motion.div
+          variants={fadeUp}
+          initial="initial"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="
+            absolute
+            -top-12
+            left-0
+
+            font-display
+
+            text-[6rem]
+            md:text-[14rem]
+
+            leading-none
+            tracking-[-0.12em]
+
+            text-black/[0.03]
+          "
+        >
+          02
         </motion.div>
 
-        <div className="relative z-10 flex min-h-screen flex-col justify-between px-6 py-10 md:px-10 lg:px-20">
-          {/* TOP */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className="h-px w-16 bg-[#7DB8FF]" />
+        {/* TITLE */}
+        <motion.h1
+          variants={fadeUp}
+          initial="initial"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="
+            relative
+            z-10
 
-              <span className="text-[10px] uppercase tracking-[0.45em] text-white/40">
-                Ecosystem {data.id}
-              </span>
-            </div>
+            max-w-5xl
 
-            <span className="hidden text-[10px] uppercase tracking-[0.45em] text-white/20 md:block">
-              Political Strategy Division
-            </span>
-          </div>
+            font-display
+            uppercase
 
-          {/* CENTER */}
-          <div className="relative py-20">
-            <motion.div
-              variants={fadeUp}
-initial="initial"
-whileInView="whileInView"
-viewport={{ once: true, amount: 0.2 }}
+            text-[4rem]
+            sm:text-[5rem]
+            lg:text-[8rem]
+            xl:text-[9rem]
+
+            leading-[0.82]
+            tracking-[-0.12em]
+          "
+        >
+          {data.short}
+        </motion.h1>
+
+        {/* DESCRIPTION */}
+        <div className="mt-16 max-w-2xl">
+          <p
+            className="
+              text-base
+              md:text-xl
+
+              leading-[2]
+
+              text-[var(--muted)]
+            "
+          >
+            {data.cover.description}
+          </p>
+
+          <p
+            className="
+              mt-8
+
+              font-display
+              uppercase
+
+              text-2xl
+              md:text-4xl
+
+              leading-[1]
+
+              tracking-[-0.06em]
+
+              text-[var(--accent)]
+            "
+          >
+            {data.cover.tagline}
+          </p>
+
+          {/* BUTTONS */}
+          <div className="mt-12 flex flex-wrap gap-4">
+            <a
+              href="/pdfs/corporate-en.pdf"
+              download
               className="
-                absolute
-                -top-10
-                left-0
+                rounded-full
 
-                font-display
+                border
+                border-[var(--border)]
 
-                text-[7rem]
-                md:text-[16rem]
+                bg-white
 
-                leading-none
-                tracking-[-0.14em]
+                px-7
+                py-4
 
-                text-white/[0.03]
+                text-[10px]
+                uppercase
+
+                tracking-[0.32em]
+
+                text-[var(--text)]
+
+                transition-all
+                duration-500
+
+                hover:border-[var(--accent)]/30
+                hover:shadow-[0_10px_30px_rgba(254,0,0,0.08)]
               "
             >
-              02
-            </motion.div>
+              Download English PDF
+            </a>
 
-            <motion.h1
-              variants={fadeUp}
-initial="initial"
-whileInView="whileInView"
-viewport={{ once: true, amount: 0.2 }}
+            <a
+              href="/pdfs/corporate-hi.pdf"
+              download
               className="
-                relative
-                z-10
+                rounded-full
 
-                max-w-7xl
+                border
+                border-[var(--border)]
+
+                bg-[var(--surface)]
+
+                px-7
+                py-4
+
+                text-[10px]
+                uppercase
+
+                tracking-[0.32em]
+
+                text-[var(--muted)]
+
+                transition-all
+                duration-500
+
+                hover:border-[var(--accent)]/20
+                hover:bg-white
+                hover:text-[var(--text)]
+              "
+            >
+              हिंदी PDF डाउनलोड
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* BOTTOM */}
+      <div
+        className="
+          flex
+          items-end
+          justify-between
+
+          border-t
+          border-[var(--border)]
+
+          pt-6
+        "
+      >
+        <span
+          className="
+            text-xs
+            uppercase
+
+            tracking-[0.4em]
+
+            text-[var(--muted)]
+          "
+        >
+          Elections • Influence • Leadership
+        </span>
+
+        <span
+          className="
+            font-display
+
+            text-5xl
+
+            tracking-[-0.08em]
+
+            text-black/[0.08]
+          "
+        >
+          2026
+        </span>
+      </div>
+    </div>
+
+    {/* RIGHT VISUAL */}
+    <motion.div
+      initial={{
+        opacity: 0,
+        scale: 1.06,
+      }}
+      animate={{
+        opacity: 1,
+        scale: 1,
+      }}
+      transition={{
+        duration: 1.3,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="
+        relative
+
+        hidden
+        xl:flex
+
+        items-center
+        justify-center
+
+        p-10
+      "
+    >
+      {/* CARD */}
+      <div
+        className="
+          relative
+
+          h-[82vh]
+          w-full
+
+          overflow-hidden
+
+          rounded-[2.5rem]
+
+          border
+          border-[var(--border)]
+
+          bg-white
+
+          shadow-[0_30px_80px_rgba(0,0,0,0.10)]
+        "
+      >
+        {/* IMAGE */}
+        <Image
+          src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1800&auto=format&fit=crop"
+          alt="Political Communication"
+          fill
+          priority
+          className="
+            object-cover
+
+            brightness-[0.9]
+            contrast-[1.05]
+
+            saturate-[0.88]
+          "
+        />
+
+        {/* OVERLAY */}
+        <div
+          className="
+            absolute
+            inset-0
+
+            bg-[linear-gradient(to_top,rgba(0,0,0,0.42),transparent_35%)]
+
+            pointer-events-none
+          "
+        />
+
+        {/* FLOATING INFO */}
+        <div
+          className="
+            absolute
+            bottom-0
+            left-0
+            right-0
+
+            p-10
+          "
+        >
+          <div
+            className="
+              rounded-[2rem]
+
+              border
+              border-white/10
+
+              bg-black/45
+
+              p-8
+
+              backdrop-blur-xl
+            "
+          >
+            <span
+              className="
+                text-[10px]
+                uppercase
+
+                tracking-[0.4em]
+
+                text-white/50
+              "
+            >
+              Political Ecosystem
+            </span>
+
+            <h3
+              className="
+                mt-4
 
                 font-display
                 uppercase
 
-                text-[4rem]
-                sm:text-[6rem]
-                lg:text-[9rem]
-                xl:text-[12rem]
+                text-4xl
 
-                leading-[0.8]
-                tracking-[-0.12em]
+                leading-[0.9]
+                tracking-[-0.06em]
+
+                text-white
               "
             >
-              {data.short}
-            </motion.h1>
+              Narrative.
+              <br />
+              Influence.
+              <br />
+              Public Trust.
+            </h3>
 
-            <div className="mt-14 grid gap-10 lg:grid-cols-[0.7fr_1fr]">
-              <div>
-                <div className="mb-5 h-px w-24 bg-white/20" />
+            <p
+              className="
+                mt-6
 
-                <p className="max-w-sm text-xs uppercase tracking-[0.4em] leading-[2] text-white/30">
-                  Electoral strategy, public positioning and political influence
-                  systems built for modern leadership.
-                </p>
-              </div>
+                max-w-md
 
-              <div>
-                <p className="max-w-3xl text-base leading-[2] text-white/60 md:text-xl">
-                  {data.cover.description}
-                </p>
+                text-sm
 
-                <p
-                  className="
-                    mt-8
+                leading-[2]
 
-                    font-display
-                    uppercase
-
-                    text-2xl
-                    md:text-4xl
-
-                    tracking-[-0.06em]
-
-                    text-[#7DB8FF]
-                  "
-                >
-                  {data.cover.tagline}
-                </p>
-
-                <div className="mt-12 flex flex-wrap gap-4">
-  {/* ENGLISH PDF */}
-  <a
-    href="/pdfs/corporate-en.pdf"
-    download
-    className="
-      group
-      relative
-
-      overflow-hidden
-
-      rounded-full
-
-      border
-      border-[#7DB8FF]/30
-
-      bg-[#7DB8FF]/10
-
-      px-7
-      py-4
-
-      text-[10px]
-      uppercase
-
-      tracking-[0.3em]
-
-      text-white
-
-      transition-all
-      duration-500
-
-      hover:border-[#7DB8FF]
-      hover:bg-[#7DB8FF]/20
-    "
-  >
-    <span className="relative z-10">
-      Download English PDF
-    </span>
-
-    <div
-      className="
-        absolute
-        inset-0
-
-        translate-y-full
-
-        bg-[#7DB8FF]/10
-
-        transition-transform
-        duration-500
-
-        group-hover:translate-y-0
-      "
-    />
-  </a>
-
-  {/* HINDI PDF */}
-  <a
-    href="/pdfs/corporate-hi.pdf"
-    download
-    className="
-      group
-      relative
-
-      overflow-hidden
-
-      rounded-full
-
-      border
-      border-white/10
-
-      bg-white/[0.05]
-
-      px-7
-      py-4
-
-      text-[10px]
-      uppercase
-
-      tracking-[0.3em]
-
-      text-white/80
-
-      transition-all
-      duration-500
-
-      hover:border-white/20
-      hover:bg-white/[0.08]
-    "
-  >
-    <span className="relative z-10">
-      हिंदी PDF डाउनलोड
-    </span>
-
-    <div
-      className="
-        absolute
-        inset-0
-
-        translate-y-full
-
-        bg-white/[0.06]
-
-        transition-transform
-        duration-500
-
-        group-hover:translate-y-0
-      "
-    />
-  </a>
-</div>
-              </div>
-              
-            </div>
-          </div>
-
-          {/* BOTTOM */}
-          <div className="flex items-end justify-between border-t border-white/10 pt-6">
-            <span className="text-xs uppercase tracking-[0.4em] text-white/20">
-              Elections • Influence • Leadership
-            </span>
-
-            <span className="font-display text-5xl tracking-[-0.08em] text-white/10">
-              2026
-            </span>
+                text-white/70
+              "
+            >
+              Strategic communication systems built for elections,
+              governance positioning, media outreach and long-term
+              political influence.
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
       {/* SERVICES */}
       <section className="relative px-6 py-28 md:px-10 lg:px-20">
         <div className="mb-20">
-          <span className="text-[10px] uppercase tracking-[0.45em] text-white/30">
+          <span className="text-[10px] uppercase tracking-[0.45em] text-[var(--text)]/30">
             Our Services
           </span>
 
@@ -354,22 +529,31 @@ viewport={{ once: true, amount: 0.2 }}
                 y: -10,
               }}
               className="
-                group
-                relative
+  group
+  relative
 
-                min-h-[24rem]
+  min-h-[24rem]
 
-                overflow-hidden
+  overflow-hidden
 
-                rounded-[2rem]
+  rounded-[2rem]
 
-                border
-                border-white/10
+  border
+  border-[var(--border)]
 
-                bg-white/[0.03]
+  bg-[var(--glass)]
 
-                p-8
-              "
+  backdrop-blur-xl
+
+  p-8
+
+  transition-all
+  duration-500
+
+  hover:-translate-y-2
+  hover:border-[var(--accent)]/20
+  hover:bg-white
+"
             >
               <div
                 className="
@@ -388,7 +572,7 @@ viewport={{ once: true, amount: 0.2 }}
               />
 
               <div className="relative z-10">
-                <span className="font-display text-7xl tracking-[-0.12em] text-white/[0.05]">
+                <span className="font-display text-7xl tracking-[-0.12em] text-[var(--text)]/[0.05]">
                   {(index + 1).toString().padStart(2, "0")}
                 </span>
 
@@ -410,7 +594,7 @@ viewport={{ once: true, amount: 0.2 }}
                   {item.title}
                 </h3>
 
-                <p className="mt-6 text-sm leading-[2] text-white/55">
+                <p className="mt-6 text-sm leading-[2] text-[var(--muted)]">
                   {item.description}
                 </p>
               </div>
@@ -420,9 +604,9 @@ viewport={{ once: true, amount: 0.2 }}
       </section>
 
       {/* WORKFLOW */}
-      <section className="relative border-t border-white/10 px-6 py-28 md:px-10 lg:px-20">
+      <section className="relative border-t border-[var(--border)] px-6 py-28 md:px-10 lg:px-20">
         <div className="mb-24">
-          <span className="text-[10px] uppercase tracking-[0.45em] text-white/30">
+          <span className="text-[10px] uppercase tracking-[0.45em] text-[var(--text)]/30">
             How We Work
           </span>
 
@@ -470,30 +654,32 @@ viewport={{ once: true, amount: 0.2 }}
                 delay: index * 0.05,
               }}
               className="
-                group
+  group
 
-                grid
-                gap-10
+  grid
+  gap-10
 
-                rounded-[2rem]
+  rounded-[2rem]
 
-                border
-                border-white/10
+  border
+  border-[var(--border)]
 
-                bg-white/[0.02]
+  bg-[var(--glass)]
 
-                p-8
+  backdrop-blur-xl
 
-                transition-all
-                duration-500
+  p-8
 
-                hover:border-[#7DB8FF]/40
-                hover:bg-white/[0.04]
+  transition-all
+  duration-500
 
-                lg:grid-cols-[0.2fr_0.5fr_1fr]
-              "
+  hover:border-[var(--accent)]/25
+  hover:bg-white
+
+  lg:grid-cols-[0.2fr_0.5fr_1fr]
+"
             >
-              <div className="font-display text-[5rem] leading-none tracking-[-0.1em] text-white/[0.08]">
+              <div className="font-display text-[5rem] leading-none tracking-[-0.1em] text-[var(--text)]/[0.08]">
                 {item.step}
               </div>
 
@@ -512,7 +698,7 @@ viewport={{ once: true, amount: 0.2 }}
                 {item.title}
               </h3>
 
-              <p className="max-w-2xl text-sm leading-[2] text-white/55 md:text-base">
+              <p className="max-w-2xl text-sm leading-[2] text-[var(--muted)] md:text-base">
                 {item.description}
               </p>
             </motion.div>

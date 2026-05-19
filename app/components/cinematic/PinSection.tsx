@@ -18,7 +18,7 @@ export default function PinSection({
         z-20
 
         border-t
-        border-white/10
+        border-[var(--border)]
 
         bg-black
 
@@ -63,7 +63,7 @@ export default function PinSection({
             font-display
             uppercase
 
-            text-white
+            text-[var(--text)]
           "
         >
           {title}
@@ -96,7 +96,7 @@ export default function PinSection({
 
             leading-relaxed
 
-            text-white/70
+            text-[var(--text)]/70
           "
         >
           {desc}

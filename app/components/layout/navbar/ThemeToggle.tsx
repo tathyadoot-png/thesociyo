@@ -41,17 +41,18 @@ export default function ThemeToggle() {
           inset-0
           rounded-full
           border
-          border-white/10
+          border-[var(--border)]
           bg-white/5
           backdrop-blur-xl
           transition-all
           duration-500
-          group-hover:border-[#fe0000]
-          group-hover:bg-[#fe0000]
+          group-hover:border-[var(--accent)]
+hover:bg-[var(--accent)]/[0.06]
+          group-hover:bg-[var(--accent)]
         "
       />
 
-      <div className="relative z-10 text-white">
+      <div className="relative z-10 text-[var(--text)]">
         {dark ? (
           <SunMedium
             size={16}

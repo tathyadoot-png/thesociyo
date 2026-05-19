@@ -30,7 +30,7 @@ export default function MenuTrigger({
           absolute
           inset-0
           rounded-full
-          bg-[#fe0000]/20
+          bg-[var(--accent)]/20
           blur-2xl
           opacity-0
           transition-all
@@ -50,7 +50,7 @@ export default function MenuTrigger({
             block
             h-[2px]
             w-8
-            bg-white
+            bg-black
           "
         />
 
@@ -62,7 +62,7 @@ export default function MenuTrigger({
             block
             h-[2px]
             w-8
-            bg-white/70
+            bg-black/80
           "
         />
 
@@ -75,7 +75,7 @@ export default function MenuTrigger({
             block
             h-[2px]
             w-8
-            bg-white
+            bg-black
           "
         />
       </div>

@@ -1,250 +1,199 @@
+
 "use client";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 import CinematicBackground from "@/app/components/cinematic/CinematicBackground";
-
 import { socialDevelopmentData } from "@/app/data/work/socialCommunicationData";
 
 const data = socialDevelopmentData;
 
 export default function SocialDevelopment() {
   return (
-    <main className="relative overflow-hidden bg-[#18090B] pt-32 text-white md:px-32 md:pt-40">
+    <main className="relative overflow-hidden bg-[var(--bg)] text-[var(--text)]">
       <CinematicBackground />
 
-      {/* HERO */}
-      <section className="relative min-h-screen overflow-hidden border-b border-white/10">
-        {/* BG IMAGE */}
+      {/* ================= HERO ================= */}
+      <section className="relative overflow-hidden border-b border-[var(--border)]">
+        {/* BACKGROUND */}
         <div className="absolute inset-0">
           <Image
             src="/About-Us.jpg"
             alt="Social Development"
             fill
             priority
-            className="object-cover opacity-30"
+            className="object-cover opacity-[0.14]"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-[#18090B]/70 to-[#18090B]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,var(--ambient-1),transparent_40%)]" />
+
+          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.1),var(--bg))]" />
         </div>
 
-        <div className="relative z-10 px-6 py-24 md:px-10 lg:px-20">
-          <div className="grid min-h-screen items-end gap-20 lg:grid-cols-[1fr_0.45fr]">
+        {/* FLOATING ORBS */}
+        <div className="absolute left-[-10rem] top-[-10rem] h-[28rem] w-[28rem] rounded-full bg-[var(--accent)]/10 blur-3xl" />
+
+        <div className="absolute bottom-[-12rem] right-[-10rem] h-[32rem] w-[32rem] rounded-full bg-[var(--ambient-2)] blur-3xl" />
+
+        <div className="relative z-10 px-6 pb-28 pt-32 md:px-20">
+          <div className="mx-2 md:mx-32 grid min-h-screen items-center gap-20 xl:grid-cols-[1.05fr_0.7fr]">
             {/* LEFT */}
             <div>
-              <span className="text-[10px] uppercase tracking-[0.45em] text-[#7DB8FF]">
-                Social Impact & Development
-              </span>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="inline-flex items-center gap-4"
+              >
+                <div className="h-px w-14 bg-[var(--accent)]" />
+
+                <span className="text-[10px] uppercase tracking-[0.45em] text-[var(--accent)]">
+                  Social Impact Division
+                </span>
+              </motion.div>
 
               <motion.h1
-                initial={{
-                  opacity: 0,
-                  y: 80,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  duration: 1,
-                }}
-                className="
-                  mt-10
-
-                  max-w-6xl
-
-                  font-display
-
-                  text-[4rem]
-                  sm:text-[6rem]
-                  md:text-[8rem]
-
-                  leading-[0.82]
-                  tracking-[-0.1em]
-                "
+                initial={{ opacity: 0, y: 60 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15, duration: 1 }}
+                className="mt-10 max-w-6xl font-display text-[4.2rem] leading-[0.82] tracking-[-0.11em] sm:text-[6rem] lg:text-[8rem]"
               >
                 Building
                 <br />
                 Systems
                 <br />
                 For
-                <span className="text-[#7DB8FF]">
-                  {" "}
-                  Human Impact.
-                </span>
+                <span className="text-[var(--accent)]"> Human Impact</span>
               </motion.h1>
 
-              <p
-                className="
-                  mt-10
-
-                  max-w-2xl
-
-                  text-lg
-                  md:text-xl
-
-                  leading-[2]
-
-                  text-white/60
-                "
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35, duration: 0.9 }}
+                className="mt-10 max-w-2xl text-lg leading-[2] text-[var(--muted)] md:text-xl"
               >
                 {data.cover.description}
-              </p>
-              <div className="mt-12 flex flex-wrap gap-4">
-  {/* ENGLISH PDF */}
-  <a
-    href="/pdfs/corporate-en.pdf"
-    download
-    className="
-      group
-      relative
+              </motion.p>
 
-      overflow-hidden
+              {/* STATS */}
+              <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-3">
+                {[
+                  {
+                    title: "Awareness",
+                    value: "01",
+                  },
+                  {
+                    title: "Participation",
+                    value: "02",
+                  },
+                  {
+                    title: "Execution",
+                    value: "03",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-[1.8rem] border border-[var(--border)] bg-[var(--glass)] p-6 backdrop-blur-2xl"
+                  >
+                    <div className="font-display text-4xl tracking-[-0.08em] text-[var(--accent)]">
+                      {item.value}
+                    </div>
 
-      rounded-full
-
-      border
-      border-[#7DB8FF]/30
-
-      bg-[#7DB8FF]/10
-
-      px-7
-      py-4
-
-      text-[10px]
-      uppercase
-
-      tracking-[0.3em]
-
-      text-white
-
-      transition-all
-      duration-500
-
-      hover:border-[#7DB8FF]
-      hover:bg-[#7DB8FF]/20
-    "
-  >
-    <span className="relative z-10">
-      Download English PDF
-    </span>
-
-    <div
-      className="
-        absolute
-        inset-0
-
-        translate-y-full
-
-        bg-[#7DB8FF]/10
-
-        transition-transform
-        duration-500
-
-        group-hover:translate-y-0
-      "
-    />
-  </a>
-
-  {/* HINDI PDF */}
-  <a
-    href="/pdfs/corporate-hi.pdf"
-    download
-    className="
-      group
-      relative
-
-      overflow-hidden
-
-      rounded-full
-
-      border
-      border-white/10
-
-      bg-white/[0.05]
-
-      px-7
-      py-4
-
-      text-[10px]
-      uppercase
-
-      tracking-[0.3em]
-
-      text-white/80
-
-      transition-all
-      duration-500
-
-      hover:border-white/20
-      hover:bg-white/[0.08]
-    "
-  >
-    <span className="relative z-10">
-      हिंदी PDF डाउनलोड
-    </span>
-
-    <div
-      className="
-        absolute
-        inset-0
-
-        translate-y-full
-
-        bg-white/[0.06]
-
-        transition-transform
-        duration-500
-
-        group-hover:translate-y-0
-      "
-    />
-  </a>
-</div>
+                    <p className="mt-3 text-[11px] uppercase tracking-[0.35em] text-[var(--muted)]">
+                      {item.title}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* RIGHT */}
-            <div className="space-y-6">
-              {[
-                "Awareness",
-                "Participation",
-                "Engagement",
-                "Transformation",
-              ].map((item, index) => (
+            <motion.div
+              initial={{ opacity: 0, x: 80 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 1 }}
+              className="relative overflow-hidden rounded-[3rem] border border-[var(--border)] bg-[var(--glass)] p-6 backdrop-blur-2xl"
+            >
+              <div className="relative overflow-hidden rounded-[2.4rem]">
+                <div className="relative h-[40rem]">
+                  <Image
+                    src="/About-Us.jpg"
+                    alt="Impact"
+                    fill
+                    className="object-cover brightness-[0.8]"
+                  />
+
+                  <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(10,10,12,0.92),transparent_55%)]" />
+                </div>
+
+                <div className="absolute bottom-0 left-0 p-10">
+                  <span className="text-[10px] uppercase tracking-[0.35em] text-white/50">
+                    People • Process • Impact
+                  </span>
+
+                  <h3 className="mt-6 max-w-sm font-display text-5xl leading-[0.88] tracking-[-0.08em] text-white">
+                    Turning
+                    <br />
+                    Awareness Into
+                    <br />
+                    Action
+                  </h3>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= REALITY ================= */}
+      <section className="relative overflow-hidden border-b border-[var(--border)] px-6 py-32 md:px-10 lg:px-20">
+        <div className="absolute left-[-10rem] top-[-8rem] h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,var(--ambient-1),transparent_70%)] blur-3xl" />
+
+        <div className="relative z-10 mx-auto max-w-7xl">
+          <div className="grid gap-24 lg:grid-cols-[0.9fr_1fr]">
+            {/* LEFT */}
+            <div>
+              <span className="inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.4em] text-[var(--accent)]">
+                <div className="h-px w-12 bg-[var(--accent)]" />
+                The Social Reality
+              </span>
+
+              <h2 className="mt-8 font-display text-[3.8rem] leading-[0.84] tracking-[-0.09em] md:text-[6rem]">
+                Impact
+                <br />
+                Breaks
+                <br />
+                Without
+                <br />
+                Structure
+              </h2>
+
+              <p className="mt-10 max-w-xl text-lg leading-[2] text-[var(--muted)]">
+                {data.reality.description}
+              </p>
+            </div>
+
+            {/* RIGHT */}
+            <div className="space-y-12">
+              {data.reality.points.map((item, index) => (
                 <motion.div
                   key={item}
-                  initial={{
-                    opacity: 0,
-                    x: 60,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    x: 0,
-                  }}
-                  transition={{
-                    delay: index * 0.1,
-                  }}
-                  className="
-                    rounded-[2rem]
-
-                    border
-                    border-white/10
-
-                    bg-white/[0.04]
-
-                    p-7
-
-                    backdrop-blur-xl
-                  "
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.08, duration: 0.8 }}
+                  className="group relative overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--glass)] p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-[var(--accent)]/20"
                 >
-                  <div className="font-display text-5xl tracking-[-0.08em] text-[#7DB8FF]/40">
+                  <div className="absolute right-6 top-2 font-display text-[5rem] tracking-[-0.08em] text-[var(--accent)]/8 transition-all duration-500 group-hover:text-[var(--accent)]/15">
                     0{index + 1}
                   </div>
 
-                  <p className="mt-4 text-lg text-white/70">
+                  <div className="mb-6 h-px w-14 bg-[var(--accent)] transition-all duration-500 group-hover:w-24" />
+
+                  <h3 className="max-w-xl font-display text-3xl leading-[1] tracking-[-0.06em] text-[var(--text)] md:text-4xl">
                     {item}
-                  </p>
+                  </h3>
                 </motion.div>
               ))}
             </div>
@@ -252,212 +201,61 @@ export default function SocialDevelopment() {
         </div>
       </section>
 
-      {/* REALITY */}
-      <section className="relative border-b border-white/10 px-6 py-32 md:px-10 lg:px-20">
-        <div className="grid gap-20 lg:grid-cols-[0.7fr_1fr]">
-          {/* LEFT */}
-          <div>
-            <span className="text-[10px] uppercase tracking-[0.4em] text-white/30">
-              The Social Reality
+      {/* ================= FRAMEWORK ================= */}
+      <section className="relative overflow-hidden px-6 py-32 md:px-10 lg:px-20">
+        <div className="absolute bottom-[-10rem] right-[-10rem] h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,var(--ambient-2),transparent_70%)] blur-3xl" />
+
+        <div className="relative z-10 mx-auto max-w-7xl">
+          {/* HEADER */}
+          <div className="max-w-5xl">
+            <span className="inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.4em] text-[var(--accent)]">
+              <div className="h-px w-12 bg-[var(--accent)]" />
+              Impact Framework
             </span>
 
-            <h2
-              className="
-                mt-8
-
-                font-display
-
-                text-[3rem]
-                md:text-[5rem]
-
-                leading-[0.9]
-                tracking-[-0.08em]
-              "
-            >
-              Good Intentions
+            <h2 className="mt-8 font-display text-[3.8rem] leading-[0.84] tracking-[-0.09em] md:text-[6rem]">
+              Awareness.
               <br />
-              Need Better
+              Participation.
               <br />
-              Systems.
+              Impact.
             </h2>
 
-            <div className="relative mt-14 overflow-hidden rounded-[2rem]">
-              <div className="relative h-[34rem]">
-                <Image
-                  src="/About-Us.jpg"
-                  alt="Reality"
-                  fill
-                  className="object-cover opacity-70"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-[#18090B] via-transparent to-transparent" />
-              </div>
-            </div>
           </div>
 
-          {/* RIGHT */}
-          <div className="space-y-5">
-            {data.reality.points.map((item, index) => (
+          {/* FRAMEWORK GRID */}
+          <div className="mt-24 grid gap-8 lg:grid-cols-3">
+            {data.framework.map((item, index) => (
               <motion.div
-                key={item}
-                initial={{
-                  opacity: 0,
-                  x: 40,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  delay: index * 0.08,
-                  duration: 0.8,
-                }}
-                className="
-                  flex
-                  items-center
-                  justify-between
-
-                  rounded-[1.5rem]
-
-                  border
-                  border-white/10
-
-                  bg-white/[0.03]
-
-                  px-8
-                  py-7
-
-                  backdrop-blur-xl
-                "
+                key={item.title}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                className="group relative overflow-hidden rounded-[2.6rem] border border-[var(--border)] bg-[var(--glass)] p-10 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-3 hover:border-[var(--accent)]/20"
               >
-                <span className="max-w-[80%] text-lg leading-[1.8] text-white/70">
-                  {item}
-                </span>
-
-                <span className="font-display text-4xl text-white/[0.08]">
+                {/* BACK NUMBER */}
+                <div className="absolute right-6 top-0 font-display text-[7rem] tracking-[-0.08em] text-[var(--accent)]/5">
                   0{index + 1}
-                </span>
+                </div>
+
+                {/* TOP ICON */}
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[var(--border)] bg-white text-sm font-medium tracking-[0.3em] text-[var(--accent)] shadow-xl shadow-black/10">
+                  0{index + 1}
+                </div>
+
+                <h3 className="mt-10 font-display text-4xl leading-[0.92] tracking-[-0.07em] md:text-[4rem]">
+                  {item.title}
+                </h3>
+
+                <p className="mt-6 text-base leading-[2] text-[var(--muted)] md:text-lg">
+                  {item.description}
+                </p>
+
+                <div className="mt-10 h-px w-full bg-[linear-gradient(to_right,var(--accent),transparent)] opacity-40" />
               </motion.div>
             ))}
-
-            <p className="pt-8 text-lg leading-[2] text-white/50">
-              {data.reality.description}
-            </p>
           </div>
-        </div>
-      </section>
-
-      {/* FRAMEWORK */}
-      <section className="relative px-6 py-32 md:px-10 lg:px-20">
-        <div className="mb-20">
-          <span className="text-[10px] uppercase tracking-[0.4em] text-white/30">
-            The Impact Framework
-          </span>
-
-          <h2
-            className="
-              mt-8
-
-              max-w-5xl
-
-              font-display
-
-              text-[3rem]
-              md:text-[5rem]
-
-              leading-[0.9]
-              tracking-[-0.08em]
-            "
-          >
-            A Process Designed
-            <br />
-            Around Human
-            <br />
-            Engagement.
-          </h2>
-        </div>
-
-        <div className="grid gap-8 lg:grid-cols-3">
-          {data.framework.map((item, index) => (
-            <motion.div
-              key={item.title}
-              initial={{
-                opacity: 0,
-                y: 60,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                delay: index * 0.08,
-              }}
-              className="
-                group
-                relative
-
-                overflow-hidden
-
-                rounded-[2rem]
-
-                border
-                border-white/10
-
-                bg-white/[0.03]
-
-                p-6
-              "
-            >
-              {/* IMAGE */}
-              <div className="relative mb-8 h-[14rem] overflow-hidden rounded-[1.5rem]">
-                <Image
-           src="/About-Us.jpg"
-                  alt={item.title}
-                  fill
-                  className="
-                    object-cover
-
-                    opacity-70
-
-                    transition-transform
-                    duration-700
-
-                    group-hover:scale-110
-                  "
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-[#18090B] to-transparent" />
-              </div>
-
-              <div className="font-display text-[5rem] tracking-[-0.1em] text-white/[0.04]">
-                0{index + 1}
-              </div>
-
-              <h3
-                className="
-                  mt-6
-
-                  font-display
-
-                  text-4xl
-
-                  tracking-[-0.06em]
-                "
-              >
-                {item.title}
-              </h3>
-
-              <p className="mt-6 text-base leading-[2] text-white/55">
-                {item.description}
-              </p>
-            </motion.div>
-          ))}
         </div>
       </section>
     </main>

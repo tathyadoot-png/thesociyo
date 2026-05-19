@@ -9,7 +9,7 @@ export default function NavAtmosphere() {
           h-[20rem]
           w-[20rem]
           rounded-full
-          bg-[#18090B] 
+          bg-[var(--bg)] 
           blur-3xl
         "
       />

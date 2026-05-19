@@ -23,7 +23,7 @@ export default function HeroBackground() {
       {/* <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-[var(--background)]" /> */}
 
       {/* Red Glow */}
-      {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60rem] h-[60rem] rounded-full bg-[#fe0000]/10 blur-3xl z-10" /> */}
+      {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60rem] h-[60rem] rounded-full bg-[var(--accent)]/10 blur-3xl z-10" /> */}
     </>
   );
 }

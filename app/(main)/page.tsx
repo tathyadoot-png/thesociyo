@@ -14,7 +14,7 @@ export default function Home() {
       className="
         relative
         overflow-hidden
-        bg-[#0A1325]
+        bg-[var(--bg)]
         text-[var(--text)]
         transition-colors
         duration-500
@@ -30,7 +30,7 @@ export default function Home() {
         <HeroSection />
       </section>
 
-      <SignalTransition />
+      {/* <SignalTransition /> */}
 
       <InsideSociyo />
       <EcosystemsSection />

@@ -28,7 +28,7 @@ export default function HeroCTA() {
         border-[color:var(--border)]
         bg-white/5
         backdrop-blur-md
-        hover:bg-[#fe0000]
+        hover:bg-[var(--accent)]
         transition-all
         duration-500
       "

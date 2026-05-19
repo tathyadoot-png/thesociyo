@@ -2,14 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
-
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 import { blogs } from "@/app/data/blogs/blogs";
@@ -30,11 +23,7 @@ export default function BlogsPage() {
     damping: 30,
   });
 
-  const glowY = useTransform(
-    smooth,
-    [0, 1],
-    [0, -120]
-  );
+  const glowY = useTransform(smooth, [0, 1], [0, -120]);
 
   return (
     <main
@@ -43,48 +32,34 @@ export default function BlogsPage() {
         relative
         overflow-hidden
 
-        px-0
-        md:px-40
-
-        bg-[#18090B]
-        text-white
+        bg-[var(--bg)]
+        text-[var(--text)]
       "
     >
-      {/* CINEMATIC BG */}
+      {/* BG */}
       <CinematicBackground />
 
-      {/* DARK OVERLAY */}
+      {/* SOFT OVERLAY */}
       <div
         className="
           absolute
           inset-0
 
-          bg-[#18090B]/50
+          bg-[linear-gradient(to_bottom,rgba(246,241,238,0.72),rgba(246,241,238,0.96))]
         "
       />
 
-      {/* RED GLOW */}
-      <motion.div
-        style={{
-          y: glowY,
-        }}
-        className="
-          absolute
-          left-1/2
-          top-0
+  {/* SOFT AMBIENT */}
+<div
+  className="
+    absolute
+    inset-0
 
-          h-[40rem]
-          w-[40rem]
+    bg-[radial-gradient(circle_at_top,transparent_0%,var(--ambient-1)_35%,transparent_70%)]
 
-          -translate-x-1/2
-
-          rounded-full
-
-          bg-[#fe0000]/8
-
-          blur-[160px]
-        "
-      />
+    opacity-40
+  "
+/>
 
       {/* GRID */}
       <div
@@ -92,9 +67,9 @@ export default function BlogsPage() {
           absolute
           inset-0
 
-          opacity-[0.03]
+          opacity-[0.025]
 
-          bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]
+          bg-[linear-gradient(rgba(17,17,19,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(17,17,19,0.04)_1px,transparent_1px)]
 
           bg-[size:90px_90px]
         "
@@ -107,7 +82,7 @@ export default function BlogsPage() {
 
           absolute
           left-1/2
-          top-[8%]
+          top-[6%]
 
           -translate-x-1/2
 
@@ -116,71 +91,69 @@ export default function BlogsPage() {
           font-display
           uppercase
 
-          text-[28vw]
+          text-[26vw]
 
           leading-none
-          tracking-[-0.15em]
+          tracking-[-0.14em]
 
-          text-white/[0.02]
+          text-[var(--text)]/[0.018]
         "
       >
         NOTES
       </div>
 
+      {/* CONTENT */}
       <section
         className="
           relative
           z-10
 
-          px-6
+          mx-auto
+          w-[94%]
+          max-w-[1600px]
+
           pt-28
           pb-24
-
-          md:px-10
-          xl:px-16
         "
       >
-   
-      {/* TOP */}
-<div
-  className="
-    mb-20
+        {/* TOP */}
+        <div
+          className="
+            mb-24
 
-    border-b
-    border-white/10
+            border-b
+            border-[var(--border)]
 
-    pb-14
-  "
->
-  <CinematicSectionHeading
-    sectionLabel="Thoughts & Perspectives"
-    heading={{
-      first: "Ideas",
-      highlight: "Become",
-      last: "Influence",
-    }}
-    shortText="
-      Thoughts around communication, systems,
-      digital behavior, public perception and
-      cinematic storytelling.
-    "
-    className="
-      !mb-0
-      !pb-0
-    "
-  />
-</div>
+            pb-14
+          "
+        >
+          <CinematicSectionHeading
+            sectionLabel="Thoughts & Perspectives"
+            heading={{
+              first: "Ideas",
+              highlight: "Become",
+              last: "Influence",
+            }}
+            shortText="
+              Thoughts around communication, systems,
+              digital behavior, public perception and
+              cinematic storytelling.
+            "
+            className="
+              !mb-0
+              !pb-0
+            "
+          />
+        </div>
 
         {/* BLOG FLOW */}
-        <div className="space-y-8
-    md:space-y-10
-    xl:space-y-14">
+        <div className="space-y-10 xl:space-y-14">
           {blogs.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{
                 opacity: 0,
-                y: 40,
+                y: 60,
               }}
               whileInView={{
                 opacity: 1,
@@ -191,7 +164,7 @@ export default function BlogsPage() {
                 amount: 0.2,
               }}
               transition={{
-                duration: 0.8,
+                duration: 0.9,
                 delay: index * 0.05,
               }}
             >
@@ -201,24 +174,26 @@ export default function BlogsPage() {
                 className="
                   group
                   relative
-
                   block
 
                   overflow-hidden
 
-                  rounded-[2rem]
+                  rounded-[2.5rem]
 
                   border
-                  border-white/10
+                  border-[var(--border)]
 
-                  bg-[#07111F]/60
+                  bg-[var(--glass)]
 
-                  backdrop-blur-xl
+                  backdrop-blur-2xl
 
                   transition-all
-                  duration-500
+                  duration-700
 
-                  hover:border-[#fe0000]/30
+                  hover:-translate-y-1
+                  hover:border-[var(--accent)]/20
+
+                  shadow-[0_10px_40px_rgba(0,0,0,0.03)]
                 "
               >
                 {/* HOVER GLOW */}
@@ -234,7 +209,7 @@ export default function BlogsPage() {
 
                     group-hover:opacity-100
 
-                    bg-[radial-gradient(circle_at_right,rgba(0,140,255,0.10),transparent_45%)]
+                    bg-[radial-gradient(circle_at_right,var(--ambient-1),transparent_55%)]
                   "
                 />
 
@@ -244,9 +219,8 @@ export default function BlogsPage() {
                     z-10
 
                     grid
-                    gap-0
 
-                    md:grid-cols-[260px_1fr]
+                    lg:grid-cols-[340px_1fr]
                   "
                 >
                   {/* IMAGE */}
@@ -254,8 +228,8 @@ export default function BlogsPage() {
                     className="
                       relative
 
-                      h-[240px]
-                      md:h-full
+                      h-[260px]
+                      lg:h-full
 
                       overflow-hidden
                     "
@@ -266,6 +240,8 @@ export default function BlogsPage() {
                       fill
                       className="
                         object-cover
+                        brightness-[1]
+                        contrast-[1.02]
 
                         transition-transform
                         duration-700
@@ -274,16 +250,12 @@ export default function BlogsPage() {
                       "
                     />
 
-                    {/* OVERLAY */}
+                    {/* IMAGE OVERLAY */}
                     <div
                       className="
                         absolute
                         inset-0
-
-                        bg-gradient-to-r
-                        from-[#18090B]
-                        via-[#07111F]/70
-                        to-transparent
+ bg-[linear-gradient(to_right,rgba(0,0,0,0.10)_0%,rgba(0,0,0,0.03)_40%,transparent_75%)]
                       "
                     />
                   </div>
@@ -295,14 +267,14 @@ export default function BlogsPage() {
                       flex-col
                       justify-between
 
-                      p-6
-                      md:p-8
+                      p-7
+                      md:p-10
                     "
                   >
                     {/* TOP */}
                     <div
                       className="
-                        mb-10
+                        mb-12
 
                         flex
                         items-center
@@ -314,7 +286,6 @@ export default function BlogsPage() {
                           flex
                           items-center
                           gap-4
-                          
                         "
                       >
                         <span
@@ -324,7 +295,7 @@ export default function BlogsPage() {
 
                             tracking-[0.45em]
 
-                            text-[#fe0000]
+                            text-[var(--accent)]
                           "
                         >
                           {item.date}
@@ -335,7 +306,7 @@ export default function BlogsPage() {
                             h-px
                             w-8
 
-                            bg-white/20
+                            bg-[var(--border)]
                           "
                         />
                       </div>
@@ -344,11 +315,11 @@ export default function BlogsPage() {
                         className="
                           font-display
 
-                          text-[1.2rem]
+                          text-[1.3rem]
 
                           tracking-[-0.08em]
 
-                          text-white/15
+                          text-[var(--text)]/12
                         "
                       >
                         {item.id}
@@ -362,16 +333,15 @@ export default function BlogsPage() {
                           max-w-4xl
 
                           font-display
-                          uppercase
 
-                          text-[1.8rem]
-                          sm:text-[2.2rem]
-                          md:text-[2.7rem]
+                          text-[2rem]
+                          sm:text-[2.6rem]
+                          md:text-[3.1rem]
 
-                          leading-[0.9]
-                          tracking-[-0.08em]
+                          leading-[0.94]
+                          tracking-[-0.06em]
 
-                          text-white
+                          text-[var(--text)]
 
                           transition-all
                           duration-500
@@ -384,16 +354,16 @@ export default function BlogsPage() {
 
                       <p
                         className="
-                          mt-5
+                          mt-6
 
                           max-w-3xl
 
-                          text-sm
-                          md:text-[15px]
+                          text-[15px]
+                          md:text-[16px]
 
-                          leading-[1.9]
+                          leading-[2]
 
-                          text-white/50
+                          text-[var(--muted)]
                         "
                       >
                         {item.shortDescription}
@@ -403,7 +373,7 @@ export default function BlogsPage() {
                     {/* BOTTOM */}
                     <div
                       className="
-                        mt-10
+                        mt-12
 
                         flex
                         items-center
@@ -415,12 +385,12 @@ export default function BlogsPage() {
                           h-px
                           w-10
 
-                          bg-[#fe0000]
+                          bg-[linear-gradient(to_right,var(--accent),transparent)]
 
                           transition-all
                           duration-500
 
-                          group-hover:w-20
+                          group-hover:w-24
                         "
                       />
 
@@ -431,7 +401,12 @@ export default function BlogsPage() {
 
                           tracking-[0.45em]
 
-                          text-white/35
+                          text-[var(--muted)]
+
+                          transition-colors
+                          duration-500
+
+                          group-hover:text-[var(--accent)]
                         "
                       >
                         Open Article

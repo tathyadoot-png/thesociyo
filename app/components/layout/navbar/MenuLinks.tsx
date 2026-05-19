@@ -68,7 +68,7 @@ export default function MenuLinks({
 
           rounded-full
 
-          bg-[#18090B] 
+          bg-[var(--bg)] 
 
           blur-[120px]
         "
@@ -96,7 +96,7 @@ export default function MenuLinks({
           leading-none
           tracking-[-0.14em]
 
-          text-white/[0.02]
+          text-[var(--text)]/[0.02]
         "
       >
         SOCIYO
@@ -129,7 +129,7 @@ export default function MenuLinks({
             }}
             className="
               border-b
-              border-white/10
+              border-[var(--border)]
             "
           >
             <Link
@@ -166,7 +166,7 @@ export default function MenuLinks({
 
                     tracking-[0.4em]
 
-                    text-white/20
+                    text-[var(--muted)]
                   "
                 >
                   {item.number}
@@ -214,12 +214,12 @@ lg:text-[4.5vw]
                       leading-[0.85]
                       tracking-[-0.1em]
 
-                      text-white/20
+                      text-[var(--muted)]
 
                       transition-all
                       duration-500
 
-                      group-hover:text-white
+                      group-hover:text-[var(--accent)]
                     "
                   >
                     {item.label}
@@ -242,7 +242,7 @@ lg:text-[4.5vw]
                     h-px
                     w-8
 
-                    bg-[#ff2d2d]
+                    bg-[var(--accent)]
 
                     transition-all
                     duration-500
@@ -258,7 +258,7 @@ lg:text-[4.5vw]
 
                     tracking-[0.45em]
 
-                    text-white/30
+                    text-[var(--text)]/30
                   "
                 >
                   Open
@@ -276,7 +276,7 @@ lg:text-[4.5vw]
                   w-0
 
                   bg-gradient-to-r
-                  from-[#ff2d2d]
+                  from-[var(--accent-light)]
                   to-transparent
 
                   transition-all

@@ -9,9 +9,9 @@ export default function AboutPage() {
     relative
     overflow-hidden
 
-    bg-[#18090B]
+    bg-[var(--bg)]
 
-    text-white
+    text-[var(--text)]
   "
 >
    {/* CINEMATIC BG */}
@@ -22,8 +22,12 @@ export default function AboutPage() {
   className="
     absolute
     inset-0
+bg-gradient-to-b
+from-transparent
+via-[var(--ambient-1)]/5
+to-black/[0.06]
 
-    bg-black/20
+dark:to-black/35
   "
 />
 
@@ -38,7 +42,7 @@ export default function AboutPage() {
           px-3
           py-28
 
-          md:px-40
+          md:px-48
      
         "
       >
@@ -64,7 +68,7 @@ export default function AboutPage() {
                 h-px
                 w-14
 
-                bg-[#ff2d2d]
+                bg-[var(--accent)]
               "
             />
 
@@ -75,7 +79,7 @@ export default function AboutPage() {
 
                 tracking-[0.6em]
 
-                text-white/40
+                text-[var(--muted)]
               "
             >
               About Sociyo
@@ -92,7 +96,7 @@ export default function AboutPage() {
 
               tracking-[0.45em]
 
-              text-white/20
+              text-[var(--muted)]
             "
           >
             Narrative • Systems • Influence
@@ -106,6 +110,8 @@ export default function AboutPage() {
 
     grid
     gap-16
+    pt-0
+    md:mt-20
 
     xl:grid-cols-[1fr_420px]
     xl:items-start
@@ -139,7 +145,7 @@ export default function AboutPage() {
           h-px
           w-12
 
-          bg-[#fe0000]
+          bg-[var(--accent)]
         "
       />
 
@@ -150,7 +156,7 @@ export default function AboutPage() {
 
           tracking-[0.55em]
 
-          text-white/40
+          text-[var(--muted)]
         "
       >
         Beyond Visibility
@@ -184,7 +190,7 @@ export default function AboutPage() {
         leading-[0.82]
         tracking-[-0.1em]
 
-        text-white
+        text-[var(--text)]
       "
     >
       Beyond
@@ -196,9 +202,9 @@ export default function AboutPage() {
           text-transparent
 
           bg-gradient-to-b
-          from-[#fe0000]
-          via-[#ff8c8c]
-          to-white
+          from-[var(--accent-light)]
+          via-[var(--accent)]
+          to-[#ffe1e6]
 
           bg-clip-text
         "
@@ -231,7 +237,7 @@ export default function AboutPage() {
 
         leading-[2]
 
-        text-white/55
+        text-[var(--muted)]
       "
     >
       Sociyo builds cinematic communication systems
@@ -273,18 +279,18 @@ export default function AboutPage() {
         rounded-[2rem]
 
         border
-        border-white/10
+        border-[var(--border)]
 
-        bg-white/[0.03]
+glass-card
 
         p-8
 
-        backdrop-blur-xl
+   
 
         transition-all
         duration-500
 
-        hover:border-[#fe0000]/30
+        hover:border-[var(--accent)]
       "
     >
       {/* GLOW */}
@@ -299,7 +305,7 @@ export default function AboutPage() {
 
           rounded-full
 
-          bg-[#fe0000]/10
+          bg-[var(--accent)]/10
 
           blur-[100px]
         "
@@ -336,7 +342,7 @@ export default function AboutPage() {
 
               tracking-[0.5em]
 
-              text-white/35
+              text-[var(--muted)]
             "
           >
             Philosophy
@@ -351,7 +357,7 @@ export default function AboutPage() {
               leading-none
               tracking-[-0.1em]
 
-              text-white/[0.08]
+              text-[var(--text)]/[0.08]
             "
           >
             01
@@ -369,7 +375,7 @@ export default function AboutPage() {
             leading-[0.9]
             tracking-[-0.08em]
 
-            text-white
+            text-[var(--text)]
           "
         >
           Communication
@@ -390,18 +396,19 @@ export default function AboutPage() {
         rounded-[2rem]
 
         border
-        border-white/10
+        border-[var(--border)]
 
-        bg-white/[0.03]
+        glass-card
+
 
         p-8
 
-        backdrop-blur-xl
+     
 
         transition-all
         duration-500
 
-        hover:border-[#fe0000]/30
+        hover:border-[var(--accent)]
       "
     >
       {/* GLOW */}
@@ -416,7 +423,7 @@ export default function AboutPage() {
 
           rounded-full
 
-          bg-[#fe0000]/10
+          bg-[var(--accent)]/10
 
           blur-[100px]
         "
@@ -453,7 +460,7 @@ export default function AboutPage() {
 
               tracking-[0.5em]
 
-              text-white/35
+              text-[var(--muted)]
             "
           >
             Systems
@@ -468,7 +475,7 @@ export default function AboutPage() {
               leading-none
               tracking-[-0.1em]
 
-              text-white/[0.08]
+              text-[var(--text)]/[0.08]
             "
           >
             02
@@ -486,7 +493,7 @@ export default function AboutPage() {
             leading-[0.9]
             tracking-[-0.08em]
 
-            text-white
+            text-[var(--text)]
           "
         >
           Designed
@@ -520,7 +527,7 @@ export default function AboutPage() {
             mt-40
 
             border-y
-            border-white/10
+            border-[var(--border)]
 
             py-24
           "
@@ -545,7 +552,7 @@ export default function AboutPage() {
               leading-none
               tracking-[-0.18em]
 
-              text-white/[0.02]
+              text-[var(--text)]/[0.02]
             "
           >
             IMPACT
@@ -572,7 +579,7 @@ export default function AboutPage() {
 
                 tracking-[0.8em]
 
-                text-white/35
+                text-[var(--muted)]
               "
             >
               Sociyo Communications
@@ -589,7 +596,7 @@ export default function AboutPage() {
                 leading-[0.82]
                 tracking-[-0.14em]
 
-                text-white
+                text-[var(--text)]
               "
             >
               Not Just
@@ -603,8 +610,8 @@ export default function AboutPage() {
                   text-transparent
 
                   bg-gradient-to-b
-                  from-[#ff2d2d]
-                  via-[#ff8a8a]
+                  from-[var(--accent-light)]
+                  via-[var(--accent)]
                   to-[#ffffff]
 
                   bg-clip-text
@@ -649,7 +656,7 @@ export default function AboutPage() {
       leading-none
       tracking-[-0.14em]
 
-      text-white/[0.02]
+      text-[var(--text)]/[0.02]
     "
   >
     FILMS
@@ -696,23 +703,24 @@ export default function AboutPage() {
   rounded-[2rem]
 
   border
-  border-white/10
+  border-[var(--border)]
 
-  bg-[#07111F]/70
+  glass-card
+dark:bg-white/[0.03]
 
   backdrop-blur-xl
 
   transition-all
   duration-500
 
-  hover:border-[#fe0000]/30
+  hover:border-[var(--accent)]
 "
     >
       <div
         className="
           grid
 
-          lg:grid-cols-[1.1fr_0.9fr]
+          lg:grid-cols-[1.2fr_0.8fr]
         "
       >
         {/* THUMB */}
@@ -748,8 +756,8 @@ export default function AboutPage() {
               inset-0
 
               bg-gradient-to-r
-              from-black/60
-              via-black/10
+              from-black/75
+              via-black/25
               to-transparent
             "
           />
@@ -778,9 +786,9 @@ export default function AboutPage() {
                 rounded-full
 
                 border
-                border-white/20
+                border-[var(--border)]
 
-                bg-white/10
+                glass-card
 
                 backdrop-blur-xl
               "
@@ -809,7 +817,7 @@ export default function AboutPage() {
 
                   tracking-[0.45em]
 
-                  text-white/40
+                  text-[var(--muted)]
                 "
               >
                 Watch Film
@@ -821,7 +829,7 @@ export default function AboutPage() {
 
                   text-sm
 
-                  text-white/70
+                  text-[var(--text)]/70
                 "
               >
                 Sociyo Narrative
@@ -857,7 +865,7 @@ export default function AboutPage() {
               leading-none
               tracking-[-0.12em]
 
-              text-white/[0.04]
+              text-[var(--text)]/[0.04]
             "
           >
             01
@@ -878,7 +886,7 @@ export default function AboutPage() {
                   h-px
                   w-10
 
-                  bg-[#ff2d2d]
+                  bg-[var(--accent)]
                 "
               />
 
@@ -889,7 +897,7 @@ export default function AboutPage() {
 
                   tracking-[0.45em]
 
-                  text-white/35
+                  text-[var(--muted)]
                 "
               >
                 Influence Film
@@ -909,7 +917,7 @@ export default function AboutPage() {
                 leading-[0.85]
                 tracking-[-0.09em]
 
-                text-white
+                text-[var(--text)]
               "
             >
               Influence
@@ -934,7 +942,7 @@ export default function AboutPage() {
 
                 leading-relaxed
 
-                text-white/50
+                text-[var(--muted)]
               "
             >
               Visual storytelling built around emotion,
@@ -966,7 +974,7 @@ export default function AboutPage() {
 
                   tracking-[0.45em]
 
-                  text-white/30
+                  text-[var(--text)]/30
                 "
               >
                 Open
@@ -1007,16 +1015,17 @@ export default function AboutPage() {
   rounded-[2rem]
 
   border
-  border-white/10
+  border-[var(--border)]
 
-  bg-[#07111F]/70
+  glass-card
+dark:bg-white/[0.03]
 
   backdrop-blur-xl
 
   transition-all
   duration-500
 
-  hover:border-[#fe0000]/30
+  hover:border-[var(--accent)]
 "
     >
       <div
@@ -1056,7 +1065,7 @@ export default function AboutPage() {
               leading-none
               tracking-[-0.12em]
 
-              text-white/[0.04]
+              text-[var(--text)]/[0.04]
             "
           >
             02
@@ -1077,7 +1086,7 @@ export default function AboutPage() {
                   h-px
                   w-10
 
-                  bg-[#ff2d2d]
+                  bg-[var(--accent)]
                 "
               />
 
@@ -1088,7 +1097,7 @@ export default function AboutPage() {
 
                   tracking-[0.45em]
 
-                  text-white/35
+                  text-[var(--muted)]
                 "
               >
                 Narrative Film
@@ -1108,7 +1117,7 @@ export default function AboutPage() {
                 leading-[0.85]
                 tracking-[-0.09em]
 
-                text-white
+                text-[var(--text)]
               "
             >
               Narrative
@@ -1133,7 +1142,7 @@ export default function AboutPage() {
 
                 leading-relaxed
 
-                text-white/50
+                text-[var(--muted)]
               "
             >
               Cinematic communication crafted to create
@@ -1165,7 +1174,7 @@ export default function AboutPage() {
 
                   tracking-[0.45em]
 
-                  text-white/30
+                  text-[var(--text)]/30
                 "
               >
                 Open
@@ -1210,8 +1219,8 @@ export default function AboutPage() {
               inset-0
 
               bg-gradient-to-l
-              from-black/60
-              via-black/10
+              from-black/75
+              via-black/25
               to-transparent
             "
           />
@@ -1238,7 +1247,7 @@ export default function AboutPage() {
 
                   tracking-[0.45em]
 
-                  text-white/40
+                  text-[var(--muted)]
                 "
               >
                 Watch Film
@@ -1251,7 +1260,7 @@ export default function AboutPage() {
                   text-right
                   text-sm
 
-                  text-white/70
+                  text-[var(--text)]/70
                 "
               >
                 Strategic Storytelling
@@ -1270,9 +1279,9 @@ export default function AboutPage() {
                 rounded-full
 
                 border
-                border-white/20
+                border-[var(--border)]
 
-                bg-white/10
+                glass-card
 
                 backdrop-blur-xl
               "

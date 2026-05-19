@@ -81,11 +81,11 @@ export default function Navbar() {
       items-center
       justify-between
 
-      px-5
+      px-2
       md:px-10
       lg:px-16
-
-      pt-5
+pt-0
+      md:pt-5
     "
   >
     {/* ATMOSPHERE */}
@@ -96,223 +96,249 @@ export default function Navbar() {
       <NavBrand />
     </div>
 
-    {/* CENTER DESKTOP NAV */}
+{/* CENTER DESKTOP NAV */}
+<div
+  className={`
+    absolute
+    left-1/2
+    top-6
+
+    z-30
+
+    hidden
+    lg:block
+
+    -translate-x-1/2
+
+    transition-all
+    duration-700
+
+    ${
+      scrolled
+        ? "scale-[0.96] translate-y-0"
+        : "scale-100 translate-y-0"
+    }
+  `}
+>
+  <div
+    className={`
+      relative
+
+      flex
+      items-center
+
+      overflow-hidden
+
+      rounded-full
+
+      border
+
+      px-4
+      py-[0.95rem]
+
+      transition-all
+      duration-700
+
+      ${
+        scrolled
+          ? `
+            border-white/20
+            bg-black/65
+            backdrop-blur-2xl
+
+            shadow-[0_20px_80px_rgba(0,0,0,0.45)]
+          `
+          : `
+            border-black/5
+            bg-white/88
+            backdrop-blur-xl
+
+            shadow-[0_20px_60px_rgba(0,0,0,0.12)]
+          `
+      }
+    `}
+  >
+    {/* RED AMBIENT */}
     <div
-      className={`
+      className="
+        pointer-events-none
+
         absolute
         left-1/2
-        top-5
+        top-1/2
 
-        z-10
-
-        hidden
-        lg:block
+        h-24
+        w-[26rem]
 
         -translate-x-1/2
+        -translate-y-1/2
 
-        transition-all
-        duration-700
+        bg-[radial-gradient(circle,rgba(254,0,0,0.14),transparent_72%)]
 
-        ${
-          scrolled
-            ? "scale-[0.98] opacity-100"
-            : "scale-100 opacity-100"
-        }
-      `}
-    >
-      {/* OUTER FRAME */}
-      <div
-        className={`
-          relative
+        blur-[70px]
+      "
+    />
 
-          overflow-hidden
+    {/* GLOSS */}
+    <div
+      className="
+        pointer-events-none
 
-          rounded-full
+        absolute
+        inset-0
 
-          border
+        bg-[linear-gradient(180deg,rgba(255,255,255,0.35),transparent_45%)]
 
-          px-3
-          py-3
+        opacity-60
+      "
+    />
 
-          transition-all
-          duration-700
-
-          ${
-            scrolled
-              ? `
-                border-white/10
-                bg-black/40
-                backdrop-blur-2xl
-                shadow-[0_0_60px_rgba(0,0,0,0.45)]
-              `
-              : `
-                border-white/5
-                bg-white/[0.03]
-                backdrop-blur-xl
-              `
-          }
-        `}
-      >
-        {/* CINEMATIC GLOW */}
+    {/* LINKS */}
+    <div className="relative z-10 flex items-center">
+      {links.map((item, index) => (
         <div
-          className="
-            pointer-events-none
-
-            absolute
-            left-1/2
-            top-1/2
-
-            h-20
-            w-[20rem]
-
-            -translate-x-1/2
-            -translate-y-1/2
-
-            bg-[#fe0000]/10
-
-            blur-[70px]
-          "
-        />
-
-        {/* MOVING LIGHT */}
-        <div
-          className="
-            absolute
-            inset-0
-
-            opacity-40
-
-            bg-[linear-gradient(120deg,transparent_20%,rgba(255,255,255,0.08)_50%,transparent_80%)]
-
-            bg-[length:200%_100%]
-
-            animate-[shine_8s_linear_infinite]
-          "
-        />
-
-        {/* LINKS */}
-        <div
-          className="
-            relative
-            z-10
-
-            flex
-            items-center
-            gap-1
-          "
+          key={item.label}
+          className="flex items-center"
         >
-          {links.map((item, index) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="
-                group
-                relative
+          <Link
+            href={item.href}
+            className="
+              group
+              relative
 
-                overflow-hidden
+              flex
+              items-center
+              gap-3
+
+              rounded-full
+
+              px-6
+              py-2
+
+              transition-all
+              duration-500
+            "
+          >
+            {/* HOVER BG */}
+            <div
+              className="
+                absolute
+                inset-0
 
                 rounded-full
 
-                px-6
-                py-3
+                opacity-0
+                scale-75
+
+                transition-all
+                duration-500
+
+                bg-[linear-gradient(135deg,rgba(254,0,0,0.16),rgba(254,0,0,0.05))]
+
+                group-hover:opacity-100
+                group-hover:scale-100
               "
+            />
+
+            {/* ACTIVE LINE */}
+            <div
+              className="
+                absolute
+                left-1/2
+                bottom-1
+
+                h-[2px]
+                w-0
+
+                -translate-x-1/2
+
+                rounded-full
+
+                bg-[var(--accent)]
+
+                transition-all
+                duration-500
+
+                group-hover:w-8
+              "
+            />
+
+            {/* NUMBER */}
+            <span
+              className={`
+                relative
+                z-10
+
+                text-[10px]
+
+                font-medium
+
+                tracking-[0.32em]
+
+                transition-all
+                duration-500
+
+                ${
+                  scrolled
+                    ? "text-white/45"
+                    : "text-black/45"
+                }
+
+                group-hover:text-[var(--accent)]
+              `}
             >
-              {/* HOVER BG */}
-              <div
-                className="
-                  absolute
-                  inset-0
+              0{index + 1}
+            </span>
 
-                  scale-50
+            {/* LABEL */}
+            <span
+              className={`
+                relative
+                z-10
 
-                  rounded-full
+                text-[12px]
+                uppercase
 
-                  opacity-0
+                tracking-[0.34em]
 
-                  transition-all
-                  duration-500
+                transition-all
+                duration-500
 
-                  bg-[#fe0000]/12
+                ${
+                  scrolled
+                    ? "text-white/90"
+                    : "text-black/80"
+                }
 
-                  group-hover:scale-100
-                  group-hover:opacity-100
-                "
-              />
+                group-hover:text-[var(--accent)]
+              `}
+            >
+              {item.label}
+            </span>
+          </Link>
 
-              {/* TOP LIGHT */}
-              <div
-                className="
-                  absolute
-                  inset-x-0
-                  top-0
+          {/* DIVIDER */}
+          {index !== links.length - 1 && (
+            <div
+              className={`
+                mx-1
 
-                  h-px
+                h-5
+                w-px
 
-                  bg-gradient-to-r
-                  from-transparent
-                  via-[#fe0000]
-                  to-transparent
-
-                  opacity-0
-
-                  transition-all
-                  duration-500
-
-                  group-hover:opacity-100
-                "
-              />
-
-              {/* CONTENT */}
-              <div
-                className="
-                  relative
-                  z-10
-
-                  flex
-                  items-center
-                  gap-3
-                "
-              >
-                <span
-                  className="
-                    text-[9px]
-
-                    tracking-[0.35em]
-
-                    text-white/20
-
-                    transition-all
-                    duration-500
-
-                    group-hover:text-[#fe0000]
-                  "
-                >
-                  0{index + 1}
-                </span>
-
-                <span
-                  className="
-                    text-[11px]
-                    uppercase
-
-                    tracking-[0.35em]
-
-                    text-white
-
-                    transition-all
-                    duration-500
-
-                    group-hover:text-white
-                  "
-                >
-                  {item.label}
-                </span>
-              </div>
-            </Link>
-          ))}
+                ${
+                  scrolled
+                    ? "bg-white/10"
+                    : "bg-black/[0.06]"
+                }
+              `}
+            />
+          )}
         </div>
-      </div>
+      ))}
     </div>
+  </div>
+</div>
 
     {/* RIGHT SIDE */}
     <div
@@ -334,7 +360,7 @@ export default function Navbar() {
           gap-3
         "
       >
-        <div className="h-px w-10 bg-[#fe0000]" />
+        <div className="h-px w-10 bg-[var(--accent)]" />
 
         <span
           className="
@@ -343,7 +369,7 @@ export default function Navbar() {
 
             tracking-[0.4em]
 
-            text-white/75
+            text-[var(--text)]/75
           "
         >
           Digital Agency
@@ -363,6 +389,7 @@ export default function Navbar() {
       <MenuTrigger
         open={open}
         setOpen={setOpen}
+        
       />
     </div>
   </div>

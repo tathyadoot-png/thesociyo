@@ -11,15 +11,16 @@ const data = technologyDigitalData;
 
 export default function TechnologyDigital() {
   return (
-    <main className="relative overflow-hidden bg-[#18090B] text-white md:px-32 pt-32 md:pt-40">
+    <main className="relative overflow-hidden bg-[var(--bg)] text-[var(--text)] md:px-32 pt-32 md:pt-40">
       <CinematicBackground />
 
-  <section className="relative overflow-hidden border-b border-white/10">
+  <section className="relative overflow-hidden border-b border-[var(--border)]">
   {/* BACKGROUND GLOW */}
   <div className="absolute inset-0 overflow-hidden">
     <div className="absolute left-0 top-0 h-[40rem] w-[40rem] rounded-full bg-[#7DB8FF]/10 blur-[140px]" />
 
-    <div className="absolute bottom-0 right-0 h-[35rem] w-[35rem] rounded-full bg-white/[0.03] blur-[120px]" />
+    <div className="absolute bottom-0 right-0 h-[35rem] w-[35rem] rounded-full glass-card
+dark:bg-white/[0.03] blur-[120px]" />
 
     <div
       className="
@@ -41,7 +42,7 @@ export default function TechnologyDigital() {
       <div className="flex items-center gap-4">
         <div className="h-px w-20 bg-[#7DB8FF]" />
 
-        <span className="text-[10px] uppercase tracking-[0.45em] text-white/40">
+        <span className="text-[10px] uppercase tracking-[0.45em] text-[var(--muted)]">
           Information & Technology
         </span>
       </div>
@@ -49,7 +50,7 @@ export default function TechnologyDigital() {
       <div className="hidden items-center gap-3 md:flex">
         <span className="h-2 w-2 rounded-full bg-[#7DB8FF]" />
 
-        <span className="text-[10px] uppercase tracking-[0.35em] text-white/30">
+        <span className="text-[10px] uppercase tracking-[0.35em] text-[var(--text)]/30">
           Digital Ecosystem Division
         </span>
       </div>
@@ -77,11 +78,11 @@ export default function TechnologyDigital() {
           }}
         >
           <div className="mb-8 flex items-center gap-5">
-            <span className="font-display text-7xl tracking-[-0.12em] text-white/[0.06]">
+            <span className="font-display text-7xl tracking-[-0.12em] text-[var(--text)]/[0.06]">
               04
             </span>
 
-            <div className="h-px flex-1 bg-white/10" />
+            <div className="h-px flex-1 glass-card" />
           </div>
 
           <h1
@@ -134,7 +135,7 @@ export default function TechnologyDigital() {
             text-lg
             leading-[2]
 
-            text-white/55
+            text-[var(--muted)]
           "
         >
           {data.cover.description}
@@ -189,11 +190,11 @@ export default function TechnologyDigital() {
               </div>
 
               <div>
-                <p className="text-[10px] uppercase tracking-[0.35em] text-white/30">
+                <p className="text-[10px] uppercase tracking-[0.35em] text-[var(--text)]/30">
                   English PDF
                 </p>
 
-                <p className="mt-1 text-sm text-white/80">
+                <p className="mt-1 text-sm text-[var(--text)]/80">
                   Download Portfolio
                 </p>
               </div>
@@ -212,7 +213,7 @@ export default function TechnologyDigital() {
               rounded-full
 
               border
-              border-white/10
+              border-[var(--border)]
 
               bg-white/[0.04]
 
@@ -222,7 +223,7 @@ export default function TechnologyDigital() {
               transition-all
               duration-500
 
-              hover:border-white/20
+              hover:border-[var(--border)]
               hover:bg-white/[0.07]
             "
           >
@@ -247,11 +248,11 @@ export default function TechnologyDigital() {
               </div>
 
               <div>
-                <p className="text-[10px] uppercase tracking-[0.35em] text-white/30">
+                <p className="text-[10px] uppercase tracking-[0.35em] text-[var(--text)]/30">
                   हिंदी PDF
                 </p>
 
-                <p className="mt-1 text-sm text-white/80">
+                <p className="mt-1 text-sm text-[var(--text)]/80">
                   डाउनलोड पोर्टफोलियो
                 </p>
               </div>
@@ -288,9 +289,10 @@ export default function TechnologyDigital() {
             rounded-[2.5rem]
 
             border
-            border-white/10
+            border-[var(--border)]
 
-            bg-white/[0.03]
+            glass-card
+dark:bg-white/[0.03]
 
             p-10
           "
@@ -309,7 +311,7 @@ export default function TechnologyDigital() {
               leading-none
               tracking-[-0.14em]
 
-              text-white/[0.03]
+              text-[var(--text)]/[0.03]
             "
           >
             UX
@@ -317,7 +319,7 @@ export default function TechnologyDigital() {
 
           {/* CONTENT */}
           <div className="relative z-10">
-            <span className="text-[10px] uppercase tracking-[0.4em] text-[#7DB8FF]">
+            <span className="text-[10px] uppercase tracking-[0.4em] text-[var(--accent)]">
               Digital-First Environment
             </span>
 
@@ -349,7 +351,7 @@ export default function TechnologyDigital() {
                 text-base
                 leading-[2]
 
-                text-white/50
+                text-[var(--muted)]
               "
             >
               {data.environment.outro}
@@ -366,7 +368,7 @@ export default function TechnologyDigital() {
                     justify-between
 
                     border-b
-                    border-white/10
+                    border-[var(--border)]
 
                     pb-5
                   "
@@ -380,7 +382,7 @@ export default function TechnologyDigital() {
 
                         tracking-[-0.08em]
 
-                        text-white/[0.12]
+                        text-[var(--text)]/[0.12]
                       "
                     >
                       0{index + 1}
@@ -393,7 +395,7 @@ export default function TechnologyDigital() {
 
                         tracking-[0.3em]
 
-                        text-white/70
+                        text-[var(--text)]/70
                       "
                     >
                       {item}
@@ -448,7 +450,7 @@ export default function TechnologyDigital() {
 
                   tracking-[-0.12em]
 
-                  text-white/[0.06]
+                  text-[var(--text)]/[0.06]
                 "
               >
                 {(categoryIndex + 1)
@@ -486,7 +488,7 @@ export default function TechnologyDigital() {
                 text-base
                 leading-[2]
 
-                text-white/45
+                text-[var(--text)]/45
               "
             >
               {projects.length} platforms developed across this digital
@@ -524,7 +526,7 @@ export default function TechnologyDigital() {
         block
 
         border-t
-        border-white/10
+        border-[var(--border)]
 
         py-14
       "
@@ -562,8 +564,8 @@ export default function TechnologyDigital() {
                 inset-0
 
                 bg-gradient-to-t
-                from-[#18090B]
-                via-[#18090B]/10
+                from-[#111111]
+                via-[#111111]/10
                 to-transparent
               "
             />
@@ -586,7 +588,7 @@ export default function TechnologyDigital() {
               leading-none
               tracking-[-0.12em]
 
-              text-white/[0.03]
+              text-[var(--text)]/[0.03]
             "
           >
             {(index + 1)
@@ -602,7 +604,7 @@ export default function TechnologyDigital() {
 
                 tracking-[0.45em]
 
-                text-[#7DB8FF]
+                text-[var(--accent)]
               "
             >
               {project.category}
@@ -644,7 +646,7 @@ export default function TechnologyDigital() {
                   duration-500
 
                   group-hover:w-32
-                  group-hover:bg-[#7DB8FF]
+             group-hover:bg-[var(--accent)]
                 "
               />
 
@@ -655,7 +657,7 @@ export default function TechnologyDigital() {
 
                   tracking-[0.35em]
 
-                  text-white/45
+                  text-[var(--text)]/45
                 "
               >
                 Open Live Platform
