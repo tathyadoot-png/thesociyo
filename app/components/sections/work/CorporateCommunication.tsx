@@ -75,7 +75,7 @@ export default function CorporateCommunication() {
       {/* IMAGE */}
       <div className="absolute inset-0 overflow-hidden">
         <Image
-          src="/About-Us.jpg"
+          src="/ecosystem/1.jpg"
           alt="Corporate Communication"
           fill
           priority

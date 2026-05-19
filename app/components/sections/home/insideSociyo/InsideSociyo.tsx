@@ -83,7 +83,7 @@ export default function InsideSociyo() {
           >
             {/* IMAGE */}
             <Image
-              src="/About-Us.jpg"
+              src="/About-Us.webp"
               alt="Inside Sociyo"
               fill
               className="

@@ -35,7 +35,7 @@ snapshots: [
     title: "The Drishtikon",
     ecosystem: "News & Media",
     category: "News & Media",
-    image: "/About-Us.jpg",
+    image: "/work/download.png",
     liveLink: "https://www.thedrishtikon.com",
   },
 
@@ -43,7 +43,7 @@ snapshots: [
     title: "Indian Says",
     ecosystem: "News & Media",
     category: "Media Platform",
-    image: "/About-Us.jpg",
+    image: "/work/download.png",
     liveLink: "https://www.indiansays.com",
   },
 
@@ -51,7 +51,7 @@ snapshots: [
     title: "TathyaDoot",
     ecosystem: "News & Media",
     category: "News Platform",
-    image: "/About-Us.jpg",
+    image: "/work/download.png",
     liveLink: "https://www.indiansays.com",
   },
 
@@ -59,7 +59,7 @@ snapshots: [
     title: "News World Web",
     ecosystem: "News & Media",
     category: "Digital Media",
-    image: "/About-Us.jpg",
+    image: "/work/download.png",
     liveLink: "https://www.newsworldweb.in",
   },
 
@@ -67,7 +67,7 @@ snapshots: [
     title: "H2O Connects",
     ecosystem: "Social Impact",
     category: "Social Impact",
-    image: "/About-Us.jpg",
+    image: "/work/download.png",
     liveLink: "https://h2oconnects.org",
   },
 
@@ -75,7 +75,7 @@ snapshots: [
     title: "Sarthak Sanstha",
     ecosystem: "Social Impact",
     category: "NGO Platform",
-    image: "/About-Us.jpg",
+    image: "/work/download.png",
     liveLink: "https://www.sarthaksanstha.org",
   },
 
@@ -83,7 +83,7 @@ snapshots: [
     title: "Nirbhaya Foundation",
     ecosystem: "Foundations",
     category: "Foundation",
-    image: "/About-Us.jpg",
+    image: "/work/download.png",
     liveLink: "https://nirbhayafoundation.org",
   },
 
@@ -91,7 +91,7 @@ snapshots: [
     title: "Sky Social",
     ecosystem: "Foundations",
     category: "Organization",
-    image: "/About-Us.jpg",
+    image: "/work/download.png",
     liveLink: "https://skysocial.org",
   },
 
@@ -99,7 +99,7 @@ snapshots: [
     title: "Sacchi Saheli",
     ecosystem: "Foundations",
     category: "Women Empowerment",
-    image: "/About-Us.jpg",
+    image: "/work/download.png",
     liveLink: "https://sachhisaheli.org",
   },
 
@@ -107,7 +107,7 @@ snapshots: [
     title: "Sociyo Communications",
     ecosystem: "Corporate Platforms",
     category: "Corporate Platform",
-    image: "/About-Us.jpg",
+    image: "/work/download.png",
     liveLink: "https://thesociyo.com",
   },
 
@@ -115,7 +115,7 @@ snapshots: [
     title: "Inedco Networks",
     ecosystem: "Corporate Platforms",
     category: "Corporate",
-    image: "/About-Us.jpg",
+    image: "/work/download.png",
     liveLink: "https://www.inedconetworks.com",
   },
 
@@ -123,7 +123,7 @@ snapshots: [
     title: "Sampatiya Uikey",
     ecosystem: "Political & Public Profiles",
     category: "Political Profile",
-    image: "/About-Us.jpg",
+    image: "/work/download.png",
     liveLink: "https://www.sampatiyauikey.com",
   },
 
@@ -131,7 +131,7 @@ snapshots: [
     title: "Ganesh Singh",
     ecosystem: "Political & Public Profiles",
     category: "Public Leadership",
-    image: "/About-Us.jpg",
+    image: "/work/download.png",
     liveLink: "https://ganeshsingh.com",
   },
 
@@ -139,7 +139,7 @@ snapshots: [
     title: "Rajendra Shukla",
     ecosystem: "Political & Public Profiles",
     category: "Governance",
-    image: "/About-Us.jpg",
+    image: "/work/download.png",
     liveLink: "http://rajendrashukla.co.in",
   },
 
@@ -147,7 +147,7 @@ snapshots: [
     title: "Bhupendra Singh",
     ecosystem: "Political & Public Profiles",
     category: "Political Communication",
-    image: "/About-Us.jpg",
+    image: "/work/download.png",
     liveLink: "http://bhuppendrasiingh.com",
   },
 
@@ -155,7 +155,7 @@ snapshots: [
     title: "Content Mohalla",
     ecosystem: "Creative & Personal Platforms",
     category: "Creative Ecosystem",
-    image: "/About-Us.jpg",
+    image: "/work/download.png",
     liveLink: "https://www.contentmohalla.com",
   },
 
@@ -163,14 +163,14 @@ snapshots: [
     title: "Sociyo CMS",
     ecosystem: "Corporate",
     category: "Internal Platform",
-    image: "/About-Us.jpg",
+    image: "/work/download.png",
     liveLink: "https://thesociyo.in",
   },
   {
   title: "Ssksatna",
   ecosystem: "Governance",
   category: "Governance Platform",
-  image: "/About-Us.jpg",
+  image: "/work/download.png",
   liveLink: "https://www.ssksatna.com",
 },
 
@@ -178,14 +178,14 @@ snapshots: [
   title: "JSK",
   ecosystem: "Governance",
   category: "Citizen Service Platform",
-  image: "/About-Us.jpg",
+  image: "/work/download.png",
   liveLink: "https://jskindia.in",
 },
 {
   title: "Vikalp Singh",
   ecosystem: "Creative & Personal Platforms",
   category: "Personal Portfolio",
-  image: "/About-Us.jpg",
+  image: "/work/download.png",
   liveLink: "https://vikalpsingh.com",
 },
 ],

@@ -57,7 +57,7 @@ export const ecosystemsData: EcosystemItem[] = [
       "Strengthening awareness, participation and execution support for organizations working within communities and impact-driven programs.",
 
     image:
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1600&auto=format&fit=crop",
+      "/ecosystem/3.jpg",
   },
 
   {
@@ -69,6 +69,6 @@ export const ecosystemsData: EcosystemItem[] = [
       "Building adaptable digital experiences that support functionality, accessibility and evolving organizational needs.",
 
     image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop",
+      "/ecosystem/4.jpg",
   },
 ];

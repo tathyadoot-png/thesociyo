@@ -189,7 +189,7 @@ export default function SelectedAssociationsSection() {
                     <div className="absolute h-20 w-20 rounded-full bg-[var(--accent)]/10 opacity-70 blur-[24px]" />
 
                     {/* LOGO */}
-                    <div className="relative z-10 h-12 w-24">
+                    <div className="relative z-10 h-20 w-24">
                       <Image
                         src={item.image}
                         alt={item.name}

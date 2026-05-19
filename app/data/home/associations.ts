@@ -17,66 +17,66 @@ export const associations = [
   {
     id: "01",
     name: "Equations Money",
-    image: "/sociyo.png",
+    image: "/associates/1.png",
   },
 
   {
     id: "02",
     name: "DSS Group",
-    image: "/sociyo.png",
+    image: "/associates/2.png",
   },
 
   {
     id: "03",
     name: "Genefire",
-    image: "/sociyo.png",
+    image: "/associates/3.png",
   },
 
   {
     id: "04",
     name: "Moseta Renewable Luxury",
-    image: "/sociyo.png",
+    image: "/associates/4.png",
   },
 
   {
     id: "05",
     name: "Ansoz Creations",
-    image: "/sociyo.png",
+    image: "/associates/5.jpeg",
   },
 
   {
     id: "06",
     name: "H2O",
-    image: "/sociyo.png",
+    image: "/associates/6.jpeg",
   },
 
   {
     id: "07",
     name: "Sarthak",
-    image: "/sociyo.png",
+    image: "/associates/7.png",
   },
 
   {
     id: "08",
     name: "The Drishtikon",
-    image: "/sociyo.png",
+    image: "/associates/8.png",
   },
 
   {
     id: "09",
     name: "Indian Says",
-    image: "/sociyo.png",
+    image: "/associates/9.png",
   },
 
   {
     id: "10",
     name: "Inedco Networks",
-    image: "/sociyo.png",
+    image: "/associates/10.png",
   },
 
   {
     id: "11",
     name: "Content Mohalla",
-    image: "/sociyo.png",
+    image: "/associates/11.png",
   },
 ];

@@ -19,7 +19,7 @@ export default function SocialDevelopment() {
         {/* BACKGROUND */}
         <div className="absolute inset-0">
           <Image
-            src="/About-Us.jpg"
+            src="/ecosystem/3.jpg"
             alt="Social Development"
             fill
             priority
@@ -118,7 +118,7 @@ export default function SocialDevelopment() {
               <div className="relative overflow-hidden rounded-[2.4rem]">
                 <div className="relative h-[40rem]">
                   <Image
-                    src="/About-Us.jpg"
+                    src="/ecosystem/3.jpg"
                     alt="Impact"
                     fill
                     className="object-cover brightness-[0.8]"
