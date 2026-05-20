@@ -136,79 +136,145 @@ export default function SelectedAssociationsSection() {
   ))}
 </div>
 
-          {/* DESKTOP CLOUD */}
-          <div className="relative hidden h-[900px] md:block xl:h-[1100px]">
-            {associations.map((item, index) => {
-              const positions = [
-                "left-[18%] top-[10%]",
-                "left-[42%] top-[2%]",
-                "right-[18%] top-[10%]",
-                "left-[8%] top-[38%]",
-                "left-[32%] top-[30%]",
-                "right-[32%] top-[30%]",
-                "right-[8%] top-[38%]",
-                "left-[18%] bottom-[10%]",
-                "left-[42%] bottom-[2%]",
-                "right-[18%] bottom-[10%]",
-                "left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
-              ];
+{/* DESKTOP CLOUD */}
+<motion.div
+  style={{
+    y: useTransform(smooth, [0, 1], [0, -120]),
+    scale: useTransform(smooth, [0, 0.5, 1], [0.96, 1, 1.02]),
+  }}
+  className="relative hidden h-[900px] md:block xl:h-[1100px]"
+>
+  {associations.map((item, index) => {
+    const positions = [
+      "left-[18%] top-[10%]",
+      "left-[42%] top-[2%]",
+      "right-[18%] top-[10%]",
+      "left-[8%] top-[38%]",
+      "left-[32%] top-[30%]",
+      "right-[32%] top-[30%]",
+      "right-[8%] top-[38%]",
+      "left-[18%] bottom-[10%]",
+      "left-[42%] bottom-[2%]",
+      "right-[18%] bottom-[10%]",
+      "left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
+    ];
 
-              return (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 1,
-                    delay: index * 0.05,
-                  }}
-                  animate={{
-                    y: [0, -12, 0],
-                  }}
-                  className={`absolute ${positions[index]}`}
-                >
-                  <motion.div
-                    whileHover={{
-                      scale: 1.08,
-                    }}
-                    className="group relative flex h-[170px] w-[170px] flex-col items-center justify-center rounded-full border border-[var(--border)] bg-white/[0.03] shadow-[0_20px_50px_rgba(0,0,0,0.18)] backdrop-blur-xl transition-all duration-500 hover:border-[var(--accent)]/30 hover:bg-white/[0.06]"
-                  >
-                    {/* OUTER RING */}
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "linear",
-                      }}
-                      className="absolute h-[130px] w-[130px] rounded-full border border-[var(--border)]"
-                    />
+    return (
+      <motion.div
+        key={item.id}
+        initial={{
+          opacity: 0,
+          scale: 0.85,
+          y: 40,
+        }}
+        whileInView={{
+          opacity: 1,
+          scale: 1,
+          y: 0,
+        }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 1.1,
+          delay: index * 0.06,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        className={`absolute ${positions[index]}`}
+      >
+        <motion.div
+          animate={{
+            y: [0, -10, 0],
+          }}
+          transition={{
+            duration: 4 + index * 0.3,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          whileHover={{
+            scale: 1.06,
+            y: -6,
+          }}
+          className="
+            group
+            relative
+            flex
+            h-[170px]
+            w-[170px]
+            items-center
+            justify-center
+            overflow-hidden
+            rounded-full
+            border
+            border-white/[0.08]
+            bg-white/[0.03]
+            shadow-[0_25px_60px_rgba(0,0,0,0.22)]
+            backdrop-blur-xl
+            transition-all
+            duration-700
+            hover:border-[var(--accent)]/30
+            hover:bg-white/[0.05]
+          "
+        >
+          {/* AMBIENT GLOW */}
+          <div
+            className="
+              absolute
+              inset-0
+              rounded-full
+              bg-[radial-gradient(circle_at_center,rgba(254,0,0,0.12),transparent_70%)]
+              opacity-60
+            "
+          />
 
-                    {/* INNER GLOW */}
-                    <div className="absolute h-20 w-20 rounded-full bg-[var(--accent)]/10 opacity-70 blur-[24px]" />
+          {/* ROTATING RING */}
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="
+              absolute
+              h-[135px]
+              w-[135px]
+              rounded-full
+              border
+              border-white/[0.08]
+            "
+          />
 
-                    {/* LOGO */}
-                    <div className="relative z-10 h-20 w-24">
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
+          {/* SOFT LIGHT */}
+          <div
+            className="
+              absolute
+              top-0
+              h-1/2
+              w-full
+              bg-[linear-gradient(180deg,rgba(255,255,255,0.10),transparent)]
+            "
+          />
 
-                    {/* NAME */}
-                    <div className="absolute bottom-7 px-4 text-center">
-                      <h3 className="text-[10px] uppercase tracking-[0.18em] text-[var(--muted)]">
-                        {item.name}
-                      </h3>
-                    </div>
-                  </motion.div>
-                </motion.div>
-              );
-            })}
+          {/* LOGO */}
+          <div className="relative z-10 h-20 w-24">
+            <Image
+              src={item.image}
+              alt={item.name}
+              fill
+              className="object-contain"
+            />
           </div>
+
+          {/* NAME */}
+          <div className="absolute bottom-7 px-4 text-center">
+            <h3 className="text-[10px] uppercase tracking-[0.18em] text-[var(--muted)]">
+              {item.name}
+            </h3>
+          </div>
+        </motion.div>
+      </motion.div>
+    );
+  })}
+</motion.div>
         </div>
 
         {/* BOTTOM */}
