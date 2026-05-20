@@ -235,7 +235,7 @@ export default function EcosystemsSection() {
               />
 
               {/* OVERLAY */}
-              <div
+              {/* <div
                 className="
                   absolute
                   inset-0
@@ -245,7 +245,7 @@ export default function EcosystemsSection() {
                   via-black/30
                   to-transparent
                 "
-              />
+              /> */}
 
               {/* AMBIENT */}
               <div
