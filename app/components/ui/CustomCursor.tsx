@@ -5,9 +5,11 @@ import gsap from "@/app/lib/gsap";
 import Image from "next/image";
 
 export default function CustomCursor() {
-  const cursorRef = useRef<HTMLDivElement | null>(null);
+  const cursorRef =
+    useRef<HTMLDivElement | null>(null);
 
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] =
+    useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -16,47 +18,77 @@ export default function CustomCursor() {
 
     checkMobile();
 
-    window.addEventListener("resize", checkMobile);
+    window.addEventListener(
+      "resize",
+      checkMobile
+    );
 
     return () => {
-      window.removeEventListener("resize", checkMobile);
+      window.removeEventListener(
+        "resize",
+        checkMobile
+      );
     };
   }, []);
 
   useEffect(() => {
     if (isMobile) return;
 
-    const moveCursor = (e: MouseEvent) => {
+    const moveCursor = (
+      e: MouseEvent
+    ) => {
       gsap.to(cursorRef.current, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0.22,
-        ease: "power3.out",
+        x: e.clientX - 34,
+        y: e.clientY - 34,
+        duration: 0.55,
+        ease: "power4.out",
       });
     };
 
     const handleMouseDown = () => {
       gsap.to(cursorRef.current, {
-        scale: 0.82,
-        duration: 0.15,
+        scale: 0.88,
+        duration: 0.18,
       });
     };
 
     const handleMouseUp = () => {
       gsap.to(cursorRef.current, {
         scale: 1,
-        duration: 0.25,
+        duration: 0.3,
       });
     };
 
-    window.addEventListener("mousemove", moveCursor);
-    window.addEventListener("mousedown", handleMouseDown);
-    window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener(
+      "mousemove",
+      moveCursor
+    );
+
+    window.addEventListener(
+      "mousedown",
+      handleMouseDown
+    );
+
+    window.addEventListener(
+      "mouseup",
+      handleMouseUp
+    );
 
     return () => {
-      window.removeEventListener("mousemove", moveCursor);
-      window.removeEventListener("mousedown", handleMouseDown);
-      window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener(
+        "mousemove",
+        moveCursor
+      );
+
+      window.removeEventListener(
+        "mousedown",
+        handleMouseDown
+      );
+
+      window.removeEventListener(
+        "mouseup",
+        handleMouseUp
+      );
     };
   }, [isMobile]);
 
@@ -74,10 +106,29 @@ export default function CustomCursor() {
         pointer-events-none
       "
       style={{
-        transform: "translate(-50%, -50%)",
+        transform:
+          "translate(-50%, -50%)",
       }}
     >
-      {/* OUTER GLOW */}
+      {/* BIG AMBIENT GLOW */}
+      <div
+        className="
+          absolute
+          inset-0
+
+          scale-[3.8]
+
+          rounded-full
+
+          bg-[radial-gradient(circle,rgba(254,0,0,0.14),transparent_72%)]
+
+          blur-[90px]
+
+          opacity-70
+        "
+      />
+
+      {/* MID GLOW */}
       <div
         className="
           absolute
@@ -87,26 +138,11 @@ export default function CustomCursor() {
 
           rounded-full
 
-          glow-cherry
+          bg-[radial-gradient(circle,rgba(255,80,80,0.18),transparent_70%)]
 
-          opacity-70
+          blur-3xl
 
-          blur-2xl
-        "
-      />
-
-      {/* OUTER RING */}
-      <div
-        className="
-          absolute
-          inset-0
-
-          scale-[1.35]
-
-          rounded-full
-
-          border
-          border-[var(--accent)]/20
+          opacity-80
         "
       />
 
@@ -124,13 +160,14 @@ export default function CustomCursor() {
 
           rounded-full
 
-          glass-card
+          backdrop-blur-2xl
 
-          border-[var(--accent)]/20
+          border
+          border-white/50
 
-          bg-[rgba(17,17,19,0.72)]
+          bg-[rgba(255,255,255,0.78)]
 
-          shadow-[0_0_40px_rgba(254,0,0,0.16)]
+          shadow-[0_12px_45px_rgba(254,0,0,0.16)]
 
           transition-all
           duration-300
@@ -146,9 +183,23 @@ export default function CustomCursor() {
 
             rounded-full
 
-            bg-[var(--accent)]/12
+            bg-[var(--accent)]/18
 
-            blur-xl
+            blur-2xl
+          "
+        />
+
+        {/* SHINE */}
+        <div
+          className="
+            absolute
+            inset-0
+
+            rounded-full
+
+            bg-[linear-gradient(180deg,rgba(255,255,255,0.65),transparent_55%)]
+
+            opacity-80
           "
         />
 
@@ -156,8 +207,8 @@ export default function CustomCursor() {
         <Image
           src="/Sociyo_Favicon.png"
           alt="cursor"
-          width={24}
-          height={24}
+          width={22}
+          height={22}
           priority
           className="
             relative
@@ -165,7 +216,9 @@ export default function CustomCursor() {
 
             object-contain
 
-            drop-shadow-[0_0_12px_rgba(254,0,0,0.55)]
+            opacity-95
+
+            drop-shadow-[0_0_16px_rgba(254,0,0,0.38)]
           "
         />
       </div>
