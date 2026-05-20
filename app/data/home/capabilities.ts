@@ -12,7 +12,7 @@ export const capabilitiesHeading = {
   },
 
   shortText:
-    "Narrative systems, communication infrastructure, brand positioning, and influence architecture designed for modern institutions.",
+    "Narrative systems, communication infrastructure, brand positioning and influence architecture designed for modern institutions.",
 };
 
 

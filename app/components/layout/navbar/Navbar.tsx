@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 import Link from "next/link";
-
+import { usePathname } from "next/navigation";
 import NavBrand from "./NavbarBrand";
 import MenuTrigger from "./MenuTrigger";
 import FullscreenMenu from "./FullscreenMenu";
@@ -12,6 +12,7 @@ import NavAtmosphere from "./NavAtmosphere";
 import { links } from "./MenuLinks";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   const [showNav, setShowNav] = useState(true);
@@ -192,151 +193,170 @@ pt-0
         opacity-60
       "
     />
+{/* LINKS */}
+<div className="relative z-10 flex items-center">
+  {links.map((item, index) => {
+    const isActive =
+      pathname === item.href;
 
-    {/* LINKS */}
-    <div className="relative z-10 flex items-center">
-      {links.map((item, index) => (
-        <div
-          key={item.label}
-          className="flex items-center"
+    return (
+      <div
+        key={item.label}
+        className="flex items-center"
+      >
+        <Link
+          href={item.href}
+          className={`
+            group
+            relative
+
+            flex
+            items-center
+            gap-3
+
+            rounded-full
+
+            px-6
+            py-2
+
+            transition-all
+            duration-500
+
+            ${
+              isActive
+                ? `
+                  bg-[linear-gradient(135deg,rgba(254,0,0,0.16),rgba(254,0,0,0.05))]
+                `
+                : ""
+            }
+          `}
         >
-          <Link
-            href={item.href}
-            className="
-              group
-              relative
-
-              flex
-              items-center
-              gap-3
+          {/* HOVER BG */}
+          <div
+            className={`
+              absolute
+              inset-0
 
               rounded-full
 
-              px-6
-              py-2
+              transition-all
+              duration-500
+
+              bg-[linear-gradient(135deg,rgba(254,0,0,0.16),rgba(254,0,0,0.05))]
+
+              ${
+                isActive
+                  ? "opacity-100 scale-100"
+                  : "opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100"
+              }
+            `}
+          />
+
+          {/* ACTIVE LINE */}
+          <div
+            className={`
+              absolute
+              left-1/2
+              bottom-1
+
+              h-[2px]
+
+              -translate-x-1/2
+
+              rounded-full
+
+              bg-[var(--accent)]
 
               transition-all
               duration-500
-            "
+
+              ${
+                isActive
+                  ? "w-8"
+                  : "w-0 group-hover:w-8"
+              }
+            `}
+          />
+
+          {/* NUMBER */}
+          <span
+            className={`
+              relative
+              z-10
+
+              text-[10px]
+
+              font-medium
+
+              tracking-[0.32em]
+
+              transition-all
+              duration-500
+
+              ${
+                isActive
+                  ? "text-[var(--accent)]"
+                  : scrolled
+                  ? "text-white/45"
+                  : "text-black/45"
+              }
+
+              group-hover:text-[var(--accent)]
+            `}
           >
-            {/* HOVER BG */}
-            <div
-              className="
-                absolute
-                inset-0
+            0{index + 1}
+          </span>
 
-                rounded-full
+          {/* LABEL */}
+          <span
+            className={`
+              relative
+              z-10
 
-                opacity-0
-                scale-75
+              text-[12px]
+              uppercase
 
-                transition-all
-                duration-500
+              tracking-[0.34em]
 
-                bg-[linear-gradient(135deg,rgba(254,0,0,0.16),rgba(254,0,0,0.05))]
+              transition-all
+              duration-500
 
-                group-hover:opacity-100
-                group-hover:scale-100
-              "
-            />
+              ${
+                isActive
+                  ? "text-[var(--accent)]"
+                  : scrolled
+                  ? "text-white/90"
+                  : "text-black/80"
+              }
 
-            {/* ACTIVE LINE */}
-            <div
-              className="
-                absolute
-                left-1/2
-                bottom-1
+              group-hover:text-[var(--accent)]
+            `}
+          >
+            {item.label}
+          </span>
+        </Link>
 
-                h-[2px]
-                w-0
+        {/* DIVIDER */}
+        {index !== links.length - 1 && (
+          <div
+            className={`
+              mx-1
 
-                -translate-x-1/2
+              h-5
+              w-px
 
-                rounded-full
-
-                bg-[var(--accent)]
-
-                transition-all
-                duration-500
-
-                group-hover:w-8
-              "
-            />
-
-            {/* NUMBER */}
-            <span
-              className={`
-                relative
-                z-10
-
-                text-[10px]
-
-                font-medium
-
-                tracking-[0.32em]
-
-                transition-all
-                duration-500
-
-                ${
-                  scrolled
-                    ? "text-white/45"
-                    : "text-black/45"
-                }
-
-                group-hover:text-[var(--accent)]
-              `}
-            >
-              0{index + 1}
-            </span>
-
-            {/* LABEL */}
-            <span
-              className={`
-                relative
-                z-10
-
-                text-[12px]
-                uppercase
-
-                tracking-[0.34em]
-
-                transition-all
-                duration-500
-
-                ${
-                  scrolled
-                    ? "text-white/90"
-                    : "text-black/80"
-                }
-
-                group-hover:text-[var(--accent)]
-              `}
-            >
-              {item.label}
-            </span>
-          </Link>
-
-          {/* DIVIDER */}
-          {index !== links.length - 1 && (
-            <div
-              className={`
-                mx-1
-
-                h-5
-                w-px
-
-                ${
-                  scrolled
-                    ? "bg-white/10"
-                    : "bg-black/[0.06]"
-                }
-              `}
-            />
-          )}
-        </div>
-      ))}
-    </div>
+              ${
+                scrolled
+                  ? "bg-white/10"
+                  : "bg-black/[0.06]"
+              }
+            `}
+          />
+        )}
+      </div>
+    );
+  })}
+</div>
   </div>
 </div>
 

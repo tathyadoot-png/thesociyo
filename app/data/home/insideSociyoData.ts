@@ -49,7 +49,7 @@ export const insideSociyoData: InsideSociyoData = {
       title: "Human-Centered Narrative",
 
       description:
-        "Whether shaping narratives, strengthening engagement or building digital experiences, the focus remains the same — creating communication that feels aligned, intentional and human.",
+        "Whether shaping narratives, strengthening engagement or building digital experiences, the focus remains the same - creating communication that feels aligned, intentional and human.",
     },
   ],
 };
