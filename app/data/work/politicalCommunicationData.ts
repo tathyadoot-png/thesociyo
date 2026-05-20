@@ -1,5 +1,5 @@
 export const politicalCommunicationData = {
-  id: "02",
+  id: "01",
 
   short: "Political Communication Systems",
 
