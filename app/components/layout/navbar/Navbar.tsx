@@ -225,7 +225,7 @@ pt-0
             ${
               isActive
                 ? `
-                  bg-[linear-gradient(135deg,rgba(254,0,0,0.16),rgba(254,0,0,0.05))]
+               bg-[linear-gradient(135deg,rgba(254,0,0,0.32),rgba(254,0,0,0.12))]
                 `
                 : ""
             }
@@ -242,7 +242,7 @@ pt-0
               transition-all
               duration-500
 
-              bg-[linear-gradient(135deg,rgba(254,0,0,0.16),rgba(254,0,0,0.05))]
+             bg-[linear-gradient(135deg,rgba(254,0,0,0.32),rgba(254,0,0,0.12))]
 
               ${
                 isActive
@@ -295,7 +295,7 @@ pt-0
 
               ${
                 isActive
-                  ? "text-[var(--accent)]"
+                  ? "text-white"
                   : scrolled
                   ? "text-white/45"
                   : "text-black/45"
@@ -312,7 +312,7 @@ pt-0
             className={`
               relative
               z-10
-
+font-semibold
               text-[12px]
               uppercase
 
@@ -323,7 +323,7 @@ pt-0
 
               ${
                 isActive
-                  ? "text-[var(--accent)]"
+                  ? "text-white"
                   : scrolled
                   ? "text-white/90"
                   : "text-black/80"
