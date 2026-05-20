@@ -83,21 +83,30 @@ export default function InsideSociyo() {
           >
             {/* IMAGE */}
             <Image
-              src="/About-Us.webp"
+              src="/wordcloud.png"
               alt="Inside Sociyo"
               fill
-              className="
-                object-cover
+          className="
+  relative
+  overflow-hidden
 
-                transition-all
-                duration-[2500ms]
+  lg:col-span-7
 
-                hover:scale-105
-              "
+  min-h-[420px]
+  md:min-h-[520px]
+  lg:min-h-[650px]
+
+  rounded-[2rem]
+
+  border
+  border-[var(--border)]
+
+  glass-card
+"
             />
 
             {/* IMAGE OVERLAY */}
-            <div
+            {/* <div
               className="
                 absolute
                 inset-0
@@ -107,7 +116,7 @@ export default function InsideSociyo() {
                 via-black/30
                 to-transparent
               "
-            />
+            /> */}
 
             {/* SOFT RED AMBIENT */}
             <div
