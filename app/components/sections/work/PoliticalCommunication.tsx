@@ -210,7 +210,7 @@ export default function PoliticalCommunication() {
           {/* BUTTONS */}
           <div className="mt-12 flex flex-wrap gap-4">
             <a
-              href="/pdfs/corporate-en.pdf"
+              href="/ecosystem/political_eng.pdf"
               download
               className="
                 rounded-full
@@ -241,7 +241,7 @@ export default function PoliticalCommunication() {
             </a>
 
             <a
-              href="/pdfs/corporate-hi.pdf"
+              href="/ecosystem/Political_Hindi.pdf"
               download
               className="
                 rounded-full

@@ -374,7 +374,7 @@ export default function CorporateCommunication() {
           {/* BUTTONS */}
           <div className="flex flex-wrap gap-4 pt-6">
             <a
-              href="/pdfs/corporate-en.pdf"
+              href="/ecosystem/corporate_eng.pdf"
               download
               className="
                 rounded-full
@@ -400,7 +400,7 @@ export default function CorporateCommunication() {
               Download English PDF
             </a>
 
-            <a
+            {/* <a
               href="/pdfs/corporate-hi.pdf"
               download
               className="
@@ -428,7 +428,7 @@ export default function CorporateCommunication() {
               "
             >
               हिंदी PDF डाउनलोड
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

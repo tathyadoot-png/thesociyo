@@ -75,7 +75,65 @@ export default function SocialDevelopment() {
               >
                 {data.cover.description}
               </motion.p>
+ {/* BUTTONS */}
+          <div className="flex flex-wrap gap-4 pt-6">
+            <a
+              href="/ecosystem/social_eng.pdf"
+              download
+              className="
+                rounded-full
 
+                bg-[var(--accent)]
+
+                px-8
+                py-4
+
+                text-[10px]
+                uppercase
+
+                tracking-[0.32em]
+
+                text-white
+
+                transition-all
+                duration-500
+
+                hover:scale-[1.04]
+              "
+            >
+              Download English PDF
+            </a>
+
+            {/* <a
+              href="/pdfs/corporate-hi.pdf"
+              download
+              className="
+                rounded-full
+
+                border
+                border-[var(--border)]
+
+                bg-white
+
+                px-8
+                py-4
+
+                text-[10px]
+                uppercase
+
+                tracking-[0.32em]
+
+                text-[var(--text)]
+
+                transition-all
+                duration-500
+
+                hover:border-[var(--accent)]/20
+              "
+            >
+              हिंदी PDF डाउनलोड
+            </a> */}
+          </div>
               {/* STATS */}
               <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-3">
                 {[

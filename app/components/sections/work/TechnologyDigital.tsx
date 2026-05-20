@@ -17,7 +17,7 @@ export default function TechnologyDigital() {
   <section className="relative overflow-hidden border-b border-[var(--border)]">
   {/* BACKGROUND GLOW */}
   <div className="absolute inset-0 overflow-hidden">
-    <div className="absolute left-0 top-0 h-[40rem] w-[40rem] rounded-full bg-[#7DB8FF]/10 blur-[140px]" />
+    <div className="absolute left-0 top-0 h-[40rem] w-[40rem] rounded-full bg-[var(--accent)]/10 blur-[140px]" />
 
     <div className="absolute bottom-0 right-0 h-[35rem] w-[35rem] rounded-full glass-card
 dark:bg-white/[0.03] blur-[120px]" />
@@ -40,7 +40,7 @@ dark:bg-white/[0.03] blur-[120px]" />
     {/* TOP STRIP */}
     <div className="flex flex-wrap items-center justify-between gap-6">
       <div className="flex items-center gap-4">
-        <div className="h-px w-20 bg-[#7DB8FF]" />
+        <div className="h-px w-20 bg-[var(--accent)]" />
 
         <span className="text-[10px] uppercase tracking-[0.45em] text-[var(--muted)]">
           Information & Technology
@@ -48,7 +48,7 @@ dark:bg-white/[0.03] blur-[120px]" />
       </div>
 
       <div className="hidden items-center gap-3 md:flex">
-        <span className="h-2 w-2 rounded-full bg-[#7DB8FF]" />
+        <span className="h-2 w-2 rounded-full bg-[var(--accent)]" />
 
         <span className="text-[10px] uppercase tracking-[0.35em] text-[var(--text)]/30">
           Digital Ecosystem Division
@@ -141,124 +141,64 @@ dark:bg-white/[0.03] blur-[120px]" />
           {data.cover.description}
         </motion.p>
 
-        {/* PDF ACTIONS */}
-        <div className="mt-16 flex flex-wrap gap-6">
-          <a
-            href={data.pdfs.english}
-            download
-            className="
-              group
-              relative
+        <div className="flex flex-wrap gap-4 pt-6">
+            <a
+              href="/ecosystem/it_eng.pdf"
+              download
+              className="
+                rounded-full
 
-              overflow-hidden
+                bg-[var(--accent)]
 
-              rounded-full
+                px-8
+                py-4
 
-              border
-              border-[#7DB8FF]/20
+                text-[10px]
+                uppercase
 
-              bg-[#7DB8FF]/10
+                tracking-[0.32em]
 
-              px-8
-              py-5
+                text-white
 
-              transition-all
-              duration-500
+                transition-all
+                duration-500
 
-              hover:border-[#7DB8FF]/50
-              hover:bg-[#7DB8FF]/15
-            "
-          >
-            <div className="flex items-center gap-5">
-              <div
-                className="
-                  flex
-                  h-12
-                  w-12
+                hover:scale-[1.04]
+              "
+            >
+              Download English PDF
+            </a>
 
-                  items-center
-                  justify-center
+            {/* <a
+              href="/pdfs/corporate-hi.pdf"
+              download
+              className="
+                rounded-full
 
-                  rounded-full
+                border
+                border-[var(--border)]
 
-                  bg-[#7DB8FF]/20
+                bg-white
 
-                  text-lg
-                "
-              >
-                ↓
-              </div>
+                px-8
+                py-4
 
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.35em] text-[var(--text)]/30">
-                  English PDF
-                </p>
+                text-[10px]
+                uppercase
 
-                <p className="mt-1 text-sm text-[var(--text)]/80">
-                  Download Portfolio
-                </p>
-              </div>
-            </div>
-          </a>
+                tracking-[0.32em]
 
-          <a
-            href={data.pdfs.hindi}
-            download
-            className="
-              group
-              relative
+                text-[var(--text)]
 
-              overflow-hidden
+                transition-all
+                duration-500
 
-              rounded-full
-
-              border
-              border-[var(--border)]
-
-              bg-white/[0.04]
-
-              px-8
-              py-5
-
-              transition-all
-              duration-500
-
-              hover:border-[var(--border)]
-              hover:bg-white/[0.07]
-            "
-          >
-            <div className="flex items-center gap-5">
-              <div
-                className="
-                  flex
-                  h-12
-                  w-12
-
-                  items-center
-                  justify-center
-
-                  rounded-full
-
-                  bg-white/[0.08]
-
-                  text-lg
-                "
-              >
-                ↓
-              </div>
-
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.35em] text-[var(--text)]/30">
-                  हिंदी PDF
-                </p>
-
-                <p className="mt-1 text-sm text-[var(--text)]/80">
-                  डाउनलोड पोर्टफोलियो
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
+                hover:border-[var(--accent)]/20
+              "
+            >
+              हिंदी PDF डाउनलोड
+            </a> */}
+          </div>
       </div>
 
       {/* RIGHT SIDE */}
@@ -402,7 +342,7 @@ dark:bg-white/[0.03]
                     </span>
                   </div>
 
-                  <div className="h-2 w-2 rounded-full bg-[#7DB8FF]" />
+                  <div className="h-2 w-2 rounded-full bg-[var(--accent)]" />
                 </div>
               ))}
             </div>
@@ -458,7 +398,7 @@ dark:bg-white/[0.03]
                   .padStart(2, "0")}
               </span>
 
-              <div className="h-px w-20 bg-[#7DB8FF]" />
+              <div className="h-px w-20 bg-[var(--accent)]" />
             </div>
 
             <h3
