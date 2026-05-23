@@ -2,7 +2,6 @@ import HeroSection from "@/app/components/sections/home/hero/HeroSection";
 import CapabilitiesSection from "@/app/components/sections/home/capabilities/CapabilitiesSection";
 import CinematicLayer from "@/app/components/cinematic/CinematicLayer";
 import CinematicBackground from "@/app/components/cinematic/CinematicBackground"; // ← Added
-import SignalTransition from "../components/sections/home/transition/SignalTransition";
 import InsideSociyo from "../components/sections/home/insideSociyo/InsideSociyo";
 import ManifestoSection from "../components/sections/home/manifesto/ManifestoSection";
 import SelectedAssociationsSection from "../components/sections/home/associations/SelectedAssociationsSection";

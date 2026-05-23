@@ -60,22 +60,22 @@ const footerLinks = [
 const socials = [
   {
     icon: FaInstagram,
-    href: "https://www.instagram.com/the_sociyo",
+    href: "https://www.instagram.com/thesociyocom",
   },
 
   {
     icon: FaLinkedinIn,
-    href: "https://www.linkedin.com/company/sociyo-communication-pvt-ltd",
+    href: "https://www.linkedin.com/company/the-sociyo-com",
   },
 
   {
     icon: FaFacebookF,
-    href: "https://www.facebook.com/theSociyo",
+    href: "https://www.facebook.com/theSOCIYOcom",
   },
 
   {
     icon: FaXTwitter,
-    href: "https://x.com/theSociyo",
+    href: "https://x.com/theSOCIYOcom",
   },
 ];
 
