@@ -309,15 +309,9 @@ export default function SelectedAssociationsSection() {
             className="
               relative
               z-10
-
-              h-14
-              w-16
-
-              lg:h-16
-              lg:w-20
-
-              xl:h-20
-              xl:w-24
+h-18 w-24
+lg:h-24 lg:w-28
+xl:h-28 xl:w-32
             "
           >
             <Image
