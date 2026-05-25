@@ -373,7 +373,7 @@ export default function SelectedAssociationsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="relative mt-20 border-t border-[var(--border)] pt-10 md:mt-24 md:pt-14"
+          className="relative border-t border-[var(--border)] pt-10 md:pt-14"
         >
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <p className="max-w-2xl text-lg leading-relaxed text-[var(--muted)] md:text-2xl">
