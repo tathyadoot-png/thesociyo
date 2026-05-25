@@ -140,3 +140,27 @@ export const blogs = [
     "https://www.linkedin.com/posts/parasocial-wordoftheyear2025-book-share-7396848522450571264-Yfor/?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAFBw4PoB2-WAB-4ZSFg0yr4cgcbBtP6ZHqQ",
 }
 ];
+
+
+export const films = [
+  {
+    id: "01",
+
+    video:
+      "https://youtu.be/nK-OhlHwqvA",
+  },
+
+  {
+    id: "02",
+
+    video:
+      "https://youtu.be/a7vjpgO77H0",
+  },
+
+  {
+    id: "03",
+
+    video:
+      "https://youtu.be/F23YcqthqFQ",
+  },
+];
