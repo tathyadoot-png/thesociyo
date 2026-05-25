@@ -10,8 +10,12 @@ import Footer from "@/app/components/layout/Footer";
 import ScrollToTop from "@/app/components/ui/ScrollToTop";
 
 export const metadata: Metadata = {
-  title:
-    "SOCIYO | Strategic Communication Consultancy",
+  metadataBase: new URL("https://www.thesociyo.com"),
+
+  title: {
+    default: "SOCIYO | Strategic Communication Consultancy",
+    template: "%s | SOCIYO",
+  },
 
   description:
     "SOCIYO is a strategic communication consultancy helping brands, leaders, institutions, and organizations shape perception, build authority, and create lasting influence across political, corporate, and social ecosystems.",
@@ -37,16 +41,33 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "SOCIYO Communications",
+      url: "https://www.thesociyo.com",
     },
   ],
 
   creator: "SOCIYO Communications",
 
-  metadataBase: new URL("https://www.thesociyo.com"),
+  publisher: "SOCIYO Communications",
+
+  alternates: {
+    canonical: "https://www.thesociyo.com",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 
   openGraph: {
-    title:
-      "SOCIYO | Strategic Communication Consultancy",
+    title: "SOCIYO | Strategic Communication Consultancy",
 
     description:
       "We help brands, leaders, and institutions shape perception, build authority, and create lasting influence.",
@@ -60,6 +81,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
+        alt: "SOCIYO Strategic Communication Consultancy",
       },
     ],
 
@@ -71,14 +93,17 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title:
-      "SOCIYO | Strategic Communication Consultancy",
+    title: "SOCIYO | Strategic Communication Consultancy",
 
     description:
       "Strategies. Stories. Success.",
 
     images: ["/og-image.png"],
+
+    creator: "@thesociyo",
   },
+
+  category: "Business",
 
   icons: {
     icon: "/favicon.ico",
@@ -86,7 +111,6 @@ export const metadata: Metadata = {
     apple: "/icon.png",
   },
 };
-
 
 const bebas = Bebas_Neue({
   subsets: ["latin"],
