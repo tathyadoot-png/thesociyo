@@ -139,23 +139,43 @@ export default function SelectedAssociationsSection() {
 {/* DESKTOP CLOUD */}
 <motion.div
   style={{
-    y: useTransform(smooth, [0, 1], [0, -120]),
-    scale: useTransform(smooth, [0, 0.5, 1], [0.96, 1, 1.02]),
+    y: useTransform(smooth, [0, 1], [0, -80]),
+    scale: useTransform(
+      smooth,
+      [0, 0.5, 1],
+      [0.98, 1, 1.01]
+    ),
   }}
-  className="relative hidden h-[900px] md:block xl:h-[1100px]"
+  className="
+    relative
+
+    hidden
+    md:block
+
+    h-[760px]
+    lg:h-[900px]
+    xl:h-[1100px]
+  "
 >
   {associations.map((item, index) => {
     const positions = [
-      "left-[18%] top-[10%]",
-      "left-[42%] top-[2%]",
-      "right-[18%] top-[10%]",
-      "left-[8%] top-[38%]",
-      "left-[32%] top-[30%]",
-      "right-[32%] top-[30%]",
-      "right-[8%] top-[38%]",
-      "left-[18%] bottom-[10%]",
-      "left-[42%] bottom-[2%]",
-      "right-[18%] bottom-[10%]",
+      // TOP
+      "left-[14%] top-[10%]",
+      "left-1/2 top-[2%] -translate-x-1/2",
+      "right-[14%] top-[10%]",
+
+      // UPPER MID
+      "left-[4%] top-[34%]",
+      "left-[28%] top-[26%]",
+      "right-[28%] top-[26%]",
+      "right-[4%] top-[34%]",
+
+      // BOTTOM
+"left-[20%] bottom-[26%]",
+"left-1/2 bottom-[18%] -translate-x-1/2",
+"right-[20%] bottom-[26%]",
+
+      // CENTER
       "left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
     ];
 
@@ -174,53 +194,72 @@ export default function SelectedAssociationsSection() {
         }}
         viewport={{ once: true }}
         transition={{
-          duration: 1.1,
-          delay: index * 0.06,
+          duration: 1,
+          delay: index * 0.05,
           ease: [0.22, 1, 0.36, 1],
         }}
         className={`absolute ${positions[index]}`}
       >
         <motion.div
           animate={{
-            y: [0, -10, 0],
+            y: [0, -8, 0],
           }}
           transition={{
-            duration: 4 + index * 0.3,
+            duration: 4 + index * 0.25,
             repeat: Infinity,
             ease: "easeInOut",
           }}
           whileHover={{
-            scale: 1.06,
-            y: -6,
+            scale: 1.05,
+            y: -5,
           }}
           className="
             group
             relative
+
             flex
-            h-[170px]
-            w-[170px]
             items-center
             justify-center
+
             overflow-hidden
+
             rounded-full
+
             border
             border-white/[0.08]
+
             bg-white/[0.03]
-            shadow-[0_25px_60px_rgba(0,0,0,0.22)]
+
             backdrop-blur-xl
+
+            shadow-[0_20px_50px_rgba(0,0,0,0.18)]
+
             transition-all
             duration-700
+
             hover:border-[var(--accent)]/30
             hover:bg-white/[0.05]
+
+            h-[120px]
+            w-[120px]
+
+            lg:h-[150px]
+            lg:w-[150px]
+
+            xl:h-[170px]
+            xl:w-[170px]
           "
         >
-          {/* AMBIENT GLOW */}
+          {/* AMBIENT */}
           <div
             className="
               absolute
               inset-0
+
               rounded-full
-              bg-[radial-gradient(circle_at_center,rgba(254,0,0,0.12),transparent_70%)]
+
+              bg-[radial-gradient(circle_at_center,rgba(254,0,0,0.10),transparent_70%)]
+
               opacity-60
             "
           />
@@ -235,27 +274,52 @@ export default function SelectedAssociationsSection() {
             }}
             className="
               absolute
-              h-[135px]
-              w-[135px]
+
               rounded-full
+
               border
               border-white/[0.08]
+
+              h-[92px]
+              w-[92px]
+
+              lg:h-[118px]
+              lg:w-[118px]
+
+              xl:h-[135px]
+              xl:w-[135px]
             "
           />
 
-          {/* SOFT LIGHT */}
+          {/* LIGHT */}
           <div
             className="
               absolute
               top-0
+
               h-1/2
               w-full
+
               bg-[linear-gradient(180deg,rgba(255,255,255,0.10),transparent)]
             "
           />
 
           {/* LOGO */}
-          <div className="relative z-10 h-20 w-24">
+          <div
+            className="
+              relative
+              z-10
+
+              h-14
+              w-16
+
+              lg:h-16
+              lg:w-20
+
+              xl:h-20
+              xl:w-24
+            "
+          >
             <Image
               src={item.image}
               alt={item.name}
@@ -265,8 +329,34 @@ export default function SelectedAssociationsSection() {
           </div>
 
           {/* NAME */}
-          <div className="absolute bottom-7 px-4 text-center">
-            <h3 className="text-[10px] uppercase tracking-[0.18em] text-[var(--muted)]">
+          <div
+            className="
+              absolute
+
+              bottom-4
+              lg:bottom-5
+              xl:bottom-7
+
+              px-3
+
+              text-center
+            "
+          >
+            <h3
+              className="
+                text-[8px]
+                lg:text-[9px]
+                xl:text-[10px]
+
+                uppercase
+
+                tracking-[0.14em]
+                lg:tracking-[0.16em]
+                xl:tracking-[0.18em]
+
+                text-[var(--muted)]
+              "
+            >
               {item.name}
             </h3>
           </div>
