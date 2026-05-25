@@ -185,7 +185,7 @@ px-5
 
                     leading-[0.9]
                     tracking-[-0.06em]
-text-justify
+
                     text-[var(--text)]
 
                     transition-all

@@ -369,7 +369,7 @@ xl:mt-[-10rem]
   md:text-[2.7rem]
   lg:text-[3.4rem]
   xl:text-[4.2rem]
-text-justify
+
   leading-[0.92]
   lg:leading-[0.84]
 
@@ -407,7 +407,7 @@ text-justify
   md:text-[17px]
 
   leading-[1.8]
-text-justify
+
   max-w-[65ch]
 
   text-[var(--muted)]

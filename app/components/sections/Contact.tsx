@@ -16,7 +16,7 @@ export default function ContactPage() {
         relative
         min-h-screen
         overflow-hidden
-px-10
+md:px-10
         bg-[var(--bg)]
         text-[var(--text)]
       "
@@ -227,7 +227,7 @@ px-10
             "
           >
             Let’s build systems, experiences and
-            communication that people don’t just notice —
+            communication that people don’t just notice -
             but remember.
           </p>
 

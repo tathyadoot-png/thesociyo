@@ -111,8 +111,8 @@ px-5
           mx-auto
           w-[94%]
           max-w-[1600px]
-
-          pt-40
+pt-24
+          md:pt-40
           pb-24
         "
       >

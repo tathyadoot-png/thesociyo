@@ -27,7 +27,7 @@ const fadeUp: Variants = {
 
 export default function PoliticalCommunication() {
   return (
-    <main className="relative overflow-hidden bg-[var(--bg)] text-justify  pt-32 md:pt-40 text-[var(--text)]">
+    <main className="relative overflow-hidden bg-[var(--bg)]  pt-20 md:pt-40 text-[var(--text)]">
       <CinematicBackground />
 
 {/* HERO */}

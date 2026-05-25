@@ -11,7 +11,7 @@ const data = technologyDigitalData;
 
 export default function TechnologyDigital() {
   return (
-    <main className="relative overflow-hidden bg-[var(--bg)] text-[var(--text)]  pt-32 md:pt-16">
+    <main className="relative overflow-hidden bg-[var(--bg)] text-[var(--text)] pt-2  md:pt-16">
       <CinematicBackground />
 
   <section className="relative overflow-hidden border-b border-[var(--border)]">
@@ -373,7 +373,7 @@ dark:bg-white/[0.03]
             flex
             flex-col
             gap-10
-
+px-5 md:px-16
             lg:flex-row
             lg:items-end
             lg:justify-between
@@ -467,7 +467,7 @@ dark:bg-white/[0.03]
 
         border-t
         border-[var(--border)]
-
+px-5 md:px-16
         py-14
       "
     >

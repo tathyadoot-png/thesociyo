@@ -36,7 +36,7 @@ export const corporateCommunicationData = {
 
       "Every inconsistency weakens trust.",
 
-      "At Sociyo Communications, we help businesses create communication systems that do more than generate visibility — We help them create trust & authority.",
+      "At Sociyo Communications, we help businesses create communication systems that do more than generate visibility - We help them create trust & authority.",
     ],
   },
 
