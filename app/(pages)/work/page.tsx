@@ -37,7 +37,7 @@ const tabs = [
   },
   {
     id: "technology",
-    label: "Technology",
+    label: "IT Solutions",
     desc: "Digital ecosystems",
     component: <TechnologyDigital />,
   },
