@@ -224,7 +224,7 @@ xl:w-[32%]
               aspect-[4/4.8]
                   w-full
 
-                object-contain
+                object-cover
 bg-white/5
 
                   brightness-[0.72]
