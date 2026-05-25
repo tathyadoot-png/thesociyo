@@ -7,7 +7,7 @@ import {
   useTransform,
 } from "framer-motion";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface CinematicSectionHeadingProps {
   sectionLabel?: string;
@@ -28,6 +28,24 @@ export default function CinematicSectionHeading({
 }: CinematicSectionHeadingProps) {
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+
+    window.addEventListener("resize", checkMobile);
+
+    return () =>
+      window.removeEventListener(
+        "resize",
+        checkMobile
+      );
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start 85%", "end 20%"],
@@ -39,7 +57,11 @@ export default function CinematicSectionHeading({
     mass: 0.5,
   });
 
-  const headingY = useTransform(smooth, [0, 1], [120, -40]);
+  const headingY = useTransform(
+    smooth,
+    [0, 1],
+    [120, -40]
+  );
 
   const headingScale = useTransform(
     smooth,
@@ -85,25 +107,31 @@ export default function CinematicSectionHeading({
         xl:items-end
         xl:justify-between
 
+        overflow-hidden
+
         ${className}
       `}
     >
       {/* LEFT */}
-      <div className="max-w-full xl:max-w-[850px]">
+      <div className="max-w-full xl:max-w-[850px] overflow-hidden">
         {/* LABEL */}
         {sectionLabel && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="
-              mb-6
+              mb-5
               md:mb-8
 
               flex
               items-center
-              gap-5
+              gap-4
+              md:gap-5
             "
           >
             {/* LINE */}
@@ -146,7 +174,8 @@ export default function CinematicSectionHeading({
                   md:text-[11px]
 
                   uppercase
-                  tracking-[0.5em]
+                  tracking-[0.4em]
+                  md:tracking-[0.5em]
 
                   text-[var(--muted)]
                 "
@@ -159,13 +188,18 @@ export default function CinematicSectionHeading({
 
         {/* HEADING */}
         <motion.h2
-          initial={{ opacity: 0, y: 70 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
           style={{
-            y: headingY,
-            scale: headingScale,
+            y: isMobile ? 0 : headingY,
+            scale: isMobile
+              ? 1
+              : headingScale,
             opacity: headingOpacity,
             filter: blurFilter,
           }}
@@ -175,14 +209,18 @@ export default function CinematicSectionHeading({
             font-display
             uppercase
 
-            text-[clamp(3.5rem,11vw,5.8rem)]
-            sm:text-[clamp(4rem,10vw,6.5rem)]
+            text-[clamp(2.2rem,13vw,3.8rem)]
+            sm:text-[clamp(3rem,10vw,5rem)]
             lg:text-[clamp(4.5rem,7vw,7rem)]
 
-            leading-[0.82]
+            leading-[0.95]
+            sm:leading-[0.9]
+            lg:leading-[0.82]
 
-            tracking-[-0.06em]
-            md:tracking-[-0.075em]
+            tracking-[-0.04em]
+            md:tracking-[-0.06em]
+
+            break-words
 
             text-[var(--text)]
           "
@@ -246,7 +284,10 @@ export default function CinematicSectionHeading({
       {shortText && (
         <motion.p
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
           viewport={{ once: true }}
           transition={{
             duration: 1,

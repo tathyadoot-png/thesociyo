@@ -60,74 +60,54 @@ export default function InsideSociyo() {
 
         <div className="grid gap-8 lg:grid-cols-12">
           {/* IMAGE SIDE */}
-          <motion.div
-            initial={{ opacity: 0, y: 80 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2 }}
-            className="
-              relative
-              overflow-hidden
+{/* IMAGE SIDE */}
+<motion.div
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 1.2 }}
+  className="
+    relative
+    overflow-hidden
 
-              lg:col-span-7
+    lg:col-span-7
 
-              min-h-[650px]
+    min-h-[300px]
+    md:min-h-[420px]
+    lg:min-h-[520px]
 
-              rounded-[2rem]
+    rounded-[2rem]
 
-              border
-              border-[var(--border)]
+    border
+    border-[var(--border)]
 
-              glass-card
-            "
-          >
-            {/* IMAGE */}
-            <Image
-              src="/wordcloud.png"
-              alt="Inside Sociyo"
-              fill
-          className="
-  relative
-  overflow-hidden
-
-  lg:col-span-7
-
-  min-h-[420px]
-  md:min-h-[520px]
-  lg:min-h-[650px]
+    glass-card
+  "
+>
+  {/* IMAGE */}
+  <Image
+    src="/wordcloud.png"
+    alt="Inside Sociyo"
+    fill
+ className="
+  object-contain
+  p-4
+  md:p-6
 
   rounded-[2rem]
-
-  border
-  border-[var(--border)]
-
-  glass-card
 "
-            />
+  />
 
-            {/* IMAGE OVERLAY */}
-            {/* <div
-              className="
-                absolute
-                inset-0
+  {/* SOFT RED AMBIENT */}
+  <div
+    className="
+      absolute
+      inset-0
 
-                bg-gradient-to-t
-                from-black/75
-                via-black/30
-                to-transparent
-              "
-            /> */}
-
-            {/* SOFT RED AMBIENT */}
-            <div
-              className="
-                absolute
-                inset-0
-
-                bg-[radial-gradient(circle_at_top_right,var(--ambient-1),transparent_45%)]
-              "
-            />
-          </motion.div>
+      bg-[radial-gradient(circle_at_top_right,var(--ambient-1),transparent_45%)]
+    "
+  />
+</motion.div>
 
           {/* CONTENT CARDS */}
           <div
