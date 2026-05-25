@@ -902,7 +902,7 @@ px-10
         "
       >
         Whether you're building a brand, movement,
-        campaign or ecosystem — we’d love to hear
+        campaign or ecosystem - we’d love to hear
         your vision.
       </p>
 

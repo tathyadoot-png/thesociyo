@@ -606,35 +606,36 @@ xl:w-[340px]
         </div>
 
         {/* BOTTOM */}
-        <div
-          className="
-            mt-16
-            pt-6
+     <div
+  className="
+    mt-16
+    pt-6
 
-            border-t
-            border-white/[0.08]
+    border-t
+    border-white/[0.08]
 
-            flex
-            flex-col
-            gap-3
+    flex
+    flex-col
+    gap-3
 
-            text-[10px]
-            uppercase
-            tracking-[0.35em]
+    text-[10px]
+    uppercase
+    tracking-[0.35em]
 
-            text-white/40
+    text-white/40
 
-            sm:flex-row
-            sm:items-center
-            sm:justify-between
-          "
-        >
-          <div>
-            © {new Date().getFullYear()} Sociyo Communication
-          </div>
+    sm:flex-row
+    sm:items-center
+    sm:justify-between
+  "
+>
+  <div>
+    © {new Date().getFullYear()} Sociyo Communications.
+    All Rights Reserved.
+  </div>
 
-          <div>Socially Yours</div>
-        </div>
+  <div>Socially Yours</div>
+</div>
       </div>
     </footer>
   );

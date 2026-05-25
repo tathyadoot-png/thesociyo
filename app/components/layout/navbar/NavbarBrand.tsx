@@ -16,7 +16,7 @@ export default function NavBrand() {
     >
       <Image
         src="/logoBlack.png"
-        alt="SOCIYO Communication"
+        alt="SOCIYO Communications"
 
         width={200}
         height={60}
