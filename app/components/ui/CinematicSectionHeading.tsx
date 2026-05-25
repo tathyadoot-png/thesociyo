@@ -301,7 +301,7 @@ export default function CinematicSectionHeading({
             sm:text-base
             md:text-[15px]
             lg:text-base
-
+text-justify
             leading-[1.9]
 
             text-[var(--muted)]

@@ -47,7 +47,7 @@ export default function EcosystemsSection() {
         md:py-40
 
         px-6
-        md:px-48
+        md:px-16
 
         bg-[var(--bg)]
       "
@@ -197,12 +197,12 @@ export default function EcosystemsSection() {
                 glass-card
 
                 shadow-[0_30px_80px_rgba(0,0,0,0.18)]
-
-                w-[82%]
-                sm:w-[68%]
-                md:w-[42vw]
-                lg:w-[26vw]
-                xl:w-[22vw]
+w-full
+sm:w-[80%]
+md:w-[60%]
+lg:w-[38%]
+xl:w-[32%]
+2xl:w-[28%]
 
                 ${
                   index % 2 === 0
@@ -221,10 +221,11 @@ export default function EcosystemsSection() {
                 src={item.image}
                 alt={item.title}
                 className="
-                  aspect-[4/5]
+              aspect-[4/4.8]
                   w-full
 
-                  object-cover
+                object-contain
+bg-white/5
 
                   brightness-[0.72]
                   contrast-[1.05]
@@ -266,8 +267,10 @@ export default function EcosystemsSection() {
                 relative
                 z-20
 
-                mt-4
-                lg:-mt-[14rem]
+               mt-8
+lg:mt-[-8rem]
+xl:mt-[-10rem]
+2xl:mt-[-12rem]
 
                 flex
                 items-center
@@ -283,7 +286,15 @@ export default function EcosystemsSection() {
                 }
               `}
             >
-              <div className="max-w-[90%] xl:max-w-2xl">
+              <div
+  className="
+    w-full
+    max-w-full
+    md:max-w-[80%]
+    lg:max-w-[55%]
+    xl:max-w-[50%]
+  "
+>
                 {/* META */}
                 <motion.div
                   initial={{
@@ -350,19 +361,25 @@ export default function EcosystemsSection() {
                     ease: [0.22, 1, 0.36, 1],
                   }}
                   className="
-                    font-display
-                    uppercase
+  font-display
+  uppercase
 
-                    text-[1.5rem]
-                    sm:text-[2rem]
-                    md:text-[3rem]
-                    xl:text-[4rem]
+  text-[1.4rem]
+  sm:text-[2rem]
+  md:text-[2.7rem]
+  lg:text-[3.4rem]
+  xl:text-[4.2rem]
+text-justify
+  leading-[0.92]
+  lg:leading-[0.84]
 
-                    leading-[0.84]
-                    tracking-[-0.065em]
+  tracking-[-0.045em]
+  lg:tracking-[-0.065em]
 
-                    text-[var(--text)]
-                  "
+  break-words
+
+  text-[var(--text)]
+"
                 >
                   {item.title}
                 </motion.h2>
@@ -381,17 +398,20 @@ export default function EcosystemsSection() {
                     duration: 1,
                     delay: 0.2,
                   }}
-                  className="
-                    mt-7
+                 className="
+  mt-5
+  lg:mt-7
 
-                    text-sm
-                    sm:text-base
-                    md:text-lg
+  text-sm
+  sm:text-base
+  md:text-[17px]
 
-                    leading-[1.8]
+  leading-[1.8]
+text-justify
+  max-w-[65ch]
 
-                    text-[var(--muted)]
-                  "
+  text-[var(--muted)]
+"
                 >
                   {item.description}
                 </motion.p>

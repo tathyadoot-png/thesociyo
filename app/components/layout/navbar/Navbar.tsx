@@ -86,14 +86,14 @@ export default function Navbar() {
       md:px-10
       lg:px-16
 pt-0
-      md:pt-5
+    
     "
   >
     {/* ATMOSPHERE */}
     <NavAtmosphere />
 
     {/* LEFT BRAND */}
-    <div className="relative z-20">
+    <div className="relative  z-20">
       <NavBrand />
     </div>
 

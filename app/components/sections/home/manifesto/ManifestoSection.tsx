@@ -25,7 +25,6 @@ export default function ManifestoSection() {
         border-t
         border-[var(--border)]
 
-        px-5
       "
     >
       {/* BACKGROUND */}

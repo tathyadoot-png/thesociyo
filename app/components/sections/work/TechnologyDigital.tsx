@@ -11,7 +11,7 @@ const data = technologyDigitalData;
 
 export default function TechnologyDigital() {
   return (
-    <main className="relative overflow-hidden bg-[var(--bg)] text-[var(--text)] md:px-32 pt-32 md:pt-40">
+    <main className="relative overflow-hidden bg-[var(--bg)] text-[var(--text)]  pt-32 md:pt-16">
       <CinematicBackground />
 
   <section className="relative overflow-hidden border-b border-[var(--border)]">

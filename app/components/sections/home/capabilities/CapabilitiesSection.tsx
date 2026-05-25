@@ -15,7 +15,7 @@ export default function CapabilitiesSection() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="relative overflow-hidden bg-[var(--bg)] py-24 md:py-36">
+    <section className="relative overflow-hidden bg-[var(--bg)] py-24 md:py-36 px-5">
       {/* BG */}
       <CinematicBackground />
 
@@ -142,7 +142,7 @@ export default function CapabilitiesSection() {
                         y: isActive ? 0 : 6,
                       }}
                       transition={{ duration: 0.5 }}
-                      className={`mt-5 max-w-2xl text-sm leading-[1.9] md:text-lg ${
+                      className={`mt-5 max-w-2xl text-sm leading-[1.9] text-justify md:text-lg ${
                         isActive
                           ? "text-white/80"
                           : "text-[var(--muted)]"
@@ -164,7 +164,7 @@ export default function CapabilitiesSection() {
                       className={`text-4xl transition-all duration-500 ${
                         isActive
                           ? "text-white"
-                          : "text-[var(--graphite)]"
+                          : "text-[var(--accent)]"
                       }`}
                     >
                       ↗

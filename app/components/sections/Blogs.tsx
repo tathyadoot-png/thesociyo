@@ -31,7 +31,7 @@ export default function BlogsPage() {
       className="
         relative
         overflow-hidden
-
+px-5
         bg-[var(--bg)]
         text-[var(--text)]
       "
@@ -112,7 +112,7 @@ export default function BlogsPage() {
           w-[94%]
           max-w-[1600px]
 
-          pt-28
+          pt-40
           pb-24
         "
       >
@@ -124,7 +124,7 @@ export default function BlogsPage() {
             border-b
             border-[var(--border)]
 
-            pb-14
+            pb-16
           "
         >
           <CinematicSectionHeading

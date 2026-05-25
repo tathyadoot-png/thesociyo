@@ -9,6 +9,7 @@ import {
   FaFacebookF,
   FaArrowRight,
   FaXTwitter,
+   FaYoutube,
 } from "react-icons/fa6";
 
 const footerLinks = [
@@ -58,24 +59,25 @@ const footerLinks = [
 ];
 
 const socials = [
+    {
+    icon: FaLinkedinIn,
+    href: "https://www.linkedin.com/company/the-sociyo-com",
+  },
   {
     icon: FaInstagram,
     href: "https://www.instagram.com/thesociyocom",
   },
-
-  {
-    icon: FaLinkedinIn,
-    href: "https://www.linkedin.com/company/the-sociyo-com",
-  },
-
   {
     icon: FaFacebookF,
     href: "https://www.facebook.com/theSOCIYOcom",
   },
-
   {
     icon: FaXTwitter,
     href: "https://x.com/theSOCIYOcom",
+  },
+  {
+    icon: FaYoutube,
+    href: "https://www.youtube.com/@theSOCIYOcom",
   },
 ];
 
@@ -128,8 +130,7 @@ export default function Footer() {
           md:px-8
           lg:px-12
 
-          py-20
-          md:py-28
+          py-5
         "
       >
         {/* TOP STRIP */}
@@ -230,11 +231,9 @@ export default function Footer() {
             gap-24
             lg:gap-32
 
-            px-2
-            md:px-10
-            lg:px-20
-
-            lg:grid-cols-[1.2fr_0.8fr]
+       
+lg:grid-cols-[0.9fr_1.1fr]
+xl:grid-cols-[0.85fr_1.15fr]
             lg:items-start
           "
         >
@@ -251,10 +250,11 @@ export default function Footer() {
                 className="
                   h-auto
 
-                  w-[160px]
-                  sm:w-[220px]
-                  md:w-[320px]
-                  lg:w-[420px]
+                  w-[140px]
+sm:w-[180px]
+md:w-[240px]
+lg:w-[300px]
+xl:w-[340px]
 
                   object-contain
                 "
@@ -265,7 +265,7 @@ export default function Footer() {
             <p
               className="
                 mt-8
-                max-w-xl
+      max-w-[30rem]
 
                 text-sm
                 md:text-base

@@ -26,11 +26,10 @@ const fadeUp: Variants = {
 };
 export default function CorporateCommunication() {
   return (
-    <main className="relative overflow-hidden bg-[var(--bg)] md:px-32 pt-32 md:pt-40 text-[var(--text)]">
+    <main className="relative overflow-hidden bg-[var(--bg)] text-justify  pt-32 md:pt-40 text-[var(--text)]">
       {/* CINEMATIC BG */}
       <CinematicBackground />
 
-{/* HERO — SPLIT MAGAZINE STYLE */}
 <section
   className="
     relative
@@ -43,197 +42,17 @@ export default function CorporateCommunication() {
     bg-[var(--bg)]
   "
 >
-  {/* GRID */}
+  {/* MAIN GRID */}
   <div
     className="
       grid
+
       min-h-screen
 
-      xl:grid-cols-[0.95fr_1.05fr]
+      xl:grid-cols-[1.05fr_0.95fr]
     "
   >
-    {/* LEFT IMAGE SIDE */}
-    <motion.div
-      initial={{
-        opacity: 0,
-        x: -80,
-      }}
-      animate={{
-        opacity: 1,
-        x: 0,
-      }}
-      transition={{
-        duration: 1.2,
-      }}
-      className="
-        relative
-
-        hidden
-        xl:block
-      "
-    >
-      {/* IMAGE */}
-      <div className="absolute inset-0 overflow-hidden">
-        <Image
-          src="/ecosystem/1.avif"
-          alt="Corporate Communication"
-          fill
-          priority
-          className="
-            object-cover
-
-            brightness-[0.78]
-            contrast-[1.05]
-
-            scale-[1.04]
-          "
-        />
-
-        {/* DARK OVERLAY */}
-        <div
-          className="
-            absolute
-            inset-0
-
-            bg-[linear-gradient(to_right,rgba(0,0,0,0.65),rgba(0,0,0,0.15))]
-          "
-        />
-
-        {/* GRAIN */}
-        <div
-          className="
-            absolute
-            inset-0
-
-            opacity-[0.05]
-
-            mix-blend-overlay
-
-            bg-[url('/noise.png')]
-          "
-        />
-      </div>
-
-      {/* FLOATING LABEL */}
-      <div
-        className="
-          absolute
-          left-10
-          top-10
-
-          rounded-full
-
-          border
-          border-white/10
-
-          bg-white/10
-
-          px-5
-          py-3
-
-          backdrop-blur-xl
-        "
-      >
-        <span
-          className="
-            text-[10px]
-            uppercase
-
-            tracking-[0.4em]
-
-            text-white/70
-          "
-        >
-          Corporate Division
-        </span>
-      </div>
-
-      {/* FLOAT CARD */}
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: 40,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          delay: 0.5,
-          duration: 1,
-        }}
-        className="
-          absolute
-          bottom-10
-          left-10
-
-          max-w-md
-
-          rounded-[2rem]
-
-          border
-          border-white/10
-
-          bg-black/40
-
-          p-8
-
-          backdrop-blur-2xl
-        "
-      >
-        <span
-          className="
-            text-[10px]
-            uppercase
-
-            tracking-[0.4em]
-
-            text-white/40
-          "
-        >
-          Communication Architecture
-        </span>
-
-        <h3
-          className="
-            mt-5
-
-            font-display
-            uppercase
-
-            text-5xl
-
-            leading-[0.9]
-            tracking-[-0.08em]
-
-            text-white
-          "
-        >
-          Building
-          <br />
-          Institutional
-          <br />
-          Trust
-        </h3>
-
-        <p
-          className="
-            mt-6
-
-            text-sm
-
-            leading-[2]
-
-            text-white/70
-          "
-        >
-          Strategic communication systems for leadership,
-          governance, reputation and long-term influence.
-        </p>
-      </motion.div>
-    </motion.div>
-
-    {/* RIGHT CONTENT */}
+    {/* LEFT CONTENT */}
     <div
       className="
         relative
@@ -245,14 +64,15 @@ export default function CorporateCommunication() {
         px-6
         py-8
 
-        md:px-10
-        lg:px-20
+        md:px-12
+        lg:px-16
+        xl:px-20
       "
     >
-      {/* TOP */}
+      {/* TOP BAR */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <div className="h-px w-16 bg-[var(--accent)]" />
+          <div className="h-px w-14 bg-[var(--accent)]" />
 
           <span
             className="
@@ -271,33 +91,47 @@ export default function CorporateCommunication() {
         <span
           className="
             hidden
-            md:block
+            lg:block
 
             text-[10px]
             uppercase
 
-            tracking-[0.45em]
+            tracking-[0.4em]
 
             text-[var(--muted)]
           "
         >
-          Corporate Communication Division
+          Corporate Communication Systems
         </span>
       </div>
 
-      {/* MAIN */}
-      <div className="relative py-20">
-        {/* NUMBER */}
+      {/* HERO */}
+      <div
+        className="
+          relative
+
+          flex
+          flex-col
+          justify-center
+
+          py-16
+          md:py-20
+        "
+      >
+        {/* BG NUMBER */}
         <div
           className="
+            pointer-events-none
+
             absolute
-            -top-8
+            -top-4
             left-0
 
             font-display
 
-            text-[6rem]
-            md:text-[12rem]
+            text-[5rem]
+            md:text-[9rem]
+            xl:text-[12rem]
 
             leading-none
             tracking-[-0.12em]
@@ -318,30 +152,34 @@ export default function CorporateCommunication() {
             relative
             z-10
 
-            max-w-5xl
+            max-w-[8ch]
 
             font-display
             uppercase
 
-            text-[4rem]
-            sm:text-[6rem]
-            lg:text-[8rem]
+            text-[3rem]
+            sm:text-[4.5rem]
+            md:text-[6rem]
+            xl:text-[7rem]
 
-            leading-[0.82]
-            tracking-[-0.1em]
+            leading-[0.88]
+
+            tracking-[-0.09em]
+
+            text-[var(--text)]
           "
         >
           {data.short}
         </motion.h1>
 
         {/* DESCRIPTION */}
-        <div className="mt-14 space-y-10">
+        <div className="mt-12 space-y-8">
           <p
             className="
-              max-w-2xl
+              max-w-[42ch]
 
-              text-lg
-              md:text-2xl
+              text-base
+              md:text-xl
 
               leading-[1.9]
 
@@ -351,19 +189,20 @@ export default function CorporateCommunication() {
             {data.cover.description}
           </p>
 
+          {/* TAGLINE */}
           <p
             className="
-              max-w-3xl
+              max-w-[18ch]
 
               font-display
               uppercase
 
-              text-2xl
-              md:text-5xl
+              text-[1.8rem]
+              md:text-[3rem]
 
-              leading-[1]
+              leading-[0.95]
 
-              tracking-[-0.06em]
+              tracking-[-0.05em]
 
               text-[var(--accent)]
             "
@@ -372,7 +211,7 @@ export default function CorporateCommunication() {
           </p>
 
           {/* BUTTONS */}
-          <div className="flex flex-wrap gap-4 pt-6">
+          <div className="flex flex-wrap gap-4 pt-4">
             <a
               href="/ecosystem/corporate_eng.pdf"
               download
@@ -381,7 +220,7 @@ export default function CorporateCommunication() {
 
                 bg-[var(--accent)]
 
-                px-8
+                px-7
                 py-4
 
                 text-[10px]
@@ -394,24 +233,22 @@ export default function CorporateCommunication() {
                 transition-all
                 duration-500
 
-                hover:scale-[1.04]
+                hover:scale-[1.03]
               "
             >
               Download English PDF
             </a>
 
-            {/* <a
-              href="/pdfs/corporate-hi.pdf"
-              download
+            <button
               className="
                 rounded-full
 
                 border
                 border-[var(--border)]
 
-                bg-white
+                bg-white/70
 
-                px-8
+                px-7
                 py-4
 
                 text-[10px]
@@ -421,14 +258,16 @@ export default function CorporateCommunication() {
 
                 text-[var(--text)]
 
+                backdrop-blur-xl
+
                 transition-all
                 duration-500
 
                 hover:border-[var(--accent)]/20
               "
             >
-              हिंदी PDF डाउनलोड
-            </a> */}
+              Explore Case Studies
+            </button>
           </div>
         </div>
       </div>
@@ -448,7 +287,7 @@ export default function CorporateCommunication() {
       >
         <span
           className="
-            text-xs
+            text-[10px]
             uppercase
 
             tracking-[0.4em]
@@ -463,7 +302,8 @@ export default function CorporateCommunication() {
           className="
             font-display
 
-            text-5xl
+            text-4xl
+            md:text-5xl
 
             tracking-[-0.08em]
 
@@ -474,9 +314,197 @@ export default function CorporateCommunication() {
         </span>
       </div>
     </div>
+
+    {/* RIGHT VISUAL */}
+    <motion.div
+      initial={{
+        opacity: 0,
+        x: 60,
+      }}
+      animate={{
+        opacity: 1,
+        x: 0,
+      }}
+      transition={{
+        duration: 1.1,
+      }}
+      className="
+        relative
+
+        hidden
+        xl:flex
+
+        items-center
+        justify-center
+
+        p-10
+      "
+    >
+      {/* IMAGE WRAPPER */}
+      <div
+        className="
+          relative
+
+          h-full
+          w-full
+
+          overflow-hidden
+
+          rounded-[2.5rem]
+
+          border
+          border-[var(--border)]
+
+          shadow-[0_30px_80px_rgba(0,0,0,0.12)]
+        "
+      >
+        {/* IMAGE */}
+        <Image
+          src="/ecosystem/1.avif"
+          alt="Corporate Communication"
+          fill
+          priority
+          className="
+            object-cover
+
+            brightness-[0.85]
+            contrast-[1.04]
+
+            scale-[1.03]
+          "
+        />
+
+        {/* OVERLAY */}
+        <div
+          className="
+            absolute
+            inset-0
+
+            bg-[linear-gradient(to_top,rgba(0,0,0,0.35),transparent_40%)]
+          "
+        />
+
+        {/* TOP LABEL */}
+        <div
+          className="
+            absolute
+            left-8
+            top-8
+
+            rounded-full
+
+            border
+            border-white/10
+
+            bg-black/20
+
+            px-5
+            py-3
+
+            backdrop-blur-xl
+          "
+        >
+          <span
+            className="
+              text-[10px]
+              uppercase
+
+              tracking-[0.4em]
+
+              text-white/70
+            "
+          >
+            Corporate Division
+          </span>
+        </div>
+
+        {/* FLOAT CARD */}
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            delay: 0.4,
+            duration: 1,
+          }}
+          className="
+            absolute
+            bottom-8
+            left-8
+
+            max-w-[380px]
+
+            rounded-[2rem]
+
+            border
+            border-white/10
+
+            bg-black/35
+
+            p-8
+
+            backdrop-blur-2xl
+          "
+        >
+          <span
+            className="
+              text-[10px]
+              uppercase
+
+              tracking-[0.38em]
+
+              text-white/45
+            "
+          >
+            Communication Architecture
+          </span>
+
+          <h3
+            className="
+              mt-5
+
+              max-w-[8ch]
+
+              font-display
+              uppercase
+
+              text-[3.2rem]
+
+              leading-[0.9]
+              tracking-[-0.08em]
+
+              text-white
+            "
+          >
+            Building Institutional Trust
+          </h3>
+
+          <p
+            className="
+              mt-6
+
+              max-w-[34ch]
+
+              text-sm
+
+              leading-[1.9]
+
+              text-white/70
+            "
+          >
+            Strategic communication systems for governance,
+            leadership positioning and institutional influence.
+          </p>
+        </motion.div>
+      </div>
+    </motion.div>
   </div>
 </section>
-
       {/* PERSPECTIVE */}
  <section
   className="
@@ -1020,15 +1048,14 @@ export default function CorporateCommunication() {
 
     bg-[var(--surface)]
 
-    px-6
+
     py-28
 
-    md:px-10
-    lg:px-20
+   
   "
 >
   {/* AMBIENT */}
-  <div
+  {/* <div
     className="
       absolute
       left-[-10rem]
@@ -1043,7 +1070,7 @@ export default function CorporateCommunication() {
 
       blur-3xl
     "
-  />
+  /> */}
 
   <div
     className="
@@ -1309,13 +1336,12 @@ export default function CorporateCommunication() {
     border-b
     border-[var(--border)]
 
-    bg-[var(--bg)]
+ 
 
-    px-6
+   
     py-28
 
-    md:px-10
-    lg:px-20
+   
   "
 >
   <div className="relative z-10">
@@ -1380,7 +1406,7 @@ export default function CorporateCommunication() {
           border
           border-[var(--border)]
 
-          bg-white
+       
 
           p-10
         "
@@ -1557,11 +1583,10 @@ export default function CorporateCommunication() {
 
     bg-[var(--surface)]
 
-    px-6
+
     py-28
 
-    md:px-10
-    lg:px-20
+   
   "
 >
   {/* HEADER */}

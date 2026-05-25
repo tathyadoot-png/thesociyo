@@ -11,7 +11,7 @@ const data = socialDevelopmentData;
 
 export default function SocialDevelopment() {
   return (
-    <main className="relative overflow-hidden bg-[var(--bg)] text-[var(--text)]">
+    <main className="relative overflow-hidden text-justify bg-[var(--bg)] text-[var(--text)]">
       <CinematicBackground />
 
       {/* ================= HERO ================= */}
@@ -36,8 +36,8 @@ export default function SocialDevelopment() {
 
         <div className="absolute bottom-[-12rem] right-[-10rem] h-[32rem] w-[32rem] rounded-full bg-[var(--ambient-2)] blur-3xl" />
 
-        <div className="relative z-10 px-6 pb-28 pt-32 md:px-20">
-          <div className="mx-2 md:mx-32 grid min-h-screen items-center gap-20 xl:grid-cols-[1.05fr_0.7fr]">
+        <div className="relative z-10  pb-28 pt-36 ">
+          <div className="mx-2 md:mx-16 grid min-h-screen items-center gap-20 xl:grid-cols-[1.05fr_0.7fr]">
             {/* LEFT */}
             <div>
               <motion.div

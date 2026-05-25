@@ -26,7 +26,7 @@ export default function NavBrand() {
         className="
           h-auto
           w-[100px]
-
+pt-0 md:-pt-20
           md:w-[160px]
 
           object-contain

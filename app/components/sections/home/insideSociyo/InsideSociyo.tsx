@@ -20,7 +20,7 @@ export default function InsideSociyo() {
         bg-[var(--bg)]
 
         px-4
-        md:px-24
+        md:px-12
 
         py-28
         md:py-40
@@ -185,7 +185,7 @@ px-5
 
                     leading-[0.9]
                     tracking-[-0.06em]
-
+text-justify
                     text-[var(--text)]
 
                     transition-all
@@ -207,7 +207,7 @@ px-5
 
                     text-sm
                     md:text-base
-
+text-justify
                     leading-relaxed
 
                     text-[var(--muted)]

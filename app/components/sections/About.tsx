@@ -42,7 +42,7 @@ dark:to-black/35
           px-3
           py-28
 
-          md:px-48
+          md:px-16
      
         "
       >

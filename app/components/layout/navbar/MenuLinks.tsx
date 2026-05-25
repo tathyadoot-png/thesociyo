@@ -25,7 +25,7 @@ export const links = [
     number: "04",
   },
   {
-    label: "INITIATE",
+    label: "CONNECT",
     href: "/contact",
     number: "05",
   },
