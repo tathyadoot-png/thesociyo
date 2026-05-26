@@ -53,11 +53,11 @@ export const sociyoMethodData = [
   },
   {
     number: "05",
-    title: "Evolve",
+    title: "Develop",
     icon: LineChart,
     description:
       "Communication is never static.",
     details:
-      "We continuously analyze engagement, audience response and performance to refine systems that remain relevant, effective and scalable over time.",
+      "Through continuous refinement, audience understanding and performance analysis, we help communication systems remain adaptable, relevant and built for long-term growth.",
   },
 ];
