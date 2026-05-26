@@ -6,6 +6,7 @@ import InsideSociyo from "../components/sections/home/insideSociyo/InsideSociyo"
 import ManifestoSection from "../components/sections/home/manifesto/ManifestoSection";
 import SelectedAssociationsSection from "../components/sections/home/associations/SelectedAssociationsSection";
 import EcosystemsSection from "@/app/components/sections/home/ecosystem/EcosystemsSection";
+import SociyoMethodSection from "../components/sections/home/method/SociyoMethodSection";
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
       <InsideSociyo />
       <EcosystemsSection />
       <CapabilitiesSection />
+      <SociyoMethodSection/>
       <ManifestoSection />
       <SelectedAssociationsSection />
     </main>
