@@ -8,6 +8,7 @@ import { Bebas_Neue, Inter_Tight } from "next/font/google";
 import Navbar from "@/app/components/layout/navbar/Navbar";
 import Footer from "@/app/components/layout/Footer";
 import ScrollToTop from "@/app/components/ui/ScrollToTop";
+import FloatingWhatsappButton from "./components/ui/FloatingWhatsappButton";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.thesociyo.com"),
@@ -158,7 +159,7 @@ export default function RootLayout({
           <main className="relative">
             {children}
           </main>
-
+<FloatingWhatsappButton/>
           {/* Scroll To Top */}
           <ScrollToTop />
 

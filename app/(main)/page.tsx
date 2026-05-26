@@ -7,6 +7,7 @@ import ManifestoSection from "../components/sections/home/manifesto/ManifestoSec
 import SelectedAssociationsSection from "../components/sections/home/associations/SelectedAssociationsSection";
 import EcosystemsSection from "@/app/components/sections/home/ecosystem/EcosystemsSection";
 import SociyoMethodSection from "../components/sections/home/method/SociyoMethodSection";
+import TestimonialEditorialSlider from "../components/sections/home/testimonials/TestimonialEditorialSlider";
 
 export default function Home() {
   return (
@@ -38,6 +39,7 @@ export default function Home() {
       <SociyoMethodSection/>
       <ManifestoSection />
       <SelectedAssociationsSection />
+      {/* <TestimonialEditorialSlider/> */}
     </main>
   );
 }

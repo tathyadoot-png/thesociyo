@@ -79,4 +79,12 @@ export const associations = [
     name: "Content Mohalla",
     image: "/associates/11.png",
   },
+  {
+    id: "13",
+    name: "Sachhi Saheli",
+    image: "/associates/13.png",
+  },
+
+
+  
 ];
