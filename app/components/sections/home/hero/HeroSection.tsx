@@ -1,5 +1,6 @@
 import HeroScene from "@/app/components/r3f/HeroScene";
 import HeroContent from "./HeroContent";
+import HeroActionButtons from "./HeroActionButtons";
 
 export default function HeroSection() {
   return (
@@ -24,7 +25,9 @@ export default function HeroSection() {
 
         {/* Content */}
         <HeroContent />
+      
       </div>
+
     </section>
   );
 }

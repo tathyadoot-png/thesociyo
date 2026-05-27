@@ -665,6 +665,13 @@ md:px-10
       shadow-[0_10px_50px_rgba(0,0,0,0.05)]
     "
   >
+      <a
+    href="https://maps.google.com/?q=SOCIYO+Communications+Bhopal"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="absolute inset-0 z-20"
+    aria-label="Open Google Maps"
+  />
     {/* MAP */}
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4349.259941416157!2d77.43814669999999!3d23.222881400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c43b2a961c525%3A0x31120be3bbc5cf27!2sSOCIYO%20Communications!5e1!3m2!1sen!2sin!4v1778746488788!5m2!1sen!2sin"
@@ -680,6 +687,8 @@ md:px-10
         contrast-110
       "
     />
+
+    {/* <iframe src="https://www.google.com/maps/embed?pb=!4v1779863696202!6m8!1m7!1sLsUyfHP6oAhz1SHG8oPPnw!2m2!1d23.22295458081733!2d77.43760193551738!3f92.43671744120823!4f18.303313199813488!5f0.4000000000000002" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
 
     {/* OVERLAY */}
     <div
@@ -930,7 +939,7 @@ md:px-10
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="John Doe"
+            placeholder="Ram Kumar"
             className="
               w-full
 

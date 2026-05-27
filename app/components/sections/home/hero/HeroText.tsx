@@ -9,6 +9,7 @@ import {
 import {
   heroLines,
 } from "@/app/data/home/heroTextData";
+import HeroActionButtons from "./HeroActionButtons";
 
 export default function HeroText() {
   const { scrollYProgress } = useScroll();
@@ -152,7 +153,7 @@ export default function HeroText() {
     uppercase
 
     text-[clamp(5rem,14vw,14rem)]
-    md:text-[clamp(5rem,11vw,12rem)]
+md:text-[clamp(4.5rem,8.5vw,9rem)]
 
     leading-[0.82]
 
@@ -209,6 +210,20 @@ export default function HeroText() {
             );
           })}
         </div>
+<section
+  className="
+    relative
+    z-50
+
+    mt-16
+    md:mt-20
+
+    flex
+    justify-center
+  "
+>
+  <HeroActionButtons />
+</section>
       </div>
     </motion.section>
   );
