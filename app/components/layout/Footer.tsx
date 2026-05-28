@@ -105,7 +105,6 @@ export default function Footer() {
 
           mix-blend-overlay
 
-          bg-[url('/noise.png')]
         "
       />
 

@@ -205,11 +205,7 @@ body {
   background: var(--ambient-dark);
 }
 
-.cinematic-noise {
-  opacity: var(--noise-opacity);
-  mix-blend-mode: soft-light;
-  background-image: url("/noise.png");
-}
+
 
 .cinematic-vignette {
   background:
@@ -497,13 +493,7 @@ body {
     );
 }
 
-.cinematic-noise {
-  opacity: var(--noise-opacity);
 
-  mix-blend-mode: soft-light;
-
-  background-image: url("/noise.png");
-}
 
 .cinematic-top-light {
   background:
