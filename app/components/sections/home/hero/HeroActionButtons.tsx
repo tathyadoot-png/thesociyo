@@ -1,9 +1,8 @@
-// app/components/ui/HeroActionButtons.tsx
-
 "use client";
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 export default function HeroActionButtons() {
   return (
@@ -23,11 +22,12 @@ export default function HeroActionButtons() {
       }}
       className="
         flex
+        flex-wrap
         items-center
         justify-center
-text-left
-        gap-4
-        md:gap-5
+
+        gap-3
+        md:gap-4
       "
     >
       {/* ABOUT */}
@@ -35,119 +35,52 @@ text-left
         href="/about"
         className="
           group
-          relative
 
-          overflow-hidden
+          inline-flex
+          items-center
+          gap-2
+
+          rounded-full
 
           border
-          border-black/10
+          border-[var(--border)]
 
           bg-black
 
-          px-7
-          md:px-9
+          px-5
+          md:px-6
 
-          py-4
+          py-3
+
+          text-[11px]
+          md:text-xs
+
+          font-semibold
+          uppercase
+
+          tracking-[0.18em]
+
+          text-white
 
           transition-all
-          duration-500
+          duration-300
 
-          hover:border-primary
-          hover:shadow-[0_20px_60px_rgba(255,0,0,0.12)]
+          hover:border-[var(--accent)]
+          hover:bg-[var(--accent)]
         "
       >
-        {/* cinematic hover bg */}
-        <div
+        About Us
+
+        <ArrowUpRight
+          size={15}
           className="
-            absolute
-            inset-0
-
-            origin-left
-            scale-x-0
-
-            bg-primary
-
             transition-transform
-            duration-700
+            duration-300
 
-            group-hover:scale-x-100
+            group-hover:translate-x-0.5
+            group-hover:-translate-y-0.5
           "
         />
-
-        {/* top line */}
-        <div
-          className="
-            absolute
-            left-0
-            top-0
-
-            h-px
-            w-full
-
-            bg-white/10
-          "
-        />
-
-        <div
-          className="
-            relative
-            z-10
-
-            flex
-            items-center
-            gap-5
-          "
-        >
-          {/* index */}
-          <span
-            className="
-              text-[10px]
-
-              font-medium
-
-              tracking-[0.35em]
-
-              text-white/40
-            "
-          >
-            01
-          </span>
-
-          <div className="flex flex-col items-start">
-            <span
-              className="
-                text-[9px]
-
-                uppercase
-
-                tracking-[0.32em]
-
-                text-white/40
-              "
-            >
-              Enter
-            </span>
-
-            <span
-              className="
-                mt-1
-
-                text-[11px]
-                md:text-xs
-
-                font-semibold
-
-                uppercase
-
-                tracking-[0.28em]
-
-                text-white
-              "
-            >
-              About The Studio
-            </span>
-          </div>
-        </div>
       </Link>
 
       {/* CONTACT */}
@@ -155,122 +88,54 @@ text-left
         href="/contact"
         className="
           group
-          relative
 
-          overflow-hidden
+          inline-flex
+          items-center
+          gap-2
+
+          rounded-full
 
           border
-          border-black/10
+          border-[var(--border)]
 
-          bg-white/90
-
-          px-7
-          md:px-9
-
-          py-4
+          bg-[var(--glass)]
 
           backdrop-blur-xl
 
-          transition-all
-          duration-500
+          px-5
+          md:px-6
 
-          hover:border-primary/20
-          hover:bg-white
-          hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)]
+          py-3
+
+          text-[11px]
+          md:text-xs
+
+          font-semibold
+          uppercase
+
+          tracking-[0.18em]
+
+          text-[var(--text)]
+
+          transition-all
+          duration-300
+
+          hover:border-[var(--accent)]
+          hover:text-[var(--accent)]
         "
       >
-        {/* subtle hover */}
-        <div
+        Contact Us
+
+        <ArrowUpRight
+          size={15}
           className="
-            absolute
-            inset-0
-
-            origin-left
-            scale-x-0
-
-            bg-primary/5
-
             transition-transform
-            duration-700
+            duration-300
 
-            group-hover:scale-x-100
+            group-hover:translate-x-0.5
+            group-hover:-translate-y-0.5
           "
         />
-
-        {/* top line */}
-        <div
-          className="
-            absolute
-            left-0
-            top-0
-
-            h-px
-            w-full
-
-            bg-black/5
-          "
-        />
-
-        <div
-          className="
-            relative
-            z-10
-
-            flex
-            items-center
-            gap-5
-          "
-        >
-          {/* index */}
-          <span
-            className="
-              text-[10px]
-
-              font-medium
-
-              tracking-[0.35em]
-
-              text-primary/70
-            "
-          >
-            02
-          </span>
-
-          <div className="flex flex-col items-start">
-            <span
-              className="
-                text-[9px]
-
-                uppercase
-
-                tracking-[0.32em]
-
-                text-black/35
-              "
-            >
-              Connect
-            </span>
-
-            <span
-              className="
-                mt-1
-
-                text-[11px]
-                md:text-xs
-
-                font-semibold
-
-                uppercase
-
-                tracking-[0.28em]
-
-                text-black
-              "
-            >
-              Start A Conversation
-            </span>
-          </div>
-        </div>
       </Link>
     </motion.div>
   );
