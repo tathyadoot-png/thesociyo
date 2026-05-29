@@ -1,4 +1,5 @@
 import About from "@/app/components/sections/About";
+import CompanyTimeline from "@/app/components/sections/about/CompanyTimeline";
 import CreativeShowcase from "@/app/components/sections/about/CreativeShowcase";
 import DrSulabhEditorial from "@/app/components/sections/about/team/DrSulabhEditorial";
 import VideoCreativeShowcase from "@/app/components/sections/about/VideoCreativeShowcase";
@@ -63,10 +64,24 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="">
-      <About />
-      {/* <DrSulabhEditorial /> */}
-      <CreativeShowcase />
-      <VideoCreativeShowcase/>
+    <div
+  style={{
+    position: "relative",
+    zIndex: 1,
+  }}
+>
+  <About />
+</div>
+   <div
+  style={{
+    position: "relative",
+    zIndex: 20,
+    isolation: "isolate",
+  }}
+>
+  <DrSulabhEditorial />
+</div>
+<CompanyTimeline/>
     </main>
   );
 }

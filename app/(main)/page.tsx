@@ -39,7 +39,7 @@ export default function Home() {
       <SociyoMethodSection/>
       <ManifestoSection />
       <SelectedAssociationsSection />
-      {/* <TestimonialEditorialSlider/> */}
+      <TestimonialEditorialSlider/>
     </main>
   );
 }

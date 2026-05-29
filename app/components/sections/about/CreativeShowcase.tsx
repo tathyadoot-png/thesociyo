@@ -21,7 +21,7 @@ import "swiper/css/navigation";
 
 export default function CreativeShowcase() {
   return (
-    <section className="relative w-full py-24 overflow-hidden">
+    <section className="relative w-full py-24 md:py-32 overflow-hidden">
       {/* cinematic bg */}
       <CinematicBackground />
 

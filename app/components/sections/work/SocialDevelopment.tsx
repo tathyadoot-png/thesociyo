@@ -78,7 +78,7 @@ export default function SocialDevelopment() {
  {/* BUTTONS */}
           <div className="flex flex-wrap gap-4 pt-6">
             <a
-              href="/ecosystem/social_eng.pdf"
+              href="/ecosystem/Sociyo_social_eng.pdf"
               download
               className="
                 rounded-full

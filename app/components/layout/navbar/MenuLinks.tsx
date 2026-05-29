@@ -15,19 +15,24 @@ export const links = [
     number: "02",
   },
   {
+    label: "ECOSYSTEMS",
+    href: "/services",
+    number: "03",
+  },
+  {
     label: "EXECUTIONS",
     href: "/work",
-    number: "03",
+    number: "04",
   },
   {
     label: "NOTES",
     href: "/blogs",
-    number: "04",
+    number: "05",
   },
   {
     label: "CONNECT",
     href: "/contact",
-    number: "05",
+    number: "06",
   },
 ];
 

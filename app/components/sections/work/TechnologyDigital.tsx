@@ -143,7 +143,7 @@ dark:bg-white/[0.03] blur-[120px]" />
 
         <div className="flex flex-wrap gap-4 pt-6">
             <a
-              href="/ecosystem/it_eng.pdf"
+              href="/ecosystem/Sociyo_IT_eng.pdf"
               download
               className="
                 rounded-full

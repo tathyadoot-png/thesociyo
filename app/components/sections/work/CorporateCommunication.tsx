@@ -213,7 +213,7 @@ export default function CorporateCommunication() {
           {/* BUTTONS */}
           <div className="flex flex-wrap gap-4 pt-4">
             <a
-              href="/ecosystem/corporate_eng.pdf"
+              href="/ecosystem/Sociyo_corporate_eng.pdf"
               download
               className="
                 rounded-full
@@ -239,7 +239,7 @@ export default function CorporateCommunication() {
               Download English PDF
             </a>
 
-            <button
+            {/* <button
               className="
                 rounded-full
 
@@ -267,7 +267,7 @@ export default function CorporateCommunication() {
               "
             >
               Explore Case Studies
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

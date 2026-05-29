@@ -8,11 +8,11 @@ export const drSulabhSingh = {
   designation: "Founder & CEO, Sociyo Communications Pvt. Ltd.",
 
   shortBio:
-    "Political consultant, strategic communication expert, and media researcher with deep experience in election campaigns, public relations, branding, and digital communication systems.",
+    "Political consultant, strategic communication expert and media researcher with deep experience in election campaigns, public relations, branding and digital communication systems.",
 
-  image: "/SociyoLogo_Agency_WhiteRed.png",
+  image: "/team/drss.jpeg",
 
-  coverImage: "/SociyoLogo_Agency_WhiteRed.png",
+  coverImage: "/team/drss.jpeg",
 
   gallery: [
     "/SociyoLogo_Agency_WhiteRed.png",

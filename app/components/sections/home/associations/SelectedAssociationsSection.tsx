@@ -29,14 +29,14 @@ export default function SelectedAssociationsSection() {
 
   return (
     <section
-      ref={sectionRef}
-      className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--bg)] py-24 md:py-32"
-    >
+  ref={sectionRef}
+  className="relative overflow-hidden border-t border-[var(--border)] bg-transparent py-24 md:py-32"
+>
       {/* BACKGROUND */}
       <CinematicBackground />
 
       {/* SOFT DEPTH */}
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,rgba(254,0,0,0.015)_40%,transparent_100%)]" />
+      {/* <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,rgba(254,0,0,0.015)_40%,transparent_100%)]" /> */}
 
       {/* MAIN AMBIENT */}
       <motion.div
@@ -48,9 +48,9 @@ export default function SelectedAssociationsSection() {
       <div className="absolute left-1/2 top-0 h-[420px] w-[900px] -translate-x-1/2 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.045),transparent_72%)] opacity-40 blur-[100px]" />
 
       {/* CONTENT */}
-      <div className="relative z-20 px-6 md:px-16 xl:px-32">
+      <div className="relative z-20 w-[96%] lg:w-[88%] mx-auto">
         {/* HEADING */}
-        <div className="relative z-30 mb-20 md:mb-28">
+       <div className="relative z-30 mb-12 md:mb-16">
           <CinematicSectionHeading
             {...associationsHeading}
             className="relative z-20"
@@ -58,7 +58,7 @@ export default function SelectedAssociationsSection() {
         </div>
 
         {/* LOGO CLOUD */}
-        <div className="relative mt-20 overflow-hidden md:mt-32">
+    <div className="relative mt-6 overflow-hidden md:mt-10">
           {/* CENTER GLOW */}
           <div className="absolute left-1/2 top-1/2 h-[16rem] w-[16rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--accent)]/10 blur-[120px] md:h-[28rem] md:w-[28rem]" />
 
@@ -136,184 +136,76 @@ export default function SelectedAssociationsSection() {
   ))}
 </div>
 
-{/* DESKTOP CLOUD */}
-<motion.div
-  style={{
-    y: useTransform(smooth, [0, 1], [0, -80]),
-    scale: useTransform(
-      smooth,
-      [0, 0.5, 1],
-      [0.98, 1, 1.01]
-    ),
-  }}
+
+{/* DESKTOP + TABLET MARQUEE */}
+<div
   className="
     relative
-
     hidden
     md:block
 
-    h-[760px]
-    lg:h-[900px]
-    xl:h-[1100px]
+    py-6
+
+    rounded-[2rem]
+
+    border border-[var(--border)]
+
+    bg-white/[0.02]
+
+    backdrop-blur-sm
   "
 >
-  {associations.map((item, index) => {
-    const positions = [
-      // TOP
-      "left-[14%] top-[10%]",
-      "left-1/2 top-[2%] -translate-x-1/2",
-      "right-[14%] top-[10%]",
+  {/* TOP FADE */}
+  <div className="pointer-events-none absolute inset-y-0 left-0 z-30 w-52 bg-gradient-to-r from-[var(--bg)] to-transparent" />
+  <div className="pointer-events-none absolute inset-y-0 right-0 z-30 w-52 bg-gradient-to-l from-[var(--bg)] to-transparent" />
 
-      // UPPER MID
-      "left-[4%] top-[34%]",
-      "left-[28%] top-[26%]",
-      "right-[28%] top-[26%]",
-      "right-[4%] top-[34%]",
-
-      // BOTTOM
-"left-[20%] bottom-[26%]",
-"left-1/2 bottom-[18%] -translate-x-1/2",
-"right-[20%] bottom-[26%]",
-
-      // CENTER
-      "left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
-    ];
-
-    return (
-      <motion.div
-        key={item.id}
-        initial={{
-          opacity: 0,
-          scale: 0.85,
-          y: 40,
-        }}
-        whileInView={{
-          opacity: 1,
-          scale: 1,
-          y: 0,
-        }}
-        viewport={{ once: true }}
-        transition={{
-          duration: 1,
-          delay: index * 0.05,
-          ease: [0.22, 1, 0.36, 1],
-        }}
-        className={`absolute ${positions[index]}`}
-      >
-        <motion.div
-          animate={{
-            y: [0, -8, 0],
-          }}
-          transition={{
-            duration: 4 + index * 0.25,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          whileHover={{
-            scale: 1.05,
-            y: -5,
-          }}
+  {/* ROW 1 */}
+ <div className="mb-4 overflow-hidden">
+    <motion.div
+      animate={{
+        x: ["0%", "-50%"],
+      }}
+      transition={{
+        duration: 80,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+      className="flex w-max gap-8"
+    >
+      {[...associations, ...associations].map((item, index) => (
+        <div
+          key={`row1-${index}`}
           className="
             group
             relative
 
             flex
+    h-[120px]
+w-[220px]
+
+            shrink-0
             items-center
             justify-center
 
             overflow-hidden
-
-            rounded-full
+            rounded-[2rem]
 
             border
-            border-white/[0.08]
+            border-white/10
 
             bg-white/[0.03]
-
             backdrop-blur-xl
 
-            shadow-[0_20px_50px_rgba(0,0,0,0.18)]
-
             transition-all
-            duration-700
+            duration-500
 
-            hover:border-[var(--accent)]/30
+            hover:border-[var(--accent)]/40
             hover:bg-white/[0.05]
-
-            h-[120px]
-            w-[120px]
-
-            lg:h-[150px]
-            lg:w-[150px]
-
-            xl:h-[170px]
-            xl:w-[170px]
           "
         >
-          {/* AMBIENT */}
-          <div
-            className="
-              absolute
-              inset-0
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(254,0,0,0.08),transparent_70%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-              rounded-full
-
-              bg-[radial-gradient(circle_at_center,rgba(254,0,0,0.10),transparent_70%)]
-
-              opacity-60
-            "
-          />
-
-          {/* ROTATING RING */}
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{
-              duration: 30,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="
-              absolute
-
-              rounded-full
-
-              border
-              border-white/[0.08]
-
-              h-[92px]
-              w-[92px]
-
-              lg:h-[118px]
-              lg:w-[118px]
-
-              xl:h-[135px]
-              xl:w-[135px]
-            "
-          />
-
-          {/* LIGHT */}
-          <div
-            className="
-              absolute
-              top-0
-
-              h-1/2
-              w-full
-
-              bg-[linear-gradient(180deg,rgba(255,255,255,0.10),transparent)]
-            "
-          />
-
-          {/* LOGO */}
-          <div
-            className="
-              relative
-              z-10
-h-18 w-24
-lg:h-24 lg:w-28
-xl:h-28 xl:w-32
-            "
-          >
+          <div className="relative h-24 w-28">
             <Image
               src={item.image}
               alt={item.name}
@@ -322,43 +214,81 @@ xl:h-28 xl:w-32
             />
           </div>
 
-          {/* NAME */}
-          <div
-            className="
-              absolute
-
-              bottom-4
-              lg:bottom-5
-              xl:bottom-7
-
-              px-3
-
-              text-center
-            "
-          >
-            <h3
-              className="
-                text-[8px]
-                lg:text-[9px]
-                xl:text-[10px]
-
-                uppercase
-
-                tracking-[0.14em]
-                lg:tracking-[0.16em]
-                xl:tracking-[0.18em]
-
-                text-[var(--muted)]
-              "
-            >
+          <div className="absolute bottom-4 left-0 right-0 px-3 text-center">
+            <p className="text-[10px] uppercase tracking-[0.18em] text-[var(--muted)]">
               {item.name}
-            </h3>
+            </p>
           </div>
-        </motion.div>
-      </motion.div>
-    );
-  })}
-</motion.div>
+        </div>
+      ))}
+    </motion.div>
+  </div>
+
+  {/* ROW 2 */}
+  <div className="overflow-hidden">
+    <motion.div
+      animate={{
+        x: ["-50%", "0%"],
+      }}
+      transition={{
+        duration: 70,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+     className="flex w-max gap-5"
+    >
+      {[...associations, ...associations].map((item, index) => (
+        <div
+          key={`row2-${index}`}
+          className="
+            group
+            relative
+
+            flex
+           h-[120px]
+w-[220px]
+
+            shrink-0
+            items-center
+            justify-center
+
+            overflow-hidden
+            rounded-[2rem]
+
+            border
+            border-white/10
+
+            bg-white/[0.03]
+            backdrop-blur-xl
+
+            transition-all
+            duration-500
+
+            hover:border-[var(--accent)]/40
+            hover:bg-white/[0.05]
+          "
+        >
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(254,0,0,0.08),transparent_70%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+         <div className="relative h-14 w-36">
+            <Image
+              src={item.image}
+              alt={item.name}
+              fill
+              className="object-contain"
+            />
+          </div>
+
+          <div className="absolute bottom-4 left-0 right-0 px-3 text-center">
+            <p className="text-[10px] uppercase tracking-[0.18em] text-[var(--muted)]">
+              {item.name}
+            </p>
+          </div>
+        </div>
+      ))}
+    </motion.div>
+  </div>
+</div>
         </div>
 
         {/* BOTTOM */}

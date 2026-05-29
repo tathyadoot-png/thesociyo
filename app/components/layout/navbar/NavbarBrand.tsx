@@ -14,29 +14,26 @@ export default function NavBrand() {
         items-center
       "
     >
-      <Image
-        src="/logoBlack.png"
-        alt="SOCIYO Communications"
+     <Image
+  src="/logoBlack.png"
+  alt="SOCIYO Communications"
+  width={140}
+  height={50}
+  priority
+  className="
+    h-auto
+    w-[80px]
+    md:w-[130px]
 
-        width={200}
-        height={60}
+    object-contain
 
-        priority
-
-        className="
-          h-auto
-          w-[100px]
-pt-0 md:-pt-20
-          md:w-[160px]
-
-          object-contain
-
-          transition-all
-          duration-500
-
-          group-hover:opacity-80
-        "
-      />
+    transition-all
+    duration-500
+md:-mt-2
+mt-0
+    group-hover:opacity-80
+  "
+/>
     </Link>
   );
 }
