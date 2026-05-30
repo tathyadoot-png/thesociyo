@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+
 
 import CinematicBackground from "@/app/components/cinematic/CinematicBackground";
 import CinematicSectionHeading from "@/app/components/ui/CinematicSectionHeading";
@@ -14,7 +15,9 @@ import {
 
 export default function SelectedAssociationsSection() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
+const [activeIndex, setActiveIndex] = useState(0);
 
+const active = associations[activeIndex];
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end end"],
@@ -57,242 +60,205 @@ export default function SelectedAssociationsSection() {
           />
         </div>
 
-        {/* LOGO CLOUD */}
-    <div className="relative mt-6 overflow-hidden md:mt-10">
-          {/* CENTER GLOW */}
-          <div className="absolute left-1/2 top-1/2 h-[16rem] w-[16rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--accent)]/10 blur-[120px] md:h-[28rem] md:w-[28rem]" />
+{/* TRUST MOSAIC */}
+<div className="relative mt-16">
 
-          {/* MOBILE */}
-       <div className="relative z-20 grid grid-cols-2 gap-4 md:hidden mx-5">
-  {associations.map((item, index) => (
-    <motion.div
-      key={item.id}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{
-        duration: 0.7,
-        delay: index * 0.04,
-      }}
-      className="
-        group
-        relative
-        overflow-hidden
+  {/* BIG CENTER GLOW */}
+  <div
+    className="
+      absolute
+      left-1/2
+      top-1/2
 
-        rounded-[1.8rem]
+      h-[28rem]
+      w-[28rem]
 
-        border border-white/[0.08]
+      -translate-x-1/2
+      -translate-y-1/2
 
-        bg-[rgba(255,255,255,0.55)]
+      rounded-full
 
-        shadow-[0_10px_30px_rgba(0,0,0,0.08)]
+      bg-[var(--accent)]/8
 
-        p-5
+      blur-[140px]
+    "
+  />
 
-        before:absolute
-        before:inset-0
-        before:bg-[linear-gradient(180deg,rgba(255,255,255,0.22),transparent)]
-        before:pointer-events-none
-      "
-    >
-      {/* SOFT HOVER GLOW */}
-      <div
+  {/* WATERMARK */}
+  <div
+    className="
+      absolute
+      inset-0
+
+      flex
+      items-center
+      justify-center
+
+      pointer-events-none
+
+      font-display
+
+      text-[4rem]
+      md:text-[8rem]
+      lg:text-[12rem]
+
+      tracking-[-0.12em]
+
+      text-[var(--text)]/[0.03]
+    "
+  >
+    TRUSTED
+  </div>
+
+  <div
+    className="
+      relative
+      z-20
+
+      grid
+
+      grid-cols-2
+      md:grid-cols-3
+      xl:grid-cols-4
+
+      gap-4
+      md:gap-6
+    "
+  >
+    {associations.map((item, index) => (
+      <motion.div
+        key={item.id}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 0.5,
+          delay: index * 0.03,
+        }}
         className="
-          absolute
-          inset-0
+          group
+          relative
 
-          opacity-0
-          transition-opacity
+          overflow-hidden
+
+          rounded-[32px]
+
+          border
+          border-[var(--border)]
+
+          bg-[var(--glass)]
+
+          backdrop-blur-xl
+
+          h-[180px]
+          md:h-[220px]
+
+          flex
+          flex-col
+          items-center
+          justify-center
+
+          transition-all
           duration-500
 
-          group-hover:opacity-100
+          hover:-translate-y-2
+          hover:border-[var(--accent)]/30
 
-          bg-[radial-gradient(circle_at_top,rgba(254,0,0,0.08),transparent_70%)]
+          hover:shadow-[0_20px_60px_rgba(254,0,0,0.12)]
         "
-      />
+      >
+        {/* Hover Glow */}
+        <div
+          className="
+            absolute
+            inset-0
 
-      {/* NUMBER */}
-      <div className="relative z-10 mb-6 font-display text-[1.4rem] leading-none tracking-[-0.08em] text-[var(--muted)]">
-        {item.id}
-      </div>
+            opacity-0
 
-      {/* LOGO */}
-      <div className="relative z-10 mb-6 flex items-center justify-center">
-        <div className="relative h-10 w-24">
+            transition-opacity
+            duration-500
+
+            group-hover:opacity-100
+
+            bg-[radial-gradient(circle_at_center,rgba(254,0,0,0.08),transparent_70%)]
+          "
+        />
+
+        {/* Number */}
+        <div
+          className="
+            absolute
+
+            top-4
+            right-4
+
+            font-display
+
+            text-3xl
+            md:text-5xl
+
+            text-[var(--accent)]/[0.08]
+          "
+        >
+          {item.id}
+        </div>
+
+        {/* Logo */}
+        <div
+          className="
+            relative
+            z-10
+
+            h-14
+            w-28
+
+            md:h-20
+            md:w-40
+          "
+        >
           <Image
             src={item.image}
             alt={item.name}
             fill
-            className="object-contain"
+            className="
+              object-contain
+
+              transition-all
+              duration-500
+
+              group-hover:scale-105
+            "
           />
         </div>
-      </div>
 
-      {/* NAME */}
-      <h3 className="relative z-10 text-center text-[10px] uppercase tracking-[0.18em] text-[var(--muted)]">
-        {item.name}
-      </h3>
-    </motion.div>
-  ))}
-</div>
-
-
-{/* DESKTOP + TABLET MARQUEE */}
-<div
-  className="
-    relative
-    hidden
-    md:block
-
-    py-6
-
-    rounded-[2rem]
-
-    border border-[var(--border)]
-
-    bg-white/[0.02]
-
-    backdrop-blur-sm
-  "
->
-  {/* TOP FADE */}
-  <div className="pointer-events-none absolute inset-y-0 left-0 z-30 w-52 bg-gradient-to-r from-[var(--bg)] to-transparent" />
-  <div className="pointer-events-none absolute inset-y-0 right-0 z-30 w-52 bg-gradient-to-l from-[var(--bg)] to-transparent" />
-
-  {/* ROW 1 */}
- <div className="mb-4 overflow-hidden">
-    <motion.div
-      animate={{
-        x: ["0%", "-50%"],
-      }}
-      transition={{
-        duration: 80,
-        repeat: Infinity,
-        ease: "linear",
-      }}
-      className="flex w-max gap-8"
-    >
-      {[...associations, ...associations].map((item, index) => (
-        <div
-          key={`row1-${index}`}
+        {/* Name */}
+        <p
           className="
-            group
-            relative
+            mt-5
 
-            flex
-    h-[120px]
-w-[220px]
+            px-4
 
-            shrink-0
-            items-center
-            justify-center
+            text-center
 
-            overflow-hidden
-            rounded-[2rem]
+            text-[10px]
+            md:text-[11px]
 
-            border
-            border-white/10
+            uppercase
 
-            bg-white/[0.03]
-            backdrop-blur-xl
+            tracking-[0.22em]
 
-            transition-all
-            duration-500
-
-            hover:border-[var(--accent)]/40
-            hover:bg-white/[0.05]
+            text-[var(--muted)]
           "
         >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(254,0,0,0.08),transparent_70%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-          <div className="relative h-24 w-28">
-            <Image
-              src={item.image}
-              alt={item.name}
-              fill
-              className="object-contain"
-            />
-          </div>
-
-          <div className="absolute bottom-4 left-0 right-0 px-3 text-center">
-            <p className="text-[10px] uppercase tracking-[0.18em] text-[var(--muted)]">
-              {item.name}
-            </p>
-          </div>
-        </div>
-      ))}
-    </motion.div>
-  </div>
-
-  {/* ROW 2 */}
-  <div className="overflow-hidden">
-    <motion.div
-      animate={{
-        x: ["-50%", "0%"],
-      }}
-      transition={{
-        duration: 70,
-        repeat: Infinity,
-        ease: "linear",
-      }}
-     className="flex w-max gap-5"
-    >
-      {[...associations, ...associations].map((item, index) => (
-        <div
-          key={`row2-${index}`}
-          className="
-            group
-            relative
-
-            flex
-           h-[120px]
-w-[220px]
-
-            shrink-0
-            items-center
-            justify-center
-
-            overflow-hidden
-            rounded-[2rem]
-
-            border
-            border-white/10
-
-            bg-white/[0.03]
-            backdrop-blur-xl
-
-            transition-all
-            duration-500
-
-            hover:border-[var(--accent)]/40
-            hover:bg-white/[0.05]
-          "
-        >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(254,0,0,0.08),transparent_70%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-         <div className="relative h-14 w-36">
-            <Image
-              src={item.image}
-              alt={item.name}
-              fill
-              className="object-contain"
-            />
-          </div>
-
-          <div className="absolute bottom-4 left-0 right-0 px-3 text-center">
-            <p className="text-[10px] uppercase tracking-[0.18em] text-[var(--muted)]">
-              {item.name}
-            </p>
-          </div>
-        </div>
-      ))}
-    </motion.div>
+          {item.name}
+        </p>
+      </motion.div>
+    ))}
   </div>
 </div>
-        </div>
 
         {/* BOTTOM */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -309,7 +275,7 @@ w-[220px]
               Trusted.
             </h2>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
