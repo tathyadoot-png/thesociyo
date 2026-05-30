@@ -1,4 +1,5 @@
 import About from "@/app/components/sections/About";
+import CaseStudies from "@/app/components/sections/about/CaseStudies";
 import CompanyTimeline from "@/app/components/sections/about/CompanyTimeline";
 import CreativeShowcase from "@/app/components/sections/about/CreativeShowcase";
 import DrSulabhEditorial from "@/app/components/sections/about/team/DrSulabhEditorial";
@@ -82,6 +83,7 @@ export default function AboutPage() {
   <DrSulabhEditorial />
 </div>
 <CompanyTimeline/>
+<CaseStudies/>
     </main>
   );
 }

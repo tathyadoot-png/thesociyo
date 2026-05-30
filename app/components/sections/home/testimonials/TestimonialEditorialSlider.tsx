@@ -1,10 +1,8 @@
 "use client";
-"use client";
+import Slider from "react-slick";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-
-import "swiper/css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import CinematicSectionHeading from "@/app/components/ui/CinematicSectionHeading";
 import CinematicBackground from "@/app/components/cinematic/CinematicBackground";
 import {
@@ -12,7 +10,41 @@ import {
 } from "@/app/data/home/testimonials";
 
 export default function TestimonialSlickCarousel() {
+const settings = {
+  dots: false,
+  arrows: false,
+  infinite: true,
 
+  centerMode: true,
+  centerPadding: "0px",
+
+  speed: 700,
+
+  slidesToShow: 3,
+  slidesToScroll: 1,
+
+  autoplay: true,
+  autoplaySpeed: 4500,
+  pauseOnHover: true,
+
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        centerMode: true,
+        slidesToShow: 2,
+      },
+    },
+    {
+  breakpoint: 768,
+  settings: {
+    centerMode: true,
+    centerPadding: "20px",
+    slidesToShow: 1,
+  },
+}
+  ],
+};
   return (
         <section
 
@@ -30,213 +62,245 @@ export default function TestimonialSlickCarousel() {
     className="relative z-20"
   />
 
-  <Swiper
-    modules={[Autoplay]}
-    loop={true}
-    centeredSlides={true}
-    speed={900}
-    spaceBetween={24}
-    autoplay={{
-      delay: 4000,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-    }}
-    breakpoints={{
-      0: {
-        slidesPerView: 1.1,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-    }}
-    className="!overflow-visible py-10"
-  >
-    {testimonialsData.map((item) => (
-      <SwiperSlide key={item.id}>
-        <div
-          className="
-            testimonial-card
-
-            relative
-
-            min-h-[420px]
-
-            overflow-hidden
-
-            rounded-[28px]
-
-            border
-            border-white/10
-
-            bg-[var(--glass)]
-
-            backdrop-blur-xl
-
-            p-8
-
-            transition-all
-            duration-500
-          "
-        >
-          {/* Accent line */}
-          <div
-            className="
-              absolute
-              left-0
-              top-0
-
-              h-1
-              w-full
-
-              bg-gradient-to-r
-              from-[var(--accent)]
-              via-[var(--accent)]
-              to-transparent
-              opacity-70
-            "
-          />
-
-          {/* Big quote */}
-          <div
-            className="
-              absolute
-              right-6
-              top-2
-
-              text-[120px]
-
-              leading-none
-
-              text-white/[0.04]
-
-              font-serif
-            "
-          >
-            "
-          </div>
-
-          {/* Company */}
-          <div
-            className="
-              inline-flex
-
-              rounded-full
-
-              border
-              border-[var(--accent)]/20
-
-              bg-[var(--accent)]/10
-
-              px-3
-              py-1
-
-              text-[11px]
-
-              uppercase
-              tracking-[0.25em]
-
-              text-[var(--accent)]
-            "
-          >
-            {item.company}
-          </div>
-
-          {/* Quote */}
-        <p
+  <Slider {...settings} className="mt-12">
+  {testimonialsData.map((item) => (
+    <div key={item.id}>
+<div
   className="
+    testimonial-card
+
     relative
-    z-10
-    mt-6
 
-    text-[15px]
-    lg:text-[16px]
+    min-h-[420px]
 
-    leading-[1.9]
+    overflow-hidden
 
-    text-[var(--text)]
+    rounded-[32px]
 
-   line-clamp-8
+    border
+    border-white/10
+
+    bg-[var(--glass)]
+
+    backdrop-blur-xl
+
+    p-8
+
+    transition-all
+    duration-500
   "
 >
-  {item.quote}
-</p>
+  {/* Ambient Glow */}
+  <div
+    className="absolute inset-0 pointer-events-none"
+    style={{
+      background:
+        "radial-gradient(circle at top, rgba(254,0,0,.08), transparent 60%)",
+    }}
+  />
 
-          {/* Footer */}
-          <div
-            className="
-              absolute
-              bottom-0
-              left-0
-              right-0
+  {/* Accent Line */}
+  <div
+    className="
+      absolute
+      left-0
+      top-0
 
-              flex
-              items-center
-              justify-between
+      h-[2px]
+      w-full
 
-              border-t
-              border-white/10
+      bg-gradient-to-r
+      from-[var(--accent)]
+      via-[var(--accent)]
+      to-transparent
 
-              px-8
-              py-5
-            "
-          >
-            <div>
-              <h3
-                className="
-                  text-xl
-                  font-black
+      opacity-70
+    "
+  />
 
-                  tracking-tight
+  {/* Giant Quote */}
+  <div
+    className="
+      absolute
 
-                  text-[var(--text)]
-                "
-              >
-                {item.name}
-              </h3>
+      right-4
+      top-0
 
-              <p
-                className="
-                  mt-1
+      font-display
 
-                  text-sm
+      text-[8rem]
+      md:text-[10rem]
 
-                  text-[var(--muted)]
-                "
-              >
-                {item.role}
-              </p>
-            </div>
+      leading-none
 
-            <div
-              className="
-                h-12
-                w-12
+      text-[var(--accent)]/[0.04]
 
-                rounded-full
+      pointer-events-none
+    "
+  >
+    "
+  </div>
 
-                border
-                border-[var(--accent)]/20
+  {/* Company */}
+  <div
+    className="
+      relative
+      z-10
 
-                bg-[var(--accent)]/10
+      inline-flex
 
-                flex
-                items-center
-                justify-center
+      items-center
+      gap-2
 
-                text-[var(--accent)]
-                font-bold
-              "
-            >
-              ★
-            </div>
-          </div>
-        </div>
-      </SwiperSlide>
-    ))}
-  </Swiper>
+      text-[10px]
+
+      uppercase
+
+      tracking-[0.35em]
+
+      text-[var(--accent)]
+    "
+  >
+    <div className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+    {item.company}
+  </div>
+
+  {/* Label */}
+  <div
+    className="
+      mt-5
+
+      text-[10px]
+
+      uppercase
+
+      tracking-[0.35em]
+
+      text-[var(--muted)]
+    "
+  >
+    Client Testimonial
+  </div>
+
+  {/* Quote */}
+  <p
+    className="
+      relative
+      z-10
+
+      mt-6
+
+      text-[15px]
+      lg:text-[16px]
+
+      leading-[2]
+
+      text-[var(--text)]
+
+      line-clamp-6
+
+      first-letter:text-[var(--accent)]
+      first-letter:text-3xl
+      first-letter:font-display
+    "
+  >
+    {item.quote}
+  </p>
+
+  {/* Divider */}
+  <div
+    className="
+      absolute
+
+      left-8
+      right-8
+      bottom-24
+
+      h-px
+
+      bg-gradient-to-r
+      from-transparent
+      via-[var(--accent)]/30
+      to-transparent
+    "
+  />
+
+  {/* Footer */}
+  <div
+    className="
+      absolute
+      bottom-0
+      left-0
+      right-0
+
+      flex
+      items-center
+      justify-between
+
+      px-8
+      py-5
+    "
+  >
+    <div>
+      <h3
+        className="
+          font-display
+
+          text-2xl
+
+          leading-none
+
+          tracking-tight
+
+          text-[var(--text)]
+        "
+      >
+        {item.name}
+      </h3>
+
+      <p
+        className="
+          mt-2
+
+          text-sm
+
+          text-[var(--muted)]
+        "
+      >
+        {item.role}
+      </p>
+    </div>
+
+    <div
+      className="
+        h-14
+        w-14
+
+        rounded-full
+
+        border
+        border-[var(--accent)]/20
+
+        bg-[var(--accent)]/10
+
+        flex
+        items-center
+        justify-center
+
+        font-display
+
+        text-xl
+
+        text-[var(--accent)]
+      "
+    >
+      {item.name.charAt(0)}
+    </div>
+  </div>
+</div>
+    </div>
+  ))}
+</Slider>
 </div>
     </section> 
   );

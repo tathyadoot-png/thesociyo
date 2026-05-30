@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
 @theme {
   --color-brand-ivory: #FDFCF0;
@@ -490,44 +492,143 @@ body {
   mix-blend-mode: screen;
 }
 
+/* ==========================================
+   TESTIMONIAL SLIDER
+========================================== */
 
 .testimonial-slider .slick-list {
   overflow: visible;
-}s
-
-.testimonial-slider .slick-slide {
-  padding: 12px;
-  transition: all 0.5s ease;
 }
 
-@media (min-width: 1024px) {
-  .testimonial-slider .slick-slide {
-    opacity: 0.35;
-    transform: scale(0.82);
-  }
+.testimonial-slider .slick-track {
+  display: flex !important;
+  align-items: center;
+}
 
-  .testimonial-slider .slick-center {
-    opacity: 1 !important;
-    transform: scale(1.08);
+.testimonial-slider .slick-slide {
+  height: auto;
+}
+
+.testimonial-slider .slick-slide > div {
+  height: 100%;
+  padding: 0 12px;
+}
+
+.testimonial-slider .testimonial-card {
+  position: relative;
+  height: 420px;
+
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease,
+    filter 0.5s ease,
+    box-shadow 0.5s ease,
+    border-color 0.5s ease;
+}
+
+/* ==========================================
+   DESKTOP CENTER EMPHASIS
+========================================== */
+
+@media (min-width: 1024px) {
+
+  .testimonial-slider .slick-slide .testimonial-card {
+    transform: scale(0.9);
+    opacity: 0.6;
+    filter: blur(0.5px);
   }
 
   .testimonial-slider .slick-center .testimonial-card {
-    border-color: rgba(255,255,255,0.15);
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+
+    border-color: rgba(254, 0, 0, 0.22);
 
     box-shadow:
-      0 0 0 1px rgba(255,255,255,0.05),
-      0 25px 80px rgba(0,0,0,0.25),
-      0 0 50px rgba(254,0,0,0.12);
+      0 0 40px rgba(254, 0, 0, 0.12),
+      0 20px 50px rgba(0, 0, 0, 0.08);
   }
 }
 
-@media (max-width: 1023px) {
-  .testimonial-slider .slick-slide {
-    opacity: 1;
-    transform: none;
-  }
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
 
   .testimonial-slider .testimonial-card {
     transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 767px) {
+
+  .testimonial-slider .slick-slide > div {
+    padding: 0;
+  }
+
+  .testimonial-slider .testimonial-card {
+    height: auto;
+    min-height: 420px;
+
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+}
+
+/* ==========================================
+   ACTIVE TOP ACCENT
+========================================== */
+
+.testimonial-slider .testimonial-card::before {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 0%;
+  height: 2px;
+
+  background: var(--accent);
+
+  transition: width 0.5s ease;
+}
+
+@media (min-width: 1024px) {
+  .testimonial-slider .slick-center .testimonial-card::before {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .testimonial-slider .slick-list {
+    padding: 0 18px !important;
+  }
+
+  .testimonial-slider .slick-slide {
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+
+  .testimonial-slider .slick-slide > div {
+    padding: 0 !important;
+  }
+
+  .testimonial-slider .testimonial-card {
+    min-height: 420px;
+    height: auto;
+
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
   }
 }
