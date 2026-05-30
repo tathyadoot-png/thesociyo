@@ -63,7 +63,7 @@ export default function SelectedAssociationsSection() {
           <div className="absolute left-1/2 top-1/2 h-[16rem] w-[16rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--accent)]/10 blur-[120px] md:h-[28rem] md:w-[28rem]" />
 
           {/* MOBILE */}
-       <div className="relative z-20 grid grid-cols-2 gap-4 md:hidden">
+       <div className="relative z-20 grid grid-cols-2 gap-4 md:hidden mx-5">
   {associations.map((item, index) => (
     <motion.div
       key={item.id}
