@@ -89,7 +89,4 @@ export const associations = [
     name: "Political Edge",
     image: "/associates/12.png",
   },
-
-
-  
 ];

@@ -47,54 +47,6 @@ const active = caseStudies[activeIndex];
       <div className="relative z-10 w-[94%] lg:w-[88%] mx-auto">
         <CinematicSectionHeading {...caseStudiesHeading} />
 
-   <div className="hidden md:flex mt-16 flex-wrap justify-center gap-3">
-  {caseStudies.map((item, index) => (
-    <button
-      key={index}
-      onClick={() => setActiveIndex(index)}
-  className={`
-  relative
-
-  px-5 py-3
-
-  text-xs
-  md:text-sm
-
-  font-medium
-  uppercase
-
-  tracking-[0.35em]
-
-  transition-all
-  duration-500
-
-  ${
-    activeIndex === index
-      ? "text-[var(--accent)]"
-      : "text-[var(--muted)] hover:text-[var(--text)]"
-  }
-`}
-    >
-     <>
-  {item.year}
-
-  {activeIndex === index && (
-    <motion.div
-      layoutId="yearIndicator"
-      className="
-        absolute
-        -bottom-1
-        left-0
-        right-0
-        h-px
-        bg-[var(--accent)]
-      "
-    />
-  )}
-</>
-    </button>
-  ))}
-</div>
 
 
 <div className="hidden md:flex mt-12 flex-wrap justify-center gap-6">
