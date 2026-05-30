@@ -80,12 +80,12 @@ export const associations = [
     image: "/associates/11.png",
   },
   {
-    id: "13",
+    id: "12",
     name: "Sachhi Saheli",
     image: "/associates/13.png",
   },
     {
-    id: "12",
+    id: "13",
     name: "Political Edge",
     image: "/associates/12.png",
   },

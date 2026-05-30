@@ -11,6 +11,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
+
 export default function CaseStudies() {
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -46,7 +47,7 @@ const active = caseStudies[activeIndex];
       <div className="relative z-10 w-[94%] lg:w-[88%] mx-auto">
         <CinematicSectionHeading {...caseStudiesHeading} />
 
-        <div className="mt-16 flex flex-wrap justify-center gap-3">
+   <div className="hidden md:flex mt-16 flex-wrap justify-center gap-3">
   {caseStudies.map((item, index) => (
     <button
       key={index}
@@ -96,7 +97,7 @@ const active = caseStudies[activeIndex];
 </div>
 
 
-<div className="mt-12 flex flex-wrap justify-center gap-6">
+<div className="hidden md:flex mt-12 flex-wrap justify-center gap-6">
   {caseStudies.map((item, index) => (
     <button
       key={index}
@@ -154,6 +155,112 @@ const active = caseStudies[activeIndex];
     </button>
   ))}
 </div>
+{/* MOBILE CASE STUDIES */}
+<div className="md:hidden mt-10 space-y-5">
+  {caseStudies.map((item) => (
+    <div
+      key={item.year}
+      className="
+        rounded-[28px]
+
+        border border-[var(--border)]
+
+        bg-[var(--glass)]
+
+        backdrop-blur-xl
+
+        overflow-hidden
+      "
+    >
+      <div className="p-5">
+        {/* TOP */}
+        <div className="flex items-center gap-4">
+          <div
+            className="
+              h-16
+              w-16
+
+              rounded-2xl
+
+              border border-[var(--border)]
+
+              flex
+              items-center
+              justify-center
+            "
+          >
+            <Image
+              src={item.logo}
+              alt={item.title}
+              width={48}
+              height={48}
+              className="object-contain"
+            />
+          </div>
+
+          <div>
+            <div
+              className="
+                text-xs
+
+                uppercase
+
+                tracking-[0.25em]
+
+                text-[var(--accent)]
+              "
+            >
+              {item.year}
+            </div>
+
+            <h3
+              className="
+                mt-1
+
+                text-lg
+
+                font-bold
+
+                text-[var(--text)]
+              "
+            >
+              {item.title}
+            </h3>
+          </div>
+        </div>
+
+        {/* DIVIDER */}
+        <div
+          className="
+            my-5
+
+            h-px
+
+            bg-gradient-to-r
+            from-transparent
+            via-[var(--accent)]
+            to-transparent
+          "
+        />
+
+        {/* DESCRIPTION */}
+        <p
+          className="
+            text-sm
+
+            leading-7
+
+            text-[var(--muted)]
+          "
+        >
+          {item.description}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
+
+<div className="hidden md:block">
 <AnimatePresence mode="wait">
   <motion.div
     key={activeIndex}
@@ -161,7 +268,7 @@ const active = caseStudies[activeIndex];
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -40 }}
     transition={{ duration: 0.4 }}
-    className="relative mt-24"
+    className="relative mt-16"
   >
     {/* WATERMARK */}
     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -191,7 +298,7 @@ const active = caseStudies[activeIndex];
         max-w-6xl
         mx-auto
 
-        rounded-[40px]
+        rounded-[32px]
 
         border border-[var(--border)]
 
@@ -211,21 +318,21 @@ const active = caseStudies[activeIndex];
         }}
       />
 
-      <div className="relative z-10 p-8 md:p-12 lg:p-16">
+      <div className="relative z-10 p-8 md:p-8">
         {/* LOGO */}
        
 
         {/* YEAR */}
         <div
           className="
-            mt-8
+            mt-4
 
             text-center
 
             font-display
 
             text-6xl
-            md:text-8xl
+          
 
             tracking-[-0.08em]
 
@@ -250,9 +357,8 @@ const active = caseStudies[activeIndex];
             font-display
             uppercase
 
-            text-3xl
-            md:text-6xl
-            lg:text-7xl
+           text-5xl
+           
 
             leading-[0.9]
             tracking-[-0.07em]
@@ -305,6 +411,7 @@ const active = caseStudies[activeIndex];
     </div>
   </motion.div>
 </AnimatePresence>
+</div>
       </div>
     </section>
   );
