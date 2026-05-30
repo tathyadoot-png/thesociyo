@@ -47,7 +47,7 @@ export const associations = [
   {
     id: "06",
     name: "H2O",
-    image: "/associates/6.jpeg",
+    image: "/associates/6.png",
   },
 
   {
