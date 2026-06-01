@@ -7,14 +7,14 @@ export default function HeroSection() {
     <section
       className="
         relative
-        h-[100vh]
+in-h-screen
       "
     >
       <div
         className="
           sticky
           top-0
-          h-screen
+          h-full
           overflow-hidden
         md:p-5
         p-0

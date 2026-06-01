@@ -86,7 +86,7 @@ export const associations = [
   },
     {
     id: "13",
-    name: "Political Edge",
+    name: "Political Ally",
     image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294346/12_jb5pgq.png",
   },
 ];
