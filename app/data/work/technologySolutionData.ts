@@ -35,7 +35,7 @@ snapshots: [
     title: "The Drishtikon",
     ecosystem: "News & Media",
     category: "News & Media",
-    image: "/work/1.png",
+    image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294673/1_avnwxx.png",
     liveLink: "https://www.thedrishtikon.com",
   },
 
@@ -43,7 +43,7 @@ snapshots: [
     title: "Indian Says",
     ecosystem: "News & Media",
     category: "Media Platform",
-    image: "/work/2.png",
+    image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294673/2_yky7pj.png",
     liveLink: "https://www.indiansays.com",
   },
 
@@ -51,7 +51,7 @@ snapshots: [
     title: "TathyaDoot",
     ecosystem: "News & Media",
     category: "News Platform",
-    image: "/work/3.png",
+    image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294674/3_pxugk6.png",
     liveLink: "https://www.tathyadoot.com",
   },
 
@@ -59,7 +59,7 @@ snapshots: [
     title: "News World Web",
     ecosystem: "News & Media",
     category: "Digital Media",
-    image: "/work/4.png",
+    image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294673/2_yky7pj.png",
     liveLink: "https://www.newsworldweb.in",
   },
 
@@ -67,7 +67,7 @@ snapshots: [
     title: "H2O Connects",
     ecosystem: "Social Impact",
     category: "Social Impact",
-    image: "/work/5.png",
+    image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294677/5_tm6qlk.png",
     liveLink: "https://h2oconnects.org",
   },
 
@@ -75,7 +75,7 @@ snapshots: [
     title: "Sarthak Sanstha",
     ecosystem: "Social Impact",
     category: "NGO Platform",
-    image: "/work/6.png",
+    image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294678/6_xxhtua.png",
     liveLink: "https://www.sarthaksanstha.org",
   },
 
@@ -83,7 +83,7 @@ snapshots: [
     title: "Nirbhaya Foundation",
     ecosystem: "Foundations",
     category: "Foundation",
-    image: "/work/7.png",
+    image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294678/7_lg3o65.png",
     liveLink: "https://nirbhayafoundation.org",
   },
 
@@ -91,7 +91,7 @@ snapshots: [
     title: "Sky Social",
     ecosystem: "Foundations",
     category: "Organization",
-    image: "/work/8.png",
+    image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294680/8_mbzzwk.png",
     liveLink: "https://skysocial.org",
   },
 
@@ -99,7 +99,7 @@ snapshots: [
     title: "Sacchi Saheli",
     ecosystem: "Foundations",
     category: "Women Empowerment",
-    image: "/work/9.png",
+    image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294681/9_huqnmb.png",
     liveLink: "https://sachhisaheli.org",
   },
 
@@ -107,7 +107,7 @@ snapshots: [
     title: "Sociyo Communications",
     ecosystem: "Corporate Platforms",
     category: "Corporate Platform",
-    image: "/work/10.png",
+    image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294681/10_egc6aq.png",
     liveLink: "https://thesociyo.com",
   },
 
@@ -115,7 +115,7 @@ snapshots: [
     title: "Inedco Networks",
     ecosystem: "Corporate Platforms",
     category: "Corporate",
-    image: "/work/11.png",
+    image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294682/11_kto2ah.png",
     liveLink: "https://www.inedconetworks.com",
   },
 
@@ -123,7 +123,7 @@ snapshots: [
     title: "Sampatiya Uikey",
     ecosystem: "Political & Public Profiles",
     category: "Political Profile",
-    image: "/work/12.png",
+    image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294684/12_pzloqr.png",
     liveLink: "https://www.sampatiyauikey.com",
   },
 
@@ -131,7 +131,7 @@ snapshots: [
     title: "Ganesh Singh",
     ecosystem: "Political & Public Profiles",
     category: "Public Leadership",
-    image: "/work/13.png",
+    image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294685/13_dah5ia.png",
     liveLink: "https://ganeshsingh.com",
   },
 
@@ -139,7 +139,7 @@ snapshots: [
     title: "Rajendra Shukla",
     ecosystem: "Political & Public Profiles",
     category: "Governance",
-    image: "/work/14.png",
+    image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294685/14_zr3s3i.png",
     liveLink: "http://rajendrashukla.co.in",
   },
 
@@ -147,7 +147,7 @@ snapshots: [
     title: "Bhupendra Singh",
     ecosystem: "Political & Public Profiles",
     category: "Political Communication",
-    image: "/work/15.png",
+    image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294687/15_zskqwb.png",
     liveLink: "http://bhuppendrasiingh.com",
   },
 
@@ -155,7 +155,7 @@ snapshots: [
     title: "Content Mohalla",
     ecosystem: "Creative & Personal Platforms",
     category: "Creative Ecosystem",
-    image: "/work/16.png",
+    image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294688/16_xygaej.png",
     liveLink: "https://www.contentmohalla.com",
   },
 
@@ -163,14 +163,14 @@ snapshots: [
     title: "Sociyo CMS",
     ecosystem: "Corporate",
     category: "Internal Platform",
-    image: "/work/20.png",
+    image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294691/20_bscdyj.png",
     liveLink: "https://thesociyo.in",
   },
   {
   title: "Ssksatna",
   ecosystem: "Governance",
   category: "Governance Platform",
-  image: "/work/18.png",
+  image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294690/18_npsyca.png",
   liveLink: "https://www.ssksatna.com",
 },
 
@@ -178,14 +178,14 @@ snapshots: [
   title: "JSK",
   ecosystem: "Governance",
   category: "Citizen Service Platform",
-  image: "/work/19.png",
+  image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294690/19_y3n1tz.png",
   liveLink: "https://jskindia.in",
 },
 {
   title: "Vikalp Singh",
   ecosystem: "Creative & Personal Platforms",
   category: "Personal Portfolio",
-  image: "/work/17.png",
+  image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294688/17_ikdfsw.png",
   liveLink: "https://vikalpsingh.com",
 },
 ],

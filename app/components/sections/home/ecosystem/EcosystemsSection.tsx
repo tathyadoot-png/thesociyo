@@ -14,7 +14,7 @@ import {
   ecosystemsHeading,
 } from "@/app/data/home/ecosystems";
 
-import CinematicLayer from "@/app/components/cinematic/CinematicLayer";
+
 import CinematicBackground from "@/app/components/cinematic/CinematicBackground";
 import CinematicSectionHeading from "@/app/components/ui/CinematicSectionHeading";
 

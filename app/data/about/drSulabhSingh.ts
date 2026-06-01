@@ -10,9 +10,9 @@ export const drSulabhSingh = {
   shortBio:
     "Political consultant, strategic communication expert and media researcher with deep experience in election campaigns, public relations, branding and digital communication systems.",
 
-  image: "/team/drss.jpeg",
+  image: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294657/drss_uk2ked.jpg",
 
-  coverImage: "/team/drss.jpeg",
+  coverImage: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294657/drss_uk2ked.jpg",
 
   gallery: [
     "/SociyoLogo_Agency_WhiteRed.png",

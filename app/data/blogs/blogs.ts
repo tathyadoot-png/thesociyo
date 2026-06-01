@@ -11,7 +11,7 @@ export const blogs = [
     date: "May 15, 2026",
 
     image:
-      "/blog/blog1.jpg",
+      "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294360/blog1_qlasmz.jpg",
 
     link:
       "https://www.linkedin.com/pulse/smile-everyone-remembers-one-inherits-boy-egpff/",
@@ -29,7 +29,7 @@ export const blogs = [
     date: "May 12, 2026",
 
     image:
-      "/blog/blog2.jpg",
+      "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294360/blog2_fvzagw.jpg",
 
     link:
       "https://www.linkedin.com/pulse/visuals-role-advertising-brand-building-lurxf/",
@@ -47,7 +47,7 @@ export const blogs = [
   date: "May 8, 2026",
 
   image:
-    "/blog/blog3.jpg",
+    "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294360/blog3_nih70s.jpg",
 
   link:
     "https://www.linkedin.com/pulse/beyond-product-how-piyush-pandey-turned-chair-4edkf/",
@@ -64,7 +64,7 @@ export const blogs = [
   date: "May 2, 2026",
 
   image:
-    "/blog/blog4.png",
+    "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294361/blog4_muaoik.png",
 
   link:
     "https://www.linkedin.com/pulse/indias-biggest-hydrating-collaboration-champions-r9e1f/",
@@ -82,7 +82,7 @@ export const blogs = [
   date: "5 months ago",
 
   image:
-    "/blog/blog5.jpg",
+    "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294361/blog5_okiygb.jpg",
 
   link:
     "https://www.linkedin.com/posts/cocacola-christmas-marketing-ugcPost-7404817406717767681-BgaQ/?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAFBw4PoB2-WAB-4ZSFg0yr4cgcbBtP6ZHqQ",
@@ -99,7 +99,7 @@ export const blogs = [
   date: "5 months ago",
 
   image:
-    "/blog/blog6.jpg",
+    "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294362/blog6_ik9c9k.jpg",
 
   link:
     "https://www.linkedin.com/posts/marketing-advertising-branding-ugcPost-7401141729749405696-gHiv/?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAFBw4PoB2-WAB-4ZSFg0yr4cgcbBtP6ZHqQ",
@@ -116,7 +116,7 @@ export const blogs = [
   date: "5 months ago",
 
   image:
-    "/blog/blog7.jpg",
+    "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294362/blog7_fsj757.jpg",
 
   link:
     "https://www.linkedin.com/posts/genz-genzinsights-digitalaudience-ugcPost-7399034773525921792-NeMR/?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAFBw4PoB2-WAB-4ZSFg0yr4cgcbBtP6ZHqQ",
@@ -134,33 +134,10 @@ export const blogs = [
   date: "5 months ago",
 
   image:
-    "/blog/blog8.jpg",
+    "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294363/blog8_voszns.jpg",
 
   link:
     "https://www.linkedin.com/posts/parasocial-wordoftheyear2025-book-share-7396848522450571264-Yfor/?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAFBw4PoB2-WAB-4ZSFg0yr4cgcbBtP6ZHqQ",
 }
 ];
 
-
-export const films = [
-  {
-    id: "01",
-
-    video:
-      "https://youtu.be/nK-OhlHwqvA",
-  },
-
-  {
-    id: "02",
-
-    video:
-      "https://youtu.be/a7vjpgO77H0",
-  },
-
-  {
-    id: "03",
-
-    video:
-      "https://youtu.be/F23YcqthqFQ",
-  },
-];

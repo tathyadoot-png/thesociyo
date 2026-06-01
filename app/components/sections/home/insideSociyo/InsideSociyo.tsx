@@ -86,7 +86,7 @@ export default function InsideSociyo() {
 >
   {/* IMAGE */}
   <Image
-    src="/wordcloud.png"
+     src="https://res.cloudinary.com/dii2m7ebc/image/upload/v1780294737/wordcloud_ti3juz.png"
     alt="Inside Sociyo"
     fill
  className="

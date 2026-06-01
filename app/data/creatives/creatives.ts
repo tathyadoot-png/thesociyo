@@ -41,7 +41,7 @@ export const creatives: Creative[] = [
       "Brand Campaign",
 
     image:
-      "/creatives/1.jpeg",
+      "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294383/1_wqrk8o.jpg",
 
     alt:
       "Creative campaign identity and branding design",
@@ -59,13 +59,13 @@ export const creatives: Creative[] = [
       "Social Campaign",
 
     images: [
-      "/creatives/3.jpeg",
-      "/creatives/4.jpeg",
-      "/creatives/5.jpeg",
-      "/creatives/6.jpeg",
-      "/creatives/7.jpeg",
-      "/creatives/9.jpeg",
-      "/creatives/10.jpeg",
+      "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294385/3_v5t94n.jpg",
+      "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294386/4_wqpm3n.jpg",
+      "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294387/5_ckkrls.jpg",
+      "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294388/6_u9lqnt.jpg",
+      "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294388/7_lrmbzr.jpg",
+      "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294389/9_pwtqds.jpg",
+      "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294390/10_h2r7dk.jpg",
     ],
 
     alt:
@@ -84,7 +84,7 @@ export const creatives: Creative[] = [
       "Luxury Branding",
 
     image:
-      "/creatives/11.jpeg",
+      "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294390/11_wiizfa.jpg",
 
     alt:
       "Luxury brand inspired advertising visual",
@@ -102,7 +102,7 @@ export const creatives: Creative[] = [
       "Editorial",
 
     image:
-      "/creatives/12.jpeg",
+      "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294392/12_ukqmvr.jpg",
 
     alt:
       "Modern editorial campaign creative design",
@@ -120,7 +120,7 @@ export const creatives: Creative[] = [
       "Storytelling",
 
     image:
-      "/creatives/13.jpeg",
+      "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294393/13_v2y5is.jpg",
 
     alt:
       "Visual storytelling promotional artwork",
@@ -138,7 +138,7 @@ export const creatives: Creative[] = [
       "Advertising",
 
     image:
-      "/creatives/14.jpeg",
+      "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294393/14_wokwfm.jpg",
 
     alt:
       "Creative advertising poster design",
@@ -156,7 +156,7 @@ export const creatives: Creative[] = [
       "Branding",
 
     image:
-      "/creatives/15.jpeg",
+      "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294394/15_t4mnot.jpg",
 
     alt:
       "Strategic brand communication artwork",
@@ -174,7 +174,7 @@ export const creatives: Creative[] = [
       "Campaign",
 
     image:
-      "/creatives/16.jpeg",
+      "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294395/16_ar7ynx.jpg",
 
     alt:
       "Cinematic campaign promotional design",
@@ -192,7 +192,7 @@ export const creatives: Creative[] = [
       "Digital Campaign",
 
     image:
-      "/creatives/17.jpeg",
+      "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294396/17_ak6zig.jpg",
 
     alt:
       "Digital audience engagement creative",
@@ -210,7 +210,7 @@ export const creatives: Creative[] = [
       "Creative Strategy",
 
     image:
-      "/creatives/18.jpeg",
+      "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294396/18_xq42i3.jpg",
 
     alt:
       "Strategic visual communication design",

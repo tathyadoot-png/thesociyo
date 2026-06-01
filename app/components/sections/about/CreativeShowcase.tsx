@@ -250,13 +250,13 @@ export default function CreativeShowcase() {
 
               {/* content */}
               <div className="absolute bottom-0 left-0 z-20 p-5">
-                <p className="text-xs uppercase tracking-[0.3em] text-white/70">
+                {/* <p className="text-xs uppercase tracking-[0.3em] text-white/70">
                   {item.category}
-                </p>
-
+                </p> */}
+{/* 
                 <h3 className="mt-2 text-2xl font-black text-white leading-tight">
                   {item.title}
-                </h3>
+                </h3> */}
               </div>
             </div>
           );
