@@ -33,7 +33,7 @@ export const ecosystemsData: EcosystemItem[] = [
       "Supporting brands through positioning, audience engagement and communication designed for long-term market relevance.",
 
     image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+      "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780314386/1111_fyuyi8.png",
   },
 
   {
