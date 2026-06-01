@@ -36,6 +36,13 @@ export const caseStudies: CaseStudy[] = [
       "Worked with Jannayak Janta Party (JJP) during its breakthrough Haryana Assembly Election campaign. Despite being only 11 months old, the party emerged as a key political force, securing 10 seats and ultimately forming the government alliance with the Deputy Chief Minister position.\n\nThe campaign involved strategic communication support, regional messaging, media management, and youth-focused voter engagement that helped establish JJP as a credible alternative in Haryana politics.",
   },
   {
+    year: "2019",
+    title: "National Elections – Individual Political Campaigns",
+    logo: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294372/5_g5tjhp.png",
+    description:
+      "Executed high-impact political communication campaigns for individual candidates during the 2019 National Elections across multiple constituencies.\n\nThe campaign included digital strategy, media management, narrative building, rapid-response communication, speech and content development, and constituency-focused voter outreach designed to strengthen candidate positioning in highly competitive electoral environments.",
+  },
+  {
     year: "2020",
     title: "JD(U) Bihar Elections",
     logo: "https://res.cloudinary.com/dii2m7ebc/image/upload/q_auto/f_auto/v1780294642/3_imqgwp.jpg",
