@@ -17,9 +17,10 @@ export default function WorkPage() {
         text-[var(--text)]
       "
     >
-      <CreativeShowcase/>
-      <ClientLogos/>
       <VideoCreativeShowcase />
+      <CreativeShowcase />
+      <ClientLogos />
+
 
     </main>
   );
