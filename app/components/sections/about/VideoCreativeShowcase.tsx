@@ -55,19 +55,17 @@ export default function VideoCreativeShowcase() {
   className="
     relative
 
-    mt-28
 
     overflow-hidden
 
 
 
-    border
-    border-[var(--border)]
+   
 
     bg-[linear-gradient(180deg,rgba(255,255,255,0.02),transparent)]
 
     px-5
-    py-14
+    py-5
 
     md:px-10
     lg:px-14
